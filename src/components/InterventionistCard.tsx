@@ -27,6 +27,7 @@ const InterventionistCard = ({
   quote,
   photo_url,
   compact = false,
+  offers_hourly_coaching = false,
 }: InterventionistCardProps) => {
   return (
     <div className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow group">
