@@ -199,7 +199,7 @@ const ApplyPage = () => {
 
             <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">
               <input type="checkbox" required checked={form.noReferralFees} onChange={(e) => setForm({ ...form, noReferralFees: e.target.checked })} className="rounded border-input mt-0.5" />
-              <span>I confirm that I do not pay or accept referral fees for client placements. <span className="text-muted-foreground">*</span></span>
+              <span>I confirm that I do not pay or accept referral fees for client placements and that I am not employed by a treatment center. <span className="text-muted-foreground">*</span></span>
             </label>
 
             <Button variant="gold" size="lg" type="submit" className="w-full" disabled={loading}>
