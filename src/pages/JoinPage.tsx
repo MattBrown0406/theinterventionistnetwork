@@ -50,7 +50,7 @@ const JoinPage = () => {
     <>
       <SEO
         title="Join The Interventionist Network — Grow Your Practice"
-        description="Join the only professional interventionist network with zero referral fees. Membership starts at $199/month. Get matched with families who need your help."
+        description="Join the only professional interventionist network with zero referral fees. Membership starts at $49/month. Get matched with families who need your help."
       />
       <SchemaMarkup
         type="BreadcrumbList"
