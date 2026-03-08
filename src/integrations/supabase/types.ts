@@ -89,6 +89,72 @@ export type Database = {
         }
         Relationships: []
       }
+      interventionists: {
+        Row: {
+          approach: string
+          bio: string
+          certifications: string[]
+          created_at: string
+          credentials: string
+          email: string | null
+          featured: boolean
+          full_bio: string
+          id: string
+          name: string
+          phone: string | null
+          photo_url: string | null
+          quote: string
+          region: string
+          slug: string
+          specialties: string[]
+          states_served: string[]
+          website: string | null
+          years_experience: number
+        }
+        Insert: {
+          approach?: string
+          bio?: string
+          certifications?: string[]
+          created_at?: string
+          credentials?: string
+          email?: string | null
+          featured?: boolean
+          full_bio?: string
+          id?: string
+          name: string
+          phone?: string | null
+          photo_url?: string | null
+          quote?: string
+          region?: string
+          slug: string
+          specialties?: string[]
+          states_served?: string[]
+          website?: string | null
+          years_experience?: number
+        }
+        Update: {
+          approach?: string
+          bio?: string
+          certifications?: string[]
+          created_at?: string
+          credentials?: string
+          email?: string | null
+          featured?: boolean
+          full_bio?: string
+          id?: string
+          name?: string
+          phone?: string | null
+          photo_url?: string | null
+          quote?: string
+          region?: string
+          slug?: string
+          specialties?: string[]
+          states_served?: string[]
+          website?: string | null
+          years_experience?: number
+        }
+        Relationships: []
+      }
       membership_applications: {
         Row: {
           business_name: string | null
