@@ -4,12 +4,15 @@ import { CheckCircle } from "lucide-react";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { specialtyOptions, stateOptions } from "@/data/interventionists";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const certOptions = ["BRI-I", "BRI-II", "ARISE", "CIP", "CADC", "Other"];
 const hearAboutOptions = ["Referral", "Podcast", "Social Media", "Search", "Conference", "Other"];
 
 const ApplyPage = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -36,12 +39,34 @@ const ApplyPage = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, this would submit to Supabase
-    console.log("Application submitted:", form);
-    setSubmitted(true);
-    window.scrollTo(0, 0);
+    setLoading(true);
+    try {
+      const { error } = await supabase.from("membership_applications").insert({
+        full_name: form.fullName,
+        email: form.email,
+        phone: form.phone,
+        business_name: form.businessName || null,
+        website_url: form.websiteUrl || null,
+        years_experience: parseInt(form.yearsExperience),
+        certifications: form.certifications,
+        cert_other: form.certifications.includes("Other") ? form.certOther : null,
+        states_served: form.statesServed,
+        specialties: form.specialties,
+        practice_description: form.practiceDescription,
+        hear_about: form.hearAbout || null,
+        tier_interest: form.tierInterest,
+        no_referral_fees: form.noReferralFees,
+      });
+      if (error) throw error;
+      setSubmitted(true);
+      window.scrollTo(0, 0);
+    } catch {
+      toast.error("Something went wrong. Please try again or contact us directly.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -89,7 +114,6 @@ const ApplyPage = () => {
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4 max-w-2xl">
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Text fields */}
             {[
               { label: "Full Name *", key: "fullName", type: "text", required: true },
               { label: "Email *", key: "email", type: "email", required: true },
@@ -110,108 +134,62 @@ const ApplyPage = () => {
               </div>
             ))}
 
-            {/* Certifications */}
             <div>
               <label className="block text-sm font-medium mb-2">Certifications Held *</label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {certOptions.map((cert) => (
                   <label key={cert} className="flex items-center gap-2 text-sm cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={form.certifications.includes(cert)}
-                      onChange={() => handleCheckboxArray("certifications", cert)}
-                      className="rounded border-input"
-                    />
+                    <input type="checkbox" checked={form.certifications.includes(cert)} onChange={() => handleCheckboxArray("certifications", cert)} className="rounded border-input" />
                     {cert}
                   </label>
                 ))}
               </div>
               {form.certifications.includes("Other") && (
-                <input
-                  type="text"
-                  placeholder="Please specify"
-                  value={form.certOther}
-                  onChange={(e) => setForm({ ...form, certOther: e.target.value })}
-                  className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm mt-2 focus:outline-none focus:ring-2 focus:ring-ring"
-                />
+                <input type="text" placeholder="Please specify" value={form.certOther} onChange={(e) => setForm({ ...form, certOther: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm mt-2 focus:outline-none focus:ring-2 focus:ring-ring" />
               )}
             </div>
 
-            {/* Specialties */}
             <div>
               <label className="block text-sm font-medium mb-2">Specialties *</label>
               <div className="grid grid-cols-2 gap-2">
                 {specialtyOptions.map((spec) => (
                   <label key={spec} className="flex items-center gap-2 text-sm cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={form.specialties.includes(spec)}
-                      onChange={() => handleCheckboxArray("specialties", spec)}
-                      className="rounded border-input"
-                    />
+                    <input type="checkbox" checked={form.specialties.includes(spec)} onChange={() => handleCheckboxArray("specialties", spec)} className="rounded border-input" />
                     {spec}
                   </label>
                 ))}
               </div>
             </div>
 
-            {/* States served */}
             <div>
               <label className="block text-sm font-medium mb-1.5">States/Regions You Serve *</label>
               <select
                 multiple
                 value={form.statesServed}
-                onChange={(e) =>
-                  setForm({
-                    ...form,
-                    statesServed: Array.from(e.target.selectedOptions, (o) => o.value),
-                  })
-                }
+                onChange={(e) => setForm({ ...form, statesServed: Array.from(e.target.selectedOptions, (o) => o.value) })}
                 className="w-full h-32 px-3 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
               >
-                {stateOptions.map((s) => (
-                  <option key={s} value={s}>{s}</option>
-                ))}
+                {stateOptions.map((s) => <option key={s} value={s}>{s}</option>)}
               </select>
               <p className="text-xs text-muted-foreground mt-1">Hold Ctrl/Cmd to select multiple</p>
             </div>
 
-            {/* Practice description */}
             <div>
               <label className="block text-sm font-medium mb-1.5">Brief Description of Your Practice *</label>
-              <textarea
-                required
-                rows={4}
-                value={form.practiceDescription}
-                onChange={(e) => setForm({ ...form, practiceDescription: e.target.value })}
-                className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring"
-              />
+              <textarea required rows={4} value={form.practiceDescription} onChange={(e) => setForm({ ...form, practiceDescription: e.target.value })} className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring" />
             </div>
 
-            {/* How did you hear */}
             <div>
               <label className="block text-sm font-medium mb-1.5">How Did You Hear About Us?</label>
-              <select
-                value={form.hearAbout}
-                onChange={(e) => setForm({ ...form, hearAbout: e.target.value })}
-                className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm"
-              >
+              <select value={form.hearAbout} onChange={(e) => setForm({ ...form, hearAbout: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm">
                 <option value="">Select one</option>
-                {hearAboutOptions.map((o) => (
-                  <option key={o} value={o}>{o}</option>
-                ))}
+                {hearAboutOptions.map((o) => <option key={o} value={o}>{o}</option>)}
               </select>
             </div>
 
-            {/* Tier interest */}
             <div>
               <label className="block text-sm font-medium mb-1.5">Membership Tier Interest *</label>
-              <select
-                required
-                value={form.tierInterest}
-                onChange={(e) => setForm({ ...form, tierInterest: e.target.value })}
-                className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm"
-              >
+              <select required value={form.tierInterest} onChange={(e) => setForm({ ...form, tierInterest: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm">
                 <option value="">Select a tier</option>
                 <option value="listed">Listed — $199/month</option>
                 <option value="featured">Featured — $399/month</option>
@@ -219,22 +197,13 @@ const ApplyPage = () => {
               </select>
             </div>
 
-            {/* Ethical commitment */}
             <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">
-              <input
-                type="checkbox"
-                required
-                checked={form.noReferralFees}
-                onChange={(e) => setForm({ ...form, noReferralFees: e.target.checked })}
-                className="rounded border-input mt-0.5"
-              />
-              <span>
-                I confirm that I do not pay or accept referral fees for client placements. <span className="text-muted-foreground">*</span>
-              </span>
+              <input type="checkbox" required checked={form.noReferralFees} onChange={(e) => setForm({ ...form, noReferralFees: e.target.checked })} className="rounded border-input mt-0.5" />
+              <span>I confirm that I do not pay or accept referral fees for client placements. <span className="text-muted-foreground">*</span></span>
             </label>
 
-            <Button variant="gold" size="lg" type="submit" className="w-full">
-              Submit Application
+            <Button variant="gold" size="lg" type="submit" className="w-full" disabled={loading}>
+              {loading ? "Submitting..." : "Submit Application"}
             </Button>
           </form>
         </div>
