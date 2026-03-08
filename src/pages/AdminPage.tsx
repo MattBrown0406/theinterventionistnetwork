@@ -143,6 +143,7 @@ const AdminPage = () => {
       website: form.website || null,
       featured: form.featured,
       photo_url: photoUrl || null,
+      offers_hourly_coaching: form.offers_hourly_coaching,
     };
 
     let error;
