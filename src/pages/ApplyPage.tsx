@@ -72,7 +72,7 @@ const ApplyPage = () => {
   if (submitted) {
     return (
       <>
-        <SEO title="Application Submitted" description="Thank you for applying to The Intervention Network." />
+        <SEO title="Application Submitted" description="Thank you for applying to The Interventionist Network." />
         <div className="container mx-auto px-4 py-24 text-center max-w-lg">
           <CheckCircle className="w-16 h-16 text-gold mx-auto mb-6" />
           <h1 className="text-3xl font-bold mb-4">Application Received</h1>
