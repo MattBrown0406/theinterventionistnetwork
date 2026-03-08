@@ -61,8 +61,8 @@ const ContactPage = () => {
   return (
     <>
       <SEO
-        title="Contact The Interventionist Network"
-        description="Get in touch with The Interventionist Network. Call (541) 838-6009 or send us a message. We're here to help families and professionals."
+        title="Contact Us"
+        description="Contact The Interventionist Network. Families seeking help, interventionists interested in joining, or media inquiries."
       />
       <SchemaMarkup
         type="BreadcrumbList"
@@ -77,7 +77,7 @@ const ContactPage = () => {
       <section className="bg-navy py-12 lg:py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-3">
-            Get in <span className="text-gold">Touch</span>
+            <span className="text-gold">Contact</span> Us
           </h1>
           <p className="text-primary-foreground/70">We'd love to hear from you.</p>
         </div>

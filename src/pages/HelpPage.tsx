@@ -84,8 +84,8 @@ const HelpPage = () => {
   return (
     <>
       <SEO
-        title="Get Help — Free Interventionist Matching"
-        description="Tell us about your situation and we'll connect you with a vetted interventionist. Free, confidential, and no obligation."
+        title="Get Help — Connect With a Vetted Interventionist"
+        description="Tell us about your situation and we'll connect you with a vetted interventionist. Free, confidential, no obligation. Crisis situations prioritized."
       />
       <SchemaMarkup
         type="BreadcrumbList"

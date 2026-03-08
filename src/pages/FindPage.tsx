@@ -25,8 +25,18 @@ const FindPage = () => {
   return (
     <>
       <SEO
-        title="Find a Vetted Interventionist Near You"
-        description="Search our network of personally vetted addiction interventionists by location, specialty, and urgency. No referral fees. Serving all 50 states."
+        title="Find a Trusted Interventionist Near You"
+        description="Search our network of vetted, certified addiction interventionists by location, specialty, and urgency. Free matching for families — no referral fees ever."
+      />
+      <SchemaMarkup
+        type="WebSite"
+        data={{
+          "@type": "WebPage",
+          name: "Find a Trusted Interventionist",
+          description: "Search our network of vetted addiction interventionists by location and specialty.",
+          url: "https://theinterventionistnetwork.com/find",
+          isPartOf: { "@id": "https://theinterventionistnetwork.com/#website" },
+        }}
       />
       <SchemaMarkup
         type="BreadcrumbList"
