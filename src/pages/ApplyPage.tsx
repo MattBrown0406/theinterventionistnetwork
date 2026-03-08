@@ -200,6 +200,11 @@ const ApplyPage = () => {
             </div>
 
             <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">
+              <input type="checkbox" checked={form.offersHourlyCoaching} onChange={(e) => setForm({ ...form, offersHourlyCoaching: e.target.checked })} className="rounded border-input mt-0.5" />
+              <span>I provide hourly coaching services</span>
+            </label>
+
+            <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">
               <input type="checkbox" required checked={form.noReferralFees} onChange={(e) => setForm({ ...form, noReferralFees: e.target.checked })} className="rounded border-input mt-0.5" />
               <span>I confirm that I do not pay or accept referral fees for client placements and that I am not employed by a treatment center. <span className="text-muted-foreground">*</span></span>
             </label>

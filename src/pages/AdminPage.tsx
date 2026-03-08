@@ -31,6 +31,7 @@ const emptyForm = {
   website: "",
   featured: false,
   photo_url: "",
+  offers_hourly_coaching: false,
 };
 
 type FormData = typeof emptyForm;

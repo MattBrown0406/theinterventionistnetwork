@@ -20,6 +20,7 @@ export interface Interventionist {
   website?: string | null;
   featured: boolean;
   photo_url?: string | null;
+  offers_hourly_coaching: boolean;
 }
 
 export function useInterventionists() {

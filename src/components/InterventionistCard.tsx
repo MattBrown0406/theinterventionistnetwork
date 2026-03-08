@@ -49,6 +49,9 @@ const InterventionistCard = ({
         <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5" />{region}</span>
         <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{years_experience}+ years</span>
         <span className="flex items-center gap-1"><Award className="w-3.5 h-3.5" />Vetted</span>
+        {offers_hourly_coaching && (
+          <span className="flex items-center gap-1 text-gold font-medium"><Clock className="w-3.5 h-3.5" />Hourly Coaching</span>
+        )}
       </div>
 
       <div className="flex flex-wrap gap-1.5 mb-3">
