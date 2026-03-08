@@ -87,6 +87,7 @@ const AdminPage = () => {
       website: person.website || "",
       featured: person.featured,
       photo_url: person.photo_url || "",
+      offers_hourly_coaching: person.offers_hourly_coaching ?? false,
     });
     setPhotoFile(null);
   };
