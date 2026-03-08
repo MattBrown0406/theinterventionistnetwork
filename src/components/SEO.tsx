@@ -15,10 +15,13 @@ interface SEOProps {
 
 const BASE_URL = "https://theinterventionistnetwork.com";
 
+const DEFAULT_OG_IMAGE = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/57ed7768-0c2d-41b5-8041-faa8e7f53e1e/id-preview-f2d64247--0aadcb95-54e1-425c-844a-1c75de9e4f26.lovable.app-1773007231761.png";
+
 const SEO = ({ title, description, canonical, ogImage, ogType = "website", article }: SEOProps) => {
   const location = useLocation();
   const canonicalUrl = canonical || `${BASE_URL}${location.pathname}`;
-  const fullTitle = title.includes("The Interventionist Network") ? title : `${title} | The Interventionist Network`;
+  const fullTitle = title.includes("The Interventionist Network") ? title : `${title} — The Interventionist Network`;
+  const imageUrl = ogImage || DEFAULT_OG_IMAGE;
 
   useEffect(() => {
     document.title = fullTitle;
