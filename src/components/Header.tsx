@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,10 +35,8 @@ const Header = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link to="/" className="flex items-center gap-2">
-            <span className="text-lg lg:text-xl font-bold text-primary leading-tight">
-              The Intervention<span className="text-gold"> Network</span>
-            </span>
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="The Interventionist Network" className="h-10 lg:h-12 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
@@ -48,7 +47,7 @@ const Header = () => {
                 to={link.to}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                   location.pathname === link.to
-                    ? "text-gold"
+                    ? "text-accent"
                     : "text-foreground/80 hover:text-foreground hover:bg-muted"
                 }`}
               >
@@ -87,7 +86,7 @@ const Header = () => {
                   to={link.to}
                   className={`px-3 py-2.5 text-sm font-medium rounded-md ${
                     location.pathname === link.to
-                      ? "text-gold bg-gold-light"
+                      ? "text-accent bg-accent/10"
                       : "text-foreground/80 hover:bg-muted"
                   }`}
                 >

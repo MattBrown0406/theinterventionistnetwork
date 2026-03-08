@@ -48,7 +48,7 @@ const ContactPage = () => {
   if (submitted) {
     return (
       <>
-        <SEO title="Message Sent — The Intervention Network" description="Thank you for reaching out." />
+        <SEO title="Message Sent — The Interventionist Network" description="Thank you for reaching out." />
         <div className="container mx-auto px-4 py-24 text-center max-w-lg">
           <CheckCircle className="w-16 h-16 text-gold mx-auto mb-6" />
           <h1 className="text-3xl font-bold mb-4">Message Sent</h1>
@@ -61,8 +61,8 @@ const ContactPage = () => {
   return (
     <>
       <SEO
-        title="Contact The Intervention Network"
-        description="Get in touch with The Intervention Network. Call (541) 838-6009 or send us a message. We're here to help families and professionals."
+        title="Contact The Interventionist Network"
+        description="Get in touch with The Interventionist Network. Call (541) 838-6009 or send us a message. We're here to help families and professionals."
       />
       <SchemaMarkup
         type="BreadcrumbList"
@@ -127,7 +127,7 @@ const ContactPage = () => {
                     <Phone className="w-4 h-4" />(541) 838-6009
                   </a>
                   <a href="mailto:matt@theinterventionnetwork.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors">
-                    <Mail className="w-4 h-4" />matt@theinterventionnetwork.com
+                    <Mail className="w-4 h-4" />matt@theinterventionistnetwork.com
                   </a>
                 </div>
               </div>

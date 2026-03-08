@@ -7,8 +7,8 @@ const AboutPage = () => {
   return (
     <>
       <SEO
-        title="About The Intervention Network — Our Mission"
-        description="Founded by Matt Brown, a 20+ year veteran interventionist. Learn why The Intervention Network operates without referral fees and how we vet every professional."
+        title="About The Interventionist Network — Our Mission"
+        description="Founded by Matt Brown, a 20+ year veteran interventionist. Learn why The Interventionist Network operates without referral fees and how we vet every professional."
       />
       <SchemaMarkup
         type="BreadcrumbList"
@@ -51,7 +51,7 @@ const AboutPage = () => {
               <h2 className="text-2xl md:text-3xl font-bold">The Story Behind the Network</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  I started The Intervention Network because I was tired of watching families fall through the cracks.
+                  I started The Interventionist Network because I was tired of watching families fall through the cracks.
                 </p>
                 <p>
                   After 20+ years as an addiction interventionist and 22 years of personal recovery, I've seen everything this industry has to offer — the good and the bad. I can only take so many cases myself. But I know dozens of interventionists across the country who are just as dedicated as I am.

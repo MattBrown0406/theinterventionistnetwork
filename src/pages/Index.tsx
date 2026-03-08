@@ -12,13 +12,13 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="Find a Trusted Interventionist — The Intervention Network"
-        description="The Intervention Network connects families with vetted addiction interventionists across all 50 states. Zero referral fees. Zero kickbacks. Just trusted professionals who can help."
+        title="Find a Trusted Interventionist — The Interventionist Network"
+        description="The Interventionist Network connects families with vetted addiction interventionists across all 50 states. Zero referral fees. Zero kickbacks. Just trusted professionals who can help."
       />
       <SchemaMarkup
         type="Organization"
         data={{
-          name: "The Intervention Network",
+          name: "The Interventionist Network",
           url: "https://theinterventionistnetwork.com",
           description: "A vetted national network of addiction interventionists with zero referral fees.",
           founder: { "@type": "Person", name: "Matt Brown" },
@@ -29,7 +29,7 @@ const Index = () => {
       <SchemaMarkup
         type="WebSite"
         data={{
-          name: "The Intervention Network",
+          name: "The Interventionist Network",
           url: "https://theinterventionistnetwork.com",
           potentialAction: {
             "@type": "SearchAction",
@@ -114,7 +114,7 @@ const Index = () => {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why The Intervention Network</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why The Interventionist Network</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
@@ -180,7 +180,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
-                quote: "We were desperate and didn't know where to turn. The Intervention Network connected us with someone who truly understood our situation. Our son is now 18 months sober.",
+                quote: "We were desperate and didn't know where to turn. The Interventionist Network connected us with someone who truly understood our situation. Our son is now 18 months sober.",
                 name: "Jennifer M.",
                 state: "Florida",
               },
@@ -190,7 +190,7 @@ const Index = () => {
                 state: "California",
               },
               {
-                quote: "After calling three other services that all felt like sales calls, we found The Intervention Network. The difference was immediate. They actually listened.",
+                quote: "After calling three other services that all felt like sales calls, we found The Interventionist Network. The difference was immediate. They actually listened.",
                 name: "Susan K.",
                 state: "Ohio",
               },
