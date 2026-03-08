@@ -70,7 +70,7 @@ const JoinPage = () => {
             <span className="text-gold">Join the Network.</span>
           </h1>
           <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto">
-            The Intervention Network connects you with families who need your help — through ethical, transparent, referral-fee-free membership.
+            The Interventionist Network connects you with families who need your help — through ethical, transparent, referral-fee-free membership.
           </p>
         </div>
       </section>
