@@ -23,14 +23,14 @@ const Index = () => {
       <section className="bg-navy relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy to-navy-light opacity-90" />
         <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
               Find a Trusted<br /><span className="text-gold">Interventionist</span>
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed">
               Every interventionist in our network is personally vetted. No referral fees. No kickbacks. Just families connected with professionals who can help.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="gold" size="xl" asChild><Link to="/find">Find an Interventionist</Link></Button>
               <Button variant="hero-outline" size="xl" asChild><Link to="/join">Join the Network</Link></Button>
             </div>
