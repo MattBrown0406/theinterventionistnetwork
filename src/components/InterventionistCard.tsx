@@ -13,6 +13,7 @@ interface InterventionistCardProps {
   quote?: string | null;
   photo_url?: string | null;
   compact?: boolean;
+  offers_hourly_coaching?: boolean;
 }
 
 const InterventionistCard = ({
