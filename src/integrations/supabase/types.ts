@@ -14,7 +14,138 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          inquiry_type: string
+          message: string
+          name: string
+          phone: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          inquiry_type: string
+          message: string
+          name: string
+          phone?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          inquiry_type?: string
+          message?: string
+          name?: string
+          phone?: string | null
+        }
+        Relationships: []
+      }
+      family_intakes: {
+        Row: {
+          approximate_age: string
+          created_at: string
+          description: string | null
+          email: string
+          first_name: string
+          id: string
+          phone: string
+          primary_concern: string
+          relationship: string
+          their_state: string | null
+          urgency: string
+          your_state: string
+        }
+        Insert: {
+          approximate_age: string
+          created_at?: string
+          description?: string | null
+          email: string
+          first_name: string
+          id?: string
+          phone: string
+          primary_concern: string
+          relationship: string
+          their_state?: string | null
+          urgency: string
+          your_state: string
+        }
+        Update: {
+          approximate_age?: string
+          created_at?: string
+          description?: string | null
+          email?: string
+          first_name?: string
+          id?: string
+          phone?: string
+          primary_concern?: string
+          relationship?: string
+          their_state?: string | null
+          urgency?: string
+          your_state?: string
+        }
+        Relationships: []
+      }
+      membership_applications: {
+        Row: {
+          business_name: string | null
+          cert_other: string | null
+          certifications: string[]
+          created_at: string
+          email: string
+          full_name: string
+          hear_about: string | null
+          id: string
+          no_referral_fees: boolean
+          phone: string
+          practice_description: string
+          specialties: string[]
+          states_served: string[]
+          tier_interest: string
+          website_url: string | null
+          years_experience: number
+        }
+        Insert: {
+          business_name?: string | null
+          cert_other?: string | null
+          certifications?: string[]
+          created_at?: string
+          email: string
+          full_name: string
+          hear_about?: string | null
+          id?: string
+          no_referral_fees?: boolean
+          phone: string
+          practice_description: string
+          specialties?: string[]
+          states_served?: string[]
+          tier_interest: string
+          website_url?: string | null
+          years_experience: number
+        }
+        Update: {
+          business_name?: string | null
+          cert_other?: string | null
+          certifications?: string[]
+          created_at?: string
+          email?: string
+          full_name?: string
+          hear_about?: string | null
+          id?: string
+          no_referral_fees?: boolean
+          phone?: string
+          practice_description?: string
+          specialties?: string[]
+          states_served?: string[]
+          tier_interest?: string
+          website_url?: string | null
+          years_experience?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
