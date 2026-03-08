@@ -32,7 +32,7 @@ const tiers = [
   },
   {
     name: "Partner",
-    price: "$599",
+    price: "$299",
     popular: false,
     features: [
       "Everything in Featured, plus:",
