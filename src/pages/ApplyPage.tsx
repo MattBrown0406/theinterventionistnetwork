@@ -59,6 +59,7 @@ const ApplyPage = () => {
         hear_about: form.hearAbout || null,
         tier_interest: form.tierInterest,
         no_referral_fees: form.noReferralFees,
+        offers_hourly_coaching: form.offersHourlyCoaching,
       });
       if (error) throw error;
       setSubmitted(true);
