@@ -7,7 +7,7 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 const tiers = [
   {
     name: "Listed",
-    price: "$199",
+    price: "$49",
     popular: false,
     features: [
       "Professional profile on TheInterventionistNetwork.com",
