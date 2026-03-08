@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <img src={logo} alt="The Interventionist Network" className="h-10 w-auto mb-3 brightness-0 invert" />
+            <img src={logo} alt="The Interventionist Network" className="h-14 w-auto mb-3 brightness-0 invert" />
             <p className="text-sm text-primary-foreground/60 mb-4">
               Trusted Interventionists. Zero Referral Fees. One Mission.
             </p>
