@@ -64,7 +64,7 @@ const SEO = ({ title, description, canonical, ogImage, ogType = "website", artic
     return () => {
       document.title = "The Interventionist Network — Trusted Interventionists. Zero Referral Fees.";
     };
-  }, [fullTitle, description, canonicalUrl, ogImage, ogType, article]);
+  }, [fullTitle, description, canonicalUrl, imageUrl, ogType, article]);
 
   return null;
 };
