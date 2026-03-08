@@ -28,6 +28,7 @@ const ApplyPage = () => {
     hearAbout: "",
     tierInterest: "",
     noReferralFees: false,
+    offersHourlyCoaching: false,
   });
 
   const handleCheckboxArray = (field: "certifications" | "specialties", value: string) => {
@@ -58,6 +59,7 @@ const ApplyPage = () => {
         hear_about: form.hearAbout || null,
         tier_interest: form.tierInterest,
         no_referral_fees: form.noReferralFees,
+        offers_hourly_coaching: form.offersHourlyCoaching,
       });
       if (error) throw error;
       setSubmitted(true);
@@ -196,6 +198,11 @@ const ApplyPage = () => {
                 <option value="partner">Partner — $599/month</option>
               </select>
             </div>
+
+            <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">
+              <input type="checkbox" checked={form.offersHourlyCoaching} onChange={(e) => setForm({ ...form, offersHourlyCoaching: e.target.checked })} className="rounded border-input mt-0.5" />
+              <span>I provide hourly coaching services</span>
+            </label>
 
             <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">
               <input type="checkbox" required checked={form.noReferralFees} onChange={(e) => setForm({ ...form, noReferralFees: e.target.checked })} className="rounded border-input mt-0.5" />

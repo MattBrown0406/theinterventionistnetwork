@@ -1,0 +1,2 @@
+ALTER TABLE public.interventionists ADD COLUMN offers_hourly_coaching boolean NOT NULL DEFAULT false;
+ALTER TABLE public.membership_applications ADD COLUMN offers_hourly_coaching boolean NOT NULL DEFAULT false;
