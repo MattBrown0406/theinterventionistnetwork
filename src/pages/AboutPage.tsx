@@ -41,7 +41,7 @@ const AboutPage = () => {
               </div>
               <div className="text-center mt-4">
                 <p className="font-bold text-lg">Matt Brown</p>
-                <p className="text-sm text-muted-foreground">Founder, BRI-II, CADC</p>
+                <p className="text-sm text-muted-foreground">Founder, CIP</p>
               </div>
             </div>
             <div className="lg:col-span-3 space-y-6">
