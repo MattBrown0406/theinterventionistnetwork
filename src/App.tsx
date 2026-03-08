@@ -16,6 +16,7 @@ import BlogPost from "./pages/BlogPost";
 import ContactPage from "./pages/ContactPage";
 import AuthPage from "./pages/AuthPage";
 import AdminPage from "./pages/AdminPage";
+import PaymentConfirmation from "./pages/PaymentConfirmation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
