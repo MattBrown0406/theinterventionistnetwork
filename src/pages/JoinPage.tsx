@@ -19,7 +19,7 @@ const tiers = [
   },
   {
     name: "Featured",
-    price: "$399",
+    price: "$199",
     popular: true,
     features: [
       "Everything in Listed, plus:",
