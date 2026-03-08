@@ -61,8 +61,8 @@ const ContactPage = () => {
   return (
     <>
       <SEO
-        title="Contact The Interventionist Network"
-        description="Get in touch with The Interventionist Network. Call (541) 838-6009 or send us a message. We're here to help families and professionals."
+        title="Contact Us"
+        description="Contact The Interventionist Network. Families seeking help, interventionists interested in joining, or media inquiries."
       />
       <SchemaMarkup
         type="BreadcrumbList"
