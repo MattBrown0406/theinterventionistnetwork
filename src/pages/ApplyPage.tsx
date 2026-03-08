@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { specialtyOptions, stateOptions } from "@/data/interventionists";
@@ -10,8 +9,13 @@ import { toast } from "sonner";
 const certOptions = ["ARISE", "CIP", "CADC", "CCMI", "LCDC", "LPC", "LCSW", "PHD", "Other"];
 const hearAboutOptions = ["Referral", "Podcast", "Social Media", "Search", "Conference", "Other"];
 
+const TIER_LABELS: Record<string, string> = {
+  listed: "Listed — $49/month",
+  featured: "Featured — $199/month",
+  partner: "Partner — $299/month",
+};
+
 const ApplyPage = () => {
-  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     fullName: "",
@@ -44,7 +48,8 @@ const ApplyPage = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const { error } = await supabase.from("membership_applications").insert({
+      // 1. Save application to database
+      const { data: appData, error } = await supabase.from("membership_applications").insert({
         full_name: form.fullName,
         email: form.email,
         phone: form.phone,
@@ -60,31 +65,35 @@ const ApplyPage = () => {
         tier_interest: form.tierInterest,
         no_referral_fees: form.noReferralFees,
         offers_hourly_coaching: form.offersHourlyCoaching,
-      });
+      }).select("id").single();
+
       if (error) throw error;
-      setSubmitted(true);
-      window.scrollTo(0, 0);
-    } catch {
+
+      // 2. Create Square checkout
+      const redirectUrl = `${window.location.origin}/payment-confirmation`;
+      const { data: checkoutData, error: fnError } = await supabase.functions.invoke("create-square-checkout", {
+        body: {
+          tier: form.tierInterest,
+          applicationId: appData?.id,
+          redirectUrl,
+        },
+      });
+
+      if (fnError) throw fnError;
+      if (checkoutData?.error) throw new Error(checkoutData.error);
+
+      // 3. Redirect to Square checkout
+      if (checkoutData?.checkoutUrl) {
+        window.location.href = checkoutData.checkoutUrl;
+      } else {
+        throw new Error("No checkout URL returned");
+      }
+    } catch (err) {
+      console.error("Application error:", err);
       toast.error("Something went wrong. Please try again or contact us directly.");
-    } finally {
       setLoading(false);
     }
   };
-
-  if (submitted) {
-    return (
-      <>
-        <SEO title="Application Submitted" description="Thank you for applying to The Interventionist Network." />
-        <div className="container mx-auto px-4 py-24 text-center max-w-lg">
-          <CheckCircle className="w-16 h-16 text-gold mx-auto mb-6" />
-          <h1 className="text-3xl font-bold mb-4">Application Received</h1>
-          <p className="text-muted-foreground leading-relaxed">
-            Thank you for your application. Our team will review and contact you within 5 business days.
-          </p>
-        </div>
-      </>
-    );
-  }
 
   return (
     <>
@@ -108,7 +117,7 @@ const ApplyPage = () => {
             Membership <span className="text-gold">Application</span>
           </h1>
           <p className="text-primary-foreground/70 max-w-xl">
-            Complete the form below to apply. All applications are reviewed personally by our team.
+            Complete the form below to apply. Payment will be collected via Square after submission.
           </p>
         </div>
       </section>
@@ -193,9 +202,9 @@ const ApplyPage = () => {
               <label className="block text-sm font-medium mb-1.5">Membership Tier Interest *</label>
               <select required value={form.tierInterest} onChange={(e) => setForm({ ...form, tierInterest: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm">
                 <option value="">Select a tier</option>
-                <option value="listed">Listed — $49/month</option>
-                <option value="featured">Featured — $199/month</option>
-                <option value="partner">Partner — $299/month</option>
+                {Object.entries(TIER_LABELS).map(([value, label]) => (
+                  <option key={value} value={value}>{label}</option>
+                ))}
               </select>
             </div>
 
@@ -210,7 +219,7 @@ const ApplyPage = () => {
             </label>
 
             <Button variant="gold" size="lg" type="submit" className="w-full" disabled={loading}>
-              {loading ? "Submitting..." : "Submit Application"}
+              {loading ? "Processing..." : "Submit Application & Pay"}
             </Button>
           </form>
         </div>
