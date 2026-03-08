@@ -29,7 +29,7 @@ const Index = () => {
       <SchemaMarkup
         type="WebSite"
         data={{
-          name: "The Intervention Network",
+          name: "The Interventionist Network",
           url: "https://theinterventionistnetwork.com",
           potentialAction: {
             "@type": "SearchAction",
