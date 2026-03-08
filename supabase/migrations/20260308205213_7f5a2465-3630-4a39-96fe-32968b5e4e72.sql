@@ -1,0 +1,1 @@
+UPDATE public.interventionists SET photo_url = 'https://rrgjcbdzkgowowjivqdt.supabase.co/storage/v1/object/public/photos/matt-brown.jpg' WHERE slug = 'matt-brown';
