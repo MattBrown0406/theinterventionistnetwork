@@ -193,9 +193,9 @@ const ApplyPage = () => {
               <label className="block text-sm font-medium mb-1.5">Membership Tier Interest *</label>
               <select required value={form.tierInterest} onChange={(e) => setForm({ ...form, tierInterest: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm">
                 <option value="">Select a tier</option>
-                <option value="listed">Listed — $199/month</option>
-                <option value="featured">Featured — $399/month</option>
-                <option value="partner">Partner — $599/month</option>
+                <option value="listed">Listed — $49/month</option>
+                <option value="featured">Featured — $199/month</option>
+                <option value="partner">Partner — $299/month</option>
               </select>
             </div>
 

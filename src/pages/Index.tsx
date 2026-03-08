@@ -134,7 +134,7 @@ const Index = () => {
       <section className="bg-navy py-16 lg:py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Are You a Certified Interventionist?</h2>
-          <p className="text-primary-foreground/70 text-lg mb-8 max-w-2xl mx-auto">Join the only professional network with zero referral fees. Membership starts at $199/month.</p>
+          <p className="text-primary-foreground/70 text-lg mb-8 max-w-2xl mx-auto">Join the only professional network with zero referral fees. Membership starts at $49/month.</p>
           <Button variant="gold" size="xl" asChild><Link to="/apply">Apply for Membership</Link></Button>
         </div>
       </section>
