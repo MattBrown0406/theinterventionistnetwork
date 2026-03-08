@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const relationshipOptions = ["Parent", "Spouse/Partner", "Sibling", "Child", "Friend", "Employer", "Other"];
 const ageOptions = ["Under 18", "18-25", "26-40", "41-60", "60+"];
@@ -20,6 +22,7 @@ const urgencyOptions = [
 
 const HelpPage = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     firstName: "",
     email: "",
@@ -34,11 +37,30 @@ const HelpPage = () => {
     understand: false,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Family intake submitted:", form);
-    setSubmitted(true);
-    window.scrollTo(0, 0);
+    setLoading(true);
+    try {
+      const { error } = await supabase.from("family_intakes").insert({
+        first_name: form.firstName,
+        email: form.email,
+        phone: form.phone,
+        relationship: form.relationship,
+        approximate_age: form.age,
+        primary_concern: form.concern,
+        your_state: form.yourState,
+        their_state: form.theirState || null,
+        urgency: form.urgency,
+        description: form.description || null,
+      });
+      if (error) throw error;
+      setSubmitted(true);
+      window.scrollTo(0, 0);
+    } catch {
+      toast.error("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -163,8 +185,8 @@ const HelpPage = () => {
               <span>I understand this is a free matching service with no obligation.</span>
             </label>
 
-            <Button variant="gold" size="lg" type="submit" className="w-full">
-              Get Matched
+            <Button variant="gold" size="lg" type="submit" className="w-full" disabled={loading}>
+              {loading ? "Submitting..." : "Get Matched"}
             </Button>
           </form>
         </div>

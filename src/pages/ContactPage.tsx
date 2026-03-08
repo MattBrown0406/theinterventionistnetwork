@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const inquiryTypes = [
   "I'm a family seeking help",
@@ -14,6 +15,7 @@ const inquiryTypes = [
 
 const ContactPage = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -22,11 +24,25 @@ const ContactPage = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Contact form submitted:", form);
-    setSubmitted(true);
-    window.scrollTo(0, 0);
+    setLoading(true);
+    try {
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: form.name,
+        email: form.email,
+        phone: form.phone || null,
+        inquiry_type: form.type,
+        message: form.message,
+      });
+      if (error) throw error;
+      setSubmitted(true);
+      window.scrollTo(0, 0);
+    } catch {
+      toast.error("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -97,7 +113,9 @@ const ContactPage = () => {
                   <label className="block text-sm font-medium mb-1.5">Message *</label>
                   <textarea required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring" />
                 </div>
-                <Button variant="gold" size="lg" type="submit">Send Message</Button>
+                <Button variant="gold" size="lg" type="submit" disabled={loading}>
+                  {loading ? "Sending..." : "Send Message"}
+                </Button>
               </form>
             </div>
 
@@ -106,12 +124,10 @@ const ContactPage = () => {
                 <h3 className="font-bold mb-4">Direct Contact</h3>
                 <div className="space-y-3">
                   <a href="tel:5418386009" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors">
-                    <Phone className="w-4 h-4" />
-                    (541) 838-6009
+                    <Phone className="w-4 h-4" />(541) 838-6009
                   </a>
                   <a href="mailto:matt@theinterventionnetwork.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors">
-                    <Mail className="w-4 h-4" />
-                    matt@theinterventionnetwork.com
+                    <Mail className="w-4 h-4" />matt@theinterventionnetwork.com
                   </a>
                 </div>
               </div>
