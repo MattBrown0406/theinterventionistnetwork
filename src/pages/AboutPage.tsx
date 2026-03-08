@@ -56,7 +56,7 @@ const AboutPage = () => {
               <div className="flex flex-wrap gap-4 pt-2">
                 <a href="https://freedominterventions.com" target="_blank" rel="noopener noreferrer" className="text-sm text-gold hover:underline font-medium">Freedom Interventions →</a>
                 <a href="https://soberhelpline.com" target="_blank" rel="noopener noreferrer" className="text-sm text-gold hover:underline font-medium">Sober Helpline →</a>
-                <span className="text-sm text-gold font-medium">Party Wreckers Podcast →</span>
+                <a href="https://partywreckers.com" target="_blank" rel="noopener noreferrer" className="text-sm text-gold hover:underline font-medium">Party Wreckers Podcast →</a>
               </div>
             </div>
           </div>
