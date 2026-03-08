@@ -18,7 +18,7 @@ const Index = () => {
       <SchemaMarkup
         type="Organization"
         data={{
-          name: "The Intervention Network",
+          name: "The Interventionist Network",
           url: "https://theinterventionistnetwork.com",
           description: "A vetted national network of addiction interventionists with zero referral fees.",
           founder: { "@type": "Person", name: "Matt Brown" },
