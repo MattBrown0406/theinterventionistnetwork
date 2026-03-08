@@ -7,7 +7,7 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 const tiers = [
   {
     name: "Listed",
-    price: "$199",
+    price: "$49",
     popular: false,
     features: [
       "Professional profile on TheInterventionistNetwork.com",
@@ -19,7 +19,7 @@ const tiers = [
   },
   {
     name: "Featured",
-    price: "$399",
+    price: "$199",
     popular: true,
     features: [
       "Everything in Listed, plus:",
@@ -32,7 +32,7 @@ const tiers = [
   },
   {
     name: "Partner",
-    price: "$599",
+    price: "$299",
     popular: false,
     features: [
       "Everything in Featured, plus:",
@@ -50,7 +50,7 @@ const JoinPage = () => {
     <>
       <SEO
         title="Join The Interventionist Network — Grow Your Practice"
-        description="Join the only professional interventionist network with zero referral fees. Membership starts at $199/month. Get matched with families who need your help."
+        description="Join the only professional interventionist network with zero referral fees. Membership starts at $49/month. Get matched with families who need your help."
       />
       <SchemaMarkup
         type="BreadcrumbList"
