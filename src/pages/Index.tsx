@@ -180,7 +180,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
-                quote: "We were desperate and didn't know where to turn. The Intervention Network connected us with someone who truly understood our situation. Our son is now 18 months sober.",
+                quote: "We were desperate and didn't know where to turn. The Interventionist Network connected us with someone who truly understood our situation. Our son is now 18 months sober.",
                 name: "Jennifer M.",
                 state: "Florida",
               },
