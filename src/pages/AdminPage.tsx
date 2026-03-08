@@ -246,6 +246,10 @@ const AdminPage = () => {
                   <Switch checked={form.featured} onCheckedChange={(v) => setForm({ ...form, featured: v })} />
                   <Label>Featured on homepage</Label>
                 </div>
+                <div className="flex items-center gap-2 pt-2">
+                  <Switch checked={form.offers_hourly_coaching} onCheckedChange={(v) => setForm({ ...form, offers_hourly_coaching: v })} />
+                  <Label>Offers hourly coaching</Label>
+                </div>
               </div>
 
               <div className="mt-4">
