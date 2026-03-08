@@ -7,7 +7,7 @@ import { specialtyOptions, stateOptions } from "@/data/interventionists";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
-const certOptions = ["BRI-I", "BRI-II", "ARISE", "CIP", "CADC", "Other"];
+const certOptions = ["ARISE", "CIP", "CADC", "CCMI", "Other"];
 const hearAboutOptions = ["Referral", "Podcast", "Social Media", "Search", "Conference", "Other"];
 
 const ApplyPage = () => {
