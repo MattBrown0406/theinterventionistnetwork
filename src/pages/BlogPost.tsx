@@ -102,7 +102,7 @@ const BlogPost = () => {
               <div className="w-12 h-12 rounded-full bg-navy/10 flex items-center justify-center font-bold text-navy/50">MB</div>
               <div>
                 <p className="font-semibold text-sm">{post.author}</p>
-                <p className="text-xs text-muted-foreground">Founder, The Intervention Network</p>
+                <p className="text-xs text-muted-foreground">Founder, The Interventionist Network</p>
               </div>
             </div>
           </div>

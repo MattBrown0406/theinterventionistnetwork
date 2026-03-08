@@ -190,7 +190,7 @@ const Index = () => {
                 state: "California",
               },
               {
-                quote: "After calling three other services that all felt like sales calls, we found The Intervention Network. The difference was immediate. They actually listened.",
+                quote: "After calling three other services that all felt like sales calls, we found The Interventionist Network. The difference was immediate. They actually listened.",
                 name: "Susan K.",
                 state: "Ohio",
               },

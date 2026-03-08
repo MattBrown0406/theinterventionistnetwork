@@ -127,7 +127,7 @@ const ContactPage = () => {
                     <Phone className="w-4 h-4" />(541) 838-6009
                   </a>
                   <a href="mailto:matt@theinterventionnetwork.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors">
-                    <Mail className="w-4 h-4" />matt@theinterventionnetwork.com
+                    <Mail className="w-4 h-4" />matt@theinterventionistnetwork.com
                   </a>
                 </div>
               </div>

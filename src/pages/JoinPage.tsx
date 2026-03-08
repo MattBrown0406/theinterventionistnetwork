@@ -10,7 +10,7 @@ const tiers = [
     price: "$199",
     popular: false,
     features: [
-      "Professional profile on TheInterventionNetwork.com",
+      "Professional profile on TheInterventionistNetwork.com",
       "Included in family matching based on location and specialty",
       "Network member badge/seal for your website",
       "Listed in our national directory",

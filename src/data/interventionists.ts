@@ -32,7 +32,7 @@ export const interventionists: Interventionist[] = [
     certifications: ["BRI-II Certified", "CADC", "ARISE Trained", "20+ Years Field Experience"],
     quote: "Every family deserves a fighting chance. That's why I built this network.",
     phone: "(541) 838-6009",
-    email: "matt@theinterventionnetwork.com",
+    email: "matt@theinterventionistnetwork.com",
     website: "https://freedominterventions.com",
     featured: true,
   },

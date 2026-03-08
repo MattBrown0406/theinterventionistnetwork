@@ -18,7 +18,7 @@ const BASE_URL = "https://theinterventionistnetwork.com";
 const SEO = ({ title, description, canonical, ogImage, ogType = "website", article }: SEOProps) => {
   const location = useLocation();
   const canonicalUrl = canonical || `${BASE_URL}${location.pathname}`;
-  const fullTitle = title.includes("The Intervention Network") ? title : `${title} | The Intervention Network`;
+  const fullTitle = title.includes("The Interventionist Network") ? title : `${title} | The Interventionist Network`;
 
   useEffect(() => {
     document.title = fullTitle;
@@ -58,7 +58,7 @@ const SEO = ({ title, description, canonical, ogImage, ogType = "website", artic
     }
 
     return () => {
-      document.title = "The Intervention Network — Trusted Interventionists. Zero Referral Fees.";
+      document.title = "The Interventionist Network — Trusted Interventionists. Zero Referral Fees.";
     };
   }, [fullTitle, description, canonicalUrl, ogImage, ogType, article]);
 

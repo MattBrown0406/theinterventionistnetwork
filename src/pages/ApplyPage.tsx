@@ -87,8 +87,8 @@ const ApplyPage = () => {
   return (
     <>
       <SEO
-        title="Apply for Membership — The Intervention Network"
-        description="Apply to join The Intervention Network. Vetted membership for certified addiction interventionists. No referral fees."
+        title="Apply for Membership — The Interventionist Network"
+        description="Apply to join The Interventionist Network. Vetted membership for certified addiction interventionists. No referral fees."
       />
       <SchemaMarkup
         type="BreadcrumbList"
