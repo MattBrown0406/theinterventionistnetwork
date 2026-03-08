@@ -77,7 +77,7 @@ const ContactPage = () => {
       <section className="bg-navy py-12 lg:py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-3">
-            Get in <span className="text-gold">Touch</span>
+            <span className="text-gold">Contact</span> Us
           </h1>
           <p className="text-primary-foreground/70">We'd love to hear from you.</p>
         </div>

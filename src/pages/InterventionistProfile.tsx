@@ -25,10 +25,18 @@ const InterventionistProfile = () => {
   return (
     <>
       <SEO
-        title={`${person.name}, ${person.credentials} — Addiction Interventionist`}
-        description={`${person.name} is a vetted interventionist serving ${person.region} with ${person.years_experience}+ years of experience. Specialties: ${person.specialties.join(", ")}.`}
+        title={`${person.name}, ${person.credentials}`}
+        description={`${person.name} is a vetted member of The Interventionist Network serving ${person.region}. ${person.years_experience} years of experience specializing in ${person.specialties.slice(0, 3).join(", ")}.`}
+        ogType="profile"
       />
-      <SchemaMarkup type="ProfessionalService" data={{ name: person.name, description: person.bio, areaServed: person.states_served, url: `https://theinterventionistnetwork.com/interventionist/${person.slug}` }} />
+      <SchemaMarkup type="ProfessionalService" data={{
+        name: person.name,
+        description: person.bio,
+        url: `https://theinterventionistnetwork.com/interventionist/${person.slug}`,
+        areaServed: person.states_served,
+        hasCredential: person.certifications,
+        memberOf: { "@type": "Organization", name: "The Interventionist Network" },
+      }} />
       <SchemaMarkup type="BreadcrumbList" data={{ itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://theinterventionistnetwork.com" },
         { "@type": "ListItem", position: 2, name: "Find an Interventionist", item: "https://theinterventionistnetwork.com/find" },

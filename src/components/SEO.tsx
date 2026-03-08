@@ -42,7 +42,8 @@ const SEO = ({ title, description, canonical, ogImage, ogType = "website", artic
     setMeta("og:description", description, true);
     setMeta("og:url", canonicalUrl, true);
     setMeta("og:type", ogType, true);
-    if (ogImage) setMeta("og:image", ogImage, true);
+    setMeta("og:image", imageUrl, true);
+    setMeta("twitter:image", imageUrl);
 
     setMeta("twitter:title", fullTitle);
     setMeta("twitter:description", description);

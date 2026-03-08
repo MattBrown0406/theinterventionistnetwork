@@ -24,7 +24,7 @@ const AboutPage = () => {
       <section className="bg-navy py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-            About <span className="text-gold">The Network</span>
+            About <span className="text-gold">The Interventionist Network</span>
           </h1>
           <p className="text-lg text-primary-foreground/70 max-w-2xl">
             Built by an interventionist, for interventionists — and for the families who need them.

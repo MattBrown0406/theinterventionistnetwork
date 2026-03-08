@@ -53,6 +53,15 @@ const JoinPage = () => {
         description="Join The Interventionist Network. Grow your practice with ethical, referral-fee-free membership. Tiered plans starting at $99/month."
       />
       <SchemaMarkup
+        type="WebSite"
+        data={{
+          "@type": "WebPage",
+          name: "Join The Interventionist Network",
+          description: "Membership plans for certified interventionists. Grow your practice with ethical, referral-fee-free membership.",
+          url: "https://theinterventionistnetwork.com/join",
+        }}
+      />
+      <SchemaMarkup
         type="BreadcrumbList"
         data={{
           itemListElement: [

@@ -114,7 +114,7 @@ const ApplyPage = () => {
       <section className="bg-navy py-12 lg:py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-3">
-            Membership <span className="text-gold">Application</span>
+            Apply for <span className="text-gold">Membership</span>
           </h1>
           <p className="text-primary-foreground/70 max-w-xl">
             Complete the form below to apply. Payment will be collected via Square after submission.

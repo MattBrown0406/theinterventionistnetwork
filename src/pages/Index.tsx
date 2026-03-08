@@ -13,11 +13,33 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="Find a Trusted Interventionist — The Interventionist Network"
-        description="The Interventionist Network connects families with vetted addiction interventionists across all 50 states. Zero referral fees. Zero kickbacks. Just trusted professionals who can help."
+        title="The Interventionist Network — Trusted Interventionists. Zero Referral Fees."
+        description="Find a vetted addiction interventionist near you. The Interventionist Network connects families with trusted professionals across all 50 states. No referral fees."
+        ogImage="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/57ed7768-0c2d-41b5-8041-faa8e7f53e1e/id-preview-f2d64247--0aadcb95-54e1-425c-844a-1c75de9e4f26.lovable.app-1773007231761.png"
       />
-      <SchemaMarkup type="Organization" data={{ name: "The Interventionist Network", url: "https://theinterventionistnetwork.com", description: "A vetted national network of addiction interventionists with zero referral fees.", founder: { "@type": "Person", name: "Matt Brown" }, telephone: "(541) 838-6009", email: "matt@theinterventionistnetwork.com" }} />
-      <SchemaMarkup type="WebSite" data={{ name: "The Interventionist Network", url: "https://theinterventionistnetwork.com", potentialAction: { "@type": "SearchAction", target: "https://theinterventionistnetwork.com/find?q={search_term_string}", "query-input": "required name=search_term_string" } }} />
+      <SchemaMarkup type="Organization" data={{
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://theinterventionistnetwork.com/#organization",
+            name: "The Interventionist Network",
+            url: "https://theinterventionistnetwork.com",
+            logo: "https://theinterventionistnetwork.com/logo.png",
+            description: "A curated national network of vetted addiction interventionists. Zero referral fees.",
+            founder: { "@type": "Person", name: "Matt Brown" },
+            contactPoint: { "@type": "ContactPoint", telephone: "+1-541-838-6009", contactType: "customer service" },
+            sameAs: [],
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://theinterventionistnetwork.com/#website",
+            name: "The Interventionist Network",
+            url: "https://theinterventionistnetwork.com",
+            publisher: { "@id": "https://theinterventionistnetwork.com/#organization" },
+            potentialAction: { "@type": "SearchAction", target: "https://theinterventionistnetwork.com/find?q={search_term_string}", "query-input": "required name=search_term_string" },
+          },
+        ],
+      }} />
 
       {/* Hero */}
       <section className="bg-navy relative overflow-hidden">

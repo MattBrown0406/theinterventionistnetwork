@@ -17,8 +17,8 @@ const BlogIndex = () => {
   return (
     <>
       <SEO
-        title="Blog — The Interventionist Network"
-        description="Insights on addiction intervention, family guidance, and industry ethics from The Interventionist Network team."
+        title="Blog — Addiction Intervention Insights"
+        description="Expert insights on addiction intervention, family recovery, and navigating the treatment system from The Interventionist Network."
       />
       <SchemaMarkup
         type="BreadcrumbList"
