@@ -28,6 +28,7 @@ const ApplyPage = () => {
     hearAbout: "",
     tierInterest: "",
     noReferralFees: false,
+    offersHourlyCoaching: false,
   });
 
   const handleCheckboxArray = (field: "certifications" | "specialties", value: string) => {
