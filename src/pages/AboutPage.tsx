@@ -8,8 +8,8 @@ const AboutPage = () => {
   return (
     <>
       <SEO
-        title="About The Interventionist Network — Our Mission"
-        description="Founded by Matt Brown, a 20+ year veteran interventionist. Learn why The Interventionist Network operates without referral fees and how we vet every professional."
+        title="About Matt Brown & Our Mission"
+        description="Founded by Matt Brown, a 20+ year veteran interventionist. Learn why we built the only interventionist network with zero referral fees."
       />
       <SchemaMarkup
         type="BreadcrumbList"
