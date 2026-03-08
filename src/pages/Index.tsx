@@ -12,8 +12,8 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="Find a Trusted Interventionist — The Intervention Network"
-        description="The Intervention Network connects families with vetted addiction interventionists across all 50 states. Zero referral fees. Zero kickbacks. Just trusted professionals who can help."
+        title="Find a Trusted Interventionist — The Interventionist Network"
+        description="The Interventionist Network connects families with vetted addiction interventionists across all 50 states. Zero referral fees. Zero kickbacks. Just trusted professionals who can help."
       />
       <SchemaMarkup
         type="Organization"
