@@ -41,6 +41,7 @@ const App = () => (
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/admin" element={<AdminPage />} />
+            <Route path="/payment-confirmation" element={<PaymentConfirmation />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
