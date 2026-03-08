@@ -48,7 +48,7 @@ const BlogPost = () => {
           headline: post.title,
           author: { "@type": "Person", name: post.author },
           datePublished: post.date,
-          publisher: { "@type": "Organization", name: "The Intervention Network" },
+          publisher: { "@type": "Organization", name: "The Interventionist Network" },
           url: `https://theinterventionistnetwork.com/blog/${slug}`,
         }}
       />
