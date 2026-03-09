@@ -121,11 +121,14 @@ const BlogPost = () => {
 
           <header className="mb-10">
             <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4">{post.title}</h1>
-            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+            <div className="flex items-center gap-3 text-sm text-muted-foreground mb-6">
               <span className="font-medium text-foreground">{post.author}</span>
               <span>•</span>
               <span>{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>
             </div>
+            {post.image && (
+              <img src={post.image} alt={post.imageAlt || post.title} className="w-full rounded-lg object-cover max-h-[400px]" />
+            )}
           </header>
 
           <div className="space-y-6">
