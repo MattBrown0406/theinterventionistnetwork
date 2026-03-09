@@ -143,7 +143,7 @@ const JoinPage = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Who We're Looking For</h2>
           <ul className="space-y-4 mb-8">
             {[
-              "Minimum 2 years of active intervention experience (less than 2 years accepted under mentorship/endorsement of a current member)",
+              "Minimum 2 years of active intervention experience (less than 2 years considered under mentorship/endorsement of a current member)",
               "Cannot be a W-2 employee of any program or agency that would refer clients to an interventionist",
               "Personal or professional references",
               "Commitment to ethical, referral-fee-free practice",
