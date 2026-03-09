@@ -1,11 +1,19 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
+const memberLinks = [
+  { to: "/training", label: "Training Library" },
+  { to: "/resources", label: "Resources" },
+  { to: "/community", label: "Community" },
+  { to: "/coaching", label: "Business Coaching" },
+];
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMembersOpen, setIsMembersOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
@@ -17,15 +25,21 @@ const Header = () => {
 
   useEffect(() => {
     setIsOpen(false);
+    setIsMembersOpen(false);
   }, [location.pathname]);
 
   const navLinks = [
     { to: "/find", label: "Find an Interventionist" },
     { to: "/join", label: "Join the Network" },
+  ];
+
+  const trailingLinks = [
     { to: "/about", label: "About" },
     { to: "/blog", label: "Blog" },
     { to: "/contact", label: "Contact" },
   ];
+
+  const isMemberPage = memberLinks.some((l) => location.pathname.startsWith(l.to));
 
   return (
     <header
@@ -42,6 +56,50 @@ const Header = () => {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  location.pathname === link.to
+                    ? "text-accent"
+                    : "text-foreground/80 hover:text-foreground hover:bg-muted"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            {/* Members Dropdown */}
+            <div className="relative" onMouseEnter={() => setIsMembersOpen(true)} onMouseLeave={() => setIsMembersOpen(false)}>
+              <button
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-1 ${
+                  isMemberPage ? "text-accent" : "text-foreground/80 hover:text-foreground hover:bg-muted"
+                }`}
+              >
+                Members <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+              {isMembersOpen && (
+                <div className="absolute top-full left-0 pt-1 z-50">
+                  <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[200px]">
+                    {memberLinks.map((link) => (
+                      <Link
+                        key={link.to}
+                        to={link.to}
+                        className={`block px-4 py-2 text-sm transition-colors ${
+                          location.pathname === link.to
+                            ? "text-accent bg-accent/10"
+                            : "text-foreground/80 hover:bg-muted"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {trailingLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
@@ -81,6 +139,48 @@ const Header = () => {
           <div className="lg:hidden border-t border-border pb-4">
             <nav className="flex flex-col gap-1 pt-2">
               {navLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`px-3 py-2.5 text-sm font-medium rounded-md ${
+                    location.pathname === link.to
+                      ? "text-accent bg-accent/10"
+                      : "text-foreground/80 hover:bg-muted"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              {/* Mobile Members Expandable */}
+              <button
+                onClick={() => setIsMembersOpen(!isMembersOpen)}
+                className={`px-3 py-2.5 text-sm font-medium rounded-md flex items-center justify-between ${
+                  isMemberPage ? "text-accent bg-accent/10" : "text-foreground/80 hover:bg-muted"
+                }`}
+              >
+                Members
+                <ChevronDown className={`w-4 h-4 transition-transform ${isMembersOpen ? "rotate-180" : ""}`} />
+              </button>
+              {isMembersOpen && (
+                <div className="pl-4">
+                  {memberLinks.map((link) => (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      className={`block px-3 py-2 text-sm rounded-md ${
+                        location.pathname === link.to
+                          ? "text-accent bg-accent/10"
+                          : "text-foreground/70 hover:bg-muted"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              {trailingLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
