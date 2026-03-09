@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "how-to-find-a-qualified-interventionist",
+    title: "How to Find a Qualified Interventionist: What Families Need to Know",
+    excerpt: "Finding a qualified interventionist when you've never needed one before isn't simple. This guide walks you through what credentials matter, what questions to ask, and why the platform you use to search can make all the difference.",
+    author: "Matt Brown",
+    date: "2025-03-09",
+    readTime: "8 min read",
+  },
+  {
     slug: "why-we-dont-charge-referral-fees",
     title: "Why We Don't Charge Referral Fees (And Why It Matters for Your Family)",
     excerpt: "In an industry rife with kickbacks and patient brokering, we chose a different path. Here's why our zero-referral-fee model protects families and produces better outcomes.",
