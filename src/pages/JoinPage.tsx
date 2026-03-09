@@ -144,6 +144,7 @@ const JoinPage = () => {
           <ul className="space-y-4 mb-8">
             {[
               "Minimum 2 years of active intervention experience (less than 2 years accepted under mentorship/endorsement of a current member)",
+              "Cannot be a W-2 employee of a treatment center, detox, or any agency that would refer clients to an interventionist",
               "Personal or professional references",
               "Commitment to ethical, referral-fee-free practice",
               "Willingness to participate in vetting interview",
