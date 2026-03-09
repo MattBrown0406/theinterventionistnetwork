@@ -8,6 +8,7 @@ const memberLinks = [
   { to: "/training", label: "Training Library" },
   { to: "/resources", label: "Resources" },
   { to: "/community", label: "Community" },
+  { to: "/forum", label: "Discussion Forum" },
   { to: "/coaching", label: "Business Coaching" },
 ];
 

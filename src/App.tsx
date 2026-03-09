@@ -22,6 +22,10 @@ import ResourcesPage from "./pages/ResourcesPage";
 import CommunityPage from "./pages/CommunityPage";
 import CoachingPage from "./pages/CoachingPage";
 import BadgePage from "./pages/BadgePage";
+import ForumIndex from "./pages/ForumIndex";
+import ForumCategory from "./pages/ForumCategory";
+import ForumThread from "./pages/ForumThread";
+import ForumNewThread from "./pages/ForumNewThread";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -52,6 +56,10 @@ const App = () => (
             <Route path="/community" element={<CommunityPage />} />
             <Route path="/coaching" element={<CoachingPage />} />
             <Route path="/badge" element={<BadgePage />} />
+            <Route path="/forum" element={<ForumIndex />} />
+            <Route path="/forum/new" element={<ForumNewThread />} />
+            <Route path="/forum/thread/:threadId" element={<ForumThread />} />
+            <Route path="/forum/:slug" element={<ForumCategory />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
