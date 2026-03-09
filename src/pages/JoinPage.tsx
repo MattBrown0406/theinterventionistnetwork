@@ -143,11 +143,10 @@ const JoinPage = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Who We're Looking For</h2>
           <ul className="space-y-4 mb-8">
             {[
-              "Minimum 3 years of active intervention experience",
-              "Recognized certification (BRI-I, BRI-II, ARISE, CIP, or equivalent)",
+              "Minimum 2 years of active intervention experience (less than 2 years accepted under mentorship/endorsement of a current member)",
+              "Recognized certification (ARISE, CIP, CADC, CCMI, LCDC, LPC, LCSW, PHD, or equivalent)",
               "Personal or professional references",
               "Commitment to ethical, referral-fee-free practice",
-              "Liability insurance",
               "Willingness to participate in vetting interview",
             ].map((req) => (
               <li key={req} className="flex items-start gap-3">
