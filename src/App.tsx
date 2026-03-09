@@ -47,6 +47,11 @@ const App = () => (
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/payment-confirmation" element={<PaymentConfirmation />} />
+            <Route path="/training" element={<TrainingPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/community" element={<CommunityPage />} />
+            <Route path="/coaching" element={<CoachingPage />} />
+            <Route path="/badge" element={<BadgePage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

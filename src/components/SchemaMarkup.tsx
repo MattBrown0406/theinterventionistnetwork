@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 interface SchemaProps {
-  type: "Organization" | "WebSite" | "LocalBusiness" | "ProfessionalService" | "BreadcrumbList" | "Article";
+  type: "Organization" | "WebSite" | "WebPage" | "LocalBusiness" | "ProfessionalService" | "BreadcrumbList" | "Article";
   data: Record<string, unknown>;
 }
 

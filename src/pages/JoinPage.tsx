@@ -162,6 +162,72 @@ const JoinPage = () => {
         </div>
       </section>
 
+      {/* Benefits Comparison */}
+      <section className="py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            More Than Referrals — A Complete Professional Home
+          </h2>
+          <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+            The Interventionist Network isn't just a directory. It's everything you need to grow your practice, sharpen your skills, and serve families better.
+          </p>
+          <div className="max-w-5xl mx-auto overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b-2 border-border">
+                  <th className="text-left py-3 px-4 font-semibold">Benefit</th>
+                  <th className="text-center py-3 px-4 font-semibold">Listed ($49/mo)</th>
+                  <th className="text-center py-3 px-4 font-semibold text-gold">Featured ($199/mo)</th>
+                  <th className="text-center py-3 px-4 font-semibold">Partner ($299/mo)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Network profile & family matching", "✅", "✅ Priority", "✅ Priority"],
+                  ["Verified member badge for your website", "✅", "✅", "✅"],
+                  ["Private community access", "✅", "✅", "✅"],
+                  ["Monthly case consultation calls", "Listen only", "Full participation", "Priority + private follow-up"],
+                  ["Training library", "3 core modules", "Full library", "Full + early access"],
+                  ["Marketing templates & content drops", "—", "✅ Monthly", "✅ Monthly + custom"],
+                  ["Family resource library (white-label)", "—", "✅", "✅"],
+                  ["Legal & insurance resources", "—", "✅", "✅"],
+                  ["Peer mentorship program", "—", "—", "✅"],
+                  ["Quarterly podcast guest spot", "—", "—", "✅"],
+                  ["1-on-1 business coaching & scorecard", "—", "—", "✅"],
+                  ["Annual Summit registration", "Pay separately", "Pay separately", "Complimentary"],
+                ].map(([benefit, listed, featured, partner], i) => (
+                  <tr key={i} className="border-b border-border">
+                    <td className="py-3 px-4 text-muted-foreground">{benefit}</td>
+                    <td className="py-3 px-4 text-center">{listed}</td>
+                    <td className="py-3 px-4 text-center">{featured}</td>
+                    <td className="py-3 px-4 text-center">{partner}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 lg:py-20 bg-warm-gray">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">What Members Are Saying</h2>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              { quote: "Joining the network was the best business decision I've made. The case consultation calls alone are worth the membership.", name: "Sarah M.", state: "California" },
+              { quote: "I went from struggling to find cases to having a steady pipeline. The marketing templates saved me thousands in agency fees.", name: "James T.", state: "Texas" },
+              { quote: "Finally, a professional community that understands this work. I don't feel like I'm doing this alone anymore.", name: "Rachel K.", state: "Florida" },
+            ].map((t, i) => (
+              <div key={i} className="bg-card rounded-lg p-6 border border-border">
+                <p className="text-muted-foreground italic mb-4">"{t.quote}"</p>
+                <p className="text-sm font-semibold">— {t.name}, {t.state}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-navy py-16">
         <div className="container mx-auto px-4 text-center">
