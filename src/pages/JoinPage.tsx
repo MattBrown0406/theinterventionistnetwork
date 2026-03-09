@@ -144,7 +144,6 @@ const JoinPage = () => {
           <ul className="space-y-4 mb-8">
             {[
               "Minimum 2 years of active intervention experience (less than 2 years accepted under mentorship/endorsement of a current member)",
-              "Recognized certification (ARISE, CIP, CADC, CCMI, LCDC, LPC, LCSW, PHD, or equivalent)",
               "Personal or professional references",
               "Commitment to ethical, referral-fee-free practice",
               "Willingness to participate in vetting interview",
