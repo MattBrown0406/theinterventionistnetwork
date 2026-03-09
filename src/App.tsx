@@ -17,6 +17,11 @@ import ContactPage from "./pages/ContactPage";
 import AuthPage from "./pages/AuthPage";
 import AdminPage from "./pages/AdminPage";
 import PaymentConfirmation from "./pages/PaymentConfirmation";
+import TrainingPage from "./pages/TrainingPage";
+import ResourcesPage from "./pages/ResourcesPage";
+import CommunityPage from "./pages/CommunityPage";
+import CoachingPage from "./pages/CoachingPage";
+import BadgePage from "./pages/BadgePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
