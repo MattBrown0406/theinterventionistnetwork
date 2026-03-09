@@ -17,6 +17,11 @@ import ContactPage from "./pages/ContactPage";
 import AuthPage from "./pages/AuthPage";
 import AdminPage from "./pages/AdminPage";
 import PaymentConfirmation from "./pages/PaymentConfirmation";
+import TrainingPage from "./pages/TrainingPage";
+import ResourcesPage from "./pages/ResourcesPage";
+import CommunityPage from "./pages/CommunityPage";
+import CoachingPage from "./pages/CoachingPage";
+import BadgePage from "./pages/BadgePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +47,11 @@ const App = () => (
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/payment-confirmation" element={<PaymentConfirmation />} />
+            <Route path="/training" element={<TrainingPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/community" element={<CommunityPage />} />
+            <Route path="/coaching" element={<CoachingPage />} />
+            <Route path="/badge" element={<BadgePage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
