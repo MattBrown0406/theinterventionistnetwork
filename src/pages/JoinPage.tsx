@@ -208,24 +208,8 @@ const JoinPage = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 lg:py-20 bg-warm-gray">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">What Members Are Saying</h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[
-              { quote: "Joining the network was the best business decision I've made. The case consultation calls alone are worth the membership.", name: "Sarah M.", state: "California" },
-              { quote: "I went from struggling to find cases to having a steady pipeline. The marketing templates saved me thousands in agency fees.", name: "James T.", state: "Texas" },
-              { quote: "Finally, a professional community that understands this work. I don't feel like I'm doing this alone anymore.", name: "Rachel K.", state: "Florida" },
-            ].map((t, i) => (
-              <div key={i} className="bg-card rounded-lg p-6 border border-border">
-                <p className="text-muted-foreground italic mb-4">"{t.quote}"</p>
-                <p className="text-sm font-semibold">— {t.name}, {t.state}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
+
 
       {/* CTA */}
       <section className="bg-navy py-16">
