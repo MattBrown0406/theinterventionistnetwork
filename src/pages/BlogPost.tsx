@@ -136,6 +136,17 @@ const BlogPost = () => {
               if (paragraph.startsWith("## ")) {
                 return <h2 key={i} className="text-xl font-bold mt-8">{paragraph.replace("## ", "")}</h2>;
               }
+              // Handle bullet lists (lines starting with •)
+              if (paragraph.includes("\n•") || paragraph.startsWith("•")) {
+                const items = paragraph.split("\n").filter(line => line.trim().startsWith("•"));
+                return (
+                  <ul key={i} className="list-disc list-inside space-y-2 text-muted-foreground leading-relaxed pl-2">
+                    {items.map((item, j) => (
+                      <li key={j}>{item.replace(/^•\s*/, "")}</li>
+                    ))}
+                  </ul>
+                );
+              }
               // Handle paragraphs that have ## inline
               const parts = paragraph.split(/^## /m);
               if (parts.length > 1) {
