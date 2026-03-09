@@ -22,6 +22,10 @@ import ResourcesPage from "./pages/ResourcesPage";
 import CommunityPage from "./pages/CommunityPage";
 import CoachingPage from "./pages/CoachingPage";
 import BadgePage from "./pages/BadgePage";
+import ForumIndex from "./pages/ForumIndex";
+import ForumCategory from "./pages/ForumCategory";
+import ForumThread from "./pages/ForumThread";
+import ForumNewThread from "./pages/ForumNewThread";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
