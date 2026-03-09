@@ -132,25 +132,6 @@ const Index = () => {
         </section>
       )}
 
-      {/* Testimonials */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What Families Say</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              { quote: "We were desperate and didn't know where to turn. The Interventionist Network connected us with someone who truly understood our situation. Our son is now 18 months sober.", name: "Jennifer M.", state: "Florida" },
-              { quote: "No one tried to sell us anything. No hidden fees. Just a compassionate professional who helped our family take the hardest step we've ever had to take.", name: "Robert T.", state: "California" },
-              { quote: "After calling three other services that all felt like sales calls, we found The Interventionist Network. The difference was immediate. They actually listened.", name: "Susan K.", state: "Ohio" },
-            ].map((t) => (
-              <div key={t.name} className="bg-card border border-border rounded-lg p-6">
-                <div className="text-gold text-3xl mb-3">"</div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{t.quote}</p>
-                <div className="text-sm font-semibold">{t.name} <span className="text-muted-foreground font-normal">— {t.state}</span></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Banner */}
       <section className="bg-navy py-16 lg:py-20">
