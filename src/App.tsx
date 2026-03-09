@@ -56,6 +56,10 @@ const App = () => (
             <Route path="/community" element={<CommunityPage />} />
             <Route path="/coaching" element={<CoachingPage />} />
             <Route path="/badge" element={<BadgePage />} />
+            <Route path="/forum" element={<ForumIndex />} />
+            <Route path="/forum/new" element={<ForumNewThread />} />
+            <Route path="/forum/thread/:threadId" element={<ForumThread />} />
+            <Route path="/forum/:slug" element={<ForumCategory />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
