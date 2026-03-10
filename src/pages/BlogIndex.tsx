@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "understanding-family-systems-in-crisis",
+    title: "Understanding Family Systems in Crisis: A Practitioner's Guide to Intervening in Addiction",
+    excerpt: "Addiction does not happen in isolation. It emerges from patterns of interaction, roles, boundaries, and emotional regulation that have been building for years. This guide explores how family systems theory applies directly to your work as an interventionist.",
+    author: "Matt Brown",
+    date: "2026-03-10",
+    readTime: "12 min read",
+  },
+  {
     slug: "how-to-find-a-qualified-interventionist",
     title: "How to Find a Qualified Interventionist: What Families Need to Know",
     excerpt: "Finding a qualified interventionist when you've never needed one before isn't simple. This guide walks you through what credentials matter, what questions to ask, and why the platform you use to search can make all the difference.",
