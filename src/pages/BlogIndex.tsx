@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "what-to-expect-during-an-intervention",
+    title: "What to Expect During a Professional Intervention: A Complete Family Guide",
+    excerpt: "Understanding what to expect during an intervention can help replace fear with preparation and purpose. This guide walks you through every stage of a professionally facilitated intervention.",
+    author: "Matt Brown",
+    date: "2026-03-11",
+    readTime: "10 min read",
+  },
+  {
     slug: "understanding-family-systems-in-crisis",
     title: "Understanding Family Systems in Crisis: A Practitioner's Guide to Intervening in Addiction",
     excerpt: "Addiction does not happen in isolation. It emerges from patterns of interaction, roles, boundaries, and emotional regulation that have been building for years. This guide explores how family systems theory applies directly to your work as an interventionist.",
