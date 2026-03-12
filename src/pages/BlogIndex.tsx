@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "trauma-informed-approaches-in-intervention-work",
+    title: "Trauma-Informed Approaches in Intervention Work: A Practitioner's Guide",
+    excerpt: "Trauma is almost never absent from the families we work with. Understanding and applying trauma-informed approaches in intervention work isn't a specialty skill — it's a baseline competency. This guide explores how to integrate these principles into every stage of your practice.",
+    author: "Matt Brown",
+    date: "2026-03-12",
+    readTime: "11 min read",
+  },
+  {
     slug: "what-to-expect-during-an-intervention",
     title: "What to Expect During a Professional Intervention: A Complete Family Guide",
     excerpt: "Understanding what to expect during an intervention can help replace fear with preparation and purpose. This guide walks you through every stage of a professionally facilitated intervention.",
