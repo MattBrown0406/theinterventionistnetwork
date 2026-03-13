@@ -79,7 +79,6 @@ const FindPage = () => {
             <div className="flex items-end">
               <Button variant="outline" size="default" onClick={() => { setStateFilter(""); setSpecialtyFilter(""); }}>Clear</Button>
             </div>
-            </div>
           </div>
         </div>
       </section>
