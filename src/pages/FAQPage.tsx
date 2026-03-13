@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: "What if my loved one says no?",
-    answer: "A well-planned intervention succeeds more often than most families expect — roughly 80–90% of the time when led by an experienced professional. Even when someone initially resists, the seeds planted during an intervention often lead them to accept help in the days or weeks that follow. Your interventionist will also prepare the family with a plan for either outcome."
+    answer: "A well-planned intervention succeeds more often than most families expect — roughly 80–90% of the time when led by an experienced professional. Even when someone initially resists, the seeds planted during an intervention often lead them to accept help in the days or weeks that follow. It's also important to know that most interventionists don't simply walk away after the intervention day. Many continue working under contract with the family until the client has entered treatment, and some will remain engaged through the entire treatment process — providing ongoing support if the client leaves treatment early, resists a step-down recommendation, or needs to be re-engaged. This means your family isn't left without guidance at the most critical moments."
   },
   {
     question: "Do we need to keep the intervention a secret?",
