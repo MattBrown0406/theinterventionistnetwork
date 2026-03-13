@@ -26,6 +26,7 @@ import ForumIndex from "./pages/ForumIndex";
 import ForumCategory from "./pages/ForumCategory";
 import ForumThread from "./pages/ForumThread";
 import ForumNewThread from "./pages/ForumNewThread";
+import StateLandingPage from "./pages/StateLandingPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -60,6 +61,7 @@ const App = () => (
             <Route path="/forum/new" element={<ForumNewThread />} />
             <Route path="/forum/thread/:threadId" element={<ForumThread />} />
             <Route path="/forum/:slug" element={<ForumCategory />} />
+            <Route path="/states/:slug" element={<StateLandingPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
