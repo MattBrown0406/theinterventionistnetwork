@@ -63,6 +63,7 @@ const App = () => (
             <Route path="/forum/thread/:threadId" element={<ForumThread />} />
             <Route path="/forum/:slug" element={<ForumCategory />} />
             <Route path="/states/:slug" element={<StateLandingPage />} />
+            <Route path="/faq" element={<FAQPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
