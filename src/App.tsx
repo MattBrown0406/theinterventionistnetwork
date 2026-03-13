@@ -26,6 +26,7 @@ import ForumIndex from "./pages/ForumIndex";
 import ForumCategory from "./pages/ForumCategory";
 import ForumThread from "./pages/ForumThread";
 import ForumNewThread from "./pages/ForumNewThread";
+import StateLandingPage from "./pages/StateLandingPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
