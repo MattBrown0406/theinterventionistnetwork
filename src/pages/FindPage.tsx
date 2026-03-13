@@ -11,7 +11,7 @@ import { specialtyOptions, stateOptions } from "@/data/interventionists";
 const FindPage = () => {
   const [stateFilter, setStateFilter] = useState("");
   const [specialtyFilter, setSpecialtyFilter] = useState("");
-  const [urgencyFilter, setUrgencyFilter] = useState("");
+  
   const { data: interventionists = [], isLoading } = useInterventionists();
 
   const filtered = useMemo(() => {
@@ -76,17 +76,8 @@ const FindPage = () => {
                 {specialtyOptions.map((s) => <option key={s} value={s}>{s}</option>)}
               </select>
             </div>
-            <div className="flex-1">
-              <label className="block text-xs font-medium text-muted-foreground mb-1.5">Urgency</label>
-              <select value={urgencyFilter} onChange={(e) => setUrgencyFilter(e.target.value)} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm">
-                <option value="">Any Urgency</option>
-                <option value="crisis">Immediate / Crisis</option>
-                <option value="week">Within a Week</option>
-                <option value="planning">Planning Ahead</option>
-              </select>
-            </div>
             <div className="flex items-end">
-              <Button variant="outline" size="default" onClick={() => { setStateFilter(""); setSpecialtyFilter(""); setUrgencyFilter(""); }}>Clear</Button>
+              <Button variant="outline" size="default" onClick={() => { setStateFilter(""); setSpecialtyFilter(""); }}>Clear</Button>
             </div>
           </div>
         </div>
