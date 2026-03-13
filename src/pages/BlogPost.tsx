@@ -6,6 +6,7 @@ import blogFindInterventionist from "@/assets/blog-find-interventionist.jpg";
 import blogFamilySystems from "@/assets/blog-family-systems-crisis.jpg";
 import blogWhatToExpect from "@/assets/blog-what-to-expect-intervention.jpg";
 import blogTraumaInformed from "@/assets/blog-trauma-informed-approaches.jpg";
+import blogCredentials from "@/assets/blog-credentials-interventionist.jpg";
 
 const blogContent: Record<string, { title: string; author: string; date: string; image?: string; imageAlt?: string; content: string[] }> = {
   "trauma-informed-approaches-in-intervention-work": {
