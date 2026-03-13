@@ -11,7 +11,7 @@ import { specialtyOptions, stateOptions } from "@/data/interventionists";
 const FindPage = () => {
   const [stateFilter, setStateFilter] = useState("");
   const [specialtyFilter, setSpecialtyFilter] = useState("");
-  const [urgencyFilter, setUrgencyFilter] = useState("");
+  
   const { data: interventionists = [], isLoading } = useInterventionists();
 
   const filtered = useMemo(() => {
