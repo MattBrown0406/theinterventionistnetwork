@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "what-credentials-to-look-for-in-an-interventionist",
+    title: "What Credentials Should You Look for in a Professional Interventionist?",
+    excerpt: "Intervention is an unregulated field in most states. Knowing what credentials to look for is the first step to making a confident, informed decision when hiring a professional interventionist for your family.",
+    author: "Matt Brown",
+    date: "2026-03-13",
+    readTime: "9 min read",
+  },
+  {
     slug: "trauma-informed-approaches-in-intervention-work",
     title: "Trauma-Informed Approaches in Intervention Work: A Practitioner's Guide",
     excerpt: "Trauma is almost never absent from the families we work with. Understanding and applying trauma-informed approaches in intervention work isn't a specialty skill — it's a baseline competency. This guide explores how to integrate these principles into every stage of your practice.",
