@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     question: "What credentials should I look for in an interventionist?",
-    answer: "Look for certifications such as BRI (Board Registered Interventionist), CIP (Certified Intervention Professional), or ARISE-trained professionals. Experience matters enormously — ask how many interventions they've conducted, their success rate, and whether they carry liability insurance. Be cautious of anyone who also accepts referral fees from treatment centers, as this creates a conflict of interest."
+    answer: "Look for certifications such as CIP (Certified Intervention Professional), CCMI (Certified Case Manager Interventionist), or ARISE-trained professionals. Experience matters enormously — ask how many interventions they've conducted, their success rate, and whether they carry liability insurance. Be cautious of anyone who also accepts referral fees from treatment centers, as this creates a conflict of interest."
   },
   {
     question: "What is a referral fee, and why should I care?",
