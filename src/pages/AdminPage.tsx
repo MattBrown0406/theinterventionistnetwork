@@ -387,7 +387,11 @@ const AdminPage = () => {
             </TabsContent>
 
             <TabsContent value="training">
-              <AdminTrainingTab />
+              <AdminMaterialsTab category="training" categoryLabel="Training Material" />
+            </TabsContent>
+
+            <TabsContent value="business">
+              <AdminMaterialsTab category="business" categoryLabel="Business Development Resource" />
             </TabsContent>
           </Tabs>
         </div>
