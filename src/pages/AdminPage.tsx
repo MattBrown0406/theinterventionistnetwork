@@ -207,6 +207,9 @@ const AdminPage = () => {
               <TabsTrigger value="training" className="gap-1.5">
                 <GraduationCap className="w-4 h-4" /> Training Materials
               </TabsTrigger>
+              <TabsTrigger value="business" className="gap-1.5">
+                <Briefcase className="w-4 h-4" /> Business Development
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="interventionists">
