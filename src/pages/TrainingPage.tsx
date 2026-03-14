@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { useTrainingMaterials } from "@/hooks/useTrainingMaterials";
 
-const modules = [
+const hardcodedModules = [
   {
     title: "Foundations of Professional Intervention",
     description: "3-day comprehensive course (20 hours). Covers intervention models, family dynamics, enabling, trauma, ethics, communication, and treatment navigation.",
@@ -72,6 +73,19 @@ const tagColors: Record<string, string> = {
 };
 
 const TrainingPage = () => {
+  const { data: dbMaterials = [] } = useTrainingMaterials();
+
+  // Use DB materials if any exist, otherwise fall back to hardcoded
+  const modules = dbMaterials.length > 0
+    ? dbMaterials.map((m) => ({
+        title: m.title,
+        description: m.description,
+        tag: m.tag,
+        status: m.status as "available" | "coming-soon",
+        access: m.access_tier,
+      }))
+    : hardcodedModules;
+
   return (
     <>
       <SEO
