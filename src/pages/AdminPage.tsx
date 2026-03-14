@@ -8,10 +8,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import { Pencil, Trash2, Plus, LogOut, X } from "lucide-react";
+import { Pencil, Trash2, Plus, LogOut, X, Users, GraduationCap } from "lucide-react";
 import SEO from "@/components/SEO";
 import { specialtyOptions, stateOptions } from "@/data/interventionists";
+import AdminTrainingTab from "@/components/admin/AdminTrainingTab";
 
 const emptyForm = {
   name: "",
