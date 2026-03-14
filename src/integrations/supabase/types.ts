@@ -450,9 +450,11 @@ export type Database = {
       training_materials: {
         Row: {
           access_tier: string
+          category: string
           content: string | null
           created_at: string
           description: string
+          file_url: string | null
           id: string
           sort_order: number
           status: string
@@ -463,9 +465,11 @@ export type Database = {
         }
         Insert: {
           access_tier?: string
+          category?: string
           content?: string | null
           created_at?: string
           description?: string
+          file_url?: string | null
           id?: string
           sort_order?: number
           status?: string
@@ -476,9 +480,11 @@ export type Database = {
         }
         Update: {
           access_tier?: string
+          category?: string
           content?: string | null
           created_at?: string
           description?: string
+          file_url?: string | null
           id?: string
           sort_order?: number
           status?: string
