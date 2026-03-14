@@ -447,6 +447,48 @@ export type Database = {
         }
         Relationships: []
       }
+      training_materials: {
+        Row: {
+          access_tier: string
+          content: string | null
+          created_at: string
+          description: string
+          id: string
+          sort_order: number
+          status: string
+          tag: string
+          title: string
+          updated_at: string
+          video_url: string | null
+        }
+        Insert: {
+          access_tier?: string
+          content?: string | null
+          created_at?: string
+          description?: string
+          id?: string
+          sort_order?: number
+          status?: string
+          tag?: string
+          title: string
+          updated_at?: string
+          video_url?: string | null
+        }
+        Update: {
+          access_tier?: string
+          content?: string | null
+          created_at?: string
+          description?: string
+          id?: string
+          sort_order?: number
+          status?: string
+          tag?: string
+          title?: string
+          updated_at?: string
+          video_url?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
