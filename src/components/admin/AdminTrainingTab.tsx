@@ -96,30 +96,28 @@ const AdminMaterialsTab = ({ category, categoryLabel }: AdminMaterialsTabProps) 
       fileUrl = publicUrl;
     }
 
-    const payload = {
+    const basePayload = {
       title: form.title,
       description: form.description,
       tag: form.tag,
       access_tier: form.access_tier,
       status: form.status,
       video_url: form.video_url || null,
-      file_url: materialFile ? fileUrl : (editing !== "new" ? undefined : null),
       content: form.content,
       sort_order: form.sort_order,
       category: form.category,
       updated_at: new Date().toISOString(),
     };
 
-    // Clean undefined values for insert
-    const cleanPayload = Object.fromEntries(
-      Object.entries(payload).filter(([_, v]) => v !== undefined)
-    );
-
     let error;
     if (editing === "new") {
-      ({ error } = await supabase.from("training_materials").insert(cleanPayload));
+      const insertPayload = { ...basePayload, file_url: materialFile ? fileUrl : null };
+      ({ error } = await supabase.from("training_materials").insert(insertPayload));
     } else {
-      ({ error } = await supabase.from("training_materials").update(cleanPayload).eq("id", editing!));
+      const updatePayload = materialFile
+        ? { ...basePayload, file_url: fileUrl }
+        : basePayload;
+      ({ error } = await supabase.from("training_materials").update(updatePayload).eq("id", editing!));
     }
 
     setSaving(false);
