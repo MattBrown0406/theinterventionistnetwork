@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "vicarious-trauma-and-self-care-for-interventionists",
+    title: "Recognizing and Recovering from Vicarious Trauma: A Self-Care Guide for Professional Interventionists",
+    excerpt: "Vicarious trauma in interventionists is not a sign of weakness — it is an occupational hazard of deep empathic engagement. This guide explores how it manifests in intervention work and the concrete steps you can take to build a resilient, sustainable practice.",
+    author: "Matt Brown",
+    date: "2026-03-14",
+    readTime: "12 min read",
+  },
+  {
     slug: "what-credentials-to-look-for-in-an-interventionist",
     title: "What Credentials Should You Look for in a Professional Interventionist?",
     excerpt: "Intervention is an unregulated field in most states. Knowing what credentials to look for is the first step to making a confident, informed decision when hiring a professional interventionist for your family.",
