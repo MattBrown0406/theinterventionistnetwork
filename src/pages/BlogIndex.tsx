@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "working-with-resistant-clients-and-families",
+    title: "Working With Resistant Clients and Families: A Practitioner's Guide to Breaking Through",
+    excerpt: "Resistance is not the exception in intervention work — it is the terrain. This guide explores how to read resistance as communication, meet it with clinical curiosity, and move families toward change even when the process feels stuck.",
+    author: "Matt Brown",
+    date: "2026-03-15",
+    readTime: "14 min read",
+  },
+  {
     slug: "vicarious-trauma-and-self-care-for-interventionists",
     title: "Recognizing and Recovering from Vicarious Trauma: A Self-Care Guide for Professional Interventionists",
     excerpt: "Vicarious trauma in interventionists is not a sign of weakness — it is an occupational hazard of deep empathic engagement. This guide explores how it manifests in intervention work and the concrete steps you can take to build a resilient, sustainable practice.",
