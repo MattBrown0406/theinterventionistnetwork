@@ -53,11 +53,11 @@ const blogPosts = [
   },
   {
     slug: "how-to-find-a-qualified-interventionist",
-    title: "How to Find a Qualified Interventionist: What Families Need to Know",
-    excerpt: "Finding a qualified interventionist when you've never needed one before isn't simple. This guide walks you through what credentials matter, what questions to ask, and why the platform you use to search can make all the difference.",
+    title: "How to Find a Qualified Interventionist: A Family's Complete Guide",
+    excerpt: "Knowing how to find a qualified interventionist can feel overwhelming when you're already under enormous stress. This guide cuts through the confusion — covering credentials, red flags, questions to ask, and how to evaluate your options with confidence.",
     author: "Matt Brown",
-    date: "2025-03-09",
-    readTime: "8 min read",
+    date: "2026-03-16",
+    readTime: "10 min read",
   },
   {
     slug: "why-we-dont-charge-referral-fees",
