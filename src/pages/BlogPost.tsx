@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import blogFindInterventionist from "@/assets/blog-find-interventionist.jpg";
+import blogFindInterventionistGuide from "@/assets/blog-find-interventionist-guide.jpg";
 import blogFamilySystems from "@/assets/blog-family-systems-crisis.jpg";
 import blogWhatToExpect from "@/assets/blog-what-to-expect-intervention.jpg";
 import blogTraumaInformed from "@/assets/blog-trauma-informed-approaches.jpg";
