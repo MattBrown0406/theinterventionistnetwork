@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "how-to-prepare-your-family-for-an-intervention",
+    title: "How to Prepare Your Family for an Intervention: A Complete Guide",
+    excerpt: "Knowing how to prepare your family for an intervention can mean the difference between a moment that changes everything and one that falls short. This guide walks families through every stage — from contacting a professional to what happens the day you sit down together.",
+    author: "Matt Brown",
+    date: "2026-03-18",
+    readTime: "12 min read",
+  },
+  {
     slug: "working-with-resistant-clients-and-families",
     title: "Working With Resistant Clients and Families: A Practitioner's Guide to Breaking Through",
     excerpt: "Resistance is not the exception in intervention work — it is the terrain. This guide explores how to read resistance as communication, meet it with clinical curiosity, and move families toward change even when the process feels stuck.",
