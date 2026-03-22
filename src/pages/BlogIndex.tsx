@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "the-business-of-running-an-intervention-practice",
+    title: "The Business of Running an Intervention Practice: A Practitioner's Guide to Sustainability and Growth",
+    excerpt: "The clinical skill that got you here is only half the equation. This guide covers fee structures, referral pipelines, financial planning, and building a practice that lets you keep showing up for families in crisis — year after year.",
+    author: "Matt Brown",
+    date: "2026-03-22",
+    readTime: "14 min read",
+  },
+  {
     slug: "how-to-prepare-your-family-for-an-intervention",
     title: "How to Prepare Your Family for an Intervention: A Complete Guide",
     excerpt: "Knowing how to prepare your family for an intervention can mean the difference between a moment that changes everything and one that falls short. This guide walks families through every stage — from contacting a professional to what happens the day you sit down together.",
