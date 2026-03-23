@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "understanding-intervention-models-for-families",
+    title: "Understanding Intervention Models for Families: Which Approach Is Right for Your Loved One?",
+    excerpt: "There are several well-established intervention models for families, each with a distinct philosophy, structure, and set of outcomes. This guide walks you through the Johnson Model, ARISE, CRAFT, and systemic approaches — and helps you start an informed conversation with a professional.",
+    author: "Matt Brown",
+    date: "2026-03-23",
+    readTime: "12 min read",
+  },
+  {
     slug: "the-business-of-running-an-intervention-practice",
     title: "The Business of Running an Intervention Practice: A Practitioner's Guide to Sustainability and Growth",
     excerpt: "The clinical skill that got you here is only half the equation. This guide covers fee structures, referral pipelines, financial planning, and building a practice that lets you keep showing up for families in crisis — year after year.",
