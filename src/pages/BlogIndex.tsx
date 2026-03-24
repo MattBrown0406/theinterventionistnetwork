@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "how-families-enable-addiction-and-how-to-address-it",
+    title: "How Families Enable Addiction — and How Interventionists Can Address It Therapeutically",
+    excerpt: "Enabling is one of the most misunderstood concepts in addiction work. This guide explores how to identify enabling patterns in families, understand their attachment-based roots, and address them therapeutically — both before and after the intervention.",
+    author: "Matt Brown",
+    date: "2026-03-24",
+    readTime: "12 min read",
+  },
+  {
     slug: "understanding-intervention-models-for-families",
     title: "Understanding Intervention Models for Families: Which Approach Is Right for Your Loved One?",
     excerpt: "There are several well-established intervention models for families, each with a distinct philosophy, structure, and set of outcomes. This guide walks you through the Johnson Model, ARISE, CRAFT, and systemic approaches — and helps you start an informed conversation with a professional.",
