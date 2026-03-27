@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "questions-to-ask-before-hiring-an-interventionist",
+    title: "10 Essential Questions to Ask Before Hiring an Interventionist",
+    excerpt: "Not all interventionists are the same. This guide gives you the exact questions to ask before hiring — covering credentials, process, cost, and post-intervention support — so you can make a confident, informed decision for your family.",
+    author: "Matt Brown",
+    date: "2026-03-27",
+    readTime: "11 min read",
+  },
+  {
     slug: "building-referral-relationships-with-treatment-centers",
     title: "Building Referral Relationships with Treatment Centers: A Practitioner's Guide",
     excerpt: "Building referral relationships with treatment centers is a core professional responsibility. This guide covers how to identify the right partners, what treatment centers look for in interventionists, and how to build a mutual referral system that supports long-term practice growth.",
