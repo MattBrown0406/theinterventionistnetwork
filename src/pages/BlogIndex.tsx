@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "building-referral-relationships-with-treatment-centers",
+    title: "Building Referral Relationships with Treatment Centers: A Practitioner's Guide",
+    excerpt: "Building referral relationships with treatment centers is a core professional responsibility. This guide covers how to identify the right partners, what treatment centers look for in interventionists, and how to build a mutual referral system that supports long-term practice growth.",
+    author: "Matt Brown",
+    date: "2026-03-26",
+    readTime: "12 min read",
+  },
+  {
     slug: "how-families-enable-addiction-and-how-to-address-it",
     title: "How Families Enable Addiction — and How Interventionists Can Address It Therapeutically",
     excerpt: "Enabling is one of the most misunderstood concepts in addiction work. This guide explores how to identify enabling patterns in families, understand their attachment-based roots, and address them therapeutically — both before and after the intervention.",
