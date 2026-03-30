@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "cost-of-an-intervention-what-it-includes",
+    title: "How Much Does an Intervention Cost — and What Does It Include?",
+    excerpt: "The cost of a professional intervention typically ranges from $2,500 to $10,000 or more. This guide breaks down what's included, what factors affect the price, and how to know if you're getting fair value for your family.",
+    author: "Matt Brown",
+    date: "2026-03-30",
+    readTime: "10 min read",
+  },
+  {
     slug: "questions-to-ask-before-hiring-an-interventionist",
     title: "10 Essential Questions to Ask Before Hiring an Interventionist",
     excerpt: "Not all interventionists are the same. This guide gives you the exact questions to ask before hiring — covering credentials, process, cost, and post-intervention support — so you can make a confident, informed decision for your family.",
