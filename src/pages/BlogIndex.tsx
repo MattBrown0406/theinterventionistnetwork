@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "reading-the-room-family-systems-in-crisis",
+    title: "Reading the Room: How Interventionists Can Master Family Systems in Crisis",
+    excerpt: "Understanding family systems in crisis is not a theoretical exercise — it is the core clinical skill that separates interventionists who consistently achieve lasting outcomes from those who get compliance without commitment. This guide covers enmeshment, enabling, resistance, and how to intervene at the systems level.",
+    author: "Matt Brown",
+    date: "2026-03-31",
+    readTime: "12 min read",
+  },
+  {
     slug: "cost-of-an-intervention-what-it-includes",
     title: "How Much Does an Intervention Cost — and What Does It Include?",
     excerpt: "The cost of a professional intervention typically ranges from $2,500 to $10,000 or more. This guide breaks down what's included, what factors affect the price, and how to know if you're getting fair value for your family.",
