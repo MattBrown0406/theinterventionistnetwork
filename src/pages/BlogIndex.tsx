@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "grief-cycle-families-addicted-loved-ones-interventionist-guide",
+    title: "The Grief Cycle in Families of Addicted Loved Ones: A Clinical Framework for Interventionists",
+    excerpt: "Grief in families of addicted loved ones is one of the most underrecognized dynamics in intervention work. This guide covers ambiguous loss, the Kübler-Ross stages as they appear in intervention preparation, and practical techniques for working with grief before, during, and after the intervention.",
+    author: "Matt Brown",
+    date: "2026-04-07",
+    readTime: "12 min read",
+  },
+  {
     slug: "reading-the-room-family-systems-in-crisis",
     title: "Reading the Room: How Interventionists Can Master Family Systems in Crisis",
     excerpt: "Understanding family systems in crisis is not a theoretical exercise — it is the core clinical skill that separates interventionists who consistently achieve lasting outcomes from those who get compliance without commitment. This guide covers enmeshment, enabling, resistance, and how to intervene at the systems level.",
