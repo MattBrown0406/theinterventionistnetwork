@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "motivational-interviewing-in-intervention-setting",
+    title: "Motivational Interviewing in the Intervention Setting: Techniques Every Professional Interventionist Should Know",
+    excerpt: "Motivational interviewing may be the single most transferable clinical framework for the intervention setting. This practitioner-to-practitioner guide covers MI techniques for evoking change talk, working with family ambivalence, and avoiding common traps in the intervention room.",
+    author: "Matt Brown",
+    date: "2026-04-09",
+    readTime: "12 min read",
+  },
+  {
     slug: "grief-cycle-families-addicted-loved-ones-interventionist-guide",
     title: "The Grief Cycle in Families of Addicted Loved Ones: A Clinical Framework for Interventionists",
     excerpt: "Grief in families of addicted loved ones is one of the most underrecognized dynamics in intervention work. This guide covers ambiguous loss, the Kübler-Ross stages as they appear in intervention preparation, and practical techniques for working with grief before, during, and after the intervention.",
