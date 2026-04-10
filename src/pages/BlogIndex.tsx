@@ -12,6 +12,14 @@ const blogPosts = [
     readTime: "12 min read",
   },
   {
+    slug: "arise-johnson-craft-which-intervention-model-is-right-for-your-family",
+    title: "ARISE, Johnson, or CRAFT? How to Choose the Right Intervention Model for Your Family",
+    excerpt: "Not sure which intervention model is right for your family? Compare ARISE, Johnson, and CRAFT methods and learn how to choose the best approach for your loved one's recovery.",
+    author: "Matt Brown",
+    date: "2026-04-08",
+    readTime: "11 min read",
+  },
+  {
     slug: "grief-cycle-families-addicted-loved-ones-interventionist-guide",
     title: "The Grief Cycle in Families of Addicted Loved Ones: A Clinical Framework for Interventionists",
     excerpt: "Grief in families of addicted loved ones is one of the most underrecognized dynamics in intervention work. This guide covers ambiguous loss, the Kübler-Ross stages as they appear in intervention preparation, and practical techniques for working with grief before, during, and after the intervention.",
