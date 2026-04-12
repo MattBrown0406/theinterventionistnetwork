@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "scope-of-practice-for-professional-interventionists",
+    title: "Scope of Practice for Professional Interventionists: Knowing When to Lead — and When to Step Back",
+    excerpt: "Learn how to define scope of practice as a professional interventionist — including when to refer, what falls outside your role, and how clear limits protect both families and your career.",
+    author: "Matt Brown",
+    date: "2026-04-12",
+    readTime: "11 min read",
+  },
+  {
     slug: "motivational-interviewing-in-intervention-setting",
     title: "Motivational Interviewing in the Intervention Setting: Techniques Every Professional Interventionist Should Know",
     excerpt: "Motivational interviewing may be the single most transferable clinical framework for the intervention setting. This practitioner-to-practitioner guide covers MI techniques for evoking change talk, working with family ambivalence, and avoiding common traps in the intervention room.",
