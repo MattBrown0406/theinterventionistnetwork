@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "working-with-divided-families-managing-ambivalence-before-intervention",
+    title: "When Families Are Divided: A Professional's Guide to Managing Ambivalence Before Intervention Day",
+    excerpt: "Learn how professional interventionists can navigate family ambivalence and division before intervention day—practical strategies for building consensus and protecting outcomes.",
+    author: "Matt Brown",
+    date: "2026-04-14",
+    readTime: "12 min read",
+  },
+  {
     slug: "scope-of-practice-for-professional-interventionists",
     title: "Scope of Practice for Professional Interventionists: Knowing When to Lead — and When to Step Back",
     excerpt: "Learn how to define scope of practice as a professional interventionist — including when to refer, what falls outside your role, and how clear limits protect both families and your career.",
