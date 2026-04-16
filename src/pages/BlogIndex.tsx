@@ -4,6 +4,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 
 const blogPosts = [
   {
+    slug: "pre-engagement-assessment-what-interventionists-evaluate-before-taking-a-case",
+    title: "The Pre-Engagement Assessment: What Professional Interventionists Should Evaluate Before Taking a Case",
+    excerpt: "Before you take a case, what should you actually assess? A practical guide for professional interventionists on conducting thorough pre-engagement evaluations across substance use, medical, family, safety, and readiness domains.",
+    author: "Matt Brown",
+    date: "2026-04-16",
+    readTime: "11 min read",
+  },
+  {
     slug: "working-with-divided-families-managing-ambivalence-before-intervention",
     title: "When Families Are Divided: A Professional's Guide to Managing Ambivalence Before Intervention Day",
     excerpt: "Learn how professional interventionists can navigate family ambivalence and division before intervention day—practical strategies for building consensus and protecting outcomes.",
