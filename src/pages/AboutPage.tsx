@@ -10,6 +10,8 @@ const AboutPage = () => {
       <SEO
         title="About Matt Brown & Our Mission"
         description="Founded by Matt Brown, a 20+ year veteran interventionist. Learn why we built the only interventionist network with zero referral fees."
+        ogImage="https://theinterventionistnetwork.com/logo.png"
+        ogImageAlt="The Interventionist Network logo"
       />
       <SchemaMarkup
         type="BreadcrumbList"

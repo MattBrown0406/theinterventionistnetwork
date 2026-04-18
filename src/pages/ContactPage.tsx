@@ -73,6 +73,8 @@ const ContactPage = () => {
       <SEO
         title="Contact Us"
         description="Contact The Interventionist Network. Families seeking help, interventionists interested in joining, or media inquiries."
+        ogImage="https://theinterventionistnetwork.com/logo.png"
+        ogImageAlt="The Interventionist Network logo"
       />
       <SchemaMarkup
         type="BreadcrumbList"
@@ -89,7 +91,7 @@ const ContactPage = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-3">
             <span className="text-gold">Contact</span> Us
           </h1>
-          <p className="text-primary-foreground/70">We'd love to hear from you.</p>
+          <p className="text-primary-foreground/70 max-w-2xl">Families seeking help, interventionists interested in joining, and media inquiries can reach us here. If the situation is urgent, call instead of waiting on email.</p>
         </div>
       </section>
 
@@ -97,7 +99,7 @@ const ContactPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
             <div className="lg:col-span-2">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-border bg-card p-6 shadow-sm">
                 <input
                   type="text"
                   tabIndex={-1}
@@ -131,6 +133,9 @@ const ContactPage = () => {
                 <div>
                   <label className="block text-sm font-medium mb-1.5">Message *</label>
                   <textarea required rows={5} minLength={10} maxLength={3000} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring" />
+                </div>
+                <div className="rounded-xl border border-border bg-warm-gray p-4 text-sm text-muted-foreground">
+                  For urgent family situations, calling is faster than email. We can review general contact requests here, but crisis situations should not wait on a form response.
                 </div>
                 <Button variant="gold" size="lg" type="submit" disabled={loading}>
                   {loading ? "Sending..." : "Send Message"}

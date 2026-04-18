@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Users, MapPin, CheckCircle, ArrowRight } from "lucide-react";
+import { Shield, Users, MapPin, CheckCircle, ArrowRight, BadgeCheck, PhoneCall } from "lucide-react";
 import InterventionistCard from "@/components/InterventionistCard";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
@@ -15,7 +15,8 @@ const Index = () => {
       <SEO
         title="The Interventionist Network — Trusted Interventionists. Zero Referral Fees."
         description="Find a vetted addiction interventionist near you. The Interventionist Network connects families with trusted professionals across all 50 states. No referral fees."
-        ogImage="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/57ed7768-0c2d-41b5-8041-faa8e7f53e1e/id-preview-f2d64247--0aadcb95-54e1-425c-844a-1c75de9e4f26.lovable.app-1773007231761.png"
+        ogImage="https://theinterventionistnetwork.com/logo.png"
+        ogImageAlt="The Interventionist Network logo"
       />
       <SchemaMarkup type="Organization" data={{
         "@graph": [
@@ -113,6 +114,50 @@ const Index = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-24 bg-warm-gray/60">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto grid max-w-5xl gap-10 rounded-3xl border border-border bg-card p-8 shadow-sm lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-gold">Founded by Matt Brown</p>
+              <h2 className="mt-2 text-3xl md:text-4xl font-bold">Built by an interventionist who knows the stakes</h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Matt Brown has more than 20 years of intervention experience and more than two decades in personal recovery. Every interventionist in the network is reviewed against the standard he would trust with his own family.
+              </p>
+              <div className="mt-6 space-y-3 text-sm text-muted-foreground">
+                <div className="flex gap-3">
+                  <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                  <p>Personally vetted professionals, not call-center referrals.</p>
+                </div>
+                <div className="flex gap-3">
+                  <Shield className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                  <p>No referral fees, no kickbacks, and no pay-to-play family matching.</p>
+                </div>
+                <div className="flex gap-3">
+                  <PhoneCall className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                  <p>If the situation is urgent, families can call directly instead of waiting on a generic lead form.</p>
+                </div>
+              </div>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Button variant="gold" size="lg" asChild><Link to="/about">Why Matt Built This</Link></Button>
+                <Button variant="outline" size="lg" asChild><Link to="/help">Start Your Intake</Link></Button>
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+              {[
+                { stat: '20+ years', label: 'intervention experience' },
+                { stat: '22+ years', label: 'personal recovery' },
+                { stat: '50 states', label: 'national reach' },
+              ].map((item) => (
+                <div key={item.label} className="rounded-2xl border border-border bg-warm-gray p-5">
+                  <p className="text-2xl font-bold text-foreground">{item.stat}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
