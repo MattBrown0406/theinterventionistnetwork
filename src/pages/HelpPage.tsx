@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { createInitialSubmitMeta, markProtectedSubmission, validateProtectedSubmission } from "@/lib/formProtection";
 import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, PhoneCall, ShieldCheck, Clock3, BadgeCheck } from "lucide-react";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { stateOptions } from "@/data/interventionists";
+import { useInterventionist } from "@/hooks/useInterventionists";
 
 const relationshipOptions = ["Parent", "Spouse/Partner", "Sibling", "Child", "Friend", "Employer", "Other"];
 const ageOptions = ["Under 18", "18-25", "26-40", "41-60", "60+"];
@@ -22,6 +25,10 @@ const urgencyOptions = [
 ];
 
 const HelpPage = () => {
+  const [searchParams] = useSearchParams();
+  const interventionistSlug = searchParams.get("interventionist")?.trim() || undefined;
+  const requestedState = searchParams.get("state")?.trim() || "";
+  const { data: selectedInterventionist } = useInterventionist(interventionistSlug);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [submitMeta, setSubmitMeta] = useState(createInitialSubmitMeta);
@@ -32,12 +39,28 @@ const HelpPage = () => {
     relationship: "",
     age: "",
     concern: "",
-    yourState: "",
+    yourState: requestedState,
     theirState: "",
     urgency: "",
     description: "",
     understand: false,
   });
+
+  const selectedInterventionistLabel = useMemo(() => {
+    if (!selectedInterventionist) return null;
+    return `${selectedInterventionist.name}, ${selectedInterventionist.credentials}`;
+  }, [selectedInterventionist]);
+
+  const selectedInterventionistContext = useMemo(() => {
+    if (!selectedInterventionist) return null;
+    return [
+      `Requested interventionist: ${selectedInterventionist.name}`,
+      `Region: ${selectedInterventionist.region}`,
+      `Specialties: ${selectedInterventionist.specialties.join(", ")}`,
+    ].join("\n");
+  }, [selectedInterventionist]);
+
+  const preferredStateLabel = requestedState ? `Requested state: ${requestedState}` : null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,6 +72,10 @@ const HelpPage = () => {
 
     setLoading(true);
     try {
+      const composedDescription = [selectedInterventionistContext, preferredStateLabel, form.description.trim() || null]
+        .filter(Boolean)
+        .join("\n\n");
+
       const { error } = await supabase.from("family_intakes").insert({
         first_name: form.firstName,
         email: form.email,
@@ -59,7 +86,7 @@ const HelpPage = () => {
         your_state: form.yourState,
         their_state: form.theirState || null,
         urgency: form.urgency,
-        description: form.description || null,
+        description: composedDescription || null,
       });
       if (error) throw error;
       markProtectedSubmission("help");
@@ -81,8 +108,13 @@ const HelpPage = () => {
           <CheckCircle className="w-16 h-16 text-gold mx-auto mb-6" />
           <h1 className="text-3xl font-bold mb-4">Thank You</h1>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            A member of our team will reach out within 24 hours (same day for crisis situations).
+            A member of our team will reach out within 24 hours, and faster for crisis situations.
           </p>
+          {selectedInterventionistLabel ? (
+            <p className="text-sm text-muted-foreground mb-4">
+              We noted your request for <strong>{selectedInterventionistLabel}</strong> and will use that when reviewing fit.
+            </p>
+          ) : null}
           <p className="text-sm text-muted-foreground">
             If this is a medical emergency, please call <strong>911</strong>.
           </p>
@@ -112,15 +144,26 @@ const HelpPage = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-3">
             Tell Us About Your <span className="text-gold">Situation</span>
           </h1>
-          <p className="text-primary-foreground/70 max-w-xl">
-            Share some details and we'll connect you with a vetted interventionist who can help your family. This is free and confidential.
+          <p className="text-primary-foreground/70 max-w-2xl">
+            Share a few details and we will connect you with a vetted interventionist who fits your situation. This is free, confidential, and there is no obligation.
           </p>
         </div>
       </section>
 
       <section className="py-12 lg:py-16">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start">
+            <div className="space-y-6">
+              {selectedInterventionistLabel ? (
+                <div className="rounded-xl border border-gold/30 bg-gold-light/40 p-4">
+                  <p className="text-sm font-semibold text-foreground">Preferred interventionist selected</p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    We will prioritize your request for <strong>{selectedInterventionistLabel}</strong> when we review your intake.
+                  </p>
+                </div>
+              ) : null}
+
+              <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
             <input
               type="text"
               tabIndex={-1}
@@ -174,11 +217,21 @@ const HelpPage = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium mb-1.5">Your State *</label>
-                <input required type="text" value={form.yourState} onChange={(e) => setForm({ ...form, yourState: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                <select required value={form.yourState} onChange={(e) => setForm({ ...form, yourState: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm">
+                  <option value="">Select your state</option>
+                  {stateOptions.filter((state) => state !== "National").map((state) => (
+                    <option key={state} value={state}>{state}</option>
+                  ))}
+                </select>
               </div>
               <div>
                 <label className="block text-sm font-medium mb-1.5">Their State (if different)</label>
-                <input type="text" value={form.theirState} onChange={(e) => setForm({ ...form, theirState: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                <select value={form.theirState} onChange={(e) => setForm({ ...form, theirState: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm">
+                  <option value="">Same as mine / not sure</option>
+                  {stateOptions.filter((state) => state !== "National").map((state) => (
+                    <option key={state} value={state}>{state}</option>
+                  ))}
+                </select>
               </div>
             </div>
 
@@ -201,13 +254,55 @@ const HelpPage = () => {
 
             <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">
               <input type="checkbox" required checked={form.understand} onChange={(e) => setForm({ ...form, understand: e.target.checked })} className="rounded border-input mt-0.5" />
-              <span>I understand this is a free matching service with no obligation.</span>
+              <span>I understand this is a free matching service with no obligation and that someone may contact me to clarify fit.</span>
             </label>
+
+            <div className="rounded-xl border border-border bg-warm-gray p-4 text-sm text-muted-foreground">
+              After you submit, we review your situation, prioritize urgency, and connect you with the best-fit interventionist, often the same day for crisis cases.
+            </div>
 
             <Button variant="gold" size="lg" type="submit" className="w-full" disabled={loading}>
               {loading ? "Submitting..." : "Get Matched"}
             </Button>
           </form>
+            </div>
+
+            <aside className="space-y-5">
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <h2 className="text-xl font-bold">What happens next</h2>
+                <div className="mt-5 space-y-4 text-sm text-muted-foreground">
+                  <div className="flex gap-3">
+                    <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                    <p>We review your intake and look at urgency, location, and fit, not just who happens to be nearby.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                    <p>Crisis situations are prioritized. Most families hear back within 24 hours, often sooner.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                    <p>No referral fees, no kickbacks, and no obligation. The goal is a trustworthy match, not a sale.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <h2 className="text-xl font-bold">Need help fast?</h2>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  If this is urgent, do not wait on the form alone.
+                </p>
+                <Button variant="gold" size="lg" asChild className="mt-4 w-full">
+                  <a href="tel:5418386009">
+                    <PhoneCall className="mr-2 h-4 w-4" />
+                    Call (541) 838-6009
+                  </a>
+                </Button>
+                <p className="mt-3 text-xs text-muted-foreground">
+                  If this is a medical emergency, call 911.
+                </p>
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
     </>

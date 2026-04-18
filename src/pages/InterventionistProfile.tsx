@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { MapPin, Clock, Award, ArrowLeft, Phone, Globe, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,10 @@ import { useInterventionist } from "@/hooks/useInterventionists";
 const InterventionistProfile = () => {
   const { slug } = useParams();
   const { data: person, isLoading } = useInterventionist(slug);
+  const helpHref = useMemo(() => {
+    if (!person) return "/help";
+    return `/help?interventionist=${encodeURIComponent(person.slug)}`;
+  }, [person]);
 
   if (isLoading) {
     return <div className="container mx-auto px-4 py-24 text-center"><p className="text-muted-foreground">Loading...</p></div>;
@@ -96,13 +101,16 @@ const InterventionistProfile = () => {
             </div>
             <div className="space-y-6">
               <div className="bg-warm-gray rounded-lg p-6">
-                <h3 className="font-bold mb-4">Contact This Interventionist</h3>
+                <h3 className="font-bold mb-2">Request a Match With {person.name.split(" ")[0]}</h3>
+                <p className="mb-4 text-sm text-muted-foreground">
+                  Prefer this interventionist? We will carry that preference into your intake so we can review fit faster.
+                </p>
                 <div className="space-y-3 mb-6">
                   {person.phone && <a href={`tel:${person.phone.replace(/\D/g, "")}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors"><Phone className="w-4 h-4" />{person.phone}</a>}
                   {person.email && <a href={`mailto:${person.email}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors"><Mail className="w-4 h-4" />{person.email}</a>}
                   {person.website && <a href={person.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors"><Globe className="w-4 h-4" />Website</a>}
                 </div>
-                <Button variant="gold" className="w-full" asChild><Link to="/help">Request a Match</Link></Button>
+                <Button variant="gold" className="w-full" asChild><Link to={helpHref}>Request a Match</Link></Button>
               </div>
               <div className="bg-warm-gray rounded-lg p-6">
                 <h3 className="font-bold mb-3">Specialties</h3>

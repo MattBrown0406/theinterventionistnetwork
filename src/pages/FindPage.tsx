@@ -84,6 +84,20 @@ const FindPage = () => {
 
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4">
+          <div className="mb-8 rounded-2xl border border-border bg-card p-6 shadow-sm">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <h2 className="text-2xl font-bold">Need help choosing?</h2>
+                <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+                  If you are not sure who is the right fit, tell us about your situation and we will help you narrow it down based on urgency, specialty, and geography.
+                </p>
+              </div>
+              <Button variant="gold" asChild>
+                <Link to={`/help${stateFilter ? `?state=${encodeURIComponent(stateFilter)}` : ""}`}>Get Matched Now</Link>
+              </Button>
+            </div>
+          </div>
+
           {isLoading ? (
             <p className="text-muted-foreground">Loading interventionists...</p>
           ) : filtered.length > 0 ? (
@@ -99,8 +113,8 @@ const FindPage = () => {
             <div className="text-center py-16">
               <Search className="w-12 h-12 text-muted-foreground/30 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">No Exact Matches Found</h3>
-              <p className="text-muted-foreground mb-6 max-w-md mx-auto">Tell us about your situation and we'll personally connect you with a vetted interventionist.</p>
-              <Button variant="gold" asChild><Link to="/help">Tell Us Your Situation</Link></Button>
+              <p className="text-muted-foreground mb-6 max-w-md mx-auto">Tell us about your situation and we will personally connect you with a vetted interventionist who fits your location, urgency, and needs.</p>
+              <Button variant="gold" asChild><Link to={`/help${stateFilter ? `?state=${encodeURIComponent(stateFilter)}` : ""}`}>Tell Us Your Situation</Link></Button>
             </div>
           )}
         </div>
