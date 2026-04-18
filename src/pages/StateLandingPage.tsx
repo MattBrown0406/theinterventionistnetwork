@@ -7,16 +7,41 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import { stateData } from "@/data/stateData";
 import NotFound from "./NotFound";
 
+const networkReasons = [
+  'Vetted professionals instead of whoever paid for the lead.',
+  'A matching path based on geography, urgency, and fit.',
+  'Direct family-first guidance without referral-fee pressure.',
+];
+
+const relatedPageCards = [
+  {
+    title: 'Intervention FAQs',
+    to: '/faq',
+    desc: 'Answers about cost, timing, process, and what to expect next.',
+  },
+  {
+    title: 'Why this network is different',
+    to: '/about',
+    desc: 'See the no-referral-fee standard and founder-led vetting approach.',
+  },
+  {
+    title: 'Start a confidential intake',
+    to: '/help',
+    desc: 'Best next step if your family needs help now, not more browsing.',
+  },
+];
+
+const orderedStates = Object.values(stateData);
+
 const StateLandingPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const state = slug ? stateData[slug] : undefined;
 
   const neighboringStates = useMemo(() => {
     if (!state) return [];
-    const states = Object.values(stateData);
-    const currentIndex = states.findIndex((item) => item.slug === state.slug);
+    const currentIndex = orderedStates.findIndex((item) => item.slug === state.slug);
     if (currentIndex === -1) return [];
-    return [states[currentIndex - 1], states[currentIndex + 1]].filter(Boolean);
+    return [orderedStates[currentIndex - 1], orderedStates[currentIndex + 1]].filter(Boolean);
   }, [state]);
 
   if (!state) return <NotFound />;
@@ -190,11 +215,7 @@ const StateLandingPage = () => {
             <p className="text-sm font-semibold uppercase tracking-wide text-gold">Why families use this network</p>
             <h2 className="mt-2 text-2xl md:text-3xl font-bold">A better option than generic helplines or broker sites</h2>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
-              {[
-                'Vetted professionals instead of whoever paid for the lead.',
-                'A matching path based on geography, urgency, and fit.',
-                'Direct family-first guidance without referral-fee pressure.',
-              ].map((item) => (
+              {networkReasons.map((item) => (
                 <div key={item} className="rounded-xl bg-warm-gray p-4 text-sm text-muted-foreground">
                   {item}
                 </div>
@@ -232,18 +253,12 @@ const StateLandingPage = () => {
               <Link to="/find" className="text-sm font-medium text-gold hover:underline">Browse all interventionists</Link>
             </div>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
-              <Link to="/faq" className="rounded-2xl border border-border bg-warm-gray p-5 transition-shadow hover:shadow-md">
-                <p className="font-bold">Intervention FAQs</p>
-                <p className="mt-2 text-sm text-muted-foreground">Answers about cost, timing, process, and what to expect next.</p>
-              </Link>
-              <Link to="/about" className="rounded-2xl border border-border bg-warm-gray p-5 transition-shadow hover:shadow-md">
-                <p className="font-bold">Why this network is different</p>
-                <p className="mt-2 text-sm text-muted-foreground">See the no-referral-fee standard and founder-led vetting approach.</p>
-              </Link>
-              <Link to="/help" className="rounded-2xl border border-border bg-warm-gray p-5 transition-shadow hover:shadow-md">
-                <p className="font-bold">Start a confidential intake</p>
-                <p className="mt-2 text-sm text-muted-foreground">Best next step if your family needs help now, not more browsing.</p>
-              </Link>
+              {relatedPageCards.map((item) => (
+                <Link key={item.to} to={item.to} className="rounded-2xl border border-border bg-warm-gray p-5 transition-shadow hover:shadow-md">
+                  <p className="font-bold">{item.title}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+                </Link>
+              ))}
             </div>
             {neighboringStates.length > 0 && (
               <div className="mt-6 border-t border-border pt-6">
