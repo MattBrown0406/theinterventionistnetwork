@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { Search } from "lucide-react";
+import { Search, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import InterventionistCard from "@/components/InterventionistCard";
 import SEO from "@/components/SEO";
@@ -9,18 +9,47 @@ import { useInterventionists } from "@/hooks/useInterventionists";
 import { specialtyOptions, stateOptions } from "@/data/interventionists";
 
 const FindPage = () => {
+  const [searchQuery, setSearchQuery] = useState("");
   const [stateFilter, setStateFilter] = useState("");
   const [specialtyFilter, setSpecialtyFilter] = useState("");
-  
+
   const { data: interventionists = [], isLoading } = useInterventionists();
 
   const filtered = useMemo(() => {
-    return interventionists.filter((i) => {
-      if (stateFilter && !i.states_served.includes(stateFilter) && !i.states_served.includes("National")) return false;
-      if (specialtyFilter && !i.specialties.includes(specialtyFilter)) return false;
-      return true;
-    });
-  }, [stateFilter, specialtyFilter, interventionists]);
+    const normalizedQuery = searchQuery.trim().toLowerCase();
+
+    return interventionists
+      .filter((i) => {
+        const stateMatch = !stateFilter || i.states_served.includes(stateFilter) || i.states_served.includes("National");
+        const specialtyMatch = !specialtyFilter || i.specialties.includes(specialtyFilter);
+        const queryMatch = !normalizedQuery || [
+          i.name,
+          i.region,
+          i.credentials,
+          i.bio,
+          ...i.specialties,
+          ...i.states_served,
+        ].join(" ").toLowerCase().includes(normalizedQuery);
+
+        return stateMatch && specialtyMatch && queryMatch;
+      })
+      .sort((a, b) => {
+        const score = (person: typeof a) => {
+          let value = 0;
+          if (person.featured) value += 4;
+          if (stateFilter && (person.states_served.includes(stateFilter) || person.states_served.includes("National"))) value += 3;
+          if (specialtyFilter && person.specialties.includes(specialtyFilter)) value += 3;
+          if (normalizedQuery) {
+            const haystack = [person.name, person.region, ...person.specialties].join(" ").toLowerCase();
+            if (haystack.includes(normalizedQuery)) value += 2;
+          }
+          if (person.offers_hourly_coaching) value += 1;
+          return value;
+        };
+
+        return score(b) - score(a) || a.name.localeCompare(b.name);
+      });
+  }, [searchQuery, stateFilter, specialtyFilter, interventionists]);
 
   return (
     <>
@@ -61,6 +90,10 @@ const FindPage = () => {
       <section className="py-8 border-b border-border bg-warm-gray">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex-[1.2]">
+              <label className="block text-xs font-medium text-muted-foreground mb-1.5">Search by name, state, region, or specialty</label>
+              <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Example: California, executive, adolescent, Dallas" className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+            </div>
             <div className="flex-1">
               <label className="block text-xs font-medium text-muted-foreground mb-1.5">State</label>
               <select value={stateFilter} onChange={(e) => setStateFilter(e.target.value)} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm">
@@ -76,7 +109,7 @@ const FindPage = () => {
               </select>
             </div>
             <div className="flex items-end">
-              <Button variant="outline" size="default" onClick={() => { setStateFilter(""); setSpecialtyFilter(""); }}>Clear</Button>
+              <Button variant="outline" size="default" onClick={() => { setSearchQuery(""); setStateFilter(""); setSpecialtyFilter(""); }}>Clear</Button>
             </div>
           </div>
         </div>
@@ -97,6 +130,15 @@ const FindPage = () => {
               </Button>
             </div>
           </div>
+
+          {(stateFilter || specialtyFilter || searchQuery) && filtered.length > 0 ? (
+            <div className="mb-6 flex items-start gap-3 rounded-xl border border-gold/20 bg-gold-light/30 p-4 text-sm text-muted-foreground">
+              <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+              <p>
+                Showing the strongest matches first based on your filters{stateFilter ? ` in ${stateFilter}` : ""}{specialtyFilter ? ` for ${specialtyFilter}` : ""}.
+              </p>
+            </div>
+          ) : null}
 
           {isLoading ? (
             <p className="text-muted-foreground">Loading interventionists...</p>

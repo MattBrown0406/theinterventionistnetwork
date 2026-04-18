@@ -53,9 +53,14 @@ const Index = () => {
               Every interventionist in our network is personally vetted. No referral fees. No kickbacks. Just families connected with professionals who can help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="gold" size="xl" asChild><Link to="/find">Find an Interventionist</Link></Button>
-              <Button variant="hero-outline" size="xl" asChild><Link to="/join">Join the Network</Link></Button>
+              <Button variant="gold" size="xl" asChild><Link to="/help">Get Matched Now</Link></Button>
+              <Button variant="hero-outline" size="xl" asChild><Link to="/find">Browse Vetted Interventionists</Link></Button>
             </div>
++            <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-sm text-primary-foreground/70">
++              <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Free and confidential</span>
++              <span className="rounded-full border border-primary-foreground/15 px-3 py-1">No referral fees</span>
++              <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Crisis situations prioritized</span>
++            </div>
           </div>
         </div>
       </section>
@@ -70,8 +75,8 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               { step: "01", title: "Tell Us About Your Situation", desc: "A brief intake form captures your location, the substance or behavior involved, and how urgent the situation is." },
-              { step: "02", title: "We Match You With Vetted Professionals", desc: "We review your needs and connect you with 1-2 interventionists based on geography, specialty, and fit." },
-              { step: "03", title: "Your Family Gets Help", desc: "Direct connection with your matched interventionist. No middleman fees. No commissions. Just help." },
+              { step: "02", title: "We Match You With Vetted Professionals", desc: "We review your needs and connect you with 1-2 interventionists based on geography, specialty, urgency, and fit." },
+              { step: "03", title: "Your Family Gets Help", desc: "Direct connection with your matched interventionist. No middleman fees. No commissions. Just practical help." },
             ].map((item) => (
               <div key={item.step} className="bg-card rounded-lg p-8 text-center relative">
                 <div className="text-5xl font-black text-gold/20 absolute top-4 right-4">{item.step}</div>
@@ -84,7 +89,7 @@ const Index = () => {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Button variant="gold" size="lg" asChild><Link to="/help">Get Matched Now <ArrowRight className="w-4 h-4 ml-1" /></Link></Button>
+            <Button variant="gold" size="lg" asChild><Link to="/help">Start Your Confidential Intake <ArrowRight className="w-4 h-4 ml-1" /></Link></Button>
           </div>
         </div>
       </section>
@@ -134,11 +139,28 @@ const Index = () => {
 
 
       {/* CTA Banner */}
-      <section className="bg-navy py-16 lg:py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Are You an Interventionist?</h2>
-          <p className="text-primary-foreground/70 text-lg mb-8 max-w-2xl mx-auto">Join the only professional network with zero referral fees. Membership starts at $49/month.</p>
-          <Button variant="gold" size="xl" asChild><Link to="/apply">Apply for Membership</Link></Button>
+      <section className="bg-warm-gray py-16">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto grid max-w-5xl gap-6 rounded-3xl border border-border bg-card p-8 shadow-sm lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-gold">Families first</p>
+              <h2 className="mt-2 text-3xl font-bold">Not sure where to start?</h2>
+              <p className="mt-3 max-w-2xl text-muted-foreground">
+                Start with the intake. We will review urgency, geography, and specialty fit, then help your family get to the right interventionist fast.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Button variant="gold" size="lg" asChild><Link to="/help">Get Matched Now</Link></Button>
+                <Button variant="outline" size="lg" asChild><Link to="/find">Browse the Network</Link></Button>
+              </div>
+            </div>
+            <div className="rounded-2xl bg-navy p-6 text-left text-primary-foreground">
+              <h3 className="text-xl font-bold">Are you an interventionist?</h3>
+              <p className="mt-3 text-primary-foreground/70">
+                Join the only professional network with zero referral fees. Membership starts at $49/month.
+              </p>
+              <Button variant="gold" size="lg" asChild className="mt-6"><Link to="/apply">Apply for Membership</Link></Button>
+            </div>
+          </div>
         </div>
       </section>
     </>

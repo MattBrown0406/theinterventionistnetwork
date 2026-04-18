@@ -147,6 +147,11 @@ const HelpPage = () => {
           <p className="text-primary-foreground/70 max-w-2xl">
             Share a few details and we will connect you with a vetted interventionist who fits your situation. This is free, confidential, and there is no obligation.
           </p>
+          <div className="mt-5 flex flex-wrap gap-3 text-sm text-primary-foreground/75">
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Free and confidential</span>
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">No obligation</span>
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Crisis situations prioritized</span>
+          </div>
         </div>
       </section>
 
@@ -163,7 +168,7 @@ const HelpPage = () => {
                 </div>
               ) : null}
 
-              <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
+              <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6 lg:p-8">
             <input
               type="text"
               tabIndex={-1}
@@ -173,7 +178,7 @@ const HelpPage = () => {
               value={submitMeta.website}
               onChange={(e) => setSubmitMeta((prev) => ({ ...prev, website: e.target.value }))}
             />
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label className="block text-sm font-medium mb-1.5">Your First Name *</label>
                 <input required type="text" minLength={2} value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
@@ -189,7 +194,7 @@ const HelpPage = () => {
               <input required type="tel" minLength={7} maxLength={30} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label className="block text-sm font-medium mb-1.5">Your Relationship *</label>
                 <select required value={form.relationship} onChange={(e) => setForm({ ...form, relationship: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm">
@@ -214,7 +219,7 @@ const HelpPage = () => {
               </select>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label className="block text-sm font-medium mb-1.5">Your State *</label>
                 <select required value={form.yourState} onChange={(e) => setForm({ ...form, yourState: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm">
@@ -260,6 +265,10 @@ const HelpPage = () => {
             <div className="rounded-xl border border-border bg-warm-gray p-4 text-sm text-muted-foreground">
               After you submit, we review your situation, prioritize urgency, and connect you with the best-fit interventionist, often the same day for crisis cases.
             </div>
+
+            <p className="text-xs text-muted-foreground">
+              Prefer to talk first? Call <a href="tel:5418386009" className="font-medium text-foreground underline underline-offset-2">(541) 838-6009</a>.
+            </p>
 
             <Button variant="gold" size="lg" type="submit" className="w-full" disabled={loading}>
               {loading ? "Submitting..." : "Get Matched"}
