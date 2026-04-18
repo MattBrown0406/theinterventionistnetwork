@@ -294,6 +294,54 @@ export type Database = {
           },
         ]
       }
+      interventionist_click_events: {
+        Row: {
+          click_type: string
+          created_at: string
+          id: string
+          interventionist_id: string
+          referrer: string | null
+          slug: string
+          source_path: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          click_type: string
+          created_at?: string
+          id?: string
+          interventionist_id: string
+          referrer?: string | null
+          slug: string
+          source_path?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          click_type?: string
+          created_at?: string
+          id?: string
+          interventionist_id?: string
+          referrer?: string | null
+          slug?: string
+          source_path?: string | null
+          user_agent?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "interventionist_click_events_interventionist_id_fkey"
+            columns: ["interventionist_id"]
+            isOneToOne: false
+            referencedRelation: "interventionist_click_stats"
+            referencedColumns: ["interventionist_id"]
+          },
+          {
+            foreignKeyName: "interventionist_click_events_interventionist_id_fkey"
+            columns: ["interventionist_id"]
+            isOneToOne: false
+            referencedRelation: "interventionists"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       interventionists: {
         Row: {
           approach: string
@@ -497,7 +545,23 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      interventionist_click_stats: {
+        Row: {
+          card_match_clicks: number | null
+          card_profile_clicks: number | null
+          card_total_clicks: number | null
+          interventionist_id: string | null
+          last_click_at: string | null
+          name: string | null
+          profile_email_clicks: number | null
+          profile_match_clicks: number | null
+          profile_phone_clicks: number | null
+          profile_website_clicks: number | null
+          slug: string | null
+          total_clicks: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       delete_email: {
@@ -507,6 +571,25 @@ export type Database = {
       enqueue_email: {
         Args: { payload: Json; queue_name: string }
         Returns: number
+      }
+      get_interventionist_monthly_click_summary: {
+        Args: { target_month?: string }
+        Returns: {
+          card_match_clicks: number
+          card_profile_clicks: number
+          card_total_clicks: number
+          email: string
+          interventionist_id: string
+          month_end: string
+          month_start: string
+          name: string
+          profile_email_clicks: number
+          profile_match_clicks: number
+          profile_phone_clicks: number
+          profile_website_clicks: number
+          slug: string
+          total_clicks: number
+        }[]
       }
       move_to_dlq: {
         Args: {
