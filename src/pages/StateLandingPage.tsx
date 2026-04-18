@@ -47,9 +47,8 @@ const StateLandingPage = () => {
         }}
       />
       <SchemaMarkup
-        type="WebSite"
+        type="FAQPage"
         data={{
-          "@type": "FAQPage",
           mainEntity: faqItems.map((item) => ({
             "@type": "Question",
             name: item.question,

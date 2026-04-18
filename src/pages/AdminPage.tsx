@@ -39,7 +39,7 @@ const emptyForm = {
 type FormData = typeof emptyForm;
 
 const AdminPage = () => {
-  const [session, setSession] = useState<any>(null);
+  const [session, setSession] = useState<Awaited<ReturnType<typeof supabase.auth.getSession>>["data"]["session"] | null>(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -187,7 +187,7 @@ const AdminPage = () => {
 
   return (
     <>
-      <SEO title="Admin — The Interventionist Network" description="Manage interventionist profiles." />
+      <SEO title="Admin — The Interventionist Network" description="Manage interventionist profiles." noindex />
       <section className="bg-navy py-8">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-primary-foreground">Admin Dashboard</h1>

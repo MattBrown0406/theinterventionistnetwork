@@ -4,7 +4,7 @@ import { MessageSquare, Clock, ChevronRight } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
-import { useForumCategories, useRecentThreads, useForumStats, useCategoryThreadCounts } from "@/hooks/useForum";
+import { useForumCategories, useRecentThreads, useForumStats, useCategoryThreadCounts, type ForumThread } from "@/hooks/useForum";
 import { formatDistanceToNow } from "date-fns";
 
 const forumRules = [
@@ -15,6 +15,8 @@ const forumRules = [
   "Treatment center reviews should be honest and based on direct experience.",
   "Violations may result in membership suspension.",
 ];
+
+type RecentThread = ForumThread & { forum_categories?: { name: string; slug: string } | null };
 
 const ForumIndex = () => {
   const { data: categories = [] } = useForumCategories();
@@ -111,7 +113,7 @@ const ForumIndex = () => {
               <div>
                 <h2 className="text-xl font-bold mb-4">Recent Activity</h2>
                 <div className="space-y-3">
-                  {recentThreads.map((thread) => (
+                  {recentThreads.map((thread: RecentThread) => (
                     <Link
                       key={thread.id}
                       to={`/forum/thread/${thread.id}`}
@@ -119,7 +121,7 @@ const ForumIndex = () => {
                     >
                       <p className="font-medium text-sm line-clamp-1">{thread.title}</p>
                       <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground">
-                        <span className="text-gold">{(thread.forum_categories as any)?.name}</span>
+                        <span className="text-gold">{thread.forum_categories?.name}</span>
                         <span>·</span>
                         <span>{thread.author_name}</span>
                         <span>·</span>

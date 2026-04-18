@@ -6,10 +6,13 @@ interface SEOProps {
   description: string;
   canonical?: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: string;
+  noindex?: boolean;
   article?: {
     author?: string;
     publishedTime?: string;
+    modifiedTime?: string;
   };
 }
 
@@ -17,7 +20,7 @@ const BASE_URL = "https://theinterventionistnetwork.com";
 
 const DEFAULT_OG_IMAGE = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/57ed7768-0c2d-41b5-8041-faa8e7f53e1e/id-preview-f2d64247--0aadcb95-54e1-425c-844a-1c75de9e4f26.lovable.app-1773007231761.png";
 
-const SEO = ({ title, description, canonical, ogImage, ogType = "website", article }: SEOProps) => {
+const SEO = ({ title, description, canonical, ogImage, ogImageAlt, ogType = "website", noindex = false, article }: SEOProps) => {
   const location = useLocation();
   const canonicalUrl = canonical || `${BASE_URL}${location.pathname}`;
   const fullTitle = title.includes("The Interventionist Network") ? title : `${title} — The Interventionist Network`;
@@ -43,10 +46,23 @@ const SEO = ({ title, description, canonical, ogImage, ogType = "website", artic
     setMeta("og:url", canonicalUrl, true);
     setMeta("og:type", ogType, true);
     setMeta("og:image", imageUrl, true);
+    setMeta("og:site_name", "The Interventionist Network", true);
+    setMeta("twitter:card", "summary_large_image");
     setMeta("twitter:image", imageUrl);
+
+    if (ogImageAlt) {
+      setMeta("og:image:alt", ogImageAlt, true);
+      setMeta("twitter:image:alt", ogImageAlt);
+    }
 
     setMeta("twitter:title", fullTitle);
     setMeta("twitter:description", description);
+
+    if (noindex) {
+      setMeta("robots", "noindex, nofollow");
+    } else {
+      setMeta("robots", "index, follow");
+    }
 
     let canonicalEl = document.querySelector('link[rel="canonical"]');
     if (!canonicalEl) {
@@ -59,12 +75,13 @@ const SEO = ({ title, description, canonical, ogImage, ogType = "website", artic
     if (article) {
       if (article.author) setMeta("article:author", article.author, true);
       if (article.publishedTime) setMeta("article:published_time", article.publishedTime, true);
+      if (article.modifiedTime) setMeta("article:modified_time", article.modifiedTime, true);
     }
 
     return () => {
       document.title = "The Interventionist Network — Trusted Interventionists. Zero Referral Fees.";
     };
-  }, [fullTitle, description, canonicalUrl, imageUrl, ogType, article]);
+  }, [article, canonicalUrl, description, fullTitle, imageUrl, noindex, ogImageAlt, ogType]);
 
   return null;
 };

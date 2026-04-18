@@ -28,7 +28,7 @@ const AuthPage = () => {
 
   return (
     <>
-      <SEO title="Admin Login — The Interventionist Network" description="Admin login for The Interventionist Network." />
+      <SEO title="Admin Login — The Interventionist Network" description="Admin login for The Interventionist Network." noindex />
       <section className="bg-navy py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold text-primary-foreground">Admin Login</h1>

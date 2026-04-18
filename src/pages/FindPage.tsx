@@ -29,9 +29,8 @@ const FindPage = () => {
         description="Search our network of vetted, certified addiction interventionists by location, specialty, and urgency. Free matching for families — no referral fees ever."
       />
       <SchemaMarkup
-        type="WebSite"
+        type="WebPage"
         data={{
-          "@type": "WebPage",
           name: "Find a Trusted Interventionist",
           description: "Search our network of vetted addiction interventionists by location and specialty.",
           url: "https://theinterventionistnetwork.com/find",

@@ -10,10 +10,19 @@ const certOptions = ["ARISE", "CIP", "CADC", "CCMI", "LCDC", "LPC", "LCSW", "PHD
 const hearAboutOptions = ["Referral", "Podcast", "Social Media", "Search", "Conference", "Other"];
 
 const TIER_LABELS: Record<string, string> = {
-  listed: "Listed — $49/month",
-  featured: "Featured — $199/month",
-  partner: "Partner — $299/month",
+  listed: "Listed — $49 initial membership payment",
+  featured: "Featured — $199 initial membership payment",
+  partner: "Partner — $299 initial membership payment",
 };
+
+const fieldDefinitions = [
+  { label: "Full Name *", key: "fullName", type: "text", required: true },
+  { label: "Email *", key: "email", type: "email", required: true },
+  { label: "Phone *", key: "phone", type: "tel", required: true },
+  { label: "Business Name", key: "businessName", type: "text", required: false },
+  { label: "Website URL", key: "websiteUrl", type: "url", required: false },
+  { label: "Years of Intervention Experience *", key: "yearsExperience", type: "number", required: true },
+] as const;
 
 const ApplyPage = () => {
   const [loading, setLoading] = useState(false);
@@ -117,7 +126,7 @@ const ApplyPage = () => {
             Apply for <span className="text-gold">Membership</span>
           </h1>
           <p className="text-primary-foreground/70 max-w-xl">
-            Complete the form below to apply. Payment will be collected via Square after submission.
+            Complete the form below to apply. Your initial membership payment will be collected via Square after submission. Ongoing billing details are finalized during onboarding.
           </p>
         </div>
       </section>
@@ -125,20 +134,13 @@ const ApplyPage = () => {
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4 max-w-2xl">
           <form onSubmit={handleSubmit} className="space-y-6">
-            {[
-              { label: "Full Name *", key: "fullName", type: "text", required: true },
-              { label: "Email *", key: "email", type: "email", required: true },
-              { label: "Phone *", key: "phone", type: "tel", required: true },
-              { label: "Business Name", key: "businessName", type: "text", required: false },
-              { label: "Website URL", key: "websiteUrl", type: "url", required: false },
-              { label: "Years of Intervention Experience *", key: "yearsExperience", type: "number", required: true },
-            ].map((field) => (
+            {fieldDefinitions.map((field) => (
               <div key={field.key}>
                 <label className="block text-sm font-medium mb-1.5">{field.label}</label>
                 <input
                   type={field.type}
                   required={field.required}
-                  value={(form as any)[field.key]}
+                  value={form[field.key]}
                   onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
                   className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
                 />
@@ -206,6 +208,7 @@ const ApplyPage = () => {
                   <option key={value} value={value}>{label}</option>
                 ))}
               </select>
+              <p className="text-xs text-muted-foreground mt-1">This checkout collects the initial payment only. Recurring billing is handled during approved member onboarding.</p>
             </div>
 
             <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">

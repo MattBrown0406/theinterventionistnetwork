@@ -28,6 +28,7 @@ import ForumThread from "./pages/ForumThread";
 import ForumNewThread from "./pages/ForumNewThread";
 import StateLandingPage from "./pages/StateLandingPage";
 import FAQPage from "./pages/FAQPage";
+import VerifyPage from "./pages/VerifyPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -58,6 +59,7 @@ const App = () => (
             <Route path="/community" element={<CommunityPage />} />
             <Route path="/coaching" element={<CoachingPage />} />
             <Route path="/badge" element={<BadgePage />} />
+            <Route path="/verify" element={<VerifyPage />} />
             <Route path="/forum" element={<ForumIndex />} />
             <Route path="/forum/new" element={<ForumNewThread />} />
             <Route path="/forum/thread/:threadId" element={<ForumThread />} />

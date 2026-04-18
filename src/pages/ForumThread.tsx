@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
-import { useForumThread, useForumReplies } from "@/hooks/useForum";
+import { useForumThread, useForumReplies, type ForumCategory } from "@/hooks/useForum";
 import { supabase } from "@/integrations/supabase/client";
 import { useQueryClient } from "@tanstack/react-query";
 import { format, formatDistanceToNow } from "date-fns";
@@ -24,7 +24,7 @@ const ForumThread = () => {
   const [replyForm, setReplyForm] = useState({ name: "", email: "", body: "" });
   const [submitting, setSubmitting] = useState(false);
 
-  const category = thread?.forum_categories;
+  const category = thread?.forum_categories as ForumCategory | undefined;
 
   const handleReply = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -80,7 +80,7 @@ const ForumThread = () => {
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: "https://theinterventionistnetwork.com" },
             { "@type": "ListItem", position: 2, name: "Forum", item: "https://theinterventionistnetwork.com/forum" },
-            ...(category ? [{ "@type": "ListItem", position: 3, name: (category as any).name, item: `https://theinterventionistnetwork.com/forum/${(category as any).slug}` }] : []),
+            ...(category ? [{ "@type": "ListItem", position: 3, name: category.name, item: `https://theinterventionistnetwork.com/forum/${category.slug}` }] : []),
             { "@type": "ListItem", position: category ? 4 : 3, name: thread.title, item: `https://theinterventionistnetwork.com/forum/thread/${thread.id}` },
           ],
         }}
@@ -93,8 +93,8 @@ const ForumThread = () => {
             <ChevronRight className="w-3.5 h-3.5" />
             {category && (
               <>
-                <Link to={`/forum/${(category as any).slug}`} className="hover:text-primary-foreground">
-                  {(category as any).name}
+                <Link to={`/forum/${category.slug}`} className="hover:text-primary-foreground">
+                  {category.name}
                 </Link>
                 <ChevronRight className="w-3.5 h-3.5" />
               </>
@@ -106,7 +106,7 @@ const ForumThread = () => {
             <h1 className="text-2xl md:text-3xl font-bold text-primary-foreground">{thread.title}</h1>
           </div>
           <div className="flex items-center gap-2 mt-2 text-sm text-primary-foreground/60">
-            {category && <Badge variant="secondary" className="text-xs">{(category as any).name}</Badge>}
+            {category && <Badge variant="secondary" className="text-xs">{category.name}</Badge>}
             <span>by {thread.author_name}</span>
             <span>·</span>
             <span>{format(new Date(thread.created_at), "MMM d, yyyy")}</span>

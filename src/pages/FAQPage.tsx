@@ -102,7 +102,7 @@ const FAQPage = () => {
         title="Frequently Asked Questions About Interventions"
         description="Get answers to common questions families ask about professional interventions, costs, what to expect, and how to find a trusted interventionist for your loved one."
       />
-      <SchemaMarkup type="WebPage" data={faqSchema} />
+      <SchemaMarkup type="FAQPage" data={faqSchema} />
 
       {/* Hero */}
       <section className="bg-primary text-primary-foreground py-16 md:py-20">
