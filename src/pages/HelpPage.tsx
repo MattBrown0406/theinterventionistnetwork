@@ -1,8 +1,9 @@
 import { useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { createInitialSubmitMeta, markProtectedSubmission, validateProtectedSubmission } from "@/lib/formProtection";
+import { trackEvent } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, PhoneCall, ShieldCheck, Clock3, BadgeCheck } from "lucide-react";
+import { CheckCircle, PhoneCall, ShieldCheck, Clock3, BadgeCheck, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { supabase } from "@/integrations/supabase/client";
@@ -64,8 +65,15 @@ const HelpPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    trackEvent("help_form_submit_attempt", {
+      requested_state: form.yourState || requestedState || "unknown",
+      urgency: form.urgency || "unknown",
+      preferred_interventionist: interventionistSlug || "none",
+    });
+
     const guard = validateProtectedSubmission("help", submitMeta.website, submitMeta.startedAt);
     if (!guard.ok) {
+      trackEvent("help_form_submit_blocked", { reason: guard.reason || "unknown" });
       toast.error(guard.reason || "Unable to submit right now.");
       return;
     }
@@ -90,10 +98,19 @@ const HelpPage = () => {
       });
       if (error) throw error;
       markProtectedSubmission("help");
+      trackEvent("help_form_submit_success", {
+        requested_state: form.yourState || requestedState || "unknown",
+        urgency: form.urgency || "unknown",
+        preferred_interventionist: interventionistSlug || "none",
+      });
       setSubmitted(true);
       setSubmitMeta(createInitialSubmitMeta());
       window.scrollTo(0, 0);
     } catch {
+      trackEvent("help_form_submit_error", {
+        requested_state: form.yourState || requestedState || "unknown",
+        urgency: form.urgency || "unknown",
+      });
       toast.error("Something went wrong. Please try again or call us directly.");
     } finally {
       setLoading(false);
@@ -104,20 +121,43 @@ const HelpPage = () => {
     return (
       <>
         <SEO title="Request Received" description="We've received your information and will be in touch soon." />
-        <div className="container mx-auto px-4 py-24 text-center max-w-lg">
-          <CheckCircle className="w-16 h-16 text-gold mx-auto mb-6" />
-          <h1 className="text-3xl font-bold mb-4">Thank You</h1>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            A member of our team will reach out within 24 hours, and faster for crisis situations.
-          </p>
-          {selectedInterventionistLabel ? (
-            <p className="text-sm text-muted-foreground mb-4">
-              We noted your request for <strong>{selectedInterventionistLabel}</strong> and will use that when reviewing fit.
+        <div className="container mx-auto px-4 py-24 max-w-2xl">
+          <div className="rounded-3xl border border-border bg-card p-8 text-center shadow-sm">
+            <CheckCircle className="w-16 h-16 text-gold mx-auto mb-6" />
+            <h1 className="text-3xl font-bold mb-4">Your request is in</h1>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              We received your information. A member of the team will review urgency, location, and fit, then reach out within 24 hours, often sooner for crisis situations.
             </p>
-          ) : null}
-          <p className="text-sm text-muted-foreground">
-            If this is a medical emergency, please call <strong>911</strong>.
-          </p>
+            {selectedInterventionistLabel ? (
+              <p className="text-sm text-muted-foreground mb-4">
+                We noted your request for <strong>{selectedInterventionistLabel}</strong> and will factor that into the match review.
+              </p>
+            ) : null}
+            <div className="mx-auto mt-6 max-w-xl rounded-2xl border border-border bg-warm-gray p-5 text-left">
+              <p className="text-sm font-semibold text-foreground">What happens next</p>
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                <li>We review your intake for urgency, state, and best-fit interventionist.</li>
+                <li>If we need clarification, someone may call or email you.</li>
+                <li>If the situation is urgent, calling is still the fastest path.</li>
+              </ul>
+            </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Button variant="gold" size="lg" asChild>
+                <a href="tel:5418386009" onClick={() => trackEvent("help_success_call_click", { urgency: form.urgency || "unknown" })}>
+                  <PhoneCall className="mr-2 h-4 w-4" />
+                  Call (541) 838-6009
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link to="/find" onClick={() => trackEvent("help_success_directory_click") }>
+                  Browse interventionists <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            <p className="mt-5 text-sm text-muted-foreground">
+              If this is a medical emergency, call <strong>911</strong>.
+            </p>
+          </div>
         </div>
       </>
     );
@@ -301,7 +341,7 @@ const HelpPage = () => {
                   If this is urgent, do not wait on the form alone.
                 </p>
                 <Button variant="gold" size="lg" asChild className="mt-4 w-full">
-                  <a href="tel:5418386009">
+                  <a href="tel:5418386009" onClick={() => trackEvent("help_sidebar_call_click", { requested_state: form.yourState || requestedState || "unknown" })}>
                     <PhoneCall className="mr-2 h-4 w-4" />
                     Call (541) 838-6009
                   </a>

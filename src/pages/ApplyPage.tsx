@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createInitialSubmitMeta, markProtectedSubmission, validateProtectedSubmission } from "@/lib/formProtection";
+import { trackEvent } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, CreditCard, BadgeCheck } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -58,8 +59,15 @@ const ApplyPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    trackEvent("apply_form_submit_attempt", {
+      tier_interest: form.tierInterest || "unknown",
+      states_count: form.statesServed.length,
+      specialties_count: form.specialties.length,
+    });
+
     const guard = validateProtectedSubmission("apply", submitMeta.website, submitMeta.startedAt);
     if (!guard.ok) {
+      trackEvent("apply_form_submit_blocked", { reason: guard.reason || "unknown" });
       toast.error(guard.reason || "Unable to submit right now.");
       return;
     }
@@ -103,6 +111,10 @@ const ApplyPage = () => {
       // 3. Redirect to Square checkout
       if (checkoutData?.checkoutUrl) {
         markProtectedSubmission("apply");
+        trackEvent("apply_checkout_redirect", {
+          tier_interest: form.tierInterest || "unknown",
+          application_id: appData?.id || "unknown",
+        });
         setSubmitMeta(createInitialSubmitMeta());
         window.location.href = checkoutData.checkoutUrl;
       } else {
@@ -110,6 +122,9 @@ const ApplyPage = () => {
       }
     } catch (err) {
       console.error("Application error:", err);
+      trackEvent("apply_form_submit_error", {
+        tier_interest: form.tierInterest || "unknown",
+      });
       toast.error("Something went wrong. Please try again or contact us directly.");
       setLoading(false);
     }

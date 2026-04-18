@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { createInitialSubmitMeta, markProtectedSubmission, validateProtectedSubmission } from "@/lib/formProtection";
-import { Phone, Mail, CheckCircle } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
+import { Phone, Mail, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
@@ -28,8 +30,14 @@ const ContactPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    trackEvent("contact_form_submit_attempt", {
+      inquiry_type: form.type || "unknown",
+      has_phone: Boolean(form.phone),
+    });
+
     const guard = validateProtectedSubmission("contact", submitMeta.website, submitMeta.startedAt);
     if (!guard.ok) {
+      trackEvent("contact_form_submit_blocked", { reason: guard.reason || "unknown" });
       toast.error(guard.reason || "Unable to submit right now.");
       return;
     }
@@ -45,10 +53,17 @@ const ContactPage = () => {
       });
       if (error) throw error;
       markProtectedSubmission("contact");
+      trackEvent("contact_form_submit_success", {
+        inquiry_type: form.type || "unknown",
+        has_phone: Boolean(form.phone),
+      });
       setSubmitted(true);
       setSubmitMeta(createInitialSubmitMeta());
       window.scrollTo(0, 0);
     } catch {
+      trackEvent("contact_form_submit_error", {
+        inquiry_type: form.type || "unknown",
+      });
       toast.error("Something went wrong. Please try again or call us directly.");
     } finally {
       setLoading(false);
@@ -59,10 +74,32 @@ const ContactPage = () => {
     return (
       <>
         <SEO title="Message Sent — The Interventionist Network" description="Thank you for reaching out." />
-        <div className="container mx-auto px-4 py-24 text-center max-w-lg">
-          <CheckCircle className="w-16 h-16 text-gold mx-auto mb-6" />
-          <h1 className="text-3xl font-bold mb-4">Message Sent</h1>
-          <p className="text-muted-foreground">We'll get back to you as soon as possible.</p>
+        <div className="container mx-auto px-4 py-24 max-w-2xl">
+          <div className="rounded-3xl border border-border bg-card p-8 text-center shadow-sm">
+            <CheckCircle className="w-16 h-16 text-gold mx-auto mb-6" />
+            <h1 className="text-3xl font-bold mb-4">Message sent</h1>
+            <p className="text-muted-foreground leading-relaxed">
+              Thanks for reaching out. We received your message and will follow up as soon as possible.
+            </p>
+            <div className="mx-auto mt-6 max-w-xl rounded-2xl border border-border bg-warm-gray p-5 text-left">
+              <p className="text-sm font-semibold text-foreground">If your situation is urgent</p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Calling is faster than waiting on email, especially for families in crisis.
+              </p>
+            </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Button variant="gold" size="lg" asChild>
+                <a href="tel:5418386009" onClick={() => trackEvent("contact_success_call_click", { inquiry_type: form.type || "unknown" })}>
+                  Call (541) 838-6009
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link to="/help" onClick={() => trackEvent("contact_success_help_click", { inquiry_type: form.type || "unknown" })}>
+                  Start family intake <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </>
     );
@@ -147,7 +184,7 @@ const ContactPage = () => {
               <div className="bg-warm-gray rounded-lg p-6">
                 <h3 className="font-bold mb-4">Direct Contact</h3>
                 <div className="space-y-3">
-                  <a href="tel:5418386009" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors">
+                  <a href="tel:5418386009" onClick={() => trackEvent("contact_page_call_click", { placement: "direct_contact" })} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors">
                     <Phone className="w-4 h-4" />(541) 838-6009
                   </a>
                   <a href="mailto:matt@theinterventionnetwork.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors">
@@ -159,7 +196,7 @@ const ContactPage = () => {
                 <h3 className="font-bold mb-2">Crisis?</h3>
                 <p className="text-sm text-muted-foreground mb-3">If this is urgent, don't wait for a form response.</p>
                 <Button variant="gold" size="sm" asChild>
-                  <a href="tel:5418386009">Call Now</a>
+                  <a href="tel:5418386009" onClick={() => trackEvent("contact_page_call_click", { placement: "crisis_box" })}>Call Now</a>
                 </Button>
               </div>
             </div>
