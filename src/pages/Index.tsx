@@ -147,11 +147,19 @@ const Index = () => {
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-              {[
-                { stat: '20+ years', label: 'intervention experience' },
-                { stat: '22+ years', label: 'personal recovery' },
-                { stat: '50 states', label: 'national reach' },
-              ].map((item) => (
+              {(() => {
+                // Recovery anniversary: April 6, 2003. Auto-increments every April 6.
+                const recoveryStart = new Date(2003, 3, 6);
+                const now = new Date();
+                let years = now.getFullYear() - recoveryStart.getFullYear();
+                const anniversaryThisYear = new Date(now.getFullYear(), 3, 6);
+                if (now < anniversaryThisYear) years -= 1;
+                return [
+                  { stat: '20+ years', label: 'intervention experience' },
+                  { stat: `${years}+ years`, label: 'personal recovery' },
+                  { stat: '50 states', label: 'national reach' },
+                ];
+              })().map((item) => (
                 <div key={item.label} className="rounded-2xl border border-border bg-warm-gray p-5">
                   <p className="text-2xl font-bold text-foreground">{item.stat}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{item.label}</p>
