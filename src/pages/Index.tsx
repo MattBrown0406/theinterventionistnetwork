@@ -57,11 +57,11 @@ const Index = () => {
               <Button variant="gold" size="xl" asChild><Link to="/help">Get Matched Now</Link></Button>
               <Button variant="hero-outline" size="xl" asChild><Link to="/find">Browse Vetted Interventionists</Link></Button>
             </div>
-+            <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-sm text-primary-foreground/70">
-+              <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Free and confidential</span>
-+              <span className="rounded-full border border-primary-foreground/15 px-3 py-1">No referral fees</span>
-+              <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Crisis situations prioritized</span>
-+            </div>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-sm text-primary-foreground/70">
+              <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Free and confidential</span>
+              <span className="rounded-full border border-primary-foreground/15 px-3 py-1">No referral fees</span>
+              <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Crisis situations prioritized</span>
+            </div>
           </div>
         </div>
       </section>
@@ -157,6 +157,41 @@ const Index = () => {
                   <p className="mt-1 text-sm text-muted-foreground">{item.label}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-5xl rounded-3xl border border-border bg-warm-gray/60 p-8">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-sm font-semibold uppercase tracking-wide text-gold">Explore by location or question</p>
+                <h2 className="mt-2 text-3xl font-bold">Popular starting points for families</h2>
+                <p className="mt-3 text-muted-foreground">
+                  Some families need a vetted professional near them. Others need straight answers first. These pages help both discovery and SEO without making people dig.
+                </p>
+              </div>
+              <Button variant="outline" asChild><Link to="/faq">Read intervention FAQs</Link></Button>
+            </div>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {[
+                { title: 'California interventionists', to: '/states/california', desc: 'High-demand state page with location-specific help and substance context.' },
+                { title: 'Florida interventionists', to: '/states/florida', desc: 'Strong search intent and frequent family urgency.' },
+                { title: 'Texas interventionists', to: '/states/texas', desc: 'Large market with broad geography and high family search volume.' },
+              ].map((item) => (
+                <Link key={item.to} to={item.to} className="rounded-2xl border border-border bg-card p-5 transition-shadow hover:shadow-md">
+                  <p className="font-bold">{item.title}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+                  <p className="mt-4 text-sm font-medium text-gold">Open page</p>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-4 flex flex-wrap gap-4 text-sm">
+              <Link to="/find" className="font-medium text-gold hover:underline">Browse all interventionists</Link>
+              <Link to="/help" className="font-medium text-gold hover:underline">Start a confidential intake</Link>
+              <Link to="/about" className="font-medium text-gold hover:underline">See how the network is vetted</Link>
             </div>
           </div>
         </div>

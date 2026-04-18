@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MapPin, AlertTriangle, Users, Phone, ExternalLink, Check, ArrowRight } from "lucide-react";
@@ -9,6 +10,14 @@ import NotFound from "./NotFound";
 const StateLandingPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const state = slug ? stateData[slug] : undefined;
+
+  const neighboringStates = useMemo(() => {
+    if (!state) return [];
+    const states = Object.values(stateData);
+    const currentIndex = states.findIndex((item) => item.slug === state.slug);
+    if (currentIndex === -1) return [];
+    return [states[currentIndex - 1], states[currentIndex + 1]].filter(Boolean);
+  }, [state]);
 
   if (!state) return <NotFound />;
 
@@ -208,6 +217,46 @@ const StateLandingPage = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wide text-gold">Keep exploring</p>
+                <h2 className="mt-2 text-2xl md:text-3xl font-bold">Related pages families often visit next</h2>
+              </div>
+              <Link to="/find" className="text-sm font-medium text-gold hover:underline">Browse all interventionists</Link>
+            </div>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <Link to="/faq" className="rounded-2xl border border-border bg-warm-gray p-5 transition-shadow hover:shadow-md">
+                <p className="font-bold">Intervention FAQs</p>
+                <p className="mt-2 text-sm text-muted-foreground">Answers about cost, timing, process, and what to expect next.</p>
+              </Link>
+              <Link to="/about" className="rounded-2xl border border-border bg-warm-gray p-5 transition-shadow hover:shadow-md">
+                <p className="font-bold">Why this network is different</p>
+                <p className="mt-2 text-sm text-muted-foreground">See the no-referral-fee standard and founder-led vetting approach.</p>
+              </Link>
+              <Link to="/help" className="rounded-2xl border border-border bg-warm-gray p-5 transition-shadow hover:shadow-md">
+                <p className="font-bold">Start a confidential intake</p>
+                <p className="mt-2 text-sm text-muted-foreground">Best next step if your family needs help now, not more browsing.</p>
+              </Link>
+            </div>
+            {neighboringStates.length > 0 && (
+              <div className="mt-6 border-t border-border pt-6">
+                <p className="text-sm font-semibold text-foreground">Nearby state pages</p>
+                <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                  {neighboringStates.map((item) => (
+                    <Link key={item.slug} to={`/states/${item.slug}`} className="rounded-full border border-border px-3 py-1.5 text-muted-foreground transition-colors hover:border-gold hover:text-foreground">
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>

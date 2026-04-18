@@ -138,6 +138,26 @@ const FAQPage = () => {
         </div>
       </section>
 
+      <section className="pb-4">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-3xl border border-border bg-warm-gray/60 p-8">
+            <p className="text-sm font-semibold uppercase tracking-wide text-gold">More ways to move forward</p>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              {[
+                { title: 'Start a confidential intake', to: '/help', desc: 'Best option if your family needs direct guidance now.' },
+                { title: 'Browse interventionists by state or specialty', to: '/find', desc: 'Useful if you want to compare vetted professionals first.' },
+                { title: 'Learn why this network works differently', to: '/about', desc: 'See the anti-broker, no-referral-fee standard behind the directory.' },
+              ].map((item) => (
+                <Link key={item.to} to={item.to} className="rounded-2xl border border-border bg-card p-5 transition-shadow hover:shadow-md">
+                  <p className="font-bold">{item.title}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-muted py-16">
         <div className="container mx-auto px-4 max-w-2xl text-center">

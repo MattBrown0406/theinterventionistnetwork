@@ -18,4 +18,15 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom", "react-router-dom"],
+          ui: ["@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-tooltip", "class-variance-authority", "clsx", "tailwind-merge"],
+          supabase: ["@supabase/supabase-js", "@tanstack/react-query"],
+        },
+      },
+    },
+  },
 }));

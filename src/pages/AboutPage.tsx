@@ -83,11 +83,31 @@ const AboutPage = () => {
         </div>
       </section>
 
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="rounded-3xl border border-border bg-warm-gray/60 p-8">
+            <p className="text-sm font-semibold uppercase tracking-wide text-gold">Keep exploring</p>
+            <div className="mt-3 grid gap-4 md:grid-cols-3">
+              {[
+                { title: 'How the matching process works', to: '/help', desc: 'Go straight into the confidential intake and matching flow.' },
+                { title: 'Questions families ask before acting', to: '/faq', desc: 'Use the FAQ page if you still need clarity before reaching out.' },
+                { title: 'Browse vetted interventionists', to: '/find', desc: 'Search by state, specialty, or interventionist name.' },
+              ].map((item) => (
+                <Link key={item.to} to={item.to} className="rounded-2xl border border-border bg-card p-5 transition-shadow hover:shadow-md">
+                  <p className="font-bold">{item.title}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-navy text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-primary-foreground mb-6">Need Help?</h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="gold" size="lg" asChild><Link to="/help">Find an Interventionist</Link></Button>
+            <Button variant="gold" size="lg" asChild><Link to="/help">Get Matched Now</Link></Button>
             <Button variant="hero-outline" size="lg" asChild><Link to="/join">Join the Network</Link></Button>
           </div>
         </div>
