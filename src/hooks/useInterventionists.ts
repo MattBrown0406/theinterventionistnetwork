@@ -31,7 +31,6 @@ export function useInterventionists() {
       const { data, error } = await supabase
         .from("interventionists")
         .select("*")
-        .eq("approved", true)
         .order("featured", { ascending: false })
         .order("name");
       if (error) throw error;
@@ -49,7 +48,6 @@ export function useInterventionist(slug: string | undefined) {
         .from("interventionists")
         .select("*")
         .eq("slug", slug!)
-        .eq("approved", true)
         .single();
       if (error) throw error;
       return data as Interventionist;
