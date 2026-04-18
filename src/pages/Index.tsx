@@ -101,7 +101,7 @@ const Index = () => {
           <div className="text-center mb-12"><h2 className="text-3xl md:text-4xl font-bold mb-4">Why The Interventionist Network</h2></div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
-              { icon: Shield, title: "Zero Referral Fees", desc: "We believe families in crisis shouldn't be a revenue source for referral brokers. Our interventionists pay a membership fee to be part of the network. That's it. No fees change hands when your family gets help." },
+              { icon: Shield, title: "Zero Referral Fees", desc: "We believe families in crisis shouldn't be a revenue source for referral brokers. Our interventionists pay a membership fee to be part of the network. That's it. No fees change hands when your family gets help. If you decide to hire an interventionist, that agreement is strictly between you and the interventionist you choose." },
               { icon: CheckCircle, title: "Personally Vetted", desc: "Every interventionist is reviewed by our founder, a 20+ year veteran of the field. We check credentials, interview them, verify experience, and confirm ethical standards." },
               { icon: MapPin, title: "National Coverage", desc: "Interventionists across all 50 states, with specialties ranging from substance use to process addictions, adolescents to executives." },
               { icon: Users, title: "The Ethical Standard", desc: "In an industry plagued by patient brokering and kickback culture, we operate differently. Our model is simple: professionals pay for visibility, families pay nothing to be matched." },
