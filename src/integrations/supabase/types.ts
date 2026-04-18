@@ -330,27 +330,17 @@ export type Database = {
             foreignKeyName: "interventionist_click_events_interventionist_id_fkey"
             columns: ["interventionist_id"]
             isOneToOne: false
+            referencedRelation: "interventionist_click_stats"
+            referencedColumns: ["interventionist_id"]
+          },
+          {
+            foreignKeyName: "interventionist_click_events_interventionist_id_fkey"
+            columns: ["interventionist_id"]
+            isOneToOne: false
             referencedRelation: "interventionists"
             referencedColumns: ["id"]
           },
         ]
-      }
-      interventionist_click_stats: {
-        Row: {
-          card_match_clicks: number | null
-          card_profile_clicks: number | null
-          card_total_clicks: number | null
-          interventionist_id: string | null
-          last_click_at: string | null
-          name: string | null
-          profile_email_clicks: number | null
-          profile_match_clicks: number | null
-          profile_phone_clicks: number | null
-          profile_website_clicks: number | null
-          slug: string | null
-          total_clicks: number | null
-        }
-        Relationships: []
       }
       interventionists: {
         Row: {
@@ -555,9 +545,33 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      interventionist_click_stats: {
+        Row: {
+          card_match_clicks: number | null
+          card_profile_clicks: number | null
+          card_total_clicks: number | null
+          interventionist_id: string | null
+          last_click_at: string | null
+          name: string | null
+          profile_email_clicks: number | null
+          profile_match_clicks: number | null
+          profile_phone_clicks: number | null
+          profile_website_clicks: number | null
+          slug: string | null
+          total_clicks: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
+      delete_email: {
+        Args: { message_id: number; queue_name: string }
+        Returns: boolean
+      }
+      enqueue_email: {
+        Args: { payload: Json; queue_name: string }
+        Returns: number
+      }
       get_interventionist_monthly_click_summary: {
         Args: { target_month?: string }
         Returns: {
@@ -576,14 +590,6 @@ export type Database = {
           slug: string
           total_clicks: number
         }[]
-      }
-      delete_email: {
-        Args: { message_id: number; queue_name: string }
-        Returns: boolean
-      }
-      enqueue_email: {
-        Args: { payload: Json; queue_name: string }
-        Returns: number
       }
       move_to_dlq: {
         Args: {
