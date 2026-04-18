@@ -30,7 +30,8 @@ const Header = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { to: "/find", label: "Find an Interventionist" },
+    { to: "/help", label: "Get Matched" },
+    { to: "/find", label: "Browse Interventionists" },
     { to: "/join", label: "Join the Network" },
   ];
 
@@ -116,12 +117,12 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:5418386009" className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
+            <a href="tel:5418386009" className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
               <Phone className="w-4 h-4" />
-              (541) 838-6009
+              Call (541) 838-6009
             </a>
             <Button variant="gold" size="sm" asChild>
-              <Link to="/help">Get Help Now</Link>
+              <Link to="/help">Get Matched Now</Link>
             </Button>
           </div>
 
@@ -195,12 +196,12 @@ const Header = () => {
                 </Link>
               ))}
               <div className="mt-2 px-3 flex flex-col gap-2">
-                <a href="tel:5418386009" className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                <a href="tel:5418386009" className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
                   <Phone className="w-4 h-4" />
-                  (541) 838-6009
+                  Call (541) 838-6009
                 </a>
                 <Button variant="gold" size="sm" asChild>
-                  <Link to="/help">Get Help Now</Link>
+                  <Link to="/help">Get Matched Now</Link>
                 </Button>
               </div>
             </nav>

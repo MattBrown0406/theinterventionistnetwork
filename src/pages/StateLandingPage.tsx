@@ -79,6 +79,11 @@ const StateLandingPage = () => {
               <Link to={`/find?state=${encodeURIComponent(state.name)}`}>Browse Our Directory</Link>
             </Button>
           </div>
+          <div className="mt-5 flex flex-wrap gap-3 text-sm text-primary-foreground/75">
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Free family matching</span>
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">No referral fees</span>
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">State-aware matching</span>
+          </div>
         </div>
       </section>
 
@@ -167,6 +172,26 @@ const StateLandingPage = () => {
               Tell Us Your Situation <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-20 bg-warm-gray/60">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
+            <p className="text-sm font-semibold uppercase tracking-wide text-gold">Why families use this network</p>
+            <h2 className="mt-2 text-2xl md:text-3xl font-bold">A better option than generic helplines or broker sites</h2>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {[
+                'Vetted professionals instead of whoever paid for the lead.',
+                'A matching path based on geography, urgency, and fit.',
+                'Direct family-first guidance without referral-fee pressure.',
+              ].map((item) => (
+                <div key={item} className="rounded-xl bg-warm-gray p-4 text-sm text-muted-foreground">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

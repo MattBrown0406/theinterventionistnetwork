@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createInitialSubmitMeta, markProtectedSubmission, validateProtectedSubmission } from "@/lib/formProtection";
 import { Button } from "@/components/ui/button";
+import { ShieldCheck, CreditCard, BadgeCheck } from "lucide-react";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { specialtyOptions, stateOptions } from "@/data/interventionists";
@@ -135,15 +136,21 @@ const ApplyPage = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-3">
             Apply for <span className="text-gold">Membership</span>
           </h1>
-          <p className="text-primary-foreground/70 max-w-xl">
+          <p className="text-primary-foreground/70 max-w-2xl">
             Complete the form below to apply. Your initial membership payment will be collected via Square after submission. Ongoing billing details are finalized during onboarding.
           </p>
+          <div className="mt-5 flex flex-wrap gap-3 text-sm text-primary-foreground/75">
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Application reviewed by a human</span>
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Initial payment only</span>
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">No referral fees required</span>
+          </div>
         </div>
       </section>
 
       <section className="py-12 lg:py-16">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-start">
+            <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
             <input
               type="text"
               tabIndex={-1}
@@ -242,10 +249,44 @@ const ApplyPage = () => {
               <span>I confirm that I do not pay or accept referral fees for client placements and that I am not employed by a treatment center. <span className="text-muted-foreground">*</span></span>
             </label>
 
+            <div className="rounded-xl border border-border bg-warm-gray p-4 text-sm text-muted-foreground">
+              After you submit, we save your application, generate your Square checkout for the initial membership payment, and redirect you securely to complete payment.
+            </div>
+
             <Button variant="gold" size="lg" type="submit" className="w-full" disabled={loading}>
               {loading ? "Processing..." : "Submit Application & Pay"}
             </Button>
           </form>
+
+            <aside className="space-y-5">
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <h2 className="text-xl font-bold">What happens next</h2>
+                <div className="mt-5 space-y-4 text-sm text-muted-foreground">
+                  <div className="flex gap-3">
+                    <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                    <p>Your application is reviewed for experience, fit, and ethical alignment with the network.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <CreditCard className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                    <p>The checkout collected here is for the initial payment only. Ongoing billing is finalized during onboarding.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                    <p>You are confirming a no-referral-fee, non-brokering standard that protects families and your reputation.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <h2 className="text-xl font-bold">Before you apply</h2>
+                <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+                  <li>Have your certifications and regions served ready.</li>
+                  <li>Use a practice description that explains how you work with families.</li>
+                  <li>Choose the tier you actually want to start with. You can revisit fit during onboarding.</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
     </>

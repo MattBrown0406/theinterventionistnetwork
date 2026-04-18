@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Check, Star } from "lucide-react";
+import { Check, Star, ShieldCheck, BadgeCheck, PhoneCall } from "lucide-react";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 
@@ -79,8 +79,17 @@ const JoinPage = () => {
             <span className="text-gold">Join the Network.</span>
           </h1>
           <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto">
-            The Interventionist Network connects you with families who need your help — through ethical, transparent, referral-fee-free membership.
+            The Interventionist Network connects you with families who need your help through ethical, transparent, referral-fee-free membership.
           </p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-sm text-primary-foreground/75">
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">No referral fees</span>
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Vetted membership only</span>
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Initial payment collected securely</span>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <Button variant="gold" size="lg" asChild><Link to="/apply">Apply Now</Link></Button>
+            <Button variant="hero-outline" size="lg" asChild><a href="#membership-plans">See Membership Plans</a></Button>
+          </div>
         </div>
       </section>
 
@@ -95,9 +104,12 @@ const JoinPage = () => {
       </section>
 
       {/* Pricing */}
-      <section className="py-16 lg:py-24 bg-warm-gray">
+      <section id="membership-plans" className="py-16 lg:py-24 bg-warm-gray">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What Membership Includes</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What Membership Includes</h2>
+          <p className="mx-auto mb-12 max-w-2xl text-center text-muted-foreground">
+            Pick the visibility and support level that matches your stage of practice. Every tier keeps the no-referral-fee standard intact.
+          </p>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {tiers.map((tier) => (
               <div
@@ -131,6 +143,24 @@ const JoinPage = () => {
                 >
                   <Link to="/apply">Apply Now</Link>
                 </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              { icon: ShieldCheck, title: 'Ethical lead flow', desc: 'Families find you through a vetted network, not patient brokering or kickback-driven referrals.' },
+              { icon: BadgeCheck, title: 'Credibility built in', desc: 'Profiles, badges, and visibility are built to help families trust you faster.' },
+              { icon: PhoneCall, title: 'Human review', desc: 'Applications are vetted by a real interventionist, not shoved into an auto-approve directory.' },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <item.icon className="h-6 w-6 text-gold" />
+                <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>

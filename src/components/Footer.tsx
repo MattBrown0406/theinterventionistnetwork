@@ -13,6 +13,14 @@ const Footer = () => {
             <p className="text-sm text-primary-foreground/60 mb-4">
               Trusted Interventionists. Zero Referral Fees. One Mission.
             </p>
+            <div className="mb-5 rounded-xl border border-primary-foreground/10 bg-primary-foreground/5 p-4">
+              <p className="text-sm font-semibold text-primary-foreground">Need help now?</p>
+              <p className="mt-1 text-sm text-primary-foreground/60">Start a confidential intake or call directly if the situation is urgent.</p>
+              <div className="mt-3 flex flex-col gap-2">
+                <Link to="/help" className="text-sm font-medium text-gold hover:underline">Get matched now</Link>
+                <a href="tel:5418386009" className="text-sm font-medium text-primary-foreground hover:text-accent transition-colors">Call (541) 838-6009</a>
+              </div>
+            </div>
             <div className="flex flex-col gap-2">
               <a href="tel:5418386009" className="flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-accent transition-colors">
                 <Phone className="w-4 h-4" />
@@ -30,7 +38,8 @@ const Footer = () => {
             <h4 className="text-sm font-semibold text-primary-foreground mb-4 uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-2">
               {[
-                { to: "/find", label: "Find an Interventionist" },
+                { to: "/help", label: "Get Matched Now" },
+                { to: "/find", label: "Browse Interventionists" },
                 { to: "/join", label: "Join the Network" },
                 { to: "/about", label: "About" },
                 { to: "/contact", label: "Contact" },
@@ -49,7 +58,8 @@ const Footer = () => {
           <div>
             <h4 className="text-sm font-semibold text-primary-foreground mb-4 uppercase tracking-wider">For Families</h4>
             <ul className="space-y-2">
-              <li><Link to="/help" className="text-sm text-primary-foreground/60 hover:text-accent transition-colors">Get Help Now</Link></li>
+              <li><Link to="/help" className="text-sm text-primary-foreground/60 hover:text-accent transition-colors">Get Matched Now</Link></li>
+              <li><a href="tel:5418386009" className="text-sm text-primary-foreground/60 hover:text-accent transition-colors">Call (541) 838-6009</a></li>
               <li><Link to="/find" className="text-sm text-primary-foreground/60 hover:text-accent transition-colors">Browse Interventionists</Link></li>
               <li><Link to="/about" className="text-sm text-primary-foreground/60 hover:text-accent transition-colors">Our Standards</Link></li>
             </ul>
