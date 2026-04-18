@@ -71,6 +71,12 @@ const FloatingContact = () => {
                 </p>
               </div>
             ) : (
+              <div className="border-b border-border bg-warm-gray px-4 py-3 text-xs text-muted-foreground">
+                Confidential contact, reviewed by a real person. If it is urgent, calling is faster.
+              </div>
+            )}
+
+            {!submitted && (
               <form onSubmit={handleSubmit} className="p-4 space-y-3">
                 <input
                   required

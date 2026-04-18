@@ -1,12 +1,13 @@
 import { useEffect, useState, useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Search, Sparkles } from "lucide-react";
+import { Search, Sparkles, X, ShieldCheck, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import InterventionistCard from "@/components/InterventionistCard";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { useInterventionists } from "@/hooks/useInterventionists";
 import { specialtyOptions, stateOptions } from "@/data/interventionists";
+import { getActiveDirectoryFilters } from "@/lib/directoryUtils";
 
 const FindPage = () => {
   const [searchParams] = useSearchParams();
@@ -25,6 +26,12 @@ const FindPage = () => {
     if (requestedSpecialty) setSpecialtyFilter(requestedSpecialty);
     if (requestedQuery) setSearchQuery(requestedQuery);
   }, [searchParams]);
+
+  const activeFilters = useMemo(() => getActiveDirectoryFilters({
+    searchQuery,
+    stateFilter,
+    specialtyFilter,
+  }), [searchQuery, stateFilter, specialtyFilter]);
 
   const filtered = useMemo(() => {
     const normalizedQuery = searchQuery.trim().toLowerCase();
@@ -95,11 +102,24 @@ const FindPage = () => {
           <p className="text-primary-foreground/70 max-w-2xl">
             Search our vetted network by location, specialty, or urgency. Every professional listed has been personally reviewed.
           </p>
+          <div className="mt-5 flex flex-wrap gap-3 text-sm text-primary-foreground/75">
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Personally vetted</span>
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">No referral fees</span>
+            <span className="rounded-full border border-primary-foreground/15 px-3 py-1">Families matched by fit, not brokerage</span>
+          </div>
         </div>
       </section>
 
       <section className="py-8 border-b border-border bg-warm-gray">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 space-y-4">
+          <div className="rounded-2xl border border-border bg-card p-4 text-sm text-muted-foreground shadow-sm">
+            <div className="flex items-start gap-3">
+              <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+              <p>
+                Every listing here is reviewed before publication. Families are matched based on geography, specialty, and urgency, not who pays per lead.
+              </p>
+            </div>
+          </div>
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-[1.2]">
               <label className="block text-xs font-medium text-muted-foreground mb-1.5">Search by name, state, region, or specialty</label>
@@ -123,6 +143,33 @@ const FindPage = () => {
               <Button variant="outline" size="default" onClick={() => { setSearchQuery(""); setStateFilter(""); setSpecialtyFilter(""); }}>Clear</Button>
             </div>
           </div>
+
+          {activeFilters.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2">
+              {activeFilters.map((filter) => (
+                <button
+                  key={filter.key}
+                  type="button"
+                  onClick={() => {
+                    if (filter.key === "query") setSearchQuery("");
+                    if (filter.key === "state") setStateFilter("");
+                    if (filter.key === "specialty") setSpecialtyFilter("");
+                  }}
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:border-gold hover:text-foreground"
+                >
+                  {filter.label}
+                  <X className="h-3.5 w-3.5" />
+                </button>
+              ))}
+              <button
+                type="button"
+                onClick={() => { setSearchQuery(""); setStateFilter(""); setSpecialtyFilter(""); }}
+                className="text-sm font-medium text-gold hover:underline"
+              >
+                Clear all filters
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -152,10 +199,22 @@ const FindPage = () => {
           ) : null}
 
           {isLoading ? (
-            <p className="text-muted-foreground">Loading interventionists...</p>
+            <div className="rounded-2xl border border-border bg-card p-8 text-center shadow-sm">
+              <p className="text-muted-foreground">Loading interventionists...</p>
+            </div>
           ) : filtered.length > 0 ? (
             <>
-              <p className="text-sm text-muted-foreground mb-6">{filtered.length} interventionist{filtered.length !== 1 ? "s" : ""} found</p>
+              <div className="mb-6 flex flex-col gap-3 rounded-2xl border border-border bg-card p-5 shadow-sm md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-foreground">{filtered.length} interventionist{filtered.length !== 1 ? "s" : ""} found</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Featured and strongest-fit matches rise to the top when filters are active.</p>
+                </div>
+                <Button variant="outline" asChild>
+                  <Link to={`/help${stateFilter ? `?state=${encodeURIComponent(stateFilter)}` : ""}`}>
+                    Want help choosing? <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filtered.map((person) => (
                   <InterventionistCard key={person.slug} {...person} />
@@ -163,11 +222,18 @@ const FindPage = () => {
               </div>
             </>
           ) : (
-            <div className="text-center py-16">
+            <div className="rounded-3xl border border-border bg-card px-6 py-16 text-center shadow-sm">
               <Search className="w-12 h-12 text-muted-foreground/30 mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">No Exact Matches Found</h3>
-              <p className="text-muted-foreground mb-6 max-w-md mx-auto">Tell us about your situation and we will personally connect you with a vetted interventionist who fits your location, urgency, and needs.</p>
-              <Button variant="gold" asChild><Link to={`/help${stateFilter ? `?state=${encodeURIComponent(stateFilter)}` : ""}`}>Tell Us Your Situation</Link></Button>
+              <h3 className="text-xl font-bold mb-2">No exact matches yet</h3>
+              <p className="text-muted-foreground mb-4 max-w-xl mx-auto">That does not mean we cannot help. Tell us about your situation and we will personally narrow the field based on geography, urgency, and the kind of case you are dealing with.</p>
+              <div className="mx-auto mb-6 max-w-lg rounded-2xl border border-border bg-warm-gray p-4 text-left text-sm text-muted-foreground">
+                <p className="font-semibold text-foreground">Best next step</p>
+                <p className="mt-2">Use the intake so we can recommend the strongest fit instead of making you guess from a short list.</p>
+              </div>
+              <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Button variant="gold" asChild><Link to={`/help${stateFilter ? `?state=${encodeURIComponent(stateFilter)}` : ""}`}>Tell Us Your Situation</Link></Button>
+                <Button variant="outline" onClick={() => { setSearchQuery(""); setStateFilter(""); setSpecialtyFilter(""); }}>Reset Search</Button>
+              </div>
             </div>
           )}
         </div>

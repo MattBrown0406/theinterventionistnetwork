@@ -306,6 +306,11 @@ const HelpPage = () => {
               After you submit, we review your situation, prioritize urgency, and connect you with the best-fit interventionist, often the same day for crisis cases.
             </div>
 
+            <div className="rounded-xl border border-gold/20 bg-gold-light/30 p-4 text-sm text-muted-foreground">
+              <p className="font-semibold text-foreground">Why families trust this intake</p>
+              <p className="mt-2">This is a confidential matching request, not a referral-fee lead form. We review for fit, geography, and urgency before recommending anyone.</p>
+            </div>
+
             <p className="text-xs text-muted-foreground">
               Prefer to talk first? Call <a href="tel:5418386009" className="font-medium text-foreground underline underline-offset-2">(541) 838-6009</a>.
             </p>

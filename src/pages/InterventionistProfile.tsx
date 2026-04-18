@@ -102,6 +102,10 @@ const InterventionistProfile = () => {
             </div>
             <div className="space-y-6">
               <div className="bg-warm-gray rounded-lg p-6">
+                <div className="mb-4 rounded-xl border border-border bg-background p-4 text-sm text-muted-foreground">
+                  <p className="font-semibold text-foreground">Why families use this profile</p>
+                  <p className="mt-2">This interventionist is part of a vetted network that does not charge referral fees or sell family leads.</p>
+                </div>
                 <h3 className="font-bold mb-2">Request a Match With {person.name.split(" ")[0]}</h3>
                 <p className="mb-4 text-sm text-muted-foreground">
                   Prefer this interventionist? We will carry that preference into your intake so we can review fit faster.
