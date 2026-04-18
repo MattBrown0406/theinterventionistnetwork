@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createInitialSubmitMeta, markProtectedSubmission, validateProtectedSubmission } from "@/lib/formProtection";
 import { Phone, Mail, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
@@ -16,6 +17,7 @@ const inquiryTypes = [
 const ContactPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitMeta, setSubmitMeta] = useState(createInitialSubmitMeta);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -26,6 +28,12 @@ const ContactPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const guard = validateProtectedSubmission("contact", submitMeta.website, submitMeta.startedAt);
+    if (!guard.ok) {
+      toast.error(guard.reason || "Unable to submit right now.");
+      return;
+    }
+
     setLoading(true);
     try {
       const { error } = await supabase.from("contact_submissions").insert({
@@ -36,7 +44,9 @@ const ContactPage = () => {
         message: form.message,
       });
       if (error) throw error;
+      markProtectedSubmission("contact");
       setSubmitted(true);
+      setSubmitMeta(createInitialSubmitMeta());
       window.scrollTo(0, 0);
     } catch {
       toast.error("Something went wrong. Please try again or call us directly.");
@@ -88,19 +98,28 @@ const ContactPage = () => {
           <div className="grid lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
             <div className="lg:col-span-2">
               <form onSubmit={handleSubmit} className="space-y-6">
+                <input
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden"
+                  value={submitMeta.website}
+                  onChange={(e) => setSubmitMeta((prev) => ({ ...prev, website: e.target.value }))}
+                />
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-1.5">Name *</label>
-                    <input required type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                    <input required type="text" minLength={2} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-1.5">Email *</label>
-                    <input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                    <input required type="email" maxLength={180} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1.5">Phone</label>
-                  <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                  <input type="tel" minLength={7} maxLength={30} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1.5">I am... *</label>
@@ -111,7 +130,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1.5">Message *</label>
-                  <textarea required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring" />
+                  <textarea required rows={5} minLength={10} maxLength={3000} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring" />
                 </div>
                 <Button variant="gold" size="lg" type="submit" disabled={loading}>
                   {loading ? "Sending..." : "Send Message"}

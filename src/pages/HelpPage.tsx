@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createInitialSubmitMeta, markProtectedSubmission, validateProtectedSubmission } from "@/lib/formProtection";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -23,6 +24,7 @@ const urgencyOptions = [
 const HelpPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitMeta, setSubmitMeta] = useState(createInitialSubmitMeta);
   const [form, setForm] = useState({
     firstName: "",
     email: "",
@@ -39,6 +41,12 @@ const HelpPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const guard = validateProtectedSubmission("help", submitMeta.website, submitMeta.startedAt);
+    if (!guard.ok) {
+      toast.error(guard.reason || "Unable to submit right now.");
+      return;
+    }
+
     setLoading(true);
     try {
       const { error } = await supabase.from("family_intakes").insert({
@@ -54,7 +62,9 @@ const HelpPage = () => {
         description: form.description || null,
       });
       if (error) throw error;
+      markProtectedSubmission("help");
       setSubmitted(true);
+      setSubmitMeta(createInitialSubmitMeta());
       window.scrollTo(0, 0);
     } catch {
       toast.error("Something went wrong. Please try again or call us directly.");
@@ -111,20 +121,29 @@ const HelpPage = () => {
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4 max-w-2xl">
           <form onSubmit={handleSubmit} className="space-y-6">
+            <input
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+              value={submitMeta.website}
+              onChange={(e) => setSubmitMeta((prev) => ({ ...prev, website: e.target.value }))}
+            />
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium mb-1.5">Your First Name *</label>
-                <input required type="text" value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                <input required type="text" minLength={2} value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
               </div>
               <div>
                 <label className="block text-sm font-medium mb-1.5">Your Email *</label>
-                <input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                <input required type="email" maxLength={180} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
               </div>
             </div>
 
             <div>
               <label className="block text-sm font-medium mb-1.5">Your Phone Number *</label>
-              <input required type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+              <input required type="tel" minLength={7} maxLength={30} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
@@ -177,7 +196,7 @@ const HelpPage = () => {
 
             <div>
               <label className="block text-sm font-medium mb-1.5">Brief Description (optional)</label>
-              <textarea rows={4} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Tell us anything that might help us match you with the right professional..." />
+              <textarea rows={4} maxLength={3000} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Tell us anything that might help us match you with the right professional..." />
             </div>
 
             <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">

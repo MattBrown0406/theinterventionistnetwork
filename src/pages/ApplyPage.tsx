@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createInitialSubmitMeta, markProtectedSubmission, validateProtectedSubmission } from "@/lib/formProtection";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
@@ -26,6 +27,7 @@ const fieldDefinitions = [
 
 const ApplyPage = () => {
   const [loading, setLoading] = useState(false);
+  const [submitMeta, setSubmitMeta] = useState(createInitialSubmitMeta);
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -55,6 +57,12 @@ const ApplyPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const guard = validateProtectedSubmission("apply", submitMeta.website, submitMeta.startedAt);
+    if (!guard.ok) {
+      toast.error(guard.reason || "Unable to submit right now.");
+      return;
+    }
+
     setLoading(true);
     try {
       // 1. Save application to database
@@ -93,6 +101,8 @@ const ApplyPage = () => {
 
       // 3. Redirect to Square checkout
       if (checkoutData?.checkoutUrl) {
+        markProtectedSubmission("apply");
+        setSubmitMeta(createInitialSubmitMeta());
         window.location.href = checkoutData.checkoutUrl;
       } else {
         throw new Error("No checkout URL returned");
@@ -134,6 +144,15 @@ const ApplyPage = () => {
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4 max-w-2xl">
           <form onSubmit={handleSubmit} className="space-y-6">
+            <input
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+              value={submitMeta.website}
+              onChange={(e) => setSubmitMeta((prev) => ({ ...prev, website: e.target.value }))}
+            />
             {fieldDefinitions.map((field) => (
               <div key={field.key}>
                 <label className="block text-sm font-medium mb-1.5">{field.label}</label>
@@ -141,6 +160,8 @@ const ApplyPage = () => {
                   type={field.type}
                   required={field.required}
                   value={form[field.key]}
+                  minLength={field.key === "yearsExperience" ? undefined : 2}
+                  maxLength={field.key === "yearsExperience" ? undefined : 180}
                   onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
                   className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
                 />
@@ -158,7 +179,7 @@ const ApplyPage = () => {
                 ))}
               </div>
               {form.certifications.includes("Other") && (
-                <input type="text" placeholder="Please specify" value={form.certOther} onChange={(e) => setForm({ ...form, certOther: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm mt-2 focus:outline-none focus:ring-2 focus:ring-ring" />
+                <input type="text" placeholder="Please specify" maxLength={180} value={form.certOther} onChange={(e) => setForm({ ...form, certOther: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm mt-2 focus:outline-none focus:ring-2 focus:ring-ring" />
               )}
             </div>
 
@@ -189,7 +210,7 @@ const ApplyPage = () => {
 
             <div>
               <label className="block text-sm font-medium mb-1.5">Brief Description of Your Practice *</label>
-              <textarea required rows={4} value={form.practiceDescription} onChange={(e) => setForm({ ...form, practiceDescription: e.target.value })} className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring" />
+              <textarea required rows={4} minLength={30} maxLength={4000} value={form.practiceDescription} onChange={(e) => setForm({ ...form, practiceDescription: e.target.value })} className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring" />
             </div>
 
             <div>
