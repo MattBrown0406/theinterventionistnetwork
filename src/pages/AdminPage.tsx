@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useInterventionists, type Interventionist } from "@/hooks/useInterventionists";
-import { useQueryClient } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -38,6 +38,21 @@ const emptyForm = {
 
 type FormData = typeof emptyForm;
 
+type ClickStatsRow = {
+  interventionist_id: string;
+  name: string;
+  slug: string;
+  total_clicks: number;
+  card_profile_clicks: number;
+  card_match_clicks: number;
+  card_total_clicks: number;
+  profile_match_clicks: number;
+  profile_phone_clicks: number;
+  profile_email_clicks: number;
+  profile_website_clicks: number;
+  last_click_at: string | null;
+};
+
 const AdminPage = () => {
   const [session, setSession] = useState<Awaited<ReturnType<typeof supabase.auth.getSession>>["data"]["session"] | null>(null);
   const [loading, setLoading] = useState(true);
@@ -45,6 +60,18 @@ const AdminPage = () => {
   const { toast } = useToast();
   const queryClient = useQueryClient();
   const { data: interventionists = [], isLoading } = useInterventionists();
+  const { data: clickStats = [] } = useQuery({
+    queryKey: ["interventionist-click-stats"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("interventionist_click_stats")
+        .select("*")
+        .order("card_total_clicks", { ascending: false })
+        .order("total_clicks", { ascending: false });
+      if (error) throw error;
+      return (data ?? []) as ClickStatsRow[];
+    },
+  });
 
   const [editing, setEditing] = useState<string | null>(null); // id or "new"
   const [form, setForm] = useState<FormData>(emptyForm);
@@ -209,6 +236,9 @@ const AdminPage = () => {
               </TabsTrigger>
               <TabsTrigger value="business" className="gap-1.5">
                 <Briefcase className="w-4 h-4" /> Business Development
+              </TabsTrigger>
+              <TabsTrigger value="analytics" className="gap-1.5">
+                <Briefcase className="w-4 h-4" /> Click Analytics
               </TabsTrigger>
             </TabsList>
 
@@ -392,6 +422,53 @@ const AdminPage = () => {
 
             <TabsContent value="business">
               <AdminMaterialsTab category="business" categoryLabel="Business Development Resource" />
+            </TabsContent>
+
+            <TabsContent value="analytics">
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <h2 className="text-xl font-bold">Interventionist click analytics</h2>
+                    <p className="text-sm text-muted-foreground">Tracks every interventionist card click plus profile CTA clicks. Monthly rollups feed the end-of-month email report.</p>
+                  </div>
+                </div>
+
+                <div className="mt-6 overflow-x-auto">
+                  <table className="min-w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-border text-left text-muted-foreground">
+                        <th className="py-3 pr-4 font-medium">Interventionist</th>
+                        <th className="py-3 pr-4 font-medium">Card views</th>
+                        <th className="py-3 pr-4 font-medium">Card match clicks</th>
+                        <th className="py-3 pr-4 font-medium">Profile match clicks</th>
+                        <th className="py-3 pr-4 font-medium">Phone</th>
+                        <th className="py-3 pr-4 font-medium">Email</th>
+                        <th className="py-3 pr-4 font-medium">Website</th>
+                        <th className="py-3 pr-4 font-medium">Total tracked</th>
+                        <th className="py-3 font-medium">Last click</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {clickStats.map((row) => (
+                        <tr key={row.interventionist_id} className="border-b border-border/70 align-top">
+                          <td className="py-3 pr-4">
+                            <div className="font-medium text-foreground">{row.name}</div>
+                            <div className="text-xs text-muted-foreground">/{row.slug}</div>
+                          </td>
+                          <td className="py-3 pr-4">{row.card_profile_clicks}</td>
+                          <td className="py-3 pr-4">{row.card_match_clicks}</td>
+                          <td className="py-3 pr-4">{row.profile_match_clicks}</td>
+                          <td className="py-3 pr-4">{row.profile_phone_clicks}</td>
+                          <td className="py-3 pr-4">{row.profile_email_clicks}</td>
+                          <td className="py-3 pr-4">{row.profile_website_clicks}</td>
+                          <td className="py-3 pr-4 font-medium">{row.total_clicks}</td>
+                          <td className="py-3 text-muted-foreground">{row.last_click_at ? new Date(row.last_click_at).toLocaleString() : "—"}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </TabsContent>
           </Tabs>
         </div>

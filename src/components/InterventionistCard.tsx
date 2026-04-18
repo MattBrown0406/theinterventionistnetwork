@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { MapPin, Award, Clock, ShieldCheck, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackInterventionistClick } from "@/lib/interventionistTracking";
 
 interface InterventionistCardProps {
+  id: string;
   slug: string;
   name: string;
   credentials: string;
@@ -19,6 +21,7 @@ interface InterventionistCardProps {
 }
 
 const InterventionistCard = ({
+  id,
   slug,
   name,
   credentials,
@@ -78,10 +81,32 @@ const InterventionistCard = ({
 
       <div className="flex gap-2 mt-auto">
         <Button variant="outline" size="sm" asChild className="flex-1">
-          <Link to={`/interventionist/${slug}`}>View Profile</Link>
+          <Link
+            to={`/interventionist/${slug}`}
+            onClick={() => {
+              void trackInterventionistClick({
+                interventionistId: id,
+                slug,
+                clickType: "card_profile",
+              });
+            }}
+          >
+            View Profile
+          </Link>
         </Button>
         <Button variant="gold" size="sm" asChild className="flex-1">
-          <Link to={`/help?interventionist=${slug}`}>Request Match</Link>
+          <Link
+            to={`/help?interventionist=${slug}`}
+            onClick={() => {
+              void trackInterventionistClick({
+                interventionistId: id,
+                slug,
+                clickType: "card_match",
+              });
+            }}
+          >
+            Request Match
+          </Link>
         </Button>
       </div>
     </div>

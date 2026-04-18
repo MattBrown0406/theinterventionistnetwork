@@ -4,6 +4,7 @@ import { MapPin, Clock, Award, ArrowLeft, Phone, Globe, Mail } from "lucide-reac
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { trackInterventionistClick } from "@/lib/interventionistTracking";
 import { useInterventionist } from "@/hooks/useInterventionists";
 
 const InterventionistProfile = () => {
@@ -106,11 +107,11 @@ const InterventionistProfile = () => {
                   Prefer this interventionist? We will carry that preference into your intake so we can review fit faster.
                 </p>
                 <div className="space-y-3 mb-6">
-                  {person.phone && <a href={`tel:${person.phone.replace(/\D/g, "")}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors"><Phone className="w-4 h-4" />{person.phone}</a>}
-                  {person.email && <a href={`mailto:${person.email}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors"><Mail className="w-4 h-4" />{person.email}</a>}
-                  {person.website && <a href={person.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors"><Globe className="w-4 h-4" />Website</a>}
+                  {person.phone && <a href={`tel:${person.phone.replace(/\D/g, "")}`} onClick={() => { void trackInterventionistClick({ interventionistId: person.id, slug: person.slug, clickType: "profile_phone" }); }} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors"><Phone className="w-4 h-4" />{person.phone}</a>}
+                  {person.email && <a href={`mailto:${person.email}`} onClick={() => { void trackInterventionistClick({ interventionistId: person.id, slug: person.slug, clickType: "profile_email" }); }} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors"><Mail className="w-4 h-4" />{person.email}</a>}
+                  {person.website && <a href={person.website} target="_blank" rel="noopener noreferrer" onClick={() => { void trackInterventionistClick({ interventionistId: person.id, slug: person.slug, clickType: "profile_website" }); }} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors"><Globe className="w-4 h-4" />Website</a>}
                 </div>
-                <Button variant="gold" className="w-full" asChild><Link to={helpHref}>Request a Match</Link></Button>
+                <Button variant="gold" className="w-full" asChild><Link to={helpHref} onClick={() => { void trackInterventionistClick({ interventionistId: person.id, slug: person.slug, clickType: "profile_match" }); }}>Request a Match</Link></Button>
               </div>
               <div className="bg-warm-gray rounded-lg p-6">
                 <h3 className="font-bold mb-3">Specialties</h3>

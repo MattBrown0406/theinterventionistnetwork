@@ -2,3 +2,6 @@ project_id = "rrgjcbdzkgowowjivqdt"
 
 [functions.process-email-queue]
 verify_jwt = true
+
+[functions.send-interventionist-monthly-stats]
+verify_jwt = true
