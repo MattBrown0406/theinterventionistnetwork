@@ -152,7 +152,7 @@ const FAQPage = () => {
               <Link to="/help">Get Help Now</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link to="/find">Find an Interventionist</Link>
+              <a href="tel:5418386009">Call (541) 838-6009</a>
             </Button>
           </div>
         </div>

@@ -73,10 +73,10 @@ const StateLandingPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="gold" size="xl" asChild>
-              <Link to="/help">Get Matched With an Interventionist</Link>
+              <Link to={`/help?state=${encodeURIComponent(state.name)}`}>Get Matched With an Interventionist</Link>
             </Button>
             <Button variant="outline" size="xl" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-              <Link to="/find">Browse Our Directory</Link>
+              <Link to={`/find?state=${encodeURIComponent(state.name)}`}>Browse Our Directory</Link>
             </Button>
           </div>
         </div>
@@ -163,7 +163,7 @@ const StateLandingPage = () => {
           <p className="text-muted-foreground leading-relaxed mb-6">{state.familyGuidance}</p>
           <p className="text-muted-foreground leading-relaxed mb-8">{state.interventionContext}</p>
           <Button variant="gold" size="lg" asChild>
-            <Link to="/help" className="inline-flex items-center gap-2">
+            <Link to={`/help?state=${encodeURIComponent(state.name)}`} className="inline-flex items-center gap-2">
               Tell Us Your Situation <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
@@ -218,7 +218,7 @@ const StateLandingPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="gold" size="xl" asChild>
-              <Link to="/help">Get Free Family Matching</Link>
+              <Link to={`/help?state=${encodeURIComponent(state.name)}`}>Get Free Family Matching</Link>
             </Button>
             <Button variant="outline" size="xl" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
               <a href="tel:5418386009" className="inline-flex items-center gap-2">

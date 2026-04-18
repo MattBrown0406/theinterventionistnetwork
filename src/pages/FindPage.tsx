@@ -1,5 +1,5 @@
-import { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState, useMemo } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { Search, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import InterventionistCard from "@/components/InterventionistCard";
@@ -9,11 +9,22 @@ import { useInterventionists } from "@/hooks/useInterventionists";
 import { specialtyOptions, stateOptions } from "@/data/interventionists";
 
 const FindPage = () => {
+  const [searchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [stateFilter, setStateFilter] = useState("");
   const [specialtyFilter, setSpecialtyFilter] = useState("");
 
   const { data: interventionists = [], isLoading } = useInterventionists();
+
+  useEffect(() => {
+    const requestedState = searchParams.get("state")?.trim();
+    const requestedSpecialty = searchParams.get("specialty")?.trim();
+    const requestedQuery = searchParams.get("q")?.trim();
+
+    if (requestedState) setStateFilter(requestedState);
+    if (requestedSpecialty) setSpecialtyFilter(requestedSpecialty);
+    if (requestedQuery) setSearchQuery(requestedQuery);
+  }, [searchParams]);
 
   const filtered = useMemo(() => {
     const normalizedQuery = searchQuery.trim().toLowerCase();
