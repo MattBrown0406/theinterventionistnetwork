@@ -24,6 +24,7 @@ import blogAriseJohnsonCraft from "@/assets/blog-arise-johnson-craft-models.jpg"
 import blogScopeOfPractice from "@/assets/blog-scope-of-practice.jpg";
 import blogDividedFamilies from "@/assets/blog-working-with-divided-families.jpg";
 import blogPreEngagement from "@/assets/blog-pre-engagement-assessment.jpg";
+import blogInterventionLetter from "@/assets/blog-how-to-write-intervention-letter.jpg";
 
 export type BlogPostEntry = {
   title: string;
@@ -35,6 +36,69 @@ export type BlogPostEntry = {
 };
 
 export const blogPosts: Record<string, BlogPostEntry> = {
+  "how-to-write-an-intervention-letter": {
+    title: "How to Write an Intervention Letter That Actually Reaches Your Loved One",
+    author: "Matt Brown",
+    date: "2026-04-24",
+    image: blogInterventionLetter,
+    imageAlt: "A close-up of a person's hands writing a heartfelt intervention letter on cream stationery with a fountain pen in warm natural light",
+    content: [
+      "One of the most powerful tools in a planned intervention is the letter — and one of the most misunderstood. Families preparing for an intervention are often told to write one, but rarely given clear guidance on how to write an intervention letter that opens a door rather than slamming one shut.",
+      "Done well, an intervention letter is an act of love delivered with precision. Done poorly, it can trigger defensiveness, shame, or a complete shutdown from the person you're trying to reach. This guide walks you through the purpose, structure, and tone of an effective intervention letter, with practical examples along the way.",
+      "## What Is an Intervention Letter — and Why Does It Matter?",
+      "An intervention letter is a prepared, written statement that a family member or loved one reads aloud during an intervention. Its purpose is not to argue, lecture, or diagnose — it is to communicate specific impact and offer unconditional love alongside a clear request for change.",
+      "The letter matters because it keeps you focused. In a high-emotion moment, it's easy to drift into blame or collapse into tears without making the point you came to make. A well-written letter keeps you anchored to what you actually want to say — and keeps the person in the room listening rather than reacting.",
+      "Professional interventionists use these letters as part of a structured process. Each participating family member reads their own letter, creating a chorus of consistent, caring voices. When everyone stays on script — prepared, specific, and loving — the cumulative weight of those letters is often what moves someone toward accepting help.",
+      "## The Structure of an Effective Intervention Letter",
+      "A strong intervention letter follows a simple but intentional structure. It's not a novel — it's closer to three to five short paragraphs with a clear arc: connection, impact, and request.",
+      "### 1. Start with love and a specific memory",
+      "Open by naming the relationship and grounding it in something real. Don't lead with the problem. Lead with who this person is to you and what you love about them.",
+      "Example: \"You've been my brother for 34 years. I still think about the summer you taught me to ride a bike — you ran alongside me for three blocks and didn't let go until I asked you to. That's who you are to me.\"",
+      "This kind of opening disarms defensiveness. It reminds your loved one — and you — that this moment is coming from connection, not judgment.",
+      "### 2. Name specific behaviors and their impact — without labels",
+      "This is the hardest part to write well. You want to communicate the real harm you've witnessed without diagnosing, moralizing, or attacking.",
+      "The formula: describe a specific behavior, then describe how it affected you. Stay in the first person. Avoid words like \"always,\" \"never,\" \"addict,\" or \"alcoholic.\"",
+      "Example: \"Last Thanksgiving, you left dinner early without saying goodbye. I watched your kids look for you at the table. I didn't know what to tell them, and I cried on the way home.\"",
+      "Specific and observable. No generalization. No label. Just the truth of what happened and how it landed.",
+      "### 3. State clearly what you are asking for",
+      "This is where many families go vague. Don't. Your loved one needs to hear a direct, concrete request — not a wish, not a hope, not a dream.",
+      "Example: \"I'm asking you today to say yes to going to treatment. The team here has a place ready. We've already handled the details. All you have to do is say yes.\"",
+      "Clarity here is an act of kindness. It removes ambiguity and makes the decision binary: yes or no. That's easier to respond to than a fog of emotion.",
+      "### 4. State your bottom line — calmly and specifically",
+      "If the person chooses not to accept help, family members often agree in advance to change something about how they interact with the person's addiction — stopping financial support, ending certain enabling behaviors, or creating distance.",
+      "This is not a threat. It's a boundary. Frame it that way.",
+      "Example: \"If you choose not to go today, I won't be able to continue paying your phone bill or letting you stay at our house when you've been using. That's not me punishing you — it's me stopping participation in something that's hurting you.\"",
+      "Note: Your interventionist will guide you through this step carefully. The specifics of bottom lines should always be reviewed with a professional before the intervention takes place.",
+      "## What to Avoid When Writing Your Letter",
+      "Knowing what not to write is just as important as knowing what to include. These are the most common mistakes families make — and the ones most likely to derail the moment.",
+      "• Avoid ultimatums that you won't follow through on. Empty consequences destroy credibility and teach your loved one that there are no real limits.\n• Avoid anger-driven language. Words like \"ruined,\" \"destroyed,\" or \"selfish\" trigger shame and defensiveness — not openness.\n• Avoid listing every incident over the past ten years. One or two specific, recent examples are more powerful than a catalog of grievances.\n• Avoid making promises you can't keep. Don't promise unconditional support for whatever they choose — that removes accountability.\n• Avoid apologizing for being there. Some families feel guilty and begin to apologize mid-letter. This is your loved one's moment to hear truth. Hold it.",
+      "## How Long Should an Intervention Letter Be?",
+      "Short enough to hold attention. Long enough to be felt.",
+      "In practice, most intervention letters take between two and four minutes to read aloud. That's roughly 300 to 500 words. If yours is running longer, edit it. Every sentence should earn its place.",
+      "Your interventionist will typically review all letters before the intervention day. Use that review session. A professional set of eyes will help you cut what doesn't serve the moment and strengthen what does.",
+      "## Practice Reading Your Letter Out Loud",
+      "This step is skipped more than any other — and it's arguably the most important.",
+      "Reading your letter silently in the kitchen at midnight feels very different from reading it in a room with your loved one sitting three feet away. The emotion that hits you in the moment can be overwhelming if you haven't prepared for it.",
+      "Read your letter aloud at least five times before the intervention. Read it to your interventionist. Read it to a trusted friend. Notice where your voice breaks and practice staying steady through those moments. You don't have to be emotionless — but you do need to be able to finish.",
+      "The goal is not to perform. The goal is to be fully present while delivering something true. Practice makes that possible.",
+      "## The Letter Is a Beginning, Not an Ending",
+      "Writing and reading an intervention letter is one of the most courageous things a family member can do. It requires honesty, preparation, and the willingness to show up fully — even when the outcome is uncertain.",
+      "You don't have to get this perfect. You have to get it real.",
+      "If you're preparing for an intervention and want guidance on finding a qualified professional to lead the process, The Interventionist Network connects families with certified interventionists across the country. A trained interventionist will help you prepare your letters, practice the process, and navigate whatever comes up on the day.",
+      "You don't have to do this alone — and you shouldn't.",
+      "## Frequently Asked Questions About Intervention Letters",
+      "## Do I have to read a letter during an intervention?",
+      "Not every intervention model requires written letters, but most professional interventionists recommend them. Reading a prepared letter helps you stay focused and prevents the conversation from becoming reactive or unplanned. It also ensures that every participant has an equal voice in the room.",
+      "## What if I start crying and can't finish reading my letter?",
+      "This is very common, and your interventionist will prepare you for it. The best approach is to pause, breathe, and continue — your emotion is not a problem, it's proof that this matters. Practicing your letter aloud multiple times before the intervention will help you build the steadiness to get through it.",
+      "## Should children write intervention letters?",
+      "This depends on the child's age, maturity, and the specific circumstances. Many interventionists do involve adult children or older teenagers when appropriate. Younger children are typically not present in the intervention itself. Your interventionist will help you make this call based on what's right for your family.",
+      "## Can I send my letter before the intervention instead of reading it in person?",
+      "This is generally not recommended. The power of an intervention letter comes from being read in real time, in the presence of a professional who can manage the room. Sending a letter in advance gives your loved one the opportunity to react — or disappear — without any support structure in place.",
+      "## What if my loved one refuses to listen and leaves?",
+      "A trained interventionist anticipates this and has protocols for managing a walkout or refusal. This is one of the most important reasons to work with a professional rather than attempting a family-led intervention. Your letter still matters — even a brief moment of connection before someone walks out can plant a seed.",
+    ],
+  },
   "pre-engagement-assessment-what-interventionists-evaluate-before-taking-a-case": {
     title: "The Pre-Engagement Assessment: What Professional Interventionists Should Evaluate Before Taking a Case",
     author: "Matt Brown",
