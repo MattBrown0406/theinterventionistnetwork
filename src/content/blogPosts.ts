@@ -27,6 +27,7 @@ import blogPreEngagement from "@/assets/blog-pre-engagement-assessment.jpg";
 import blogInterventionLetter from "@/assets/blog-how-to-write-intervention-letter.jpg";
 import blogHiddenCostWaiting from "@/assets/blog-hidden-cost-of-waiting.jpg";
 import blogNeuroscienceAddiction from "@/assets/blog-neuroscience-of-addiction.jpg";
+import blogFamilySamePage from "@/assets/blog-family-same-page-intervention.jpg";
 
 export type BlogPostEntry = {
   title: string;
@@ -38,6 +39,63 @@ export type BlogPostEntry = {
 };
 
 export const blogPosts: Record<string, BlogPostEntry> = {
+  "getting-your-family-on-the-same-page-before-intervention": {
+    title: "Getting Your Family on the Same Page Before an Intervention",
+    author: "Matt Brown",
+    date: "2026-05-01",
+    image: blogFamilySamePage,
+    imageAlt: "Family members sitting together in a warm living room having an earnest conversation about intervention planning",
+    content: [
+      "The moment a family decides an intervention might be necessary is rarely a moment of calm agreement. More often, it looks like this: one person has been watching the situation deteriorate for months, finally ready to act — while a sibling is in denial, a spouse is terrified of conflict, and a parent quietly wonders if they're overreacting.",
+      "Getting your family on the same page before an intervention is one of the most critical — and least discussed — parts of the entire process. And it's where many families stall before they ever get started.",
+      "This guide walks you through how to have those conversations, how to address the most common points of disagreement, and why a professional interventionist is often the person who makes family alignment possible in the first place.",
+      "## Why Family Alignment Matters Before an Intervention",
+      "A successful intervention requires everyone involved to be working toward the same goal: getting your loved one to accept help. When family members disagree — about whether an intervention is necessary, who should be in the room, or what happens if it doesn't work — that division doesn't stay hidden. Your loved one will sense it, and it gives them an out.",
+      "Research on intervention outcomes consistently points to family cohesion as a central factor in whether someone agrees to enter treatment. When the family presents a united, loving, prepared front, the odds of a 'yes' increase substantially. When they don't, the intervention can become a stage for unresolved conflict — which helps no one.",
+      "Family alignment doesn't mean every member has to feel exactly the same way going in. It means you've agreed on what you're doing, why you're doing it, and how you're going to show up. That's achievable — even for families with complicated histories.",
+      "## The Most Common Points of Disagreement — and How to Address Them",
+      "### \"I Don't Think It's That Bad\"",
+      "Denial isn't unique to the person struggling with addiction. It runs through families too. When someone says 'I don't think it's that bad,' they usually mean 'I'm afraid of what happens if it is that bad.' This isn't resistance — it's fear wearing a different coat.",
+      "Don't argue about severity. Instead, invite them to look at specifics together: the missed events, the financial consequences, the close calls, the visible changes in behavior over time. A professional interventionist can conduct a family consultation before any intervention is planned, which often helps minimizing family members finally hear what they've been avoiding.",
+      "### \"I Don't Want to Blindside Them\"",
+      "This is one of the most common hesitations, particularly from spouses and partners. The concern is real and worth addressing directly: a professionally guided intervention is not a trap. It's a structured, compassionate conversation. The element of surprise exists not to ambush your loved one, but because pre-announcing it almost always leads to the person either leaving or escalating their use in the days beforehand.",
+      "A professional interventionist can walk hesitant family members through exactly what the experience looks like — and why the structure exists to protect everyone in the room, including the person being intervened on.",
+      "### \"What If It Makes Things Worse?\"",
+      "This fear — that confronting the problem will rupture the relationship or trigger a dangerous reaction — deserves a direct answer. Some situations do require additional caution, and a skilled interventionist assesses risk carefully before anything is planned.",
+      "But here is what is usually true: things are already worse than they appear. The question isn't whether the situation is serious. The question is whether the family will address it now, with structure and support — or later, after another crisis. Waiting has its own cost, and it's rarely a smaller one.",
+      "## How to Have the Conversation With Reluctant Family Members",
+      "Start with what you agree on: you love this person. You're scared. You want things to be different. That common ground matters more than it might seem.",
+      "Then be specific. Abstract concerns are easier to dismiss than concrete ones. 'I'm worried about them' is a feeling. 'They drove with the kids in the car after drinking twice last month' is a fact. If you have specific incidents, bring them into the conversation — not to build a legal case, but to make sure everyone is working from the same picture of reality.",
+      "Give people time to respond without pressure. Not everyone processes this at the same speed. Someone who says no today may say yes after a week of reflection, especially once they understand what the process actually involves and what a professional interventionist's role is.",
+      "Keep returning the conversation to the shared goal: getting your loved one to a place where they can get help.",
+      "## When a Family Member Refuses to Participate",
+      "Occasionally, a family member will decline to participate regardless of the conversation. That's their right. What you don't want is to let one person's refusal shut down the entire process.",
+      "A professional interventionist will help you identify who is essential and who is optional. In most cases, you don't need everyone — you need the right people. A focused, unified group of three or four is typically more effective than a larger group carrying unresolved tension.",
+      "If someone is unwilling to participate but not actively opposed, you can ask them to stay neutral — not to warn your loved one, not to undercut the process. That's often a reasonable ask they can agree to.",
+      "If someone is actively working against the intervention — warning your loved one, or creating division within the family — that's a conversation to have with your interventionist directly. They have navigated this before and can help you determine how to proceed.",
+      "## The Role of the Professional Interventionist in Unifying the Family",
+      "This is one of the most underappreciated parts of what a qualified interventionist actually does. The real work begins well before the day of the intervention — often significantly before.",
+      "A skilled interventionist will typically:\n- Conduct individual pre-calls with each family member to understand their concerns, fears, and relationship with your loved one\n- Help each person understand their specific role in the process and what to expect\n- Coach family members through writing their impact statements — the personal letters read aloud during the intervention\n- Identify and address points of conflict before they become problems in the room\n- Prepare the family for all possible outcomes, including refusal, so that no one is blindsided",
+      "By the time the intervention itself happens, the family has already done most of the work together. The day of the intervention isn't the beginning — it's the culmination of a carefully built process. That preparation is where outcomes are largely determined.",
+      "## Moving Forward Together",
+      "Getting your family aligned before an intervention is challenging. It requires honesty, patience, and a willingness to set aside old dynamics in service of something larger. It's also one of the most powerful things a family can do — for your loved one and for each other.",
+      "You don't have to navigate this process alone. A professional interventionist isn't just someone who facilitates the event. They are a guide through the entire journey — including the parts that happen before your loved one is ever in the room.",
+      "If you're in the early stages of considering an intervention and already feeling the friction of family disagreement, that's normal. And it's exactly the moment to reach out for professional support. Visit [The Interventionist Network](/find) to connect with a qualified interventionist who can help your family move forward — together.",
+      "## Frequently Asked Questions",
+      "### What if my family members don't agree that an intervention is needed?",
+      "Disagreement among family members is very common and doesn't mean intervention is off the table. Start with specific, observable facts rather than opinions or generalizations. A professional interventionist can also hold a family consultation before any plan is finalized, which often helps hesitant members see past minimization and denial.",
+      "### Do all family members have to participate in an intervention?",
+      "No. You need the right people in the room — not necessarily everyone. A professional interventionist will help identify who should participate and what each person's role will be. A focused, unified group of three or four is often more effective than a larger group with unresolved tension.",
+      "### What if I'm afraid the intervention will damage my relationship with my loved one?",
+      "This is one of the most common fears families voice, and it deserves a straight answer. What most families discover is that waiting damages relationships far more over time. A well-structured, professionally guided intervention is built around love and clear boundaries — not blame or ultimatums delivered in anger.",
+      "### How far in advance should we start preparing for an intervention?",
+      "Most professional interventionists recommend one to two weeks of preparation. That includes individual consultations, impact statement coaching, treatment placement logistics, and pre-planning. Rushing the process increases risk. The preparation period is where outcomes are largely shaped.",
+      "### What does a professional interventionist do before the intervention day?",
+      "A great deal. Pre-intervention work typically includes a thorough situation assessment, individual consultations with each participating family member, guidance on writing impact statements, identification of appropriate treatment options, and building a clear shared plan. The intervention day itself usually lasts one to three hours; the preparation behind it spans one to two weeks.",
+      "### How do I find a qualified interventionist to help my family get aligned?",
+      "Look for interventionists with recognized credentials such as CIP (Certified Intervention Professional) or ARISE Network certification, and ask specifically about their family preparation process. [The Interventionist Network](/find) maintains a directory of vetted professionals who specialize in this work."
+    ],
+  },
   "neuroscience-of-addiction-for-interventionists": {
     title: "The Neuroscience of Compulsion: What Every Interventionist Should Know — and Be Able to Explain",
     author: "Matt Brown",
