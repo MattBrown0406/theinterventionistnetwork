@@ -28,6 +28,7 @@ import blogInterventionLetter from "@/assets/blog-how-to-write-intervention-lett
 import blogHiddenCostWaiting from "@/assets/blog-hidden-cost-of-waiting.jpg";
 import blogNeuroscienceAddiction from "@/assets/blog-neuroscience-of-addiction.jpg";
 import blogFamilySamePage from "@/assets/blog-family-same-page-intervention.jpg";
+import blogSpouseIntervention from "@/assets/blog-intervention-for-spouse-addiction.jpg";
 
 export type BlogPostEntry = {
   title: string;
@@ -39,6 +40,65 @@ export type BlogPostEntry = {
 };
 
 export const blogPosts: Record<string, BlogPostEntry> = {
+  "intervention-for-spouse-with-addiction": {
+    title: "When It's Your Partner: What Families Need to Know Before Staging an Intervention for a Spouse",
+    author: "Matt Brown",
+    date: "2026-05-04",
+    image: blogSpouseIntervention,
+    imageAlt: "A couple sitting apart on a couch in a dimly lit living room, representing the emotional weight of addiction in a marriage",
+    content: [
+      "Discovering that your spouse or life partner is struggling with addiction is one of the most disorienting experiences a person can face. The person you've built a life with — shared finances, children, a home, a future — is now at the center of a crisis that touches everything at once.",
+      "An intervention for a spouse or partner is not the same as an intervention for a sibling, an adult child, or a parent. The emotional stakes are different. The legal and financial entanglements are real. And the role you play in the intervention process is more complicated when you're also the person who shares a bed, a bank account, and a set of shared commitments with the person who needs help.",
+      "This article is for spouses and partners who are considering a professional intervention for a loved one with addiction. We'll walk through what makes this situation unique, how a qualified interventionist approaches it, and what you need to think through before making the call.",
+      "## Why Staging an Intervention for a Spouse Is Different",
+      "### The Emotional Dynamics Are Layered",
+      "In a spousal intervention, the non-addicted partner often arrives carrying a complex mix of love, exhaustion, resentment, fear, and guilt — sometimes all at once. That's a lot to manage while also trying to deliver a clear, compassionate message to the person who needs help. Unlike intervening on an extended family member, there is no emotional distance here. This is the person your life is built around.",
+      "A skilled interventionist will spend significant time with you before the intervention day — not just on logistics, but on helping you untangle your own emotional position. What you express in the room needs to land as love and clear-eyed concern, not as accumulated grievance. That's a distinction that takes preparation to hold.",
+      "### Children Change the Calculation",
+      "If you have children in the home, the stakes of the intervention are higher and the preparation requires more deliberate care. Children may or may not be present in the room — that is a decision made with the interventionist based on their ages, their relationship with the addicted parent, and the specific family dynamic.",
+      "But children are almost always part of the emotional landscape that shapes the conversation. What a parent's addiction has cost the kids — lost weekends, broken promises, moments of fear or confusion — can be some of the most powerful material in the room. At the same time, a good interventionist makes sure that children are not being asked to carry adult emotional weight, and that their participation, if any, is age-appropriate and carefully prepared.",
+      "### Finances and Legal Realities",
+      "Addiction and money are always intertwined, but in a marriage they are legally intertwined. Before the intervention, you may be facing questions like: What happens to our shared finances if my spouse refuses treatment? Am I liable for debts incurred during the addiction? Should I consult a family law attorney before moving forward?",
+      "These are legitimate questions, and a professional interventionist will not dismiss them. They may refer you to appropriate legal counsel for specific guidance, but they will also help you recognize a pattern that derails many families: waiting until every legal question is resolved before taking action. That kind of delay is costly — emotionally and financially — and it rarely resolves the underlying problem.",
+      "## How a Qualified Interventionist Approaches a Spousal Case",
+      "### Pre-Intervention Assessment Is More Extensive",
+      "In a spousal intervention, a qualified interventionist will typically conduct a more thorough pre-intervention assessment than in other cases. This includes:\n- Understanding the history of the relationship and previous attempts to address the addiction\n- Identifying enabling patterns specific to the partnership — financial cover-ups, minimizing behavior to protect children, managing consequences that belong to the addicted person\n- Assessing any safety considerations, including financial control, domestic conflict, or other factors that might require adjusting the intervention's structure\n- Determining who should be in the room, in what capacity, and in what order they speak",
+      "The interventionist is not just building a logistical plan. They are building a container that is strong enough to hold a conversation that may shake the structure of the marriage.",
+      "### Your Role in the Room Is Unique",
+      "In most interventions, family members participate from the position of concerned loved ones. As the spouse, you are that — and you are also the person whose daily life is most directly bound to the outcome of this conversation. That dual role requires specific preparation.",
+      "A good interventionist will work with you carefully on your statement — what you will say, how you will say it, and what consequences you are prepared to name if your spouse declines help. That last part is not meant to be punitive. The consequences described in an intervention must be real and honest. A professional interventionist will help you understand the difference between a boundary and a threat, and help you articulate yours with clarity and care.",
+      "## Managing the Transition After a Yes",
+      "When a spouse agrees to go to treatment, the practical reality of transitioning a household can feel overwhelming. Children need care. Bills need to be paid. An employer may need to be notified. Pets, schedules, and logistics don't pause because there's a family crisis.",
+      "An experienced interventionist doesn't just get the person in the car. They help the family think through the first 48 to 72 hours so that logistical overwhelm doesn't erode the emotional momentum of the intervention. The window between a 'yes' and arrival at a treatment facility is critical, and a skilled interventionist manages that transition deliberately.",
+      "## What to Do Before You Call an Interventionist",
+      "### Have an Honest Conversation with Yourself First",
+      "Before engaging a professional, take stock of where you actually are. Are you at a point where you are prepared to follow through? That means: if your spouse declines treatment, you are ready to make real changes to the current dynamic — not just threaten to. A professional intervention is not a bluff. The consequences named in the room have to be genuine.",
+      "This does not mean you have to be ready to file for divorce. But it does mean that \"nothing changes if nothing changes\" applies to you as well. An interventionist can help you think through what your honest position is — and what it isn't.",
+      "### Choose a Qualified Professional",
+      "Look for an interventionist with recognized credentials — such as a Certified Intervention Professional (CIP) designation — and ask specifically about their experience with spousal or partner interventions. Not every interventionist has worked extensively with marriage dynamics, and this matters. The relational complexity involved requires more than general intervention training.",
+      "Ask how they structure the pre-intervention process. A qualified professional will invest significant time with you before the intervention day — getting to know your specific situation, preparing all participants, and identifying potential obstacles before they surface in the room.",
+      "### Understand What This Is",
+      "Staging a professional intervention for your spouse is not an act of war. It is not giving up on the marriage. Done well, with a qualified professional guiding the process, it is one of the most difficult and loving things a partner can do.",
+      "The families who move through this process with a skilled interventionist — rather than attempting to manage it alone, or waiting until the situation deteriorates further — consistently report that having a trained third party in the room changed the entire quality of the conversation. It shifted it from confrontation to invitation. You do not have to have everything figured out before you make the first call.",
+      "## The Professional Standard Exists for a Reason",
+      "Spousal and partner interventions are among the most emotionally complex cases a professional interventionist handles. The legal, financial, parental, and relational layers of a marriage mean that this work requires more preparation, more nuance, and more clinical care than most other intervention scenarios.",
+      "If you are at the point where you are reading this article, something already needs to change. A qualified interventionist can help you figure out what that looks like — and make sure the conversation you have been dreading becomes one your family can build on.",
+      "Visit [TheInterventionistNetwork.com](/find) to search a directory of vetted, credentialed intervention professionals. You can filter by location and specialty to find someone with specific experience in spousal and family system interventions.",
+      "## Frequently Asked Questions About Intervention for a Spouse with Addiction",
+      "### Should children be present during an intervention for their parent?",
+      "This depends on the children's ages, maturity, and their specific relationship with the addicted parent, and should always be decided in consultation with the interventionist. Young children are rarely present. Older teens may participate in a carefully prepared, limited way. The goal is inclusion that genuinely helps the process — not exposure that places adult emotional burden on children.",
+      "### What if my spouse becomes angry or threatening during the intervention?",
+      "A qualified interventionist assesses safety risk during the pre-intervention process and designs the approach accordingly. If there is a history of volatility, financial control, or domestic conflict, the interventionist may adjust the format, location, or structure of the intervention. Your safety — and the safety of everyone in the room — is the first priority, and a professional will not proceed without a plan that addresses it.",
+      "### What happens if my spouse agrees to treatment and then backs out?",
+      "This is one of the key reasons professional interventionists often arrange for immediate transport to treatment directly following agreement. The window between a 'yes' and the actual departure for a treatment facility is critical. If your spouse agrees and then wavers, the interventionist will guide you on next steps and help you hold the decision that was made in the room.",
+      "### Can I stage a spousal intervention without involving the extended family?",
+      "Yes. The composition of the intervention team is a clinical decision made with your interventionist based on your specific situation. In some cases, keeping the circle small is the right call — particularly when extended family dynamics are complicated, estranged, or potentially destabilizing to the process. Your interventionist will help you determine who belongs in the room.",
+      "### How is an intervention for a spouse different from couples counseling?",
+      "Couples counseling addresses relationship dynamics between two people who are both engaged in the process. A professional intervention is designed for situations where one partner is not yet willing or able to seek help — where the addiction has progressed to the point that waiting for self-motivated change is no longer a viable option. An interventionist is not a couples therapist; they are a specialist in guided family conversations designed to move a resistant person toward treatment.",
+      "### How do I find a qualified interventionist for a spousal addiction situation?",
+      "Start by looking for a Certified Intervention Professional (CIP) and ask specifically about their experience with marriage and family systems. [TheInterventionistNetwork.com](/find) provides a searchable directory of vetted intervention professionals you can browse by location and specialty.",
+    ],
+  },
   "getting-your-family-on-the-same-page-before-intervention": {
     title: "Getting Your Family on the Same Page Before an Intervention",
     author: "Matt Brown",
