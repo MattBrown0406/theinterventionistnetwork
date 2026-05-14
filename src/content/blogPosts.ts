@@ -34,6 +34,7 @@ import blogWhenToHireProfessional from "@/assets/blog-when-to-hire-professional-
 import blogAddictionDenial from "@/assets/blog-addiction-denial-loved-ones.jpg";
 import blogClinicalBoundaries from "@/assets/blog-clinical-boundaries-interventionists.jpg";
 import blogEarlyRecoveryFamily from "@/assets/blog-early-recovery-family-guide.jpg";
+import blogMatModernInterventionist from "@/assets/blog-mat-modern-interventionist.jpg";
 
 export type BlogPostEntry = {
   title: string;
@@ -45,6 +46,58 @@ export type BlogPostEntry = {
 };
 
 export const blogPosts: Record<string, BlogPostEntry> = {
+  "medication-assisted-treatment-modern-interventionist": {
+    title: "Medication-Assisted Treatment and the Modern Interventionist: What Every Practitioner Needs to Know",
+    author: "Matt Brown",
+    date: "2026-05-14",
+    image: blogMatModernInterventionist,
+    imageAlt: "Prescription medication bottle and stethoscope on a desk, illustrating medication-assisted treatment in addiction recovery",
+    content: [
+      "Medication-assisted treatment (MAT) has become one of the most evidence-supported tools in addiction medicine — and one of the most misunderstood topics in the intervention room. Families arrive with strong opinions. Clients arrive with fear or hope. And interventionists are often caught in the middle, expected to have an answer they may not have prepared for.",
+      "If you are doing intervention work in 2026 and you are not fluent in MAT — what it is, who it serves, how it intersects with your role, and how to navigate resistance to it — you are working with a gap that will cost you cases and client outcomes. This article is a practitioner-to-practitioner guide to getting up to speed and staying there.",
+      "## What Medication-Assisted Treatment Actually Is (and Isn't)",
+      "MAT refers to the use of FDA-approved medications — primarily buprenorphine (Suboxone), methadone, and naltrexone (Vivitrol) — in combination with counseling and behavioral therapies to treat substance use disorders, most commonly opioid use disorder (OUD) and alcohol use disorder (AUD).",
+      "The evidence base is not ambiguous. Studies consistently show that MAT reduces overdose deaths, decreases illicit drug use, improves treatment retention, and lowers rates of infectious disease transmission. The Substance Abuse and Mental Health Services Administration (SAMHSA) and the American Society of Addiction Medicine (ASAM) both endorse MAT as a first-line treatment.",
+      "What MAT is not: a replacement for recovery work, a permanent solution in every case, or something that should be decided without medical oversight. But it is also not 'trading one drug for another' — which is the phrase you will hear from clients and families alike, and one you need to be prepared to address calmly and accurately.",
+      "## Why Interventionists Can't Stay Neutral on MAT",
+      "There is a version of this topic where the interventionist tries to remain neutral — 'I don't tell families what treatment approach to choose.' That posture sounds professional. In practice, it leaves families and clients to navigate a polarizing, often medically complex decision without any grounding. That is a disservice.",
+      "Your job is not to prescribe. But your job is to help a family move toward the highest-probability path to sustained recovery. That means you need to know enough to recognize when MAT is clinically indicated (e.g., high-risk opioid use, multiple failed attempts at abstinence-only treatment, fentanyl exposure history); speak to MAT-related family resistance without dismissing their concerns or reinforcing their misinformation; and understand the treatment landscape well enough to match clients with programs that can support MAT if that is what the clinical picture calls for.",
+      "Remaining uninformed is not neutrality. It is abdication.",
+      "## Navigating Family Resistance to MAT During the Intervention Process",
+      "Family resistance to MAT typically falls into two camps: moral and practical. Moral resistance is usually rooted in 12-step culture — 'real sobriety means no medications' — or in a general distrust of pharmaceutical solutions to behavioral problems. Practical resistance often sounds like 'we want them in a real rehab, not just on a pill.'",
+      "Neither concern should be dismissed. The 12-step tradition has helped millions of people, and it carries genuine wisdom about surrender, community, and spiritual growth. The concern about 'just a pill' reflects a real truth: MAT without behavioral support and ongoing clinical management is not a sufficient treatment plan.",
+      "What families need from you is not a lecture. They need a frame that lets them hold both things: that abstinence is a legitimate long-term goal, and that MAT may be the bridge that gets their loved one to a place where that goal is achievable. For a client with three overdoses in the past year, the conversation is not about sobriety ideology. It is about keeping them alive long enough to have the conversation about sobriety ideology.",
+      "Practically, this means preparing your pre-intervention family sessions to include a brief, honest conversation about MAT if the clinical picture suggests it. Do not surprise families with this in the room. If there is a possibility the recommended treatment program will utilize MAT, address it beforehand. Family alignment before intervention day is already how we do everything else — this is no different.",
+      "## Navigating Client Resistance to MAT",
+      "Client resistance to MAT operates differently. Some clients refuse MAT because they have internalized the same 12-step messaging as their families — and for some of them, that framework is what has kept them alive through previous recovery attempts. Respect that history. Do not dismiss it.",
+      "Other clients refuse MAT because they are afraid of what it signals: that their addiction is 'that bad,' that they will be dependent on a medication indefinitely, or that they are being offered a lesser version of treatment. These are fears worth addressing directly.",
+      "What you can offer is accurate information and real questions: Has abstinence-only treatment worked long-term for you in the past? What would it mean to stay alive and get more time? You are not diagnosing and you are not prescribing — you are helping them move toward a conversation with a clinician who can.",
+      "It is also worth noting: some clients are actively interested in MAT and are afraid to raise it because they anticipate rejection from their family. Part of your role is to create space for that conversation to happen without shame.",
+      "## Treatment Center Literacy: Know Which Programs Support MAT",
+      "Not all residential treatment programs accept clients on buprenorphine or methadone. Some will taper clients off MAT as a condition of admission — a practice that carries real clinical risk for high-tolerance opioid users and one you need to understand before making a placement recommendation.",
+      "When you are building referral relationships with treatment centers, ask directly: What is your MAT policy? Do you accept clients on buprenorphine? On methadone? Do you work with prescribers to manage ongoing MAT during residential care, or do you require a taper? What does your continuing care plan look like for clients who will continue MAT post-discharge?",
+      "Your referral network should include programs across the full spectrum: abstinence-based programs that are genuinely skilled at what they do, and MAT-friendly programs that can provide medically informed care for clients who need it. A narrow referral network is a clinical liability.",
+      "## Your Professional Development Obligation",
+      "MAT is not a niche topic. It is central to opioid and alcohol use disorder treatment, and it intersects with nearly every intervention case you will take involving opioids. Staying current is a professional obligation, not optional continuing education.",
+      "Practically, this means reading updated ASAM guidelines, understanding the distinctions between buprenorphine formulations, knowing the difference between naltrexone and methadone's regulatory requirements, and having at least a working relationship with an addiction medicine physician or psychiatrist you trust.",
+      "It also means being honest about the limits of your scope. You can educate. You can refer. You can help families hold complexity without collapsing into ideology. What you cannot do is make medical determinations. Stay in your lane — but make sure your lane is wide enough to actually serve your clients.",
+      "The field has changed. Fentanyl is in the supply chain in ways it wasn't a decade ago, overdose risk is higher than it has ever been, and the conversation around MAT is no longer optional. Interventionists who are grounded in the evidence, able to hold family complexity, and honest about their scope of practice will serve their clients better — and build practices that last. That is what TheInterventionistNetwork.com is here to support.",
+      "## Frequently Asked Questions",
+      "### Should an interventionist recommend MAT to a client or family?",
+      "Interventionists are not clinicians and should not prescribe or diagnose. However, a skilled interventionist should be informed enough to discuss MAT accurately, address misinformation, and ensure that clients and families are connected with the medical professionals who can make those determinations. Staying uninformed is not neutrality — it is a gap in care.",
+      "### What is the most common family objection to medication-assisted treatment?",
+      "The most common objection is the belief that MAT is 'trading one drug for another.' This usually reflects a misunderstanding of how medications like buprenorphine and naltrexone work neurologically, and often stems from 12-step cultural norms around abstinence. Interventionists can address this by separating the goal of long-term abstinence from the clinical bridge that MAT can provide — particularly for high-risk opioid use disorder.",
+      "### Do all residential treatment programs accept clients on MAT?",
+      "No. Many abstinence-based residential programs require clients to taper off MAT before or upon admission. This policy carries real clinical risk for some clients and should be discussed before a placement is made. Interventionists should maintain a referral network that includes both abstinence-based and MAT-friendly programs to match each client's clinical needs.",
+      "### What medications are used in MAT for opioid use disorder?",
+      "The three FDA-approved medications for opioid use disorder are buprenorphine (often sold as Suboxone), methadone, and naltrexone (Vivitrol). Each has a distinct mechanism, regulatory framework, and clinical profile. Buprenorphine can be prescribed in office-based settings; methadone for OUD requires dispensing through a certified OTP clinic; naltrexone is a non-opioid option that blocks opioid receptors.",
+      "### Is MAT compatible with 12-step recovery programs?",
+      "It depends on the group and the individual. Many 12-step members and groups have evolved their approach to MAT, particularly as fentanyl-related deaths have increased. Some groups still hold that MAT conflicts with true sobriety. Interventionists should help clients and families navigate this honestly — and avoid presenting 12-step culture and MAT as mutually exclusive, because for many people they are not.",
+      "### How does MAT affect intervention outcomes?",
+      "For clients with high-severity opioid use disorder, acceptance of MAT as part of a treatment plan is associated with higher treatment retention and reduced overdose risk. Families and clients who resist MAT on ideological grounds sometimes leave intervention conversations with fewer viable options. Helping all parties approach the question with accurate information improves the likelihood of a successful placement.",
+      "For resources, case consultation, and peer community for working interventionists, visit TheInterventionistNetwork.com.",
+    ],
+  },
   "what-to-expect-in-early-recovery-family-guide": {
     title: "What to Expect in Early Recovery: A Family Guide to the First 90 Days After Treatment",
     author: "Matt Brown",
