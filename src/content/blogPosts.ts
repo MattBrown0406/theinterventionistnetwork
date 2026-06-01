@@ -37,6 +37,7 @@ import blogEarlyRecoveryFamily from "@/assets/blog-early-recovery-family-guide.j
 import blogMatModernInterventionist from "@/assets/blog-mat-modern-interventionist.jpg";
 import blogTalkingToChildren from "@/assets/blog-talking-to-children-family-addiction.jpg";
 import blogDualDiagnosis from "@/assets/blog-dual-diagnosis-family-guide.jpg";
+import blogInsuranceAddictionTreatment from "@/assets/blog-insurance-addiction-treatment.jpg";
 
 export type BlogPostEntry = {
   title: string;
@@ -48,6 +49,51 @@ export type BlogPostEntry = {
 };
 
 export const blogPosts: Record<string, BlogPostEntry> = {
+  "does-insurance-cover-addiction-treatment-family-guide": {
+    title: "Does Insurance Cover Addiction Treatment? A Family Guide to Navigating Coverage",
+    author: "Matt Brown",
+    date: "2026-05-25",
+    image: blogInsuranceAddictionTreatment,
+    imageAlt: "Stethoscope, calculator, and clipboard with healthcare forms on a warmly lit desk",
+    content: [
+      "When a family reaches the point of seeking help for a loved one's addiction, one of the first questions that comes up is almost always the same: \"Will insurance cover this?\" It's a fair question — and a critical one. The cost of addiction treatment can feel like another obstacle when you're already exhausted. The good news is that insurance coverage for addiction treatment has expanded significantly over the past decade, and most families have more options than they realize.",
+      "This guide walks you through what you need to know: what coverage typically looks like, how to find out what your plan actually covers, what to do when a claim is denied, and how a professional interventionist can help you navigate the system alongside the clinical process.",
+      "## What the Law Says: The Mental Health Parity Act",
+      "Federal law now requires that mental health and substance use disorder benefits be covered at the same level as medical and surgical benefits. This is called the Mental Health Parity and Addiction Equity Act (MHPAEA), passed in 2008 and strengthened since. In plain terms: if your insurance plan covers a hospital stay for a broken leg, it generally cannot impose more restrictive rules on covering a residential addiction treatment stay.",
+      "This doesn't mean insurance covers everything automatically — but it does mean you have legal standing to push back if coverage is denied in ways that wouldn't apply to other medical conditions. Knowing this one fact changes the entire negotiation.",
+      "The Affordable Care Act (ACA) also classified substance use disorder treatment as one of ten essential health benefits, which means most plans sold on the marketplace must include some level of addiction treatment coverage.",
+      "## What Does Insurance Coverage for Addiction Treatment Actually Include?",
+      "Coverage varies significantly by plan, provider network, and level of care. Understanding the types of treatment your plan may cover helps you ask the right questions before placement.",
+      "Most insurance plans cover some combination of the following: medical detox (typically covered as an inpatient medical service); residential treatment of 30, 60, or 90 days (often requiring pre-authorization and medical necessity review); Partial Hospitalization Programs (PHP), a step-down from residential usually 5–6 hours per day; Intensive Outpatient Programs (IOP), 3–4 days per week for several hours per session; standard outpatient services like individual therapy, psychiatry, and medication management; and Medication-Assisted Treatment (MAT) including Suboxone, Vivitrol, and Methadone.",
+      "What's less commonly covered: luxury or amenity-based programs, extended wilderness therapy, certain experimental approaches, and out-of-network providers. Some high-end treatment centers do not accept insurance at all — it's worth knowing that upfront rather than after admission.",
+      "## How to Find Out What Your Plan Actually Covers",
+      "Don't assume — verify. The details of addiction treatment coverage live in your plan's Summary of Benefits and Coverage (SBC), which every insurance company is required to provide. Here's how to get real answers quickly.",
+      "**Step 1: Call the behavioral health number on the back of the card.** Most plans have a separate behavioral health line. Ask specifically about substance use disorder benefits — not just \"mental health.\" The rep should be able to tell you your deductible, out-of-pocket maximum, in-network vs. out-of-network coverage, and whether pre-authorization is required.",
+      "**Step 2: Ask these specific questions.** What levels of care do you cover for substance use disorder? Is pre-authorization required for residential treatment or PHP? What are my in-network and out-of-network benefits? What is my deductible and has any of it been met? Does the plan use utilization review, and how does that work?",
+      "**Step 3: Get it in writing.** Ask the representative for a reference number for the call. If possible, follow up in writing via the insurer's secure member portal. Verbal authorizations can be walked back; written records are your protection.",
+      "## When Insurance Denies Coverage: How to Appeal",
+      "A denial is not a final answer. Insurance companies deny addiction treatment claims regularly — and they are overturned regularly, too. If your loved one's treatment is denied or cut short by the insurer, here is what to do: request the denial in writing with the specific reason cited; ask the treatment center's utilization review team to submit a peer-to-peer review request, where a physician at the facility speaks directly with the insurance company's medical reviewer; file an internal appeal within the insurer's system (you typically have 30–180 days); if the internal appeal fails, request an Independent Medical Review (IMR), a third-party review required by law in most states; and contact your state's Department of Insurance if you believe parity laws are being violated.",
+      "The appeals process sounds daunting, but treatment centers that work with insurance regularly have staff whose entire job is managing this. Ask upfront whether the facility has a dedicated utilization review team.",
+      "## How a Professional Interventionist Fits Into the Insurance Picture",
+      "A professional interventionist isn't just there for the conversation with your loved one. Part of what you're hiring is their knowledge of the treatment landscape — including which facilities work well with specific insurance plans, and which ones have admissions teams experienced with navigating coverage barriers.",
+      "A good interventionist will help your family verify benefits before the intervention happens, so you're not scrambling to find a bed in the immediate aftermath of a yes. When your loved one agrees to go, the next step needs to be clear and immediate. Delays — even hours — can cost you the window.",
+      "They can also help you think through private pay options and sliding scale programs if insurance coverage falls short. No coverage shouldn't automatically mean no treatment — it means a different conversation about financial resources, family contributions, and facility options.",
+      "## When There Is No Insurance: Other Options Families Should Know",
+      "Not every family has insurance, and not every insurance plan offers meaningful addiction treatment coverage. If that's where you are, these options are worth exploring: SAMHSA's National Helpline (1-800-662-4357), which offers free, confidential referrals to low-cost and free treatment; state-funded treatment programs, since most states have publicly funded detox and residential beds for uninsured individuals; Medicaid, which covers a wide range of addiction treatment services in most states if your loved one qualifies; nonprofit and faith-based programs that offer scholarship beds or sliding scale fees; and payment plans, since many private treatment centers will work with families on installment arrangements.",
+      "The absence of insurance changes the options, not the urgency. Families often assume that without coverage, professional help isn't possible. That assumption costs time, and time in active addiction is never neutral.",
+      "## The Bottom Line",
+      "Insurance coverage for addiction treatment is more robust than most families expect — but it requires advocacy. You have legal rights under federal parity law, you have the right to appeal denials, and you have more placement options than the first \"no\" suggests. The system isn't always easy to navigate, and it's one of the reasons working with a professional interventionist who knows that landscape can make a measurable difference.",
+      "Getting your loved one into the right level of care quickly — with the financial piece handled or at least mapped out — is the goal. It's achievable. You don't have to figure it out alone.",
+      "Visit TheInterventionistNetwork.com to connect with a professional interventionist who can help guide your family through the process from start to finish — including the insurance piece.",
+      "## Frequently Asked Questions",
+      "**Does insurance cover drug and alcohol rehab?** Most insurance plans are required by federal law to cover substance use disorder treatment at parity with other medical conditions. Coverage varies by plan — it typically includes detox, inpatient residential, PHP, IOP, and outpatient services, but details depend on your specific policy and network.",
+      "**What should I do if my insurance denies coverage for rehab?** A denial is not final. Request the denial in writing, ask the treatment center to initiate a peer-to-peer review, and file an internal appeal. If that fails, you can request an Independent Medical Review. Federal parity laws give you the right to challenge discriminatory coverage decisions.",
+      "**Does Medicaid cover addiction treatment?** Yes. Medicaid covers a range of addiction treatment services in most states, including detox, residential treatment, and outpatient programs. Eligibility and coverage vary by state. If your loved one qualifies, this is often a meaningful option.",
+      "**How do I find out what my insurance plan covers for rehab?** Call the behavioral health number on the back of your insurance card — not the general member services line. Ask specifically about substance use disorder benefits, pre-authorization requirements, and your in-network options. Get a reference number for every call.",
+      "**What if we can't afford rehab and don't have insurance?** State-funded programs, Medicaid, SAMHSA referrals, and nonprofit facilities with scholarship beds are all real options. A professional interventionist familiar with your region can help identify which facilities fit your financial situation without sacrificing the level of care your loved one needs.",
+      "**Does insurance cover the cost of hiring a professional interventionist?** Typically, no — the interventionist's fee is usually paid out of pocket by the family. However, the interventionist's ability to navigate the treatment landscape and insurance system often saves families significant time and money during placement. Many consider it a cost-effective part of the overall process.",
+    ],
+  },
   "dual-diagnosis-addiction-family-guide": {
     title: "Dual Diagnosis Explained: What Families Need to Know When Addiction and Mental Health Collide",
     author: "Matt Brown",
