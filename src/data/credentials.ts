@@ -266,7 +266,7 @@ export const credentials: Credential[] = [
       "Ongoing Continuing Legal Education (CLE) for license renewal",
     ],
     whyItMatters:
-      "Many interventions involve real legal stakes — a pending arrest, a licensing board complaint against an impaired professional, a custody dispute, the need for an emergency guardianship, or a civil commitment process. An attorney-interventionist (or an interventionist working closely with one) can protect the family's legal interests while keeping the focus on getting the identified person into treatment.",
+      "Many interventions carry real legal stakes — a pending arrest or DUI, a professional licensing board complaint, a custody dispute, an emergency guardianship or conservatorship, a civil commitment, or pressure from an employer with a 'last chance' agreement. Pairing a JD with a clinical or intervention credential is uniquely powerful: a JD + CIP, CADC, LCSW, LPC, or MD interventionist can speak the language of the courts, prosecutors, licensing boards, and HR departments while still leading the clinical intervention itself. That combination lets the team negotiate treatment in lieu of prosecution, protect a professional's license while they get help, structure a legally enforceable family agreement, coordinate with criminal defense or family law counsel, and make sure nothing said in the intervention puts the identified person or family at unnecessary legal risk. For high-stakes cases — physicians, attorneys, pilots, executives, or anyone already entangled with the legal system — a JD-credentialed interventionist can keep the legal and clinical strategies aligned instead of working against each other.",
     issuingBody: "State bar associations",
   },
 ];
