@@ -40,7 +40,7 @@ const InterventionistCard = ({
     <div className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow group h-full flex flex-col">
       <div className="flex items-start gap-4 mb-4">
         {photo_url ? (
-          <img src={photo_url} alt={name} className="w-16 h-16 rounded-full object-cover shrink-0" />
+          <img src={photo_url} alt={name} className="w-16 h-16 rounded-full object-cover object-top shrink-0" />
         ) : (
           <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center text-muted-foreground text-xl font-bold shrink-0">
             {name.split(" ").map((n) => n[0]).join("")}
