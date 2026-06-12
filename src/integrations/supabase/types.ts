@@ -353,6 +353,7 @@ export type Database = {
           featured: boolean
           full_bio: string
           id: string
+          languages: string[]
           name: string
           offers_case_management: boolean
           offers_hourly_coaching: boolean
@@ -376,6 +377,7 @@ export type Database = {
           featured?: boolean
           full_bio?: string
           id?: string
+          languages?: string[]
           name: string
           offers_case_management?: boolean
           offers_hourly_coaching?: boolean
@@ -399,6 +401,7 @@ export type Database = {
           featured?: boolean
           full_bio?: string
           id?: string
+          languages?: string[]
           name?: string
           offers_case_management?: boolean
           offers_hourly_coaching?: boolean
@@ -427,6 +430,7 @@ export type Database = {
           full_name: string
           hear_about: string | null
           id: string
+          languages: string[]
           no_referral_fees: boolean
           offers_case_management: boolean
           offers_hourly_coaching: boolean
@@ -453,6 +457,7 @@ export type Database = {
           full_name: string
           hear_about?: string | null
           id?: string
+          languages?: string[]
           no_referral_fees?: boolean
           offers_case_management?: boolean
           offers_hourly_coaching?: boolean
@@ -479,6 +484,7 @@ export type Database = {
           full_name?: string
           hear_about?: string | null
           id?: string
+          languages?: string[]
           no_referral_fees?: boolean
           offers_case_management?: boolean
           offers_hourly_coaching?: boolean
