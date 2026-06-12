@@ -51,7 +51,7 @@ const Index = () => {
               Find a Trusted<br /><span className="text-gold">Interventionist</span>
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Every interventionist in our network is personally vetted. No referral fees. No kickbacks. Just families connected with professionals who can help.
+              Every interventionist in our network is personally vetted. No referral fees. Just families connected with professionals who can help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="gold" size="xl" asChild><Link to="/help">Get Matched Now</Link></Button>
