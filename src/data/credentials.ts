@@ -56,19 +56,21 @@ export const credentials: Credential[] = [
     shortDescription:
       "A nationally recognized intervention-specific credential issued by the Pennsylvania Certification Board.",
     whatItIs:
-      "The Certified Intervention Professional (CIP) is a credential for professionals whose primary work is conducting interventions. It validates intervention-specific knowledge, ethical practice, and direct experience facilitating interventions with families.",
+      "The Certified Intervention Professional (CIP) is a credential for professionals whose primary role is facilitation and participation in substance use disorder interventions. CIPs guide families, friends, and others through an intervention process where the individual is encouraged to enter treatment. A CIP is not a marketer or recruiter for a treatment facility — they are a front-line professional directly engaging the individual and family to help guide them to treatment, and they remain part of the recovery team.",
     requirements: [
-      "Minimum documented hours of direct intervention experience",
-      "Intervention-specific education and training hours",
-      "Letters of professional recommendation",
-      "Passing a written examination",
-      "Adherence to the CIP Code of Ethical Conduct",
-      "Continuing education for renewal",
+      "Formal education: minimum high school diploma or GED.",
+      "Work experience (scaled by degree, providing direct substance use services at least 50% of the time): 3 years full-time / 6,000 hours part-time with HS/GED; 2.5 years / 5,000 hours with an Associates; 2 years / 4,000 hours with a Bachelors; 1 year / 2,000 hours with a Masters or higher.",
+      "Current interventionist job description from the applicant's employer, signed by both the applicant and their immediate supervisor.",
+      "100 hours of on-the-job supervision of qualifying work experience, including at least 10 hours in each intervention domain.",
+      "150 hours of relevant education and training, with set minimums in each area: 20 hours intervention theory and practice; 20 hours substance use disorders; 20 hours mental health disorders; 12 hours family systems; 12 hours motivational interviewing; 12 hours process addictions; 12 hours case management; 12 hours behavioral health ethics; 9 hours screening, assessment, and level-of-care selection; 6 hours cultural competency; 6 hours crisis intervention; 3 hours harm reduction; 3 hours overdose prevention; and 3 hours safety and self-care.",
+      "Facilitation or co-facilitation of 10 interventions within the last three years, with a written summary of at least 500 words for each one — describing intervention style, work with the family, assessment and referral to treatment (and why), and intervention aftercare. No identifying client information is included.",
+      "Adherence to the PCB Code of Ethical Conduct.",
+      "Passing the CIP written examination (based on the published CIP Content Outline).",
+      "Ongoing continuing education for credential renewal.",
     ],
     whyItMatters:
       "The CIP is one of the few credentials in the United States that is specific to the practice of intervention itself, rather than to addiction counseling or therapy broadly. It signals that the professional's core training is in moving a family from crisis to a treatment decision.",
     issuingBody: "Pennsylvania Certification Board (PCB)",
-    learnMoreUrl: "https://www.pacertboard.org/",
   },
   {
     slug: "cadc",
