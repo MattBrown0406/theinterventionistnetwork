@@ -1,0 +1,1 @@
+UPDATE public.interventionists SET specialties = array_append(specialties, 'Spanish Speaking') WHERE slug = 'matt-brown' AND NOT ('Spanish Speaking' = ANY(specialties));
