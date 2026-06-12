@@ -9,6 +9,7 @@ export type Credential = {
   issuingBody: string;
   issuingStates?: { state: string; note?: string }[];
   issuingStatesNote?: string;
+  comparisons?: { title: string; body: string; bullets?: string[] }[];
   learnMoreUrl?: string;
 };
 
