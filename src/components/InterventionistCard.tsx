@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Award, Clock, ShieldCheck, BadgeCheck, ClipboardList } from "lucide-react";
+import { MapPin, Award, Clock, ShieldCheck, BadgeCheck, ClipboardList, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackInterventionistClick } from "@/lib/interventionistTracking";
 
@@ -66,13 +66,23 @@ const InterventionistCard = ({
         {offers_case_management && (
           <span className="flex items-center gap-1 text-gold font-medium"><ClipboardList className="w-3.5 h-3.5" />Post-Treatment Case Management</span>
         )}
+        {specialties.includes("Spanish Speaking") && (
+          <span className="flex items-center gap-1 text-gold font-medium"><Languages className="w-3.5 h-3.5" />Spanish Speaking</span>
+        )}
       </div>
 
       <div className="flex flex-wrap gap-1.5 mb-3">
-        {specialties.length > 3 && <span className="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground font-medium">+{specialties.length - 3} more</span>}
-        {specialties.slice(0, 3).map((spec) => (
-          <span key={spec} className="text-xs px-2 py-0.5 rounded-full bg-gold-light text-gold-foreground font-medium">{spec}</span>
-        ))}
+        {(() => {
+          const filtered = specialties.filter((s) => s !== "Spanish Speaking");
+          return (
+            <>
+              {filtered.length > 3 && <span className="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground font-medium">+{filtered.length - 3} more</span>}
+              {filtered.slice(0, 3).map((spec) => (
+                <span key={spec} className="text-xs px-2 py-0.5 rounded-full bg-gold-light text-gold-foreground font-medium">{spec}</span>
+              ))}
+            </>
+          );
+        })()}
       </div>
 
       {!compact && (
