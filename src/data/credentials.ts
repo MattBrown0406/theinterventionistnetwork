@@ -226,6 +226,49 @@ export const credentials: Credential[] = [
       "A doctoral-level interventionist brings deep diagnostic skill and the ability to integrate research evidence into a family's plan. That depth matters when cases involve complex psychiatric, neurological, or behavioral factors.",
     issuingBody: "Accredited universities; state licensing boards for clinical practice",
   },
+  {
+    slug: "md",
+    code: "MD",
+    name: "Doctor of Medicine",
+    shortDescription:
+      "A licensed physician — a medical doctor authorized to diagnose illness, prescribe medication, and direct medical care.",
+    whatItIs:
+      "An MD is a physician who has completed medical school and a residency, and who holds an active state medical license to practice medicine. In intervention work, MD-credentialed professionals are typically addiction medicine physicians, psychiatrists, or other physicians who can evaluate medical risk, manage withdrawal, prescribe medications for substance use disorders (such as buprenorphine or naltrexone), and coordinate directly with hospitals and treatment programs.",
+    requirements: [
+      "Doctor of Medicine (MD) or Doctor of Osteopathic Medicine (DO) degree from an accredited medical school",
+      "Completion of an accredited residency (commonly internal medicine, family medicine, psychiatry, or emergency medicine)",
+      "Passing all steps of the USMLE (or COMLEX for DOs)",
+      "An active, unrestricted state medical license",
+      "For prescribing controlled medications used in addiction treatment, an active DEA registration",
+      "Board certification or additional fellowship training in Addiction Medicine or Addiction Psychiatry is common, though not required to practice",
+      "Adherence to state medical board rules and the AMA / AOA code of ethics",
+      "Ongoing continuing medical education (CME) for license and board renewal",
+    ],
+    whyItMatters:
+      "When an intervention involves overdose risk, complex withdrawal, serious psychiatric symptoms, or chronic medical illness, a physician on the team can evaluate medical safety in real time, recommend the right level of care, and bridge a family directly to medication-assisted treatment or hospital-based services. An MD interventionist combines clinical authority with intervention expertise.",
+    issuingBody: "State medical boards",
+  },
+  {
+    slug: "jd",
+    code: "JD",
+    name: "Juris Doctor (Attorney)",
+    shortDescription:
+      "A licensed attorney — a Juris Doctor admitted to a state bar and authorized to practice law.",
+    whatItIs:
+      "A JD is the professional doctorate required to practice law in the United States. An attorney working in or alongside intervention is licensed by a state bar and can advise on the legal dimensions of a case — guardianship and conservatorship, mental health holds and civil commitment, family and custody matters, employment and licensing issues for impaired professionals, criminal matters tied to substance use, estate planning, and the legal protection of the family and the identified person.",
+    requirements: [
+      "Bachelor's degree, followed by a Juris Doctor (JD) degree from an ABA-accredited law school",
+      "Passing the bar examination in at least one U.S. state (or the Uniform Bar Examination)",
+      "Passing the Multistate Professional Responsibility Examination (MPRE) in most jurisdictions",
+      "A character and fitness review by the state bar",
+      "An active license in good standing with the state bar",
+      "Adherence to the ABA Model Rules of Professional Conduct as adopted by the licensing state",
+      "Ongoing Continuing Legal Education (CLE) for license renewal",
+    ],
+    whyItMatters:
+      "Many interventions involve real legal stakes — a pending arrest, a licensing board complaint against an impaired professional, a custody dispute, the need for an emergency guardianship, or a civil commitment process. An attorney-interventionist (or an interventionist working closely with one) can protect the family's legal interests while keeping the focus on getting the identified person into treatment.",
+    issuingBody: "State bar associations",
+  },
 ];
 
 const credentialByCode = new Map<string, Credential>(
