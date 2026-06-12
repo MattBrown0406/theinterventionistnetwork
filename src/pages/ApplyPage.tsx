@@ -9,7 +9,7 @@ import { specialtyOptions, stateOptions, serviceAreaOptions } from "@/data/inter
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
-const certOptions = ["ARISE", "CIP", "CADC", "CCMI", "LCDC", "LPC", "LCSW", "PHD", "Other"];
+const certOptions = ["ARISE", "CIP", "CADC", "CCMI", "LCDC", "LPC", "LCSW", "PHD", "MD", "JD", "Other"];
 const hearAboutOptions = ["Referral", "Podcast", "Social Media", "Search", "Conference", "Other"];
 const languageOptions = [
   "Spanish", "French", "German", "Italian", "Portuguese", "Mandarin",
