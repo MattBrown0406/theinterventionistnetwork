@@ -103,6 +103,23 @@ const CredentialPage = () => {
             </div>
           )}
 
+          {credential.comparisons?.map((c) => (
+            <div key={c.title}>
+              <h2 className="text-xl font-bold mb-3">{c.title}</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">{c.body}</p>
+              {c.bullets && (
+                <ul className="space-y-2">
+                  {c.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-2 text-muted-foreground">
+                      <CheckCircle2 className="h-4 w-4 text-gold shrink-0 mt-0.5" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+
           {credential.learnMoreUrl && (
             <div>
               <a

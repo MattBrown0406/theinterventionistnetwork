@@ -9,6 +9,7 @@ export type Credential = {
   issuingBody: string;
   issuingStates?: { state: string; note?: string }[];
   issuingStatesNote?: string;
+  comparisons?: { title: string; body: string; bullets?: string[] }[];
   learnMoreUrl?: string;
 };
 
@@ -159,6 +160,20 @@ export const credentials: Credential[] = [
     whyItMatters:
       "An LPC-credentialed interventionist can recognize and account for co-occurring conditions — trauma, depression, anxiety, personality disorders — that often drive substance use and shape what a successful intervention looks like.",
     issuingBody: "State counseling licensure boards",
+    comparisons: [
+      {
+        title: "How an LPC differs from an LCSW",
+        body:
+          "LPCs and LCSWs are both master's-level, independently licensed clinicians who can diagnose and treat mental health and substance use conditions — and in many clinical settings their day-to-day work overlaps significantly. The core difference is the lens of their training.",
+        bullets: [
+          "Training focus: LPCs are trained primarily in counseling theory, psychopathology, assessment, and individual and group psychotherapy. LCSWs are trained in clinical practice and in the social systems around a client — family, workplace, school, housing, and community resources.",
+          "Graduate degree: LPCs hold a Master's in Counseling (MA/MS, MEd) from a program typically accredited by CACREP. LCSWs hold a Master of Social Work (MSW) from a CSWE-accredited program.",
+          "Licensing exam: LPCs sit for the National Counselor Examination (NCE) or National Clinical Mental Health Counseling Examination (NCMHCE). LCSWs sit for the ASWB Clinical exam.",
+          "Ethics codes: LPCs follow the ACA Code of Ethics; LCSWs follow the NASW Code of Ethics, which places explicit emphasis on social justice and systems-level advocacy.",
+          "Typical strengths in intervention work: an LPC often brings deeper formal training in diagnosis, psychotherapy modalities, and treatment planning, while an LCSW typically brings stronger training in mobilizing family systems, coordinating community resources, and case management across the continuum of care.",
+        ],
+      },
+    ],
   },
   {
     slug: "lcsw",
@@ -178,6 +193,20 @@ export const credentials: Credential[] = [
     whyItMatters:
       "Interventions are fundamentally about systems — the family, workplace, and community around the identified person. LCSWs are trained from day one to assess and mobilize those systems, which is exactly what good intervention work requires.",
     issuingBody: "State social work licensing boards",
+    comparisons: [
+      {
+        title: "How an LCSW differs from an LPC",
+        body:
+          "LCSWs and LPCs are both master's-level, independently licensed clinicians who can diagnose and treat mental health and substance use conditions, and they often work side by side in the same settings. The difference is rooted in how each profession is trained to view the client.",
+        bullets: [
+          "Training focus: LCSWs are trained in the 'person-in-environment' model — assessing and mobilizing the family, workplace, school, and community systems around a client. LPCs are trained primarily in counseling theory, psychopathology, and individual and group psychotherapy.",
+          "Graduate degree: LCSWs hold a Master of Social Work (MSW) from a CSWE-accredited program. LPCs hold a Master's in Counseling (MA/MS, MEd), typically from a CACREP-accredited program.",
+          "Licensing exam: LCSWs sit for the ASWB Clinical exam. LPCs sit for the National Counselor Examination (NCE) or National Clinical Mental Health Counseling Examination (NCMHCE).",
+          "Ethics codes: LCSWs follow the NASW Code of Ethics, with explicit attention to social justice, advocacy, and systems-level practice. LPCs follow the ACA Code of Ethics.",
+          "Typical strengths in intervention work: an LCSW often brings stronger training in family systems, case management, and connecting families to community and aftercare resources, while an LPC typically brings deeper training in diagnostic assessment and structured psychotherapy modalities.",
+        ],
+      },
+    ],
   },
   {
     slug: "phd",
