@@ -137,34 +137,19 @@ Deno.serve(async (req) => {
 
     for (const row of eligible) {
       const email = buildEmail(row)
-      const payload = {
-        to: row.email,
-        subject: email.subject,
-        html: email.html,
-        text: email.text,
-        from: 'The Interventionist Network <updates@mail.theinterventionistnetwork.com>',
-        sender_domain: 'mail.theinterventionistnetwork.com',
-        purpose: 'transactional',
-        label: 'interventionist-monthly-stats',
-        queued_at: new Date().toISOString(),
-        message_id: `interventionist-stats:${row.interventionist_id}:${row.month_start}`,
-        idempotency_key: `interventionist-stats:${row.interventionist_id}:${row.month_start}`,
-        metadata: {
-          interventionist_id: row.interventionist_id,
-          month_start: row.month_start,
-          stats: {
-            total_clicks: row.total_clicks,
-            card_total_clicks: row.card_total_clicks,
-          },
+      const { error: sendError } = await supabase.functions.invoke('send-email', {
+        body: {
+          to: row.email,
+          subject: email.subject,
+          html: email.html,
+          text: email.text,
+          from: 'The Interventionist Network <noreply@theinterventionistnetwork.com>',
         },
-      }
-
-      const { error: enqueueError } = await supabase.rpc('enqueue_email', {
-        queue_name: 'transactional_emails',
-        payload,
+        headers: {
+          'X-Internal-Call': supabaseServiceKey,
+        },
       })
-
-      if (enqueueError) throw enqueueError
+      if (sendError) throw sendError
     }
 
     return new Response(JSON.stringify({ monthStart: monthStartIso, queued: eligible.length }), {
