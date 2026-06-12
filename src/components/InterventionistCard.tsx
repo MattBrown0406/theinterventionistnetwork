@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-  import { MapPin, Award, Clock, ShieldCheck, BadgeCheck, ClipboardList } from "lucide-react";
+import { MapPin, Award, Clock, ShieldCheck, BadgeCheck, ClipboardList } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackInterventionistClick } from "@/lib/interventionistTracking";
 
