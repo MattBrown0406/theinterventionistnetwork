@@ -15,7 +15,6 @@ export interface ForumThread {
   id: string;
   category_id: string;
   author_name: string;
-  author_email: string;
   title: string;
   body: string;
   is_pinned: boolean;
@@ -31,10 +30,13 @@ export interface ForumReply {
   id: string;
   thread_id: string;
   author_name: string;
-  author_email: string;
   body: string;
   created_at: string;
 }
+
+const THREAD_COLUMNS =
+  "id, category_id, author_name, title, body, is_pinned, is_locked, reply_count, last_reply_at, created_at, updated_at";
+const REPLY_COLUMNS = "id, thread_id, author_name, body, created_at";
 
 export function useForumCategories() {
   return useQuery({
@@ -56,7 +58,7 @@ export function useForumThreadsByCategory(categoryId: string | undefined) {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("forum_threads")
-        .select("*")
+        .select(THREAD_COLUMNS)
         .eq("category_id", categoryId!)
         .order("is_pinned", { ascending: false })
         .order("last_reply_at", { ascending: false });
@@ -73,7 +75,7 @@ export function useForumThread(threadId: string | undefined) {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("forum_threads")
-        .select("*, forum_categories(*)")
+        .select(`${THREAD_COLUMNS}, forum_categories(*)`)
         .eq("id", threadId!)
         .single();
       if (error) throw error;
@@ -89,7 +91,7 @@ export function useForumReplies(threadId: string | undefined) {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("forum_replies")
-        .select("*")
+        .select(REPLY_COLUMNS)
         .eq("thread_id", threadId!)
         .order("created_at");
       if (error) throw error;
@@ -105,7 +107,7 @@ export function useRecentThreads() {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("forum_threads")
-        .select("*, forum_categories(name, slug)")
+        .select(`${THREAD_COLUMNS}, forum_categories(name, slug)`)
         .order("last_reply_at", { ascending: false })
         .limit(5);
       if (error) throw error;

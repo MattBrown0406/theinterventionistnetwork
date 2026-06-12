@@ -30,7 +30,24 @@ export const useTrainingMaterials = (category?: string) => {
       }
       const { data, error } = await query;
       if (error) throw error;
-      return data as TrainingMaterial[];
+      const rows = (data ?? []) as TrainingMaterial[];
+      // Resolve signed URLs for files stored in the private member-materials bucket.
+      await Promise.all(
+        rows.map(async (row) => {
+          if (!row.file_url) return;
+          // Already a signed/public URL from an external source — leave as-is.
+          if (/^https?:\/\//i.test(row.file_url) && !row.file_url.includes("/member-materials/")) return;
+          let path = row.file_url;
+          const marker = "/member-materials/";
+          const idx = path.indexOf(marker);
+          if (idx >= 0) path = path.slice(idx + marker.length);
+          const { data: signed } = await supabase.storage
+            .from("member-materials")
+            .createSignedUrl(path, 3600);
+          if (signed?.signedUrl) row.file_url = signed.signedUrl;
+        }),
+      );
+      return rows;
     },
   });
 };
