@@ -1,0 +1,2 @@
+ALTER TABLE public.membership_applications ADD COLUMN IF NOT EXISTS offers_case_management boolean NOT NULL DEFAULT false;
+ALTER TABLE public.interventionists ADD COLUMN IF NOT EXISTS offers_case_management boolean NOT NULL DEFAULT false;
