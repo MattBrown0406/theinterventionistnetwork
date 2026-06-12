@@ -209,6 +209,25 @@ export const credentials: Credential[] = [
     ],
   },
   {
+    slug: "msw",
+    code: "MSW",
+    name: "Master of Social Work",
+    shortDescription:
+      "A graduate degree in social work — the foundational training behind clinical social work practice, case management, and systems-based intervention.",
+    whatItIs:
+      "The Master of Social Work (MSW) is a two-year graduate degree from a program accredited by the Council on Social Work Education (CSWE). MSW-trained professionals are educated in clinical assessment, mental health and substance use treatment, family systems, case management, and the 'person-in-environment' framework — looking at the client alongside their family, workplace, community, and access to resources. An MSW is also the required degree to pursue clinical licensure as an LCSW.",
+    requirements: [
+      "Bachelor's degree (a BSW can shorten the MSW to advanced standing, typically one year)",
+      "Completion of an MSW from a CSWE-accredited program — coursework in clinical practice, human behavior, policy, research, and ethics",
+      "Two supervised field practicum placements (typically 900+ hours total) in clinical or community settings",
+      "Adherence to the NASW Code of Ethics",
+      "For independent clinical practice, additional state licensure (LMSW, then LCSW after post-graduate supervised hours and the ASWB clinical exam)",
+    ],
+    whyItMatters:
+      "An MSW-trained interventionist brings clinical and systems thinking from day one — trained to assess the identified person and the full environment around them: family roles, finances, housing, employment, legal exposure, and community supports. That broader lens often determines whether an intervention actually 'sticks' once the person enters treatment. Many interventionists begin their clinical career with an MSW and later add the LCSW for full independent clinical scope.",
+    issuingBody: "CSWE-accredited graduate schools of social work",
+  },
+  {
     slug: "phd",
     code: "PHD",
     name: "Doctor of Philosophy (PhD)",
