@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { MapPin, Award, Clock, ShieldCheck, BadgeCheck, ClipboardList, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackInterventionistClick } from "@/lib/interventionistTracking";
+import { findCredential } from "@/data/credentials";
 
 interface InterventionistCardProps {
   id: string;
@@ -52,7 +53,31 @@ const InterventionistCard = ({
         )}
         <div className="min-w-0">
           <h3 className="font-bold text-primary text-lg leading-tight">{name}</h3>
-          <p className="text-sm text-gold font-medium">{credentials}</p>
+          <p className="text-sm text-gold font-medium">
+            {credentials.split(",").map((raw, i, arr) => {
+              const token = raw.trim();
+              if (!token) return null;
+              const cred = findCredential(token);
+              const node = cred ? (
+                <Link
+                  to={`/credentials/${cred.slug}`}
+                  className="hover:underline"
+                  title={cred.name}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {token}
+                </Link>
+              ) : (
+                <span>{token}</span>
+              );
+              return (
+                <span key={`${token}-${i}`}>
+                  {node}
+                  {i < arr.length - 1 ? ", " : ""}
+                </span>
+              );
+            })}
+          </p>
         </div>
       </div>
 

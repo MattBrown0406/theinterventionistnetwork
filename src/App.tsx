@@ -30,6 +30,8 @@ const ForumThread = lazy(() => import("./pages/ForumThread"));
 const ForumNewThread = lazy(() => import("./pages/ForumNewThread"));
 const StateLandingPage = lazy(() => import("./pages/StateLandingPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
+const CredentialsIndexPage = lazy(() => import("./pages/CredentialsIndexPage"));
+const CredentialPage = lazy(() => import("./pages/CredentialPage"));
 const VerifyPage = lazy(() => import("./pages/VerifyPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -75,6 +77,8 @@ const App = () => (
               <Route path="/forum/:slug" element={<ForumCategory />} />
               <Route path="/states/:slug" element={<StateLandingPage />} />
               <Route path="/faq" element={<FAQPage />} />
+              <Route path="/credentials" element={<CredentialsIndexPage />} />
+              <Route path="/credentials/:slug" element={<CredentialPage />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>

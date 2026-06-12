@@ -6,6 +6,7 @@ import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { trackInterventionistClick } from "@/lib/interventionistTracking";
 import { useInterventionist } from "@/hooks/useInterventionists";
+import { findCredential } from "@/data/credentials";
 
 const InterventionistProfile = () => {
   const { slug } = useParams();
@@ -64,7 +65,25 @@ const InterventionistProfile = () => {
             )}
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground">{person.name}</h1>
-              <p className="text-gold text-lg font-medium mt-1">{person.credentials}</p>
+              <p className="text-gold text-lg font-medium mt-1">
+                {person.credentials.split(",").map((raw, i, arr) => {
+                  const token = raw.trim();
+                  if (!token) return null;
+                  const cred = findCredential(token);
+                  return (
+                    <span key={`${token}-${i}`}>
+                      {cred ? (
+                        <Link to={`/credentials/${cred.slug}`} className="hover:underline" title={cred.name}>
+                          {token}
+                        </Link>
+                      ) : (
+                        token
+                      )}
+                      {i < arr.length - 1 ? ", " : ""}
+                    </span>
+                  );
+                })}
+              </p>
               <div className="flex flex-wrap gap-4 mt-3 text-sm text-primary-foreground/60">
                 <span className="flex items-center gap-1"><MapPin className="w-4 h-4" />{person.region}</span>
                 <span className="flex items-center gap-1"><Clock className="w-4 h-4" />{person.years_experience}+ years</span>
@@ -92,11 +111,21 @@ const InterventionistProfile = () => {
               <div>
                 <h2 className="text-xl font-bold mb-3">Certifications & Training</h2>
                 <ul className="space-y-2">
-                  {person.certifications.map((cert) => (
-                    <li key={cert} className="flex items-center gap-2 text-muted-foreground">
-                      <Award className="w-4 h-4 text-gold shrink-0" />{cert}
-                    </li>
-                  ))}
+                  {person.certifications.map((cert) => {
+                    const cred = findCredential(cert);
+                    return (
+                      <li key={cert} className="flex items-center gap-2 text-muted-foreground">
+                        <Award className="w-4 h-4 text-gold shrink-0" />
+                        {cred ? (
+                          <Link to={`/credentials/${cred.slug}`} className="hover:text-gold hover:underline transition-colors">
+                            {cert} <span className="text-xs text-muted-foreground/70">— {cred.name}</span>
+                          </Link>
+                        ) : (
+                          <span>{cert}</span>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
