@@ -82,7 +82,14 @@ const Footer = () => {
               <p className="mt-1">A division of Freedom Interventions, LLC</p>
             </div>
             <p className="text-xs text-primary-foreground/40">
-              © {new Date().getFullYear()} The Interventionist Network. All rights reserved.
+              <Link
+                to="/auth"
+                aria-label="Admin login"
+                className="hover:text-accent transition-colors"
+              >
+                ©
+              </Link>{" "}
+              {new Date().getFullYear()} The Interventionist Network. All rights reserved.
             </p>
           </div>
         </div>
