@@ -9,6 +9,8 @@ const TIER_PRICES: Record<string, { amount: number; name: string }> = {
   listed: { amount: 2500, name: "Listed Membership — $25/month" },
 };
 
+const FREE_COUPONS = new Set(["invite2026"]);
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -21,7 +23,13 @@ serve(async (req) => {
     const SQUARE_LOCATION_ID = Deno.env.get('SQUARE_LOCATION_ID');
     if (!SQUARE_LOCATION_ID) throw new Error('SQUARE_LOCATION_ID is not configured');
 
-    const { tier, applicationId, redirectUrl } = await req.json();
+    const { tier, applicationId, redirectUrl, couponCode } = await req.json();
+
+    if (couponCode && FREE_COUPONS.has(String(couponCode).trim().toLowerCase())) {
+      return new Response(JSON.stringify({ free: true, checkoutUrl: null }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     const tierInfo = TIER_PRICES[tier];
     if (!tierInfo) throw new Error(`Invalid tier: ${tier}`);

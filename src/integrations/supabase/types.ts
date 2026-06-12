@@ -417,6 +417,7 @@ export type Database = {
           business_state: string | null
           cert_other: string | null
           certifications: string[]
+          coupon_code: string | null
           created_at: string
           email: string
           full_name: string
@@ -437,6 +438,7 @@ export type Database = {
           business_state?: string | null
           cert_other?: string | null
           certifications?: string[]
+          coupon_code?: string | null
           created_at?: string
           email: string
           full_name: string
@@ -457,6 +459,7 @@ export type Database = {
           business_state?: string | null
           cert_other?: string | null
           certifications?: string[]
+          coupon_code?: string | null
           created_at?: string
           email?: string
           full_name?: string

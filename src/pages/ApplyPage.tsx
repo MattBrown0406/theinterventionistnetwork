@@ -43,6 +43,7 @@ const ApplyPage = () => {
     practiceDescription: "",
     hearAbout: "",
     tierInterest: "listed",
+    couponCode: "",
     noReferralFees: false,
     offersHourlyCoaching: false,
   });
@@ -91,6 +92,7 @@ const ApplyPage = () => {
         tier_interest: form.tierInterest,
         no_referral_fees: form.noReferralFees,
         offers_hourly_coaching: form.offersHourlyCoaching,
+        coupon_code: form.couponCode.trim() || null,
       }).select("id").single();
 
       if (error) throw error;
@@ -102,14 +104,22 @@ const ApplyPage = () => {
           tier: form.tierInterest,
           applicationId: appData?.id,
           redirectUrl,
+          couponCode: form.couponCode.trim() || null,
         },
       });
 
       if (fnError) throw fnError;
       if (checkoutData?.error) throw new Error(checkoutData.error);
 
-      // 3. Redirect to Square checkout
-      if (checkoutData?.checkoutUrl) {
+      // 3. Redirect — either to Square checkout, or directly to confirmation if comped
+      if (checkoutData?.free) {
+        markProtectedSubmission("apply");
+        trackEvent("apply_coupon_redeemed", {
+          application_id: appData?.id || "unknown",
+        });
+        setSubmitMeta(createInitialSubmitMeta());
+        window.location.href = `${redirectUrl}?comped=1`;
+      } else if (checkoutData?.checkoutUrl) {
         markProtectedSubmission("apply");
         trackEvent("apply_checkout_redirect", {
           tier_interest: form.tierInterest || "unknown",
@@ -262,6 +272,19 @@ const ApplyPage = () => {
                 {TIER_LABELS.listed}
               </div>
               <p className="text-xs text-muted-foreground mt-1">This checkout collects the initial payment only. Recurring billing is handled during approved member onboarding.</p>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-1.5">Coupon Code (optional)</label>
+              <input
+                type="text"
+                value={form.couponCode}
+                maxLength={64}
+                placeholder="Enter invitation code"
+                onChange={(e) => setForm({ ...form, couponCode: e.target.value })}
+                className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+              />
+              <p className="text-xs text-muted-foreground mt-1">If you were invited with a coupon code, enter it here to waive the membership fee.</p>
             </div>
 
             <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">
