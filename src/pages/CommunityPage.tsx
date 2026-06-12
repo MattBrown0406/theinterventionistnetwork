@@ -138,7 +138,7 @@ const CommunityPage = () => {
               Our annual gathering of network members — training, networking, case sharing, and community building.
             </p>
             <div className="bg-muted/50 rounded-lg p-6 text-center">
-              <p className="font-semibold">2026 Summit: Virtual — Date TBA</p>
+              <p className="font-semibold">2027 Summit: Date TBA</p>
               <p className="text-sm text-muted-foreground mt-1">Details coming soon. Partner members receive complimentary registration.</p>
             </div>
           </div>
