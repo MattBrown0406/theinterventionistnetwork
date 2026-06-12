@@ -7,6 +7,8 @@ export type Credential = {
   requirements: string[];
   whyItMatters: string;
   issuingBody: string;
+  issuingStates?: { state: string; note?: string }[];
+  issuingStatesNote?: string;
   learnMoreUrl?: string;
 };
 
