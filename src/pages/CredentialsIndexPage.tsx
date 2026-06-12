@@ -4,6 +4,13 @@ import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import { credentials } from "@/data/credentials";
 
+const sortedCredentials = [
+  ...credentials.filter((c) => c.code === "CIP"),
+  ...credentials
+    .filter((c) => c.code !== "CIP")
+    .sort((a, b) => a.code.localeCompare(b.code)),
+];
+
 const CredentialsIndexPage = () => {
   return (
     <>
@@ -35,7 +42,7 @@ const CredentialsIndexPage = () => {
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="grid gap-4 md:grid-cols-2">
-            {credentials.map((c) => (
+            {sortedCredentials.map((c) => (
               <Link
                 key={c.slug}
                 to={`/credentials/${c.slug}`}
