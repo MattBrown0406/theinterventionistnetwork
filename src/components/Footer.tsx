@@ -62,6 +62,7 @@ const Footer = () => {
               <li><a href="tel:5418386009" className="text-sm text-primary-foreground/60 hover:text-accent transition-colors">Call (541) 838-6009</a></li>
               <li><Link to="/find" className="text-sm text-primary-foreground/60 hover:text-accent transition-colors">Browse Interventionists</Link></li>
               <li><Link to="/about" className="text-sm text-primary-foreground/60 hover:text-accent transition-colors">Our Standards</Link></li>
+              <li><Link to="/credentials" className="text-sm text-primary-foreground/60 hover:text-accent transition-colors">Credentials Explained</Link></li>
             </ul>
           </div>
 
