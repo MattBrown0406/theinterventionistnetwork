@@ -36,6 +36,7 @@ const emptyForm = {
   photo_url: "",
   offers_hourly_coaching: false,
   offers_case_management: false,
+  languages: [] as string[],
 };
 
 type FormData = typeof emptyForm;
@@ -120,6 +121,7 @@ const AdminPage = () => {
       photo_url: person.photo_url || "",
       offers_hourly_coaching: person.offers_hourly_coaching ?? false,
       offers_case_management: person.offers_case_management ?? false,
+      languages: person.languages || [],
     });
     setPhotoFile(null);
   };
@@ -177,6 +179,7 @@ const AdminPage = () => {
       photo_url: photoUrl || null,
       offers_hourly_coaching: form.offers_hourly_coaching,
       offers_case_management: form.offers_case_management,
+      languages: form.languages,
     };
 
     let error;
@@ -207,7 +210,7 @@ const AdminPage = () => {
     }
   };
 
-  const toggleArrayItem = (field: "states_served" | "specialties" | "certifications", value: string) => {
+  const toggleArrayItem = (field: "states_served" | "specialties" | "certifications" | "languages", value: string) => {
     setForm((prev) => ({
       ...prev,
       [field]: prev[field].includes(value) ? prev[field].filter((v) => v !== value) : [...prev[field], value],
@@ -343,6 +346,25 @@ const AdminPage = () => {
                           }`}
                         >
                           {s}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Languages besides English */}
+                  <div className="mt-4">
+                    <Label>Languages Spoken (besides English)</Label>
+                    <div className="flex flex-wrap gap-2 mt-1">
+                      {["Spanish","French","German","Italian","Portuguese","Mandarin","Cantonese","Japanese","Korean","Vietnamese","Tagalog","Arabic","Hebrew","Russian","Polish","Ukrainian","Hindi","Punjabi","Urdu","Farsi","American Sign Language"].map((l) => (
+                        <button
+                          key={l}
+                          type="button"
+                          onClick={() => toggleArrayItem("languages", l)}
+                          className={`text-xs px-3 py-1 rounded-full border transition-colors ${
+                            form.languages.includes(l) ? "bg-gold text-primary-foreground border-gold" : "bg-background border-input"
+                          }`}
+                        >
+                          {l}
                         </button>
                       ))}
                     </div>

@@ -17,6 +17,7 @@ interface InterventionistCardProps {
   compact?: boolean;
   offers_hourly_coaching?: boolean;
   offers_case_management?: boolean;
+  languages?: string[];
   featured?: boolean;
   no_referral_fees?: boolean | null;
 }
@@ -35,6 +36,7 @@ const InterventionistCard = ({
   compact = false,
   offers_hourly_coaching = false,
   offers_case_management = false,
+  languages = [],
   featured = false,
   no_referral_fees = true,
 }: InterventionistCardProps) => {
@@ -66,9 +68,17 @@ const InterventionistCard = ({
         {offers_case_management && (
           <span className="flex items-center gap-1 text-gold font-medium"><ClipboardList className="w-3.5 h-3.5" />Post-Treatment Case Management</span>
         )}
-        {specialties.includes("Spanish Speaking") && (
-          <span className="flex items-center gap-1 text-gold font-medium"><Languages className="w-3.5 h-3.5" />Spanish Speaking</span>
-        )}
+        {(() => {
+          const langs = Array.from(new Set([
+            ...languages,
+            ...(specialties.includes("Spanish Speaking") ? ["Spanish"] : []),
+          ]));
+          return langs.map((lang) => (
+            <span key={lang} className="flex items-center gap-1 text-gold font-medium">
+              <Languages className="w-3.5 h-3.5" />{lang}
+            </span>
+          ));
+        })()}
       </div>
 
       <div className="flex flex-wrap gap-1.5 mb-3">

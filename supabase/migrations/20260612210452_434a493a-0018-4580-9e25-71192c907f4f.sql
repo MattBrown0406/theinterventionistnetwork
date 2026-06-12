@@ -1,0 +1,2 @@
+ALTER TABLE public.membership_applications ADD COLUMN IF NOT EXISTS languages text[] NOT NULL DEFAULT '{}'::text[];
+ALTER TABLE public.interventionists ADD COLUMN IF NOT EXISTS languages text[] NOT NULL DEFAULT '{}'::text[];
