@@ -82,9 +82,9 @@ const JoinPage = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What Membership Includes</h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-muted-foreground">
-            Pick the visibility and support level that matches your stage of practice. Every tier keeps the no-referral-fee standard intact.
+            One simple membership. No referral fees, ever.
           </p>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid gap-6 max-w-md mx-auto">
             {tiers.map((tier) => (
               <div
                 key={tier.name}
@@ -164,56 +164,6 @@ const JoinPage = () => {
           </p>
         </div>
       </section>
-
-      {/* Benefits Comparison */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            More Than Referrals — A Complete Professional Home
-          </h2>
-          <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-            The Interventionist Network isn't just a directory. It's everything you need to grow your practice, sharpen your skills, and serve families better.
-          </p>
-          <div className="max-w-5xl mx-auto overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="border-b-2 border-border">
-                  <th className="text-left py-3 px-4 font-semibold">Benefit</th>
-                  <th className="text-center py-3 px-4 font-semibold">Listed ($49/mo)</th>
-                  <th className="text-center py-3 px-4 font-semibold text-gold">Featured ($199/mo)</th>
-                  <th className="text-center py-3 px-4 font-semibold">Partner ($299/mo)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Network profile & family matching", "✅", "✅ Priority", "✅ Priority"],
-                  ["Verified member badge for your website", "✅", "✅", "✅"],
-                  ["Private community access", "✅", "✅", "✅"],
-                  ["Monthly case consultation calls", "Listen only", "Full participation", "Priority + private follow-up"],
-                  ["Training library", "3 core modules", "Full library", "Full + early access"],
-                  ["Marketing templates & content drops", "—", "✅ Monthly", "✅ Monthly + custom"],
-                  ["Family resource library (white-label)", "—", "✅", "✅"],
-                  ["Legal & insurance resources", "—", "✅", "✅"],
-                  ["Peer mentorship program", "—", "—", "✅"],
-                  ["Quarterly podcast guest spot", "—", "—", "✅"],
-                  ["1-on-1 business coaching & scorecard", "—", "—", "✅"],
-                  ["Annual Summit registration", "Pay separately", "Pay separately", "Complimentary"],
-                ].map(([benefit, listed, featured, partner], i) => (
-                  <tr key={i} className="border-b border-border">
-                    <td className="py-3 px-4 text-muted-foreground">{benefit}</td>
-                    <td className="py-3 px-4 text-center">{listed}</td>
-                    <td className="py-3 px-4 text-center">{featured}</td>
-                    <td className="py-3 px-4 text-center">{partner}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-
-
 
       {/* CTA */}
       <section className="bg-navy py-16">
