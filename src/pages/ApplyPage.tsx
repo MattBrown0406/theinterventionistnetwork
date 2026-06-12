@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ShieldCheck, CreditCard, BadgeCheck } from "lucide-react";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
-import { specialtyOptions, stateOptions } from "@/data/interventionists";
+import { specialtyOptions, stateOptions, serviceAreaOptions } from "@/data/interventionists";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
@@ -54,6 +54,7 @@ const ApplyPage = () => {
     noReferralFees: false,
     offersHourlyCoaching: false,
     offersCaseManagement: false,
+    willingToTravelInternationally: false,
   });
 
   const handleCheckboxArray = (field: "certifications" | "specialties", value: string) => {
@@ -102,6 +103,7 @@ const ApplyPage = () => {
         no_referral_fees: form.noReferralFees,
         offers_hourly_coaching: form.offersHourlyCoaching,
         offers_case_management: form.offersCaseManagement,
+        willing_to_travel_internationally: form.willingToTravelInternationally,
         coupon_code: form.couponCode.trim() || null,
       }).select("id").single();
 
@@ -258,10 +260,20 @@ const ApplyPage = () => {
                 onChange={(e) => setForm({ ...form, statesServed: Array.from(e.target.selectedOptions, (o) => o.value) })}
                 className="w-full h-32 px-3 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
               >
-                {stateOptions.map((s) => <option key={s} value={s}>{s}</option>)}
+                {serviceAreaOptions.map((s) => <option key={s} value={s}>{s}</option>)}
               </select>
               <p className="text-xs text-muted-foreground mt-1">Hold Ctrl/Cmd to select multiple</p>
             </div>
+
+            <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">
+              <input
+                type="checkbox"
+                checked={form.willingToTravelInternationally}
+                onChange={(e) => setForm({ ...form, willingToTravelInternationally: e.target.checked })}
+                className="rounded border-input mt-0.5"
+              />
+              <span>I am willing to travel internationally for interventions</span>
+            </label>
 
             <div>
               <label className="block text-sm font-medium mb-1.5">Languages Spoken Besides English</label>

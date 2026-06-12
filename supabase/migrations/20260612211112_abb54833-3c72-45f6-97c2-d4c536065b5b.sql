@@ -1,0 +1,2 @@
+ALTER TABLE public.membership_applications ADD COLUMN IF NOT EXISTS willing_to_travel_internationally boolean NOT NULL DEFAULT false;
+ALTER TABLE public.interventionists ADD COLUMN IF NOT EXISTS willing_to_travel_internationally boolean NOT NULL DEFAULT false;

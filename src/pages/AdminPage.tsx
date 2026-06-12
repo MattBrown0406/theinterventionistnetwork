@@ -37,6 +37,7 @@ const emptyForm = {
   offers_hourly_coaching: false,
   offers_case_management: false,
   languages: [] as string[],
+  willing_to_travel_internationally: false,
 };
 
 type FormData = typeof emptyForm;
@@ -122,6 +123,7 @@ const AdminPage = () => {
       offers_hourly_coaching: person.offers_hourly_coaching ?? false,
       offers_case_management: person.offers_case_management ?? false,
       languages: person.languages || [],
+      willing_to_travel_internationally: person.willing_to_travel_internationally ?? false,
     });
     setPhotoFile(null);
   };
@@ -180,6 +182,7 @@ const AdminPage = () => {
       offers_hourly_coaching: form.offers_hourly_coaching,
       offers_case_management: form.offers_case_management,
       languages: form.languages,
+      willing_to_travel_internationally: form.willing_to_travel_internationally,
     };
 
     let error;
@@ -309,6 +312,10 @@ const AdminPage = () => {
                     <div className="flex items-center gap-2 pt-2">
                       <Switch checked={form.offers_case_management} onCheckedChange={(v) => setForm({ ...form, offers_case_management: v })} />
                       <Label>Offers post-treatment case management</Label>
+                    </div>
+                    <div className="flex items-center gap-2 pt-2">
+                      <Switch checked={form.willing_to_travel_internationally} onCheckedChange={(v) => setForm({ ...form, willing_to_travel_internationally: v })} />
+                      <Label>Willing to travel internationally</Label>
                     </div>
                   </div>
 
