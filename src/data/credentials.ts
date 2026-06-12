@@ -14,21 +14,23 @@ export const credentials: Credential[] = [
   {
     slug: "ccmi",
     code: "CCMI",
-    name: "Certified Clinical Medical Interventionist",
+    name: "Certified Case Manager Interventionist",
     shortDescription:
-      "A clinical intervention credential focused on the medical and behavioral health dimensions of substance use crises.",
+      "A Breining Institute credential demonstrating advanced knowledge and skills in both intervention and ongoing case management for long-term recovery.",
     whatItIs:
-      "The Certified Clinical Medical Interventionist (CCMI) credential identifies professionals trained to facilitate interventions that account for the medical, psychiatric, and addiction-related needs of the identified person and their family. It blends clinical case conceptualization with structured intervention models.",
+      "The Certified Case Manager Interventionist (CCMI) is a credential issued by Breining Institute that recognizes health care professionals trained to initiate the recovery process through intervention and to support that recovery through long-term case management. The credential is offered at multiple levels — CCMI-Intern (CCMI-i), CCMI-Associate (CCMI-A), full CCMI, and CCMI – Masters Level (CCMI-M) — reflecting increasing experience and education.",
     requirements: [
-      "Documented clinical training in addiction and/or mental health",
-      "Completion of an approved CCMI training curriculum",
-      "Supervised intervention experience and case review",
-      "Adherence to a published code of ethics",
-      "Ongoing continuing education to maintain the credential",
+      "Hold a qualifying health care professional credential or license (such as a substance use disorders counselor, registered nurse, marriage and family therapist, or licensed clinical social worker) plus at least 2,080 hours (about one year full-time) of credentialed experience — OR a minimum two-year (Associates) degree plus at least 4,160 hours (about two years full-time) of health care professional experience.",
+      "Complete the five required training Modules (at least 125–150 hours total) from a Breining Institute Accredited (BIA) Program: (1) Introduction to Intervention and Case Management, (2) Family Systems, (3) Business Ethics / Professionalism / Self Care, (4) Cultural Sensitivity, and (5) Addictions and Co-occurring Disorders.",
+      "Begin as a CCMI-Intern (CCMI-i) after completing at least Module 1 (25 hours) of specified coursework from a BIA Program.",
+      "Pass the Certified Case Manager Interventionist Examination (CCMIE) — a 75-question multiple-choice exam administered online by Breining Institute (a 25-question Practice Exam is required first).",
+      "CCMI-Associate (CCMI-A) holders may apply for the full CCMI Credential after completing 3,000 hours of supervised experience over at least 2 years (hours count from registration as a CCMI-Intern).",
+      "CCMI – Masters Level (CCMI-M) requires the full CCMI plus one of: 5 years health care professional clinical experience; 2 years clinical experience after earning the CCMI; or a Masters or Doctorate Degree in the healing arts.",
+      "Ongoing renewal through Breining Institute's online credential renewal process.",
     ],
     whyItMatters:
-      "Families in crisis are often navigating overdose risk, withdrawal, co-occurring mental illness, or medical instability. A CCMI-trained interventionist is prepared to coordinate with treatment providers, anticipate medical risk, and design an intervention that supports a clinically appropriate next step.",
-    issuingBody: "Clinical intervention credentialing bodies",
+      "Intervention is only the first step toward recovery — continuing case management dramatically increases the chance of long-term wellness. The CCMI signals that a professional is trained not just to facilitate the intervention itself, but to coordinate family systems, ethics, cultural considerations, and co-occurring disorders across the full arc of a family's recovery.",
+    issuingBody: "Breining Institute",
   },
   {
     slug: "arise",
