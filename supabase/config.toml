@@ -5,3 +5,6 @@ verify_jwt = true
 
 [functions.send-interventionist-monthly-stats]
 verify_jwt = true
+
+[functions.send-email]
+verify_jwt = false
