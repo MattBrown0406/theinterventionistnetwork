@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Award, Clock, ShieldCheck, BadgeCheck, ClipboardList, Languages } from "lucide-react";
+import { MapPin, Award, Clock, ShieldCheck, BadgeCheck, ClipboardList, Languages, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackInterventionistClick } from "@/lib/interventionistTracking";
 import { findCredential } from "@/data/credentials";
@@ -19,6 +19,7 @@ interface InterventionistCardProps {
   offers_hourly_coaching?: boolean;
   offers_case_management?: boolean;
   languages?: string[];
+  willing_to_travel_internationally?: boolean;
   featured?: boolean;
   no_referral_fees?: boolean | null;
 }
@@ -38,6 +39,7 @@ const InterventionistCard = ({
   offers_hourly_coaching = false,
   offers_case_management = false,
   languages = [],
+  willing_to_travel_internationally = false,
   featured = false,
   no_referral_fees = true,
 }: InterventionistCardProps) => {
@@ -92,6 +94,9 @@ const InterventionistCard = ({
         )}
         {offers_case_management && (
           <span className="flex items-center gap-1 text-gold font-medium"><ClipboardList className="w-3.5 h-3.5" />Post-Treatment Case Management</span>
+        )}
+        {willing_to_travel_internationally && (
+          <span className="flex items-center gap-1 text-gold font-medium"><Globe className="w-3.5 h-3.5" />Travels Internationally</span>
         )}
         {(() => {
           const langs = Array.from(new Set([
