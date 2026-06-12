@@ -7,40 +7,14 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 const tiers = [
   {
     name: "Listed",
-    price: "$49",
-    popular: false,
+    price: "$25",
+    popular: true,
     features: [
       "Professional profile on TheInterventionistNetwork.com",
       "Included in family matching based on location and specialty",
       "Network member badge/seal for your website",
       "Listed in our national directory",
       "Access to member resources",
-    ],
-  },
-  {
-    name: "Featured",
-    price: "$199",
-    popular: true,
-    features: [
-      "Everything in Listed, plus:",
-      "Priority placement in family matching",
-      "Featured profile on homepage rotation",
-      "Monthly spotlight in email newsletters (150+ families)",
-      "Enhanced profile with video introduction",
-      "Quarterly analytics report on profile views and inquiries",
-    ],
-  },
-  {
-    name: "Partner",
-    price: "$299",
-    popular: false,
-    features: [
-      "Everything in Featured, plus:",
-      "Co-branded content opportunities",
-      "Quarterly podcast guest appearance on Party Wreckers",
-      "Access to lead flow dashboard",
-      "Training resource library",
-      "Priority support and consultation with founder",
     ],
   },
 ];
@@ -50,7 +24,7 @@ const JoinPage = () => {
     <>
       <SEO
         title="Join the Network — Membership for Interventionists"
-        description="Join The Interventionist Network. Grow your practice with ethical, referral-fee-free membership. Tiered plans starting at $49/month."
+        description="Join The Interventionist Network. Grow your practice with ethical, referral-fee-free membership. Just $25/month."
       />
       <SchemaMarkup
         type="WebSite"
