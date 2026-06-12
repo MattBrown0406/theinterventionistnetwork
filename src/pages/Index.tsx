@@ -155,9 +155,9 @@ const Index = () => {
                 const anniversaryThisYear = new Date(now.getFullYear(), 3, 6);
                 if (now < anniversaryThisYear) years -= 1;
                 return [
-                  { stat: '20+ years', label: 'intervention experience' },
+                  { stat: '22+ years', label: 'intervention experience' },
                   { stat: `${years}+ years`, label: 'personal recovery' },
-                  { stat: '50 states', label: 'national reach' },
+                  { stat: 'National & International', label: 'reach (many of our interventionists are multi-lingual)' },
                 ];
               })().map((item) => (
                 <div key={item.label} className="rounded-2xl border border-border bg-warm-gray p-5">
