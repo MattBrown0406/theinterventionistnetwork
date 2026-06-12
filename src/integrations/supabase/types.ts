@@ -414,6 +414,7 @@ export type Database = {
       membership_applications: {
         Row: {
           business_name: string | null
+          business_state: string | null
           cert_other: string | null
           certifications: string[]
           created_at: string
@@ -433,6 +434,7 @@ export type Database = {
         }
         Insert: {
           business_name?: string | null
+          business_state?: string | null
           cert_other?: string | null
           certifications?: string[]
           created_at?: string
@@ -452,6 +454,7 @@ export type Database = {
         }
         Update: {
           business_name?: string | null
+          business_state?: string | null
           cert_other?: string | null
           certifications?: string[]
           created_at?: string

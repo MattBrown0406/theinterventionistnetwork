@@ -35,6 +35,7 @@ const ApplyPage = () => {
     email: "",
     phone: "",
     businessName: "",
+    businessState: "",
     websiteUrl: "",
     yearsExperience: "",
     certifications: [] as string[],
@@ -80,6 +81,7 @@ const ApplyPage = () => {
         email: form.email,
         phone: form.phone,
         business_name: form.businessName || null,
+        business_state: form.businessState || null,
         website_url: form.websiteUrl || null,
         years_experience: parseInt(form.yearsExperience),
         certifications: form.certifications,
@@ -189,6 +191,19 @@ const ApplyPage = () => {
                 />
               </div>
             ))}
+
+            <div>
+              <label className="block text-sm font-medium mb-1.5">State Where Business is Based *</label>
+              <select
+                required
+                value={form.businessState}
+                onChange={(e) => setForm({ ...form, businessState: e.target.value })}
+                className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+              >
+                <option value="">Select a state</option>
+                {stateOptions.map((s) => <option key={s} value={s}>{s}</option>)}
+              </select>
+            </div>
 
             <div>
               <label className="block text-sm font-medium mb-2">Certifications Held *</label>
