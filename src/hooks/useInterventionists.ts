@@ -23,6 +23,7 @@ export interface Interventionist {
   offers_hourly_coaching: boolean;
   offers_case_management: boolean;
   languages: string[];
+  willing_to_travel_internationally: boolean;
   no_referral_fees?: boolean | null;
 }
 
