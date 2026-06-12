@@ -11,6 +11,12 @@ import { toast } from "sonner";
 
 const certOptions = ["ARISE", "CIP", "CADC", "CCMI", "LCDC", "LPC", "LCSW", "PHD", "Other"];
 const hearAboutOptions = ["Referral", "Podcast", "Social Media", "Search", "Conference", "Other"];
+const languageOptions = [
+  "Spanish", "French", "German", "Italian", "Portuguese", "Mandarin",
+  "Cantonese", "Japanese", "Korean", "Vietnamese", "Tagalog", "Arabic",
+  "Hebrew", "Russian", "Polish", "Ukrainian", "Hindi", "Punjabi", "Urdu",
+  "Farsi", "American Sign Language",
+];
 
 const TIER_LABELS: Record<string, string> = {
   listed: "Listed — $25 initial membership payment",
@@ -40,6 +46,7 @@ const ApplyPage = () => {
     certOther: "",
     statesServed: [] as string[],
     specialties: [] as string[],
+    languages: [] as string[],
     practiceDescription: "",
     hearAbout: "",
     tierInterest: "listed",
@@ -88,6 +95,7 @@ const ApplyPage = () => {
         cert_other: form.certifications.includes("Other") ? form.certOther : null,
         states_served: form.statesServed,
         specialties: form.specialties,
+        languages: form.languages,
         practice_description: form.practiceDescription,
         hear_about: form.hearAbout || null,
         tier_interest: form.tierInterest,
@@ -253,6 +261,19 @@ const ApplyPage = () => {
                 {stateOptions.map((s) => <option key={s} value={s}>{s}</option>)}
               </select>
               <p className="text-xs text-muted-foreground mt-1">Hold Ctrl/Cmd to select multiple</p>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-1.5">Languages Spoken Besides English</label>
+              <select
+                multiple
+                value={form.languages}
+                onChange={(e) => setForm({ ...form, languages: Array.from(e.target.selectedOptions, (o) => o.value) })}
+                className="w-full h-32 px-3 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+              >
+                {languageOptions.map((l) => <option key={l} value={l}>{l}</option>)}
+              </select>
+              <p className="text-xs text-muted-foreground mt-1">Hold Ctrl/Cmd to select multiple. Leave empty if English only.</p>
             </div>
 
             <div>
