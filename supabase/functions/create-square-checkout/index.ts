@@ -6,9 +6,7 @@ const corsHeaders = {
 };
 
 const TIER_PRICES: Record<string, { amount: number; name: string }> = {
-  listed: { amount: 4900, name: "Listed Membership — $49/month" },
-  featured: { amount: 19900, name: "Featured Membership — $199/month" },
-  partner: { amount: 29900, name: "Partner Membership — $299/month" },
+  listed: { amount: 2500, name: "Listed Membership — $25/month" },
 };
 
 serve(async (req) => {
