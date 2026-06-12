@@ -193,6 +193,19 @@ const ApplyPage = () => {
             ))}
 
             <div>
+              <label className="block text-sm font-medium mb-1.5">State Where Business is Based *</label>
+              <select
+                required
+                value={form.businessState}
+                onChange={(e) => setForm({ ...form, businessState: e.target.value })}
+                className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+              >
+                <option value="">Select a state</option>
+                {stateOptions.map((s) => <option key={s} value={s}>{s}</option>)}
+              </select>
+            </div>
+
+            <div>
               <label className="block text-sm font-medium mb-2">Certifications Held *</label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {certOptions.map((cert) => (
