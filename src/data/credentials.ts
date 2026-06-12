@@ -7,6 +7,8 @@ export type Credential = {
   requirements: string[];
   whyItMatters: string;
   issuingBody: string;
+  issuingStates?: { state: string; note?: string }[];
+  issuingStatesNote?: string;
   learnMoreUrl?: string;
 };
 
@@ -92,6 +94,25 @@ export const credentials: Credential[] = [
     whyItMatters:
       "A CADC-credentialed interventionist has formal training in substance use disorders, motivational interviewing, and the continuum of care — so the intervention plan reflects what actually works in treatment, not guesswork.",
     issuingBody: "State certification boards (IC&RC affiliated)",
+    issuingStatesNote:
+      "States that issue a credential under the exact \"CADC\" (Certified Alcohol and Drug Counselor) title — typically through an IC&RC member board or an affiliated state body. Many additional states issue equivalent credentials under different acronyms (CADCII, LADC, CAC, CSAC, etc.).",
+    issuingStates: [
+      { state: "California", note: "Issued by CCAPP / CADTP / CAADE" },
+      { state: "Connecticut", note: "CT Certification Board" },
+      { state: "Georgia", note: "Georgia Addiction Counselors Association" },
+      { state: "Illinois", note: "IAODAPCA" },
+      { state: "Indiana", note: "Indiana Counselors Association on Alcohol and Drug Abuse" },
+      { state: "Kentucky", note: "Kentucky Board of Alcohol and Drug Counselors" },
+      { state: "Maryland", note: "MD Board of Professional Counselors & Therapists" },
+      { state: "Nevada", note: "Nevada Board of Examiners for Alcohol, Drug & Gambling Counselors" },
+      { state: "New Jersey", note: "Addiction Professionals Certification Board of New Jersey" },
+      { state: "Ohio", note: "Ohio Chemical Dependency Professionals Board" },
+      { state: "Oregon", note: "Mental Health & Addiction Certification Board of Oregon (MHACBO)" },
+      { state: "Pennsylvania", note: "Pennsylvania Certification Board" },
+      { state: "Tennessee", note: "Tennessee Certification Board" },
+      { state: "Virginia", note: "Substance Abuse Certification Alliance of Virginia" },
+      { state: "Washington", note: "Washington State Certification Board (also uses SUDP license)" },
+    ],
     learnMoreUrl: "https://internationalcredentialing.org/",
   },
   {
@@ -112,6 +133,13 @@ export const credentials: Credential[] = [
     whyItMatters:
       "Because the LCDC is a license — not just a certification — the holder is accountable to a state board. That accountability matters when a family is trusting a professional with one of the highest-stakes decisions they will ever make.",
     issuingBody: "State licensing boards (e.g., Texas HHSC)",
+    issuingStatesNote:
+      "States that issue a license under the exact \"LCDC\" (Licensed Chemical Dependency Counselor) title. Several other states license substance use counselors under different titles (e.g., LADC, LCADC, LADAC, SUDP).",
+    issuingStates: [
+      { state: "Texas", note: "Texas Health and Human Services Commission (HHSC) — primary LCDC license" },
+      { state: "Ohio", note: "Ohio Chemical Dependency Professionals Board — LCDC I, II, and III levels" },
+      { state: "Iowa", note: "Iowa Board of Certification — historical LCDC designation" },
+    ],
   },
   {
     slug: "lpc",
