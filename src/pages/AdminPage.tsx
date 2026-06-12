@@ -10,10 +10,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import { Pencil, Trash2, Plus, LogOut, X, Users, GraduationCap, Briefcase } from "lucide-react";
+import { Pencil, Trash2, Plus, LogOut, X, Users, GraduationCap, Briefcase, ClipboardCheck } from "lucide-react";
 import SEO from "@/components/SEO";
 import { specialtyOptions, stateOptions } from "@/data/interventionists";
 import AdminMaterialsTab from "@/components/admin/AdminTrainingTab";
+import AdminApplicationsTab from "@/components/admin/AdminApplicationsTab";
 
 const emptyForm = {
   name: "",
@@ -230,6 +231,9 @@ const AdminPage = () => {
             <TabsList className="mb-6">
               <TabsTrigger value="interventionists" className="gap-1.5">
                 <Users className="w-4 h-4" /> Interventionists
+              </TabsTrigger>
+              <TabsTrigger value="applications" className="gap-1.5">
+                <ClipboardCheck className="w-4 h-4" /> Applications
               </TabsTrigger>
               <TabsTrigger value="training" className="gap-1.5">
                 <GraduationCap className="w-4 h-4" /> Training Materials
