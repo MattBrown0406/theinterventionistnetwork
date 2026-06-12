@@ -43,6 +43,7 @@ const ApplyPage = () => {
     practiceDescription: "",
     hearAbout: "",
     tierInterest: "listed",
+    couponCode: "",
     noReferralFees: false,
     offersHourlyCoaching: false,
   });
@@ -91,6 +92,7 @@ const ApplyPage = () => {
         tier_interest: form.tierInterest,
         no_referral_fees: form.noReferralFees,
         offers_hourly_coaching: form.offersHourlyCoaching,
+        coupon_code: form.couponCode.trim() || null,
       }).select("id").single();
 
       if (error) throw error;
@@ -102,14 +104,22 @@ const ApplyPage = () => {
           tier: form.tierInterest,
           applicationId: appData?.id,
           redirectUrl,
+          couponCode: form.couponCode.trim() || null,
         },
       });
 
       if (fnError) throw fnError;
       if (checkoutData?.error) throw new Error(checkoutData.error);
 
-      // 3. Redirect to Square checkout
-      if (checkoutData?.checkoutUrl) {
+      // 3. Redirect — either to Square checkout, or directly to confirmation if comped
+      if (checkoutData?.free) {
+        markProtectedSubmission("apply");
+        trackEvent("apply_coupon_redeemed", {
+          application_id: appData?.id || "unknown",
+        });
+        setSubmitMeta(createInitialSubmitMeta());
+        window.location.href = `${redirectUrl}?comped=1`;
+      } else if (checkoutData?.checkoutUrl) {
         markProtectedSubmission("apply");
         trackEvent("apply_checkout_redirect", {
           tier_interest: form.tierInterest || "unknown",
