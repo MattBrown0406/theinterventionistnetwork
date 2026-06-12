@@ -83,6 +83,26 @@ const CredentialPage = () => {
             <p className="text-muted-foreground leading-relaxed">{credential.whyItMatters}</p>
           </div>
 
+          {credential.issuingStates && credential.issuingStates.length > 0 && (
+            <div>
+              <h2 className="text-xl font-bold mb-3">States that issue the {credential.code}</h2>
+              {credential.issuingStatesNote && (
+                <p className="text-muted-foreground leading-relaxed mb-4">{credential.issuingStatesNote}</p>
+              )}
+              <ul className="grid sm:grid-cols-2 gap-2">
+                {credential.issuingStates.map((s) => (
+                  <li key={s.state} className="flex items-start gap-2 text-muted-foreground">
+                    <CheckCircle2 className="h-4 w-4 text-gold shrink-0 mt-0.5" />
+                    <span>
+                      <span className="font-semibold text-foreground">{s.state}</span>
+                      {s.note && <span className="block text-sm">{s.note}</span>}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {credential.learnMoreUrl && (
             <div>
               <a
