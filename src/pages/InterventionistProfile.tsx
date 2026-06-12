@@ -56,7 +56,7 @@ const InterventionistProfile = () => {
           </Link>
           <div className="flex items-start gap-6">
             {person.photo_url ? (
-              <img src={person.photo_url} alt={person.name} className="w-24 h-24 rounded-full object-cover shrink-0 border-2 border-gold/30" />
+              <img src={person.photo_url} alt={person.name} className="w-24 h-24 rounded-full object-cover object-top shrink-0 border-2 border-gold/30" />
             ) : (
               <div className="w-24 h-24 rounded-full bg-navy-light flex items-center justify-center text-primary-foreground text-2xl font-bold shrink-0 border-2 border-gold/30">
                 {person.name.split(" ").map((n) => n[0]).join("")}
