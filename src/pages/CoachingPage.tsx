@@ -51,7 +51,7 @@ const CoachingPage = () => {
               <h2 className="text-2xl md:text-3xl font-bold">Quarterly Business Review</h2>
             </div>
             <p className="text-muted-foreground mb-4">
-              Partner members receive a quarterly 1-on-1 business review with network founder Matt Brown.
+              Partner members receive a quarterly 1-on-1 business review with network founders.
             </p>
             <ul className="space-y-2 mb-4">
               {[
