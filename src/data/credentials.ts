@@ -209,6 +209,25 @@ export const credentials: Credential[] = [
     ],
   },
   {
+    slug: "msw",
+    code: "MSW",
+    name: "Master of Social Work",
+    shortDescription:
+      "A graduate degree in social work — the foundational training behind clinical social work practice, case management, and systems-based intervention.",
+    whatItIs:
+      "The Master of Social Work (MSW) is a two-year graduate degree from a program accredited by the Council on Social Work Education (CSWE). MSW-trained professionals are educated in clinical assessment, mental health and substance use treatment, family systems, case management, and the 'person-in-environment' framework — looking at the client alongside their family, workplace, community, and access to resources. An MSW is also the required degree to pursue clinical licensure as an LCSW.",
+    requirements: [
+      "Bachelor's degree (a BSW can shorten the MSW to advanced standing, typically one year)",
+      "Completion of an MSW from a CSWE-accredited program — coursework in clinical practice, human behavior, policy, research, and ethics",
+      "Two supervised field practicum placements (typically 900+ hours total) in clinical or community settings",
+      "Adherence to the NASW Code of Ethics",
+      "For independent clinical practice, additional state licensure (LMSW, then LCSW after post-graduate supervised hours and the ASWB clinical exam)",
+    ],
+    whyItMatters:
+      "An MSW-trained interventionist brings clinical and systems thinking from day one — trained to assess the identified person and the full environment around them: family roles, finances, housing, employment, legal exposure, and community supports. That broader lens often determines whether an intervention actually 'sticks' once the person enters treatment. Many interventionists begin their clinical career with an MSW and later add the LCSW for full independent clinical scope.",
+    issuingBody: "CSWE-accredited graduate schools of social work",
+  },
+  {
     slug: "phd",
     code: "PHD",
     name: "Doctor of Philosophy (PhD)",
@@ -266,7 +285,7 @@ export const credentials: Credential[] = [
       "Ongoing Continuing Legal Education (CLE) for license renewal",
     ],
     whyItMatters:
-      "Many interventions involve real legal stakes — a pending arrest, a licensing board complaint against an impaired professional, a custody dispute, the need for an emergency guardianship, or a civil commitment process. An attorney-interventionist (or an interventionist working closely with one) can protect the family's legal interests while keeping the focus on getting the identified person into treatment.",
+      "Many interventions carry real legal stakes — a pending arrest or DUI, a professional licensing board complaint, a custody dispute, an emergency guardianship or conservatorship, a civil commitment, or pressure from an employer with a 'last chance' agreement. Pairing a JD with a clinical or intervention credential is uniquely powerful: a JD + CIP, CADC, LCSW, LPC, or MD interventionist can speak the language of the courts, prosecutors, licensing boards, and HR departments while still leading the clinical intervention itself. That combination lets the team negotiate treatment in lieu of prosecution, protect a professional's license while they get help, structure a legally enforceable family agreement, coordinate with criminal defense or family law counsel, and make sure nothing said in the intervention puts the identified person or family at unnecessary legal risk. For high-stakes cases — physicians, attorneys, pilots, executives, or anyone already entangled with the legal system — a JD-credentialed interventionist can keep the legal and clinical strategies aligned instead of working against each other.",
     issuingBody: "State bar associations",
   },
 ];
