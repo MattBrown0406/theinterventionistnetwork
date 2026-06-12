@@ -365,6 +365,7 @@ export type Database = {
           specialties: string[]
           states_served: string[]
           website: string | null
+          willing_to_travel_internationally: boolean
           years_experience: number
         }
         Insert: {
@@ -389,6 +390,7 @@ export type Database = {
           specialties?: string[]
           states_served?: string[]
           website?: string | null
+          willing_to_travel_internationally?: boolean
           years_experience?: number
         }
         Update: {
@@ -413,6 +415,7 @@ export type Database = {
           specialties?: string[]
           states_served?: string[]
           website?: string | null
+          willing_to_travel_internationally?: boolean
           years_experience?: number
         }
         Relationships: []
@@ -443,6 +446,7 @@ export type Database = {
           tier_interest: string
           website_url: string | null
           welcome_email_sent_at: string | null
+          willing_to_travel_internationally: boolean
           years_experience: number
         }
         Insert: {
@@ -470,6 +474,7 @@ export type Database = {
           tier_interest: string
           website_url?: string | null
           welcome_email_sent_at?: string | null
+          willing_to_travel_internationally?: boolean
           years_experience: number
         }
         Update: {
@@ -497,6 +502,7 @@ export type Database = {
           tier_interest?: string
           website_url?: string | null
           welcome_email_sent_at?: string | null
+          willing_to_travel_internationally?: boolean
           years_experience?: number
         }
         Relationships: []
