@@ -22,6 +22,19 @@ const FloatingContact = () => {
         message: form.message,
       });
       if (error) throw error;
+      void supabase.functions.invoke("send-email", {
+        body: {
+          to: "matt@theinterventionistnetwork.com",
+          subject: "New quick contact submission",
+          reply_to: form.email,
+          html: `<h2>New quick contact</h2>
+<p><strong>Name:</strong> ${form.name}</p>
+<p><strong>Email:</strong> ${form.email}</p>
+<p><strong>Phone:</strong> ${form.phone || "—"}</p>
+<p><strong>Message:</strong></p>
+<p>${form.message.replace(/\n/g, "<br/>")}</p>`,
+        },
+      });
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);

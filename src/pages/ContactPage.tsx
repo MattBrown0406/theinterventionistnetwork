@@ -53,6 +53,31 @@ const ContactPage = () => {
       });
       if (error) throw error;
       markProtectedSubmission("contact");
+      // Fire-and-forget email notifications (don't block UX on failure)
+      void supabase.functions.invoke("send-email", {
+        body: {
+          to: "matt@theinterventionistnetwork.com",
+          subject: `New contact form: ${form.type || "General"}`,
+          reply_to: form.email,
+          html: `<h2>New contact submission</h2>
+<p><strong>Name:</strong> ${form.name}</p>
+<p><strong>Email:</strong> ${form.email}</p>
+<p><strong>Phone:</strong> ${form.phone || "—"}</p>
+<p><strong>Inquiry type:</strong> ${form.type}</p>
+<p><strong>Message:</strong></p>
+<p>${form.message.replace(/\n/g, "<br/>")}</p>`,
+        },
+      });
+      void supabase.functions.invoke("send-email", {
+        body: {
+          to: form.email,
+          subject: "We received your message — The Interventionist Network",
+          html: `<p>Hi ${form.name},</p>
+<p>Thanks for reaching out to The Interventionist Network. We received your message and will follow up as soon as possible.</p>
+<p>If your situation is urgent, please call <a href="tel:5418386009">(541) 838-6009</a>.</p>
+<p>— Matt Brown<br/>The Interventionist Network</p>`,
+        },
+      });
       trackEvent("contact_form_submit_success", {
         inquiry_type: form.type || "unknown",
         has_phone: Boolean(form.phone),
