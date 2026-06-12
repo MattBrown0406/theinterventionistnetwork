@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Award, Clock, ShieldCheck, BadgeCheck } from "lucide-react";
+  import { MapPin, Award, Clock, ShieldCheck, BadgeCheck, ClipboardList } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackInterventionistClick } from "@/lib/interventionistTracking";
 
@@ -16,6 +16,7 @@ interface InterventionistCardProps {
   photo_url?: string | null;
   compact?: boolean;
   offers_hourly_coaching?: boolean;
+  offers_case_management?: boolean;
   featured?: boolean;
   no_referral_fees?: boolean | null;
 }
@@ -33,6 +34,7 @@ const InterventionistCard = ({
   photo_url,
   compact = false,
   offers_hourly_coaching = false,
+  offers_case_management = false,
   featured = false,
   no_referral_fees = true,
 }: InterventionistCardProps) => {
@@ -60,6 +62,9 @@ const InterventionistCard = ({
         {no_referral_fees !== false && <span className="flex items-center gap-1"><ShieldCheck className="w-3.5 h-3.5" />No referral fees</span>}
         {offers_hourly_coaching && (
           <span className="flex items-center gap-1 text-gold font-medium"><Clock className="w-3.5 h-3.5" />Hourly Coaching</span>
+        )}
+        {offers_case_management && (
+          <span className="flex items-center gap-1 text-gold font-medium"><ClipboardList className="w-3.5 h-3.5" />Post-Treatment Case Management</span>
         )}
       </div>
 
