@@ -413,6 +413,7 @@ export type Database = {
       }
       membership_applications: {
         Row: {
+          admin_notes: string | null
           business_name: string | null
           business_state: string | null
           cert_other: string | null
@@ -427,13 +428,17 @@ export type Database = {
           offers_hourly_coaching: boolean
           phone: string
           practice_description: string
+          reviewed_at: string | null
           specialties: string[]
           states_served: string[]
+          status: string
           tier_interest: string
           website_url: string | null
+          welcome_email_sent_at: string | null
           years_experience: number
         }
         Insert: {
+          admin_notes?: string | null
           business_name?: string | null
           business_state?: string | null
           cert_other?: string | null
@@ -448,13 +453,17 @@ export type Database = {
           offers_hourly_coaching?: boolean
           phone: string
           practice_description: string
+          reviewed_at?: string | null
           specialties?: string[]
           states_served?: string[]
+          status?: string
           tier_interest: string
           website_url?: string | null
+          welcome_email_sent_at?: string | null
           years_experience: number
         }
         Update: {
+          admin_notes?: string | null
           business_name?: string | null
           business_state?: string | null
           cert_other?: string | null
@@ -469,10 +478,13 @@ export type Database = {
           offers_hourly_coaching?: boolean
           phone?: string
           practice_description?: string
+          reviewed_at?: string | null
           specialties?: string[]
           states_served?: string[]
+          status?: string
           tier_interest?: string
           website_url?: string | null
+          welcome_email_sent_at?: string | null
           years_experience?: number
         }
         Relationships: []
