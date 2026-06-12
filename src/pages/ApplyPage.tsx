@@ -274,6 +274,19 @@ const ApplyPage = () => {
               <p className="text-xs text-muted-foreground mt-1">This checkout collects the initial payment only. Recurring billing is handled during approved member onboarding.</p>
             </div>
 
+            <div>
+              <label className="block text-sm font-medium mb-1.5">Coupon Code (optional)</label>
+              <input
+                type="text"
+                value={form.couponCode}
+                maxLength={64}
+                placeholder="Enter invitation code"
+                onChange={(e) => setForm({ ...form, couponCode: e.target.value })}
+                className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+              />
+              <p className="text-xs text-muted-foreground mt-1">If you were invited with a coupon code, enter it here to waive the membership fee.</p>
+            </div>
+
             <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">
               <input type="checkbox" checked={form.offersHourlyCoaching} onChange={(e) => setForm({ ...form, offersHourlyCoaching: e.target.checked })} className="rounded border-input mt-0.5" />
               <span>I provide hourly coaching services</span>
