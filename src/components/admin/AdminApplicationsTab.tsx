@@ -23,6 +23,7 @@ type Application = {
   website_url: string | null;
   hear_about: string | null;
   offers_hourly_coaching: boolean;
+  offers_case_management: boolean;
   no_referral_fees: boolean;
   coupon_code: string | null;
   status: string;
@@ -177,6 +178,7 @@ const AdminApplicationsTab = () => {
                   value={[...app.certifications, app.cert_other].filter(Boolean).join(", ") || "—"}
                 />
                 <Detail label="Offers hourly coaching" value={app.offers_hourly_coaching ? "Yes" : "No"} />
+                <Detail label="Offers post-treatment case management" value={app.offers_case_management ? "Yes" : "No"} />
                 <Detail label="Agreed: no referral fees" value={app.no_referral_fees ? "Yes" : "No"} />
                 <Detail label="How they heard" value={app.hear_about || "—"} />
                 <Detail

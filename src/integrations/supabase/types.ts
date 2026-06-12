@@ -354,6 +354,7 @@ export type Database = {
           full_bio: string
           id: string
           name: string
+          offers_case_management: boolean
           offers_hourly_coaching: boolean
           phone: string | null
           photo_url: string | null
@@ -376,6 +377,7 @@ export type Database = {
           full_bio?: string
           id?: string
           name: string
+          offers_case_management?: boolean
           offers_hourly_coaching?: boolean
           phone?: string | null
           photo_url?: string | null
@@ -398,6 +400,7 @@ export type Database = {
           full_bio?: string
           id?: string
           name?: string
+          offers_case_management?: boolean
           offers_hourly_coaching?: boolean
           phone?: string | null
           photo_url?: string | null
@@ -425,6 +428,7 @@ export type Database = {
           hear_about: string | null
           id: string
           no_referral_fees: boolean
+          offers_case_management: boolean
           offers_hourly_coaching: boolean
           phone: string
           practice_description: string
@@ -450,6 +454,7 @@ export type Database = {
           hear_about?: string | null
           id?: string
           no_referral_fees?: boolean
+          offers_case_management?: boolean
           offers_hourly_coaching?: boolean
           phone: string
           practice_description: string
@@ -475,6 +480,7 @@ export type Database = {
           hear_about?: string | null
           id?: string
           no_referral_fees?: boolean
+          offers_case_management?: boolean
           offers_hourly_coaching?: boolean
           phone?: string
           practice_description?: string

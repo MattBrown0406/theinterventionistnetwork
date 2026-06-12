@@ -46,6 +46,7 @@ const ApplyPage = () => {
     couponCode: "",
     noReferralFees: false,
     offersHourlyCoaching: false,
+    offersCaseManagement: false,
   });
 
   const handleCheckboxArray = (field: "certifications" | "specialties", value: string) => {
@@ -92,6 +93,7 @@ const ApplyPage = () => {
         tier_interest: form.tierInterest,
         no_referral_fees: form.noReferralFees,
         offers_hourly_coaching: form.offersHourlyCoaching,
+        offers_case_management: form.offersCaseManagement,
         coupon_code: form.couponCode.trim() || null,
       }).select("id").single();
 
@@ -290,6 +292,11 @@ const ApplyPage = () => {
             <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">
               <input type="checkbox" checked={form.offersHourlyCoaching} onChange={(e) => setForm({ ...form, offersHourlyCoaching: e.target.checked })} className="rounded border-input mt-0.5" />
               <span>I provide hourly coaching services</span>
+            </label>
+
+            <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">
+              <input type="checkbox" checked={form.offersCaseManagement} onChange={(e) => setForm({ ...form, offersCaseManagement: e.target.checked })} className="rounded border-input mt-0.5" />
+              <span>I provide post-treatment case management services</span>
             </label>
 
             <label className="flex items-start gap-3 text-sm cursor-pointer p-4 rounded-lg bg-warm-gray">

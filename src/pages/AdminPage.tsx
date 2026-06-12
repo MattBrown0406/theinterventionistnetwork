@@ -35,6 +35,7 @@ const emptyForm = {
   featured: false,
   photo_url: "",
   offers_hourly_coaching: false,
+  offers_case_management: false,
 };
 
 type FormData = typeof emptyForm;
@@ -118,6 +119,7 @@ const AdminPage = () => {
       featured: person.featured,
       photo_url: person.photo_url || "",
       offers_hourly_coaching: person.offers_hourly_coaching ?? false,
+      offers_case_management: person.offers_case_management ?? false,
     });
     setPhotoFile(null);
   };
@@ -174,6 +176,7 @@ const AdminPage = () => {
       featured: form.featured,
       photo_url: photoUrl || null,
       offers_hourly_coaching: form.offers_hourly_coaching,
+      offers_case_management: form.offers_case_management,
     };
 
     let error;
@@ -299,6 +302,10 @@ const AdminPage = () => {
                     <div className="flex items-center gap-2 pt-2">
                       <Switch checked={form.offers_hourly_coaching} onCheckedChange={(v) => setForm({ ...form, offers_hourly_coaching: v })} />
                       <Label>Offers hourly coaching</Label>
+                    </div>
+                    <div className="flex items-center gap-2 pt-2">
+                      <Switch checked={form.offers_case_management} onCheckedChange={(v) => setForm({ ...form, offers_case_management: v })} />
+                      <Label>Offers post-treatment case management</Label>
                     </div>
                   </div>
 
