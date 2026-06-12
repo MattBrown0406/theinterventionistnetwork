@@ -22,6 +22,7 @@ export interface Interventionist {
   photo_url?: string | null;
   offers_hourly_coaching: boolean;
   offers_case_management: boolean;
+  languages: string[];
   no_referral_fees?: boolean | null;
 }
 
