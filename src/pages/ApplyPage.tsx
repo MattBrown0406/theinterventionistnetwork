@@ -337,7 +337,6 @@ const ApplyPage = () => {
                 <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
                   <li>Have your certifications and regions served ready.</li>
                   <li>Use a practice description that explains how you work with families.</li>
-                  <li>Choose the tier you actually want to start with. You can revisit fit during onboarding.</li>
                 </ul>
               </div>
             </aside>
