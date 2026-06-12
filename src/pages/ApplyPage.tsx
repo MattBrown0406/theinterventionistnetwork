@@ -13,9 +13,7 @@ const certOptions = ["ARISE", "CIP", "CADC", "CCMI", "LCDC", "LPC", "LCSW", "PHD
 const hearAboutOptions = ["Referral", "Podcast", "Social Media", "Search", "Conference", "Other"];
 
 const TIER_LABELS: Record<string, string> = {
-  listed: "Listed — $49 initial membership payment",
-  featured: "Featured — $199 initial membership payment",
-  partner: "Partner — $299 initial membership payment",
+  listed: "Listed — $25 initial membership payment",
 };
 
 const fieldDefinitions = [
@@ -44,7 +42,7 @@ const ApplyPage = () => {
     specialties: [] as string[],
     practiceDescription: "",
     hearAbout: "",
-    tierInterest: "",
+    tierInterest: "listed",
     noReferralFees: false,
     offersHourlyCoaching: false,
   });
@@ -259,13 +257,10 @@ const ApplyPage = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1.5">Membership Tier Interest *</label>
-              <select required value={form.tierInterest} onChange={(e) => setForm({ ...form, tierInterest: e.target.value })} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm">
-                <option value="">Select a tier</option>
-                {Object.entries(TIER_LABELS).map(([value, label]) => (
-                  <option key={value} value={value}>{label}</option>
-                ))}
-              </select>
+              <label className="block text-sm font-medium mb-1.5">Membership</label>
+              <div className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm">
+                {TIER_LABELS.listed}
+              </div>
               <p className="text-xs text-muted-foreground mt-1">This checkout collects the initial payment only. Recurring billing is handled during approved member onboarding.</p>
             </div>
 
