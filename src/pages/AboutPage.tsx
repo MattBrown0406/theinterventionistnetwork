@@ -50,7 +50,7 @@ const AboutPage = () => {
               <h2 className="text-2xl md:text-3xl font-bold">The Story Behind the Network</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>I started The Interventionist Network because I was tired of watching families fall through the cracks.</p>
-                <p>After 20+ years as an addiction interventionist and 22 years of personal recovery, I've seen everything this industry has to offer — the good and the bad. I can only take so many cases myself. But I know dozens of interventionists across the country who are just as dedicated as I am.</p>
+                <p>After 22+ years as an addiction interventionist and 23 years of personal recovery, I've seen everything this industry has to offer — the good and the bad. I can only take so many cases myself. But I know dozens of interventionists across the country who are just as dedicated as I am.</p>
                 <p>The problem? Families can't find them. They call hotlines that route to whoever pays the highest referral fee. They Google "interventionist near me" and find SEO farms. They get shuffled through call centers where the "counselor" is actually a commission-based salesperson.</p>
                 <p>This network fixes that — without the referral fees and kickbacks that plague our industry.</p>
                 <p>Every interventionist in our network is someone I'd trust with my own family. That's the standard. That's the only standard that matters.</p>
