@@ -39,7 +39,7 @@ const AboutPage = () => {
           <div className="grid lg:grid-cols-5 gap-12 items-start max-w-5xl mx-auto">
             <div className="lg:col-span-2">
               <div className="rounded-lg overflow-hidden">
-                <img src={mattBrownPhoto} alt="Matt Brown — Founder of The Interventionist Network" className="w-full object-cover" />
+                <img src={mattBrownPhoto} alt="Matt Brown — Founder of The Interventionist Network" className="w-full object-cover object-top" />
               </div>
               <div className="text-center mt-4">
                 <p className="font-bold text-lg">Matt Brown</p>
