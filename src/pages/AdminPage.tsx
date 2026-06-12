@@ -424,6 +424,10 @@ const AdminPage = () => {
               <AdminMaterialsTab category="training" categoryLabel="Training Material" />
             </TabsContent>
 
+            <TabsContent value="applications">
+              <AdminApplicationsTab />
+            </TabsContent>
+
             <TabsContent value="business">
               <AdminMaterialsTab category="business" categoryLabel="Business Development Resource" />
             </TabsContent>
