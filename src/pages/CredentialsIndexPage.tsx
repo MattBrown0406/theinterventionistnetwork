@@ -59,6 +59,11 @@ const CredentialsIndexPage = () => {
                   <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-gold transition-colors mt-1" />
                 </div>
                 <p className="mt-4 text-sm text-muted-foreground">{c.shortDescription}</p>
+                {c.disclaimer && (
+                  <p className="mt-3 text-xs text-muted-foreground italic border-l-2 border-gold/60 pl-3">
+                    {c.disclaimer}
+                  </p>
+                )}
               </Link>
             ))}
           </div>

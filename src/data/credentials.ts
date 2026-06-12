@@ -10,6 +10,7 @@ export type Credential = {
   issuingStates?: { state: string; note?: string }[];
   issuingStatesNote?: string;
   comparisons?: { title: string; body: string; bullets?: string[] }[];
+  disclaimer?: string;
   learnMoreUrl?: string;
 };
 
@@ -34,6 +35,8 @@ export const credentials: Credential[] = [
     whyItMatters:
       "Intervention is only the first step toward recovery — continuing case management dramatically increases the chance of long-term wellness. The CCMI signals that a professional is trained not just to facilitate the intervention itself, but to coordinate family systems, ethics, cultural considerations, and co-occurring disorders across the full arc of a family's recovery.",
     issuingBody: "Breining Institute",
+    disclaimer:
+      "The CCMI credential, on its own, is not a HIPAA-covered designation. CCMI-credentialed interventionists are not bound by HIPAA in their ability to communicate with the family about the client during the intervention process. (A practitioner who also holds a separate HIPAA-covered license — such as LCSW, LPC, LCDC, MD, or PhD — remains bound by that license's confidentiality rules.)",
   },
   {
     slug: "arise",
@@ -53,6 +56,8 @@ export const credentials: Credential[] = [
       "ARISE has published outcomes data showing high engagement rates into treatment and recovery support. For families who fear confrontation or surprise interventions, an ARISE-trained professional offers a transparent, collaborative path forward.",
     issuingBody: "The ARISE Network",
     learnMoreUrl: "https://www.arise-network.com/",
+    disclaimer:
+      "ARISE certification, on its own, is not a HIPAA-covered designation. ARISE Interventionists are not bound by HIPAA in their ability to communicate with the family about the client during the intervention process. (A practitioner who also holds a separate HIPAA-covered license — such as LCSW, LPC, LCDC, MD, or PhD — remains bound by that license's confidentiality rules.)",
   },
   {
     slug: "cip",
@@ -76,6 +81,8 @@ export const credentials: Credential[] = [
     whyItMatters:
       "The CIP is one of the few credentials in the United States that is specific to the practice of intervention itself, rather than to addiction counseling or therapy broadly. It signals that the professional's core training is in moving a family from crisis to a treatment decision.",
     issuingBody: "Pennsylvania Certification Board (PCB)",
+    disclaimer:
+      "The CIP credential, on its own, is not a HIPAA-covered designation. CIPs are not bound by HIPAA in their ability to communicate with the family about the client during the intervention process. (A practitioner who also holds a separate HIPAA-covered license — such as LCSW, LPC, LCDC, MD, or PhD — remains bound by that license's confidentiality rules.)",
   },
   {
     slug: "cadc",
