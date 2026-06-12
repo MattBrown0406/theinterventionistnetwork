@@ -10,6 +10,7 @@ export type Credential = {
   issuingStates?: { state: string; note?: string }[];
   issuingStatesNote?: string;
   comparisons?: { title: string; body: string; bullets?: string[] }[];
+  disclaimer?: string;
   learnMoreUrl?: string;
 };
 
