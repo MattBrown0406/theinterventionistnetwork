@@ -61,6 +61,12 @@ const CredentialPage = () => {
 
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4 max-w-4xl space-y-10">
+          {credential.disclaimer && (
+            <div className="rounded-xl border-l-4 border-gold bg-warm-gray/60 p-4 text-sm text-muted-foreground italic">
+              {credential.disclaimer}
+            </div>
+          )}
+
           <div>
             <h2 className="text-xl font-bold mb-3">What it is</h2>
             <p className="text-muted-foreground leading-relaxed">{credential.whatItIs}</p>
