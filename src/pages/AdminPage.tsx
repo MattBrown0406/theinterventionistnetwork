@@ -210,7 +210,7 @@ const AdminPage = () => {
     }
   };
 
-  const toggleArrayItem = (field: "states_served" | "specialties" | "certifications", value: string) => {
+  const toggleArrayItem = (field: "states_served" | "specialties" | "certifications" | "languages", value: string) => {
     setForm((prev) => ({
       ...prev,
       [field]: prev[field].includes(value) ? prev[field].filter((v) => v !== value) : [...prev[field], value],
