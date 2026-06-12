@@ -39,6 +39,9 @@ const CoachingPage = () => {
           <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto">
             Most interventionists are great at helping families and terrible at running a business. We fix that.
           </p>
+          <p className="text-sm text-gold mt-4">
+            Pricing for this package will be updated in early 2027.
+          </p>
         </div>
       </section>
 
