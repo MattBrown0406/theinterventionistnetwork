@@ -50,6 +50,7 @@ import blogProcessAddictions from "@/assets/blog-process-addictions-intervention
 import blogLongDistanceInterventions from "@/assets/blog-long-distance-interventions-family-guide.jpg";
 import blogEthicalReferralRelationships from "@/assets/blog-ethical-treatment-center-referral-relationships.jpg";
 import blogDoInterventionsWork from "@/assets/blog-do-interventions-actually-work-family-guide.jpg";
+import blogStagesOfChange from "@/assets/blog-stages-of-change-intervention-practice.jpg";
 
 export type BlogPostEntry = {
   title: string;
@@ -61,6 +62,48 @@ export type BlogPostEntry = {
 };
 
 export const blogPosts: Record<string, BlogPostEntry> = {
+  "stages-of-change-model-intervention-practice": {
+    title: "Applying the Stages of Change Model in Intervention Practice",
+    author: "Matt Brown",
+    date: "2026-06-25",
+    image: blogStagesOfChange,
+    imageAlt: "A person sitting quietly by a sunlit window, reflecting — symbolizing the contemplation stage of change",
+    content: [
+      "Understanding the stages of change in intervention work is one of the most practical frameworks an interventionist can carry into a family's living room. The transtheoretical model — precontemplation, contemplation, preparation, action, and maintenance — gives us a shared language for where a loved one actually is, not where the family wishes they were. When we read that location accurately, we stop fighting the current and start working with it. This article is a practitioner-to-practitioner look at how the stages of change model shapes assessment, timing, room strategy, and the way we coach families before and after the day itself.",
+      "Most of us were trained to think of an intervention as a single decisive event. The stages of change reminds us it is one move inside a longer process — and that both the identified loved one and the family are moving through stages of their own, often at different speeds.",
+      "## What Are the Stages of Change in Addiction Work?",
+      "The stages of change describe the predictable sequence a person moves through when altering an entrenched behavior. In addiction and intervention work, the five stages are precontemplation (no intent to change, often no acknowledged problem), contemplation (ambivalence — aware something is wrong but not committed), preparation (ready to act and gathering the means), action (actively changing, such as entering treatment), and maintenance (sustaining the change and preventing relapse).",
+      "For interventionists, the key insight is that resistance is not a character flaw — it is information about stage. A loved one in precontemplation who is met with action-stage demands will dig in, because the conversation assumes a readiness they do not yet have. Matching our approach to the actual stage lowers defensiveness and raises the odds the door stays open.",
+      "It is also worth naming that relapse is built into the model rather than treated as failure. Movement is rarely linear. People cycle back, and each pass through the stages tends to build leverage for the next.",
+      "## How Do You Assess a Loved One's Stage Before the Intervention?",
+      "Stage assessment happens during pre-engagement, primarily through the family rather than the loved one, who you usually have not met. Listen for stage markers in how relatives describe recent conversations, the loved one's own language, and any prior attempts to address the substance use. Their words are your data.",
+      "A few practical markers that help locate the stage:",
+      "- Flat denial, minimizing, or blaming others points toward precontemplation.\n- \"I know I should cut back, but...\" statements signal contemplation and active ambivalence.\n- Researching programs, asking about cost, or making promises suggests preparation.\n- A recent crisis — overdose, arrest, job loss, health scare — can briefly accelerate someone forward and widen the window.",
+      "Assess the family's stage too. Relatives caught in precontemplation about their own enabling will struggle to hold the boundaries an intervention requires. Part of our job is moving the system toward readiness while we read the loved one's position.",
+      "## Matching Your Intervention Approach to the Stage",
+      "The stages of change in intervention practice should directly shape strategy and tone. A precontemplative loved one needs an approach that builds discrepancy gently and protects the relationship, while a contemplative one can often be moved with a clear, warm, well-timed invitation. Calibrating to the stage is the difference between leverage and a power struggle.",
+      "For precontemplation, lean toward invitational and CRAFT-informed models that work through the family over time rather than a single high-pressure confrontation. The goal is to raise awareness of consequences and keep connection intact, not to win an argument. Premature ultimatums here tend to harden the position.",
+      "For contemplation and preparation, a structured family meeting can be highly effective because the loved one is already ambivalent and looking for a reason — and a safe ramp — to act. This is where a well-rehearsed invitation, concrete logistics, and a bed already secured can tip the balance. The family's prepared statements should resolve ambivalence toward action, not amplify shame.",
+      "Across every stage, the through-line is the same: reduce the cost of saying yes and preserve the dignity of the person. We are not breaking someone down; we are making the next right step smaller and more reachable than it was the day before.",
+      "## Coaching the Family Through Their Own Stages",
+      "Families move through the stages of change as surely as their loved one does, and unaddressed family ambivalence is a frequent reason interventions stall. A relative who is still bargaining with reality will soften the message in the room or abandon the boundary within days. Coaching the family's stage is core clinical work, not preparation overhead.",
+      "Help families locate their own position honestly. Some arrive in preparation — organized, aligned, ready. Many arrive in contemplation, still hoping the problem will resolve on its own or fearing that acting will damage the relationship. Name that ambivalence directly and walk it forward before intervention day, because the family's readiness becomes the loved one's leverage.",
+      "Concretely, this means rehearsing boundaries until they are believable, clarifying what each member will and will not do, and addressing the fear underneath the hesitation. A family in genuine action stage — decided, specific, steady — communicates an unmistakable signal that often does more than any single sentence delivered in the room.",
+      "## Timing, Maintenance, and the Long View",
+      "The stages of change reframes timing as a clinical decision rather than a logistical one. The strongest windows usually open during contemplation or just after a consequence, when ambivalence is high and the status quo feels least tenable. Reading that window is one of the most valuable skills an experienced interventionist develops.",
+      "The model also extends our responsibility past the yes. Action is fragile, and maintenance is where most of the real work of recovery lives. Interventionists who coordinate aftercare, coach families on supporting without enabling, and normalize that relapse is a stage rather than a verdict give their cases a far better chance of holding.",
+      "Holding the long view protects us, too. When we measure success only by the action stage, we set ourselves up to feel like failures during the inevitable cycling. Seeing the whole sequence keeps us steady and keeps families hopeful through the parts that take time.",
+      "## Frequently Asked Questions",
+      "**What are the five stages of change in addiction intervention?**\nThe five stages are precontemplation, contemplation, preparation, action, and maintenance. They describe how a person moves from not acknowledging a problem to actively changing and sustaining that change. In intervention work, identifying the stage helps practitioners match their approach to the loved one's actual readiness rather than the family's hopes.",
+      "**How does the stages of change model improve intervention outcomes?**\nIt reduces resistance by aligning strategy with readiness. A loved one in precontemplation responds better to relationship-preserving, invitational approaches, while someone in contemplation may be ready for a structured family meeting. Matching method to stage keeps the door open and improves the odds of a yes.",
+      "**Can you intervene with someone in precontemplation?**\nYes, but the approach must change. With a precontemplative loved one, interventionists often favor CRAFT and invitational models that work through the family to build awareness over time, rather than a single high-pressure confrontation. The aim is to raise discrepancy and preserve connection so the person can move toward contemplation.",
+      "**How is the stages of change model different from motivational interviewing?**\nThe stages of change is a model that maps where a person is in the change process. Motivational interviewing is a clinical method for helping people move through those stages by resolving ambivalence. Interventionists commonly use them together — the stages tell you where someone is, and motivational interviewing helps you move them forward.",
+      "**Where does relapse fit in the stages of change?**\nRelapse is treated as part of the cycle, not a failure. People often move back to an earlier stage and progress through again, frequently with more insight each time. Framing relapse this way helps families stay engaged and helps interventionists coach realistic, durable aftercare.",
+      "## Raising the Standard of Practice",
+      "The stages of change model is not a script; it is a discipline of accurate seeing. The interventionists who use it well are the ones who can tell a family the truth about where their loved one actually is, hold hope without false promises, and time their work with skill rather than urgency. That is the standard families deserve and the standard our field should hold itself to.",
+      "For more practitioner resources, model comparisons, and guidance on growing a principled intervention practice, visit TheInterventionistNetwork.com — a community built for both the families navigating crisis and the professionals who serve them.",
+    ],
+  },
   "do-interventions-actually-work-family-guide": {
     title: "Do Interventions Actually Work? What Families Should Realistically Expect",
     author: "Matt Brown",
