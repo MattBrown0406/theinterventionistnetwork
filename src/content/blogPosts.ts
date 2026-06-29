@@ -52,6 +52,7 @@ import blogEthicalReferralRelationships from "@/assets/blog-ethical-treatment-ce
 import blogDoInterventionsWork from "@/assets/blog-do-interventions-actually-work-family-guide.jpg";
 import blogStagesOfChange from "@/assets/blog-stages-of-change-intervention-practice.jpg";
 import blogForceRehab from "@/assets/blog-force-someone-into-rehab.jpg";
+import blogSoberLivingFamilyGuide from "@/assets/blog-sober-living-family-guide.jpg";
 
 export type BlogPostEntry = {
   title: string;
@@ -63,6 +64,61 @@ export type BlogPostEntry = {
 };
 
 export const blogPosts: Record<string, BlogPostEntry> = {
+  "what-is-sober-living-family-guide": {
+    title: "What Is Sober Living and How Do Families Choose the Right One?",
+    author: "Matt Brown",
+    date: "2026-06-29",
+    image: blogSoberLivingFamilyGuide,
+    imageAlt: "A welcoming sober living home exterior at golden hour with a covered porch and warm light",
+    content: [
+      "Your loved one just completed residential treatment. You're proud. You're relieved. And you're also terrified — because you know what happened last time they came straight home.",
+      "Sober living is often the bridge between structured treatment and independent life. But it's not a one-size-fits-all solution, and choosing poorly can undermine everything your family has worked toward.",
+      "This guide is designed to help you understand what sober living for addiction recovery actually is, what to look for, what red flags to avoid, and how to make the best choice for your specific situation.",
+      "## What Is Sober Living?",
+      "Sober living homes — also called recovery residences or halfway houses — are shared housing environments where individuals in early recovery live together under common house rules. Most require sobriety as a condition of residency, though policies vary.",
+      "They are not treatment facilities. There is no clinical staff on-site providing therapy or medical monitoring. What sober living offers instead is structure, peer accountability, and a buffer zone between controlled treatment and the wide-open world where relapse risk is highest.",
+      "Research consistently shows that the transition from inpatient treatment directly back to a former home environment is one of the highest-risk periods in recovery. Sober living, when chosen well, substantially reduces that risk.",
+      "## Why Sober Living Matters More Than You Think",
+      "Many families skip sober living because it costs money, delays reunion, or feels unnecessary after 30, 60, or 90 days of residential treatment. That's a mistake.",
+      "Early recovery is neurologically fragile. The brain is still healing. Cravings are intense. Old patterns and relationships re-emerge quickly. And a home environment — even a loving one — often contains the same triggers, dynamics, and stressors that were present before treatment.",
+      "Sober living creates time. Time for new habits to solidify. Time for the person in recovery to build a life that doesn't require substances. Time for family relationships to stabilize without the pressure of immediate cohabitation.",
+      "The data backs this up: individuals who transition through sober living after residential treatment have significantly better long-term recovery outcomes than those who return home immediately.",
+      "## Types of Sober Living: Not All Are Created Equal",
+      "There is currently no universal national standard for sober living. This is both a challenge and something families must actively account for.",
+      "**Level 1 — Peer-Run Recovery Residences:** The most basic form. A house with rules about sobriety, shared chores, and mutual accountability. No clinical oversight. Lower cost. Quality varies enormously.",
+      "**Level 2 — Monitored Recovery Residences:** A house manager provides oversight. Random drug testing is standard. Rules are enforced consistently. These offer more structure without clinical programming.",
+      "**Level 3 — Supervised Recovery Residences with Services:** On-site staff, connections to outpatient treatment, life skills programming. Often the best option for someone with dual diagnosis, complex trauma, or a history of multiple treatment episodes.",
+      "**Level 4 — Service Provider Residences:** Integrated clinical and recovery housing services. Often connected to an IOP or outpatient program. The most structured and clinically informed option.",
+      "The National Alliance for Recovery Residences (NARR) maintains certification standards across all four levels. When in doubt, ask whether a home is NARR-certified — it's a baseline indicator that the operator takes quality seriously.",
+      "## Questions to Ask Before Choosing a Sober Living Home",
+      "When evaluating options for your loved one, ask these questions directly. The answers tell you everything.",
+      "**On Structure and Accountability**\n• What are the house rules, and what happens when they're violated?\n• How is drug testing conducted, and how often?\n• What is the curfew, and how is it enforced?\n• Are residents required to attend outpatient treatment or support group meetings?",
+      "**On the Physical Environment**\n• How many people live in the house?\n• What is the staff-to-resident ratio?\n• Are there separate rooms, or are people sharing with multiple roommates?\n• Is the home in an area with easy access to support groups, employment, and transportation?",
+      "**On Operations and Oversight**\n• Is this home NARR-certified or affiliated with a state association?\n• How long has this home been in operation?\n• What is the typical length of stay?\n• What happens if my loved one relapses — is there a step-down plan?",
+      "**On Cost and Billing**\n• What is the monthly cost, and what does it include?\n• Do you accept insurance or MAT-friendly residents?\n• Are there scholarship or sliding-scale options?",
+      "## Red Flags to Watch For in Sober Living Homes",
+      "Not every sober living home is legitimate. Some are poorly managed; a small number are outright predatory. Watch for these warning signs:",
+      "• No clear sobriety requirement or drug testing policy. A sober living home that doesn't test isn't actually a sober living home.\n• No rules or structure. If you can't get a clear answer about expectations, there likely aren't any.\n• Pressure to pay upfront for long periods. Legitimate homes rarely require payment for more than one month in advance.\n• No connection to treatment or support services. Good sober living actively connects residents to programming; it doesn't just warehouse them.\n• High turnover or unstable management. Ask how many residents have been there longer than 90 days. Stability in the community reflects quality.\n• Transactional referral relationships. Some homes receive referrals from treatment centers with financial ties — not inherently problematic, but worth understanding.",
+      "## How Long Should Your Loved One Stay in Sober Living?",
+      "There is no universally correct answer. Research suggests that at least 90 days in sober living correlates with meaningfully better outcomes, with some studies pointing to six months or more for individuals with longer or more severe histories.",
+      "Encourage your loved one to think about length of stay as a clinical decision — not a financial one, not an emotional one about how much you miss each other, and not a deadline imposed by pride.",
+      "Ask the sober living staff what they recommend. Ask their outpatient counselor. Let professional input drive the timeline.",
+      "## What Families Can Do During This Time",
+      "Your loved one's time in sober living isn't a waiting period for you — it's an active phase.",
+      "• Get your own support. Al-Anon, a family therapist, or a coach who specializes in addiction and family systems.\n• Resist the urge to rescue. Natural consequences teach. Removing every discomfort keeps your loved one dependent.\n• Work on your own dynamics. The family system that existed before treatment will be there waiting when they come home. Use this time to understand your part in it.\n• Establish clear expectations for the return home. What are the rules when they come back? Don't leave this to improvisation.",
+      "## The Right Bridge Makes All the Difference",
+      "Sober living isn't a punishment or an afterthought — it's one of the most powerful tools available to support lasting recovery. Choosing it thoughtfully, based on structure, certification, accountability, and clinical connection, gives your loved one the best possible runway.",
+      "If you're unsure where to start, a professional interventionist or recovery coach can help you evaluate options specific to your loved one's needs, history, and location. This is not the decision to make alone under pressure.",
+      "Visit TheInterventionistNetwork.com to find credentialed professionals who can guide your family through this step.",
+      "## Frequently Asked Questions About Sober Living",
+      "**What is the difference between sober living and a halfway house?**\nThe terms are often used interchangeably, though 'halfway house' can also refer to court-mandated transitional housing for individuals leaving incarceration. Sober living homes are typically voluntary and focused specifically on addiction recovery. Both provide shared housing with sobriety requirements, but the populations, oversight levels, and programming vary significantly.",
+      "**Does insurance cover sober living for addiction recovery?**\nMost sober living homes do not bill insurance directly for room and board. Some higher-level facilities may bill for clinical programming provided on-site. Many families pay out-of-pocket. Some states have programs that subsidize recovery housing — ask the admissions coordinator at the home you're considering for guidance specific to your state.",
+      "**Can my loved one leave sober living whenever they want?**\nYes, in most cases. Sober living is voluntary. Your loved one can leave at any time, though doing so against staff recommendation significantly increases relapse risk. House rule violations — such as a failed drug test — can also result in the home requiring them to leave. Understanding the exit policy before enrolling is important.",
+      "**How do I find a reputable sober living home?**\nStart with the National Alliance for Recovery Residences (NARR) at narronline.org, which lists certified homes by state. You can also ask the discharge planner at your loved one's treatment center for referrals, or consult a professional interventionist who maintains active referral relationships in your region.",
+      "**What if my loved one refuses to go to sober living after treatment?**\nThis is common. Listen to their concerns — sometimes they're practical, sometimes they reflect anxiety about independence. Ask their treatment team to weigh in. You can also set a clear expectation: if they're not going to sober living, they're not coming home yet. That's not an ultimatum for its own sake — it's protecting both of you while they stabilize.",
+      "**Is sober living right for everyone in addiction recovery?**\nNot necessarily, but it benefits most people who have completed residential treatment. Those with strong, stable, and recovery-supportive home environments may be able to transition home directly — with robust outpatient programming in place. A clinician or interventionist can help you assess what level of support your loved one actually needs versus what feels convenient.",
+    ],
+  },
   "can-you-force-someone-into-rehab": {
     title: "Can You Force Someone Into Rehab? What Every Family Needs to Know",
     author: "Matt Brown",
