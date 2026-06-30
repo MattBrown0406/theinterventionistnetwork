@@ -53,6 +53,7 @@ import blogDoInterventionsWork from "@/assets/blog-do-interventions-actually-wor
 import blogStagesOfChange from "@/assets/blog-stages-of-change-intervention-practice.jpg";
 import blogForceRehab from "@/assets/blog-force-someone-into-rehab.jpg";
 import blogSoberLivingFamilyGuide from "@/assets/blog-sober-living-family-guide.jpg";
+import blogOlderAdultIntervention from "@/assets/blog-older-adult-addiction-intervention.jpg";
 
 export type BlogPostEntry = {
   title: string;
@@ -64,6 +65,51 @@ export type BlogPostEntry = {
 };
 
 export const blogPosts: Record<string, BlogPostEntry> = {
+  "older-adult-addiction-intervention-practitioner-guide": {
+    title: "Older Adult Addiction Intervention: What Seasoned Practitioners Get Wrong About Late-Life Substance Use",
+    author: "Matt Brown",
+    date: "2026-06-30",
+    image: blogOlderAdultIntervention,
+    imageAlt: "An interventionist speaking respectfully with an older adult and a family member in a warmly lit living room",
+    content: [
+      "An older adult addiction intervention is not a standard intervention with a few accommodations bolted on. It is a different clinical encounter that asks the interventionist to rethink assessment, communication pace, family roles, and treatment matching from the ground up. Substance use among adults over 60 is one of the fastest-growing and most under-recognized areas in our field, and the families who call us are often years behind the problem because everyone — including their physicians — attributed the warning signs to aging.",
+      "If you have built your practice around adults in their twenties through fifties, the instincts that serve you there can quietly mislead you with an older client. This piece is a practitioner-to-practitioner look at what changes when the identified person is a parent or grandparent, and how to run a late-life intervention that respects the person's autonomy, dignity, and complex medical reality.",
+      "## Why Is Late-Life Addiction So Easy to Miss?",
+      "Late-life addiction is easy to miss because its signs overlap almost perfectly with the expected losses of aging, and because older adults are rarely screened. Confusion, falls, isolation, sleep disruption, and memory trouble all read as \"getting older\" rather than as intoxication, withdrawal, or interaction effects. The result is that the problem hides in plain sight, sometimes for a decade.",
+      "As the interventionist, you are often the first person in the family's orbit to name substance use as a primary driver rather than a footnote. Hold that hypothesis loosely but seriously. Two patterns dominate this population:",
+      "- **Survivor-stage alcohol use disorder** — a person who drank heavily for decades and whose body can no longer metabolize what it once tolerated. The dose did not change; the body did.",
+      "- **Late-onset use** — substance use that begins after 60, frequently triggered by retirement, bereavement, chronic pain, or the loss of role and structure. These clients often carry less shame and respond well once the underlying loss is addressed.",
+      "A third category deserves its own caution: prescription medication. Many older adults are not misusing substances in the street sense at all. They are following multiple prescriptions from multiple providers who are not talking to each other. Benzodiazepines, opioids, and sleep aids stack into genuine physical dependence. Frame this as a medical coordination problem, not a moral failing — the family will follow your language.",
+      "## How Should Assessment Change for an Older Client?",
+      "Assessment for an older adult must widen to include medical complexity, cognitive status, and medication interactions before you ever plan the room. Skipping this step is the most common and most dangerous error practitioners make when they carry younger-client habits into late-life work.",
+      "Withdrawal risk is the first non-negotiable. Alcohol and benzodiazepine withdrawal can be fatal at any age, and an older body with cardiac, hepatic, or renal compromise has far less margin. Never let a family attempt an abrupt home detox, and confirm that any treatment placement is equipped for medically supervised withdrawal with geriatric competence.",
+      "Cognitive screening is the second. You need a working sense of whether you are dealing with substance-induced impairment that will clear with abstinence, or an emerging dementia that will not. This distinction changes everything about consent, treatment matching, and what the family can realistically expect. When in doubt, insist on a geriatric or neuropsychological evaluation before or immediately after placement.",
+      "Practical assessment additions for this population include:",
+      "- A full medication reconciliation — every prescriber, every pharmacy, every bottle in the house.",
+      "- Fall history and mobility status, which shape both safety planning and facility selection.",
+      "- Sensory considerations — hearing and vision loss directly affect how you run the room.",
+      "- Caregiving burdens the client may carry, including a spouse or grandchild who depends on them.",
+      "- Recent losses and the timeline of use, which often reveals a grief-driven onset.",
+      "## What Does Respectful Communication Look Like in the Room?",
+      "Respectful communication with an older client means slowing the pace, protecting their authority, and refusing to infantilize. Nothing collapses a late-life intervention faster than a room full of adult children speaking about their parent as if the parent were a child. The person in that chair raised the people confronting them, and that hierarchy does not disappear because they are unwell.",
+      "Coach the family to lead with respect and specific care, not authority they have not earned in this domain. A son saying \"Dad, I need you here for my kids\" lands differently than \"Dad, we've decided what's best for you.\" Autonomy is the currency of this room. The more agency you can preserve for the older adult, the more likely they are to walk toward help rather than dig in.",
+      "Pace matters physiologically, not just emotionally. Allow longer pauses. Reduce crosstalk. Seat the person where they can hear and see everyone. Keep the session shorter than you might with a younger client, because fatigue erodes the cognitive capacity you are counting on. If the client uses hearing aids or glasses, make sure they have them — a missed sentence reads as confusion or refusal when it is neither.",
+      "## How Do You Match an Older Adult to the Right Treatment?",
+      "Matching an older adult to treatment means prioritizing medical capacity, age-appropriate peer grouping, and pace over brand-name programs. A facility that is excellent for a thirty-year-old with a stimulant disorder may be a poor fit for a seventy-five-year-old whose recovery has to coexist with managing diabetes, cardiac care, and grief.",
+      "Look for programs with genuine geriatric competence: medical staffing on site, mobility-accessible facilities, slower programming, and ideally age-specific or mixed-age tracks where the client will not feel like an outlier. Older adults often disengage from groups dominated by people the age of their children. They re-engage when they are with peers who share their losses, their references, and their pace.",
+      "Be honest with families about the continuum of care. Some older clients are best served by a medically supervised stabilization followed by intensive outpatient close to home, where their own physician and support network remain in reach. Others need full residential care. Resist defaulting to the most intensive option out of caution — uprooting a frail person far from home carries its own risk, and the right level of care is the one they can actually complete.",
+      "## The Standard This Population Demands",
+      "Late-life intervention is where our professional standards are tested most honestly. It rewards practitioners who assess thoroughly, communicate with patience, and treat the client as a whole person with decades of authority and a body that no longer forgives. It punishes practitioners who run a younger playbook on an older life.",
+      "If you take cases in this space, build the relationships now: a geriatric physician, a neuropsychologist, and one or two treatment centers with real older-adult tracks. The families calling about a parent are frightened and behind the curve. The interventionist who shows up with this competence is not just running a better session — they are raising the floor for an entire underserved population.",
+      "## Frequently Asked Questions",
+      "**Is an older adult addiction intervention different from a standard intervention?** Yes. A late-life intervention requires expanded medical and cognitive assessment, a slower and more respectful communication style, and treatment matching built around medical capacity and age-appropriate peer settings. The core structure is familiar, but the clinical demands are meaningfully different.",
+      "**Why is addiction in older adults so often missed?** Because its signs — falls, confusion, isolation, sleep and memory problems — overlap almost exactly with normal aging, and because older adults are rarely screened for substance use. Families and even physicians often attribute the warning signs to age rather than to alcohol, medication, or withdrawal.",
+      "**Can an older person safely detox at home before treatment?** No. Alcohol and benzodiazepine withdrawal can be life-threatening at any age, and an older body with cardiac, liver, or kidney conditions has very little margin. Withdrawal should always be medically supervised in a setting with geriatric competence, never attempted at home.",
+      "**How do you tell substance use apart from dementia in an older client?** You often cannot tell with certainty in the room, which is why cognitive screening and a geriatric or neuropsychological evaluation are essential. Substance-induced impairment frequently clears with sustained abstinence, while dementia does not — and that distinction reshapes consent, treatment, and family expectations.",
+      "**What should families avoid doing during a late-life intervention?** Families should avoid talking about the older adult as though they were a child or announcing decisions made on their behalf. This collapses the person's authority and triggers refusal. Leading with specific care and preserving the older adult's agency is far more effective.",
+      "**What kind of treatment program is best for an older adult?** Look for programs with on-site medical staffing, accessible facilities, slower programming, and age-specific or mixed-age peer tracks. The best fit prioritizes medical capacity and a pace the client can complete — not the most intensive or best-known program by default.",
+    ],
+  },
   "what-is-sober-living-family-guide": {
     title: "What Is Sober Living and How Do Families Choose the Right One?",
     author: "Matt Brown",
