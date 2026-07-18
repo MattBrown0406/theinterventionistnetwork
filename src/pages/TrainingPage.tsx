@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { BookOpen, Lock, Clock, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -120,6 +121,36 @@ const TrainingPage = () => {
           <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto">
             On-demand training modules built from 20+ years of intervention experience. New content added monthly.
           </p>
+        </div>
+      </section>
+
+      {/* Flagship: The Interventionist Intensive */}
+      <section className="py-12 lg:py-16 bg-warm-gray">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto grid max-w-5xl gap-8 rounded-3xl border border-border bg-card p-8 shadow-sm lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-gold">New — Founding Cohort Fall 2026</p>
+              <h2 className="mt-2 text-3xl font-bold">The Interventionist Intensive</h2>
+              <p className="mt-3 text-muted-foreground leading-relaxed">
+                Our flagship cohort program for new interventionists: a three-day live intensive taught by Matt Brown,
+                a 90-day mentorship tail on your real cases, and a directory listing when you finish. The library below
+                is the reference shelf — the Intensive is the apprenticeship.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Button variant="gold" size="lg" asChild>
+                  <Link to="/intensive">Learn More &amp; Join the Waitlist</Link>
+                </Button>
+              </div>
+            </div>
+            <div className="rounded-2xl bg-navy p-6 text-primary-foreground">
+              <ul className="space-y-3 text-sm text-primary-foreground/80">
+                <li>• 20 hours of live teaching and drills</li>
+                <li>• 90 days of group case consultation</li>
+                <li>• Directory listing via the mentorship pathway</li>
+                <li>• Capped at 12 students</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

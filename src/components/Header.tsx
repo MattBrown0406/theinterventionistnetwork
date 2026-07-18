@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
 const memberLinks = [
+  { to: "/intensive", label: "The Intensive" },
   { to: "/training", label: "Training Library" },
   { to: "/resources", label: "Resources" },
   { to: "/community", label: "Community" },

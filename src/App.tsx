@@ -20,6 +20,7 @@ const AuthPage = lazy(() => import("./pages/AuthPage"));
 const AdminPage = lazy(() => import("./pages/AdminPage"));
 const PaymentConfirmation = lazy(() => import("./pages/PaymentConfirmation"));
 const TrainingPage = lazy(() => import("./pages/TrainingPage"));
+const IntensivePage = lazy(() => import("./pages/IntensivePage"));
 const ResourcesPage = lazy(() => import("./pages/ResourcesPage"));
 const CommunityPage = lazy(() => import("./pages/CommunityPage"));
 const CoachingPage = lazy(() => import("./pages/CoachingPage"));
@@ -66,6 +67,7 @@ const App = () => (
               <Route path="/admin" element={<AdminPage />} />
               <Route path="/payment-confirmation" element={<PaymentConfirmation />} />
               <Route path="/training" element={<TrainingPage />} />
+              <Route path="/intensive" element={<IntensivePage />} />
               <Route path="/resources" element={<ResourcesPage />} />
               <Route path="/community" element={<CommunityPage />} />
               <Route path="/coaching" element={<CoachingPage />} />

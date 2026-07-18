@@ -9,7 +9,7 @@ const distDir = path.join(rootDir, "dist");
 const indexPath = path.join(distDir, "index.html");
 const blogDataPath = path.join(rootDir, "scripts", "generated", "blog-route-data.json");
 
-const baseRoutes = ["/", "/about", "/find", "/help", "/contact", "/join", "/apply", "/blog", "/faq", "/badge", "/verify"];
+const baseRoutes = ["/", "/about", "/find", "/help", "/contact", "/join", "/apply", "/blog", "/faq", "/badge", "/verify", "/training", "/intensive"];
 
 const escapeHtml = (value = "") =>
   value
@@ -25,6 +25,8 @@ const routes = [...baseRoutes, ...blogPosts.map((post) => `/blog/${post.slug}`)]
 
 const formatTitle = (route) => {
   if (route === "/") return "The Interventionist Network";
+  if (route === "/intensive") return "The Interventionist Intensive — Professional Training | The Interventionist Network";
+  if (route === "/training") return "Professional Training Library | The Interventionist Network";
   if (route === "/blog") return "Blog | The Interventionist Network";
   if (route.startsWith("/blog/")) return `${slugToPost[route.replace("/blog/", "")]?.title || "Blog"} | The Interventionist Network`;
   return "The Interventionist Network";
@@ -32,6 +34,8 @@ const formatTitle = (route) => {
 
 const formatDescription = (route) => {
   if (route === "/") return "Professional addiction intervention resources, vetted interventionists, and guidance for families in crisis.";
+  if (route === "/intensive") return "Cohort-based professional training for new addiction interventionists: a 3-day live intensive, 90-day mentorship, and a directory listing to launch your practice ethically.";
+  if (route === "/training") return "On-demand training modules for addiction interventionists, built from 20+ years of intervention experience.";
   if (route === "/blog") return "Expert insights on addiction intervention, family recovery, and navigating the treatment system from The Interventionist Network.";
   if (route.startsWith("/blog/")) return slugToPost[route.replace("/blog/", "")]?.excerpt || "Addiction intervention insights from The Interventionist Network.";
   return "The Interventionist Network.";

@@ -66,6 +66,38 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Two audiences, two clear paths */}
+      <section className="py-12 lg:py-16">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-sm flex flex-col">
+              <p className="text-sm font-semibold uppercase tracking-wide text-gold">For Families</p>
+              <h2 className="mt-2 text-2xl font-bold">Someone you love needs help</h2>
+              <p className="mt-3 text-muted-foreground leading-relaxed flex-1">
+                Get matched with a personally vetted interventionist — free, confidential, and never brokered. No one
+                pays a referral fee for your family, and crisis situations are prioritized.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Button variant="gold" size="lg" asChild><Link to="/help">Get Matched Now</Link></Button>
+                <Button variant="outline" size="lg" asChild><Link to="/find">Browse the Directory</Link></Button>
+              </div>
+            </div>
+            <div className="rounded-3xl border border-border bg-navy p-8 shadow-sm flex flex-col text-primary-foreground">
+              <p className="text-sm font-semibold uppercase tracking-wide text-gold">For Interventionists</p>
+              <h2 className="mt-2 text-2xl font-bold">Build an ethical practice</h2>
+              <p className="mt-3 text-primary-foreground/70 leading-relaxed flex-1">
+                Join the only national network with zero referral fees, train with a 20+ year veteran, and grow a
+                practice families can trust. New to the field? Start with The Interventionist Intensive.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Button variant="gold" size="lg" asChild><Link to="/join">Join the Network</Link></Button>
+                <Button variant="hero-outline" size="lg" asChild><Link to="/intensive">Explore the Intensive</Link></Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section className="py-16 lg:py-24 bg-warm-gray">
         <div className="container mx-auto px-4">
@@ -246,7 +278,10 @@ const Index = () => {
               <p className="mt-3 text-primary-foreground/70">
                 Join the only professional network with zero referral fees. Membership starts at $49/month.
               </p>
-              <Button variant="gold" size="lg" asChild className="mt-6"><Link to="/apply">Apply for Membership</Link></Button>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Button variant="gold" size="lg" asChild><Link to="/apply">Apply for Membership</Link></Button>
+                <Button variant="hero-outline" size="lg" asChild><Link to="/intensive">New? Start with the Intensive</Link></Button>
+              </div>
             </div>
           </div>
         </div>
