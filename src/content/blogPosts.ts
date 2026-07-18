@@ -61,6 +61,7 @@ import blogInterventionAdultChildParents from "@/assets/blog-intervention-adult-
 import blogHarmReductionIntervention from "@/assets/blog-harm-reduction-intervention.jpg";
 import blogSubstanceSpecificPlanning from "@/assets/blog-substance-specific-intervention-planning.jpg";
 import blogPlanInterventionDiscreetly from "@/assets/blog-plan-intervention-discreetly.jpg";
+import blogFamilyInvolvementTreatment from "@/assets/blog-family-involvement-addiction-treatment.jpg";
 
 export type BlogPostEntry = {
   title: string;
@@ -72,6 +73,53 @@ export type BlogPostEntry = {
 };
 
 export const blogPosts: Record<string, BlogPostEntry> = {
+  "family-involvement-in-addiction-treatment-family-guide": {
+    title: "Why Family Involvement in Addiction Treatment Matters — and How to Do It Well",
+    author: "Matt Brown",
+    date: "2026-07-17",
+    image: blogFamilyInvolvementTreatment,
+    imageAlt: "Multi-generational family in a warm living room engaged in a family therapy session with a compassionate clinician",
+    content: [
+      "If your loved one has just entered treatment — perhaps after an intervention — you may feel a strange mix of relief and uncertainty. The crisis phase is over. Now what is your role?",
+      "The answer matters more than most families realize: family involvement in addiction treatment is one of the strongest predictors of lasting recovery. Decades of clinical experience and research point the same direction — when families participate in the treatment process, outcomes improve.",
+      "This guide explains what family involvement actually looks like, why it works, and how to participate in a way that supports recovery rather than complicates it.",
+      "## What Does Family Involvement in Addiction Treatment Actually Mean?",
+      "Family involvement in addiction treatment means participating in the structured programming a treatment center offers for families — not managing your loved one's recovery from the outside. It typically includes family therapy sessions, educational workshops, and facilitated communication with your loved one and their clinical team.",
+      "Many families assume their job ended when their loved one walked through the treatment center doors. In reality, that is where a second, parallel process begins. Addiction develops inside a family system, and that system adapts around it — often in ways no one intended. Treatment for the individual works best when the family is doing its own work at the same time.",
+      "Involvement does not mean daily phone calls, monitoring, or advocating for a shorter stay. It means showing up for the parts of the process designed for you.",
+      "## Why Does Family Involvement Improve Treatment Outcomes?",
+      "Family involvement improves outcomes because addiction is not just an individual illness — it is a condition that reorganizes an entire household. When the family learns new patterns while their loved one is in treatment, the person returns home to a changed environment instead of the same one that surrounded their active addiction.",
+      "Consider what happens without that work. A person spends 30, 60, or 90 days building new skills, then returns to a family still operating on crisis rules: walking on eggshells, monitoring, rescuing, or quietly resenting. Old patterns pull hard. Relapse risk climbs.",
+      "Families who engage in programming tend to gain three things:",
+      "• Understanding — a working knowledge of addiction as a chronic condition, which replaces blame and confusion with realistic expectations.\n• New patterns — practical alternatives to enabling, controlling, and rescuing behaviors that developed during active addiction.\n• A recovery of their own — recognition that family members have been affected too, and that their healing is a separate, legitimate process.",
+      "## What Does Family Programming Look Like During Treatment?",
+      "Most quality treatment centers offer a defined family program. The format varies, but you can expect some combination of the following components.",
+      "Family therapy sessions are facilitated meetings — in person or virtual — that include your loved one, one or more family members, and a clinician. Early sessions often focus on honest communication that was impossible during active addiction. Later sessions address rebuilding trust, setting expectations for after discharge, and planning for the transition home.",
+      "Family education and workshops are commonly delivered as family weekends or multi-day intensives. These teach the fundamentals: how addiction affects the brain, how family systems adapt to it, what enabling looks like in practice, and what healthy support means. Education is not a lecture about your loved one — it is a mirror for the whole family.",
+      "Structured communication and updates happen with your loved one's consent, so the clinical team can share progress and involve you in discharge planning. Good centers set clear expectations about what will and will not be shared, and when. This structure protects the treatment process while keeping you appropriately informed.",
+      "## How Can Families Stay Involved Without Taking Over?",
+      "The most helpful posture is engaged but not controlling: attend what you are invited to attend, do your own work, and let the clinical team lead the treatment. Families who try to direct treatment from the outside — frequent calls, pushing for information, negotiating discharge dates — usually slow the process down.",
+      "A few practical guidelines:",
+      "• Follow the center's communication structure, even when the silence is uncomfortable. Early limits on contact are clinical, not punitive.\n• Use the time to start your own support — a family program, a therapist familiar with addiction, or a community group. Your recovery runs on its own track.\n• Resist the urge to fix things by phone. A hard call with your loved one in week two is not an emergency; it is often part of the process.\n• Be honest in family sessions. The clinicians can only work with what the family is willing to say out loud.",
+      "If you worked with a professional interventionist, this is also where their case management role continues. A qualified interventionist stays engaged after admission — coaching the family, coordinating with the treatment team, and helping everyone hold the plan when emotions run high.",
+      "## What If the Treatment Center Doesn't Offer Family Programming?",
+      "Treat a missing or minimal family program as a significant gap. Most reputable programs consider family work a core clinical component, not an add-on. If you are still choosing a treatment center, ask directly:",
+      "• What does your family program include, and how often does it run?\n• Will we have scheduled family therapy sessions with our loved one?\n• How do you involve families in discharge and aftercare planning?\n• What do you recommend for families who live far away?",
+      "If the answers are vague, keep looking — or ask a professional interventionist to help you evaluate options. Matching a family to the right treatment setting is a core part of what qualified interventionists do, and their treatment center relationships are built on knowing which programs deliver on this.",
+      "## The Bottom Line for Families",
+      "Recovery is not a spectator event for families. The person in treatment is doing hard work; the family's job is to do their own alongside it. Families who engage with programming, honor clinical boundaries, and begin their own healing give their loved one something no treatment center can provide alone — a home worth returning to that operates on new rules.",
+      "This is also why professional standards matter in this field. Qualified interventionists and reputable treatment centers treat the family as part of the clinical picture from the first phone call through aftercare. That standard of care is worth insisting on.",
+      "## Frequently Asked Questions About Family Involvement in Addiction Treatment",
+      "Does family involvement really improve addiction treatment outcomes? Yes. Research and clinical experience consistently show that structured family involvement improves treatment engagement, completion rates, and long-term recovery. When the family system changes alongside the individual, the risk of returning to old patterns after discharge drops significantly.",
+      "Can I visit my loved one while they are in treatment? Usually, yes — after an initial adjustment period. Most residential programs restrict contact for the first one to two weeks so your loved one can settle into treatment, then open scheduled calls and visits. Follow the center's structure; it exists for clinical reasons.",
+      "What if my loved one doesn't want us involved in their treatment? Treatment centers must honor an adult client's consent choices, so start by respecting that boundary. In many cases, resistance softens within a few weeks as clinical work progresses. You can still participate in family education and pursue your own support regardless of their consent.",
+      "What is a family program at a rehab center? A family program is structured clinical programming for the family members of someone in treatment. It typically includes education about addiction, facilitated family therapy sessions, and guidance on communication, boundaries, and relapse prevention after discharge.",
+      "Do I need my own therapist if my loved one is in treatment? It is strongly recommended. Living alongside active addiction affects family members in real, lasting ways. A therapist or family recovery coach who understands addiction gives you a place to do your own work — which benefits both you and your loved one's recovery.",
+      "How do I find a treatment center with a strong family program? Ask specific questions about family therapy frequency, family workshops, and discharge planning involvement before committing. A professional interventionist can also match your family to centers with strong family programming, based on direct working relationships with those programs.",
+      "## Find the Right Professional Support for Your Family",
+      "Whether you are preparing for an intervention or supporting a loved one already in treatment, you do not have to navigate this alone. Visit TheInterventionistNetwork.com to find qualified, credentialed interventionists who treat the family as an essential part of recovery — from the first call through aftercare.",
+    ],
+  },
   "how-to-plan-an-intervention-without-your-loved-one-finding-out": {
     title: "How to Plan an Intervention Without Your Loved One Finding Out",
     author: "Matt Brown",
