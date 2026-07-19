@@ -276,7 +276,7 @@ const Index = () => {
             <div className="rounded-2xl bg-navy p-6 text-left text-primary-foreground">
               <h3 className="text-xl font-bold">Are you an interventionist?</h3>
               <p className="mt-3 text-primary-foreground/70">
-                Join the only professional network with zero referral fees. Membership starts at $49/month.
+                Join the only professional network with zero referral fees. Membership starts at $25/month.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Button variant="gold" size="lg" asChild><Link to="/apply">Apply for Membership</Link></Button>
