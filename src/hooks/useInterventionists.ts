@@ -25,6 +25,9 @@ export interface Interventionist {
   languages: string[];
   willing_to_travel_internationally: boolean;
   no_referral_fees?: boolean | null;
+  accepting_cases?: boolean | null;
+  video_url?: string | null;
+  endorsements?: string[] | null;
 }
 
 export function useInterventionists() {

@@ -5,20 +5,23 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
-const sourcePath = path.join(rootDir, "src", "content", "blogPosts.ts");
+const postsDir = path.join(rootDir, "src", "content", "posts");
 const outputPath = path.join(rootDir, "scripts", "generated", "blog-route-data.json");
 
-const text = await fs.readFile(sourcePath, "utf8");
-const blockMatch = text.match(/export const blogPosts:[\s\S]*?= \{([\s\S]*?)\n\};/);
-if (!blockMatch) throw new Error("Could not locate blogPosts block");
-
-const block = blockMatch[1];
-const entryRegex = /"([a-z0-9-]+)": \{[\s\S]*?title: "([^"]+)",[\s\S]*?author: "([^"]+)",[\s\S]*?date: "([^"]+)",[\s\S]*?content: \[\n\s+"([\s\S]*?)"/g;
+const files = (await fs.readdir(postsDir)).filter((f) => f.endsWith(".ts"));
 
 const posts = [];
-let match;
-while ((match = entryRegex.exec(block)) !== null) {
-  const [, slug, title, author, date, firstParagraph] = match;
+for (const file of files) {
+  const slug = file.replace(/\.ts$/, "");
+  const text = await fs.readFile(path.join(postsDir, file), "utf8");
+  const title = text.match(/^  title: "((?:[^"\\]|\\.)*)",$/m)?.[1];
+  const author = text.match(/^  author: "((?:[^"\\]|\\.)*)",$/m)?.[1];
+  const date = text.match(/^  date: "([^"]+)",$/m)?.[1];
+  const contentIdx = text.indexOf("  content: [");
+  const firstParagraph = text.slice(contentIdx).match(/^    "((?:[^"\\]|\\.)*)",?$/m)?.[1];
+  if (!title || !author || !date || !firstParagraph) {
+    throw new Error(`Could not extract metadata from ${file}`);
+  }
   posts.push({
     slug,
     title,

@@ -1,14 +1,57 @@
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
-import { blogPosts } from "@/content/blogPosts";
+import PodcastCallout from "@/components/PodcastCallout";
+import { loadBlogPost, type BlogPostEntry } from "@/content/blogMeta";
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const post = slug ? blogPosts[slug] : null;
+  const [post, setPost] = useState<BlogPostEntry | null>(null);
+  const [status, setStatus] = useState<"loading" | "ready" | "missing">("loading");
 
-  if (!post) {
+  useEffect(() => {
+    setStatus("loading");
+    setPost(null);
+    const loader = slug ? loadBlogPost(slug) : null;
+    if (!loader) {
+      setStatus("missing");
+      return;
+    }
+    let cancelled = false;
+    loader
+      .then((entry) => {
+        if (cancelled) return;
+        setPost(entry);
+        setStatus("ready");
+      })
+      .catch(() => {
+        if (!cancelled) setStatus("missing");
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
+
+  if (status === "loading") {
+    return (
+      <div className="container mx-auto px-4 py-24 max-w-3xl">
+        <div className="animate-pulse space-y-4">
+          <div className="h-4 w-24 rounded bg-muted" />
+          <div className="h-10 w-3/4 rounded bg-muted" />
+          <div className="h-4 w-1/3 rounded bg-muted" />
+          <div className="mt-8 space-y-3">
+            <div className="h-4 rounded bg-muted" />
+            <div className="h-4 rounded bg-muted" />
+            <div className="h-4 w-5/6 rounded bg-muted" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (status === "missing" || !post) {
     return (
       <div className="container mx-auto px-4 py-24 text-center">
         <h1 className="text-2xl font-bold mb-4">Post Not Found</h1>
@@ -94,6 +137,8 @@ const BlogPost = () => {
               return <p key={i} className="text-muted-foreground leading-relaxed">{paragraph}</p>;
             })}
           </div>
+
+          <PodcastCallout />
 
           <div className="mt-12 pt-8 border-t border-border">
             <div className="flex items-center gap-4">

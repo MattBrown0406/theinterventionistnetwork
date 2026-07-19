@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 
-import { blogPostList } from "@/content/blogPosts";
+import { blogPostList } from "@/content/blogMeta";
 const BlogIndex = () => {
   return (
     <>

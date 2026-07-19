@@ -22,6 +22,7 @@ interface InterventionistCardProps {
   willing_to_travel_internationally?: boolean;
   featured?: boolean;
   no_referral_fees?: boolean | null;
+  accepting_cases?: boolean | null;
 }
 
 const InterventionistCard = ({
@@ -42,6 +43,7 @@ const InterventionistCard = ({
   willing_to_travel_internationally = false,
   featured = false,
   no_referral_fees = true,
+  accepting_cases,
 }: InterventionistCardProps) => {
   return (
     <div className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow group h-full flex flex-col">
@@ -84,6 +86,12 @@ const InterventionistCard = ({
       </div>
 
       <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-3">
+        {accepting_cases === true && (
+          <span className="flex items-center gap-1 font-semibold text-emerald-600"><span className="w-2 h-2 rounded-full bg-emerald-500" />Accepting cases</span>
+        )}
+        {accepting_cases === false && (
+          <span className="flex items-center gap-1 font-medium"><span className="w-2 h-2 rounded-full bg-muted-foreground/40" />Waitlist only</span>
+        )}
         {featured && <span className="flex items-center gap-1 text-gold font-semibold"><BadgeCheck className="w-3.5 h-3.5" />Featured</span>}
         <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5" />{region}</span>
         <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{years_experience}+ years</span>

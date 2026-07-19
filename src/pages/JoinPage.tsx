@@ -9,12 +9,47 @@ const tiers = [
     name: "Listed",
     price: "$25",
     popular: true,
+    cta: "Apply Now",
+    ctaTo: "/apply",
+    note: null as string | null,
     features: [
       "Professional profile on TheInterventionistNetwork.com",
       "Included in family matching based on location and specialty",
       "Network member badge/seal for your website",
       "Listed in our national directory",
-      "Access to member resources",
+      "Access to member resources and community forum",
+    ],
+  },
+  {
+    name: "Featured",
+    price: "$75",
+    popular: false,
+    cta: "Contact to Upgrade",
+    ctaTo: "/contact",
+    note: "Founding rate — available to approved members",
+    features: [
+      "Everything in Listed",
+      "Priority placement in family matching and directory results",
+      "Featured rotation on the homepage",
+      "Video introduction on your profile",
+      "Full access to the on-demand Training Library",
+      "Monthly marketing content drops for your practice",
+    ],
+  },
+  {
+    name: "Partner",
+    price: "$150",
+    popular: false,
+    cta: "Contact to Upgrade",
+    ctaTo: "/contact",
+    note: "Founding rate — limited seats",
+    features: [
+      "Everything in Featured",
+      "Early access to new training modules",
+      "Discounted enrollment in The Interventionist Intensive",
+      "Quarterly 1:1 practice-building call with Matt",
+      "Priority consideration for overflow case referrals",
+      "First access to network events and future summit pricing",
     ],
   },
 ];
@@ -82,9 +117,10 @@ const JoinPage = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What Membership Includes</h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-muted-foreground">
-            One simple membership. No referral fees, ever.
+            Flat monthly membership at every level. No referral fees, ever — at any tier, families never pay to be
+            matched and no one pays per lead.
           </p>
-          <div className="grid gap-6 max-w-md mx-auto">
+          <div className="grid gap-6 max-w-5xl mx-auto md:grid-cols-3 items-start">
             {tiers.map((tier) => (
               <div
                 key={tier.name}
@@ -115,11 +151,18 @@ const JoinPage = () => {
                   className="w-full"
                   asChild
                 >
-                  <Link to="/apply">Apply Now</Link>
+                  <Link to={tier.ctaTo}>{tier.cta}</Link>
                 </Button>
+                {tier.note && (
+                  <p className="mt-3 text-center text-xs text-muted-foreground">{tier.note}</p>
+                )}
               </div>
             ))}
           </div>
+          <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
+            Start with Listed — every application begins there. Featured and Partner upgrades open to members in good
+            standing after approval.
+          </p>
         </div>
       </section>
 

@@ -147,6 +147,9 @@ const Index = () => {
               </div>
             ))}
           </div>
+          <div className="text-center mt-8">
+            <Link to="/pledge" className="font-medium text-gold hover:underline">Read the Network Pledge every member signs <ArrowRight className="inline w-4 h-4" /></Link>
+          </div>
         </div>
       </section>
 

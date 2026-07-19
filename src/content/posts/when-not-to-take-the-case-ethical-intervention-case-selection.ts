@@ -1,0 +1,48 @@
+import type { BlogPostEntry } from "../blogMeta";
+import blogInterventionCaseSelection from "@/assets/blog-intervention-case-selection.jpg";
+
+const post: BlogPostEntry = {
+  title: "When Not to Take the Case: A Practitioner's Guide to Ethical Intervention Case Selection",
+  author: "Matt Brown",
+  date: "2026-07-05",
+  image: blogInterventionCaseSelection,
+  imageAlt: "A professional interventionist thoughtfully taking a phone call at a quiet office desk",
+  content: [
+    "Intervention case selection is one of the least discussed skills in our field, and one of the most consequential. Every experienced interventionist has a case they wish they had declined — and most of us can trace the trouble back to the first phone call, where the signs were already visible.",
+    "Saying yes to every family that calls feels compassionate. Often it isn't. Taking a case you shouldn't take can harm the family, harm the identified loved one, and quietly erode your practice. Knowing when to decline — and how to decline well — is a clinical skill, not a business preference.",
+    "## Why Is Turning Down Work a Clinical Skill?",
+    "Declining a case protects families from a mismatch between what they need and what you can deliver. It is a clinical judgment in the same category as level-of-care recommendations: you are assessing fit, risk, and likelihood of benefit. The discomfort of saying no is not a reason to say yes.",
+    "Most interventionists who take the wrong cases are not greedy. They are helpers who struggle to disappoint a family in pain — often the same trait that made them good at this work in the first place. But a family in crisis does not need your willingness. They need the right professional, the right structure, and an honest read on what is possible. Sometimes you are that professional. Sometimes you are the person who helps them find the one who is.",
+    "## What Does Ethical Intervention Case Selection Look Like?",
+    "Ethical intervention case selection means assessing every inquiry against three questions: Is this within my competence? Can this engagement be done safely? Is the family's goal one I can ethically serve? A case must clear all three before you quote a fee or discuss logistics.",
+    "In practice, that means the first call is an assessment, not a sales conversation. Before agreeing to anything, you should have a working picture of:",
+    "• The substance use or behavioral picture, including severity, duration, and any recent escalation.\n• Co-occurring mental health concerns — psychosis, suicidality, significant trauma history, eating disorders.\n• The family system: who holds influence, who is opposed, what previous attempts have looked like.\n• Safety variables: history of violence, access to weapons, protective orders, children in the home.\n• What the family actually wants — and whether what they want is an intervention or something else wearing its clothes.",
+    "If you cannot answer these questions after a thorough first conversation, the honest move is a second call, not a contract.",
+    "## What Red Flags Should Make You Pause Before Taking a Case?",
+    "The clearest red flags are hidden agendas, unmanageable safety risk, and a family seeking control rather than change. Any one of these should slow you down. Two or more should usually stop you.",
+    "**Hidden agendas.** Some inquiries are not really about treatment. A spouse building a custody case, siblings maneuvering around an inheritance, a family that wants the loved one 'sent away' during a divorce — these engagements position you as leverage in a conflict, not as a clinician facilitating change. If the timeline of the family's urgency maps to a legal calendar rather than a clinical one, ask more questions.",
+    "**Safety risk beyond your infrastructure.** Active psychosis, credible threats of violence, recent suicide attempts without stabilization — these are not automatic declines, but they require resources: psychiatric backup, coordinated treatment placement, sometimes law enforcement liaison. If you do not have that infrastructure for this case, in this location, on this timeline, the case is not yours yet.",
+    "**A family that wants coercion, not intervention.** When a family's questions center on how to force, trick, or trap their loved one, you are being asked to run an ambush, not an intervention. Many of these families can be redirected — their desperation is usually fear wearing armor. If they remain committed to coercion after you explain your model, declining is the ethical answer.",
+    "**Pressure to compress the process.** Families in crisis want speed, and urgency is sometimes clinically real. But a family demanding you skip assessment, rehearsal, or treatment planning is asking you to remove the parts of the process that make it work.",
+    "## When Is a Case Outside Your Scope of Practice?",
+    "A case is outside your scope when the primary clinical driver is something you are not trained to manage — regardless of whether addiction is also present. The presence of substance use does not make every case an intervention case.",
+    "Common scope boundaries in this work include severe untreated mental illness where substance use is secondary, adolescents when your training is with adults, complex process addictions you have not worked with, and medical fragility that changes the risk calculus of confrontation and travel. None of these make you a lesser practitioner — they make you one who knows the edges of their map.",
+    "The professional response to a scope limit is a lateral referral — to a colleague whose training fits. This is one of the strongest arguments for maintaining real relationships with other interventionists rather than treating them purely as competitors. The referral you send today shapes the referral you receive next year — and the family gets the right help now.",
+    "## How Do You Decline a Case Well?",
+    "Decline quickly, honestly, and with a next step attached. A good decline takes the family somewhere; a bad one leaves them stranded with their crisis and one more closed door.",
+    "Three components make a decline serve the family:",
+    "• Speed. If you know it's a no, say so on the first or second call. Families in crisis burn energy waiting on you.\n• Honesty without a lecture. 'This case needs someone with psychiatric intervention experience, and that's not me' respects them more than a vague 'I'm not available.'\n• A warm handoff. Give a name, make an introduction where you can, or point them to a vetted directory. The referral is the difference between declining a case and abandoning a family.",
+    "Handled this way, a declined case often becomes a future referral source. Families remember the professional who told them the truth and pointed them in the right direction.",
+    "## Case Selection Is Where Professional Standards Live",
+    "Anyone can say yes. The discipline of intervention case selection — assessing fit, naming scope limits, refusing engagements built on coercion or hidden agendas — is what separates a profession from a marketplace. Families cannot always tell the difference between a skilled interventionist and a confident one. Our intake decisions are where we prove it.",
+    "The case you decline for the right reasons will never show up in your testimonials. It still counts among your best work.",
+    "## Frequently Asked Questions",
+    "**How do I know if an intervention case is outside my scope of practice?** Ask what the primary clinical driver is. If the case turns on something you are not trained to manage — acute psychiatric illness, adolescent development, medical fragility — it is outside your scope even if addiction is present. When in doubt, consult a colleague or clinical supervisor before committing.",
+    "**Is it ethical to decline an intervention case?** Yes — and sometimes it is the only ethical option. Taking a case you cannot serve safely or competently harms the family more than an honest no. The obligation is to decline responsibly: quickly, truthfully, and with a referral where possible.",
+    "**What should I say when turning down an intervention case?** Be brief and specific: name the reason in plain language, affirm that their situation deserves help, and offer a next step. For example: 'Your son's situation needs someone with dual-diagnosis intervention experience. That isn't my strength, but here are two colleagues I trust.'",
+    "**Should I take a case where the family wants to force their loved one into treatment?** Not while coercion is the goal. Many families arrive frightened and controlling, and can be redirected once they understand how a professional intervention actually works. If they insist on force or deception after that conversation, decline.",
+    "**Can declining cases actually help my intervention practice?** Yes. Case selection improves your outcomes, protects your reputation, reduces burnout, and builds referral relationships with the colleagues you hand cases to. Practices built on saying yes to everything tend to be the ones that quietly collapse.",
+  ],
+};
+
+export default post;

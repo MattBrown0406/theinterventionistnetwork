@@ -7,6 +7,7 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import { trackInterventionistClick } from "@/lib/interventionistTracking";
 import { useInterventionist } from "@/hooks/useInterventionists";
 import { findCredential } from "@/data/credentials";
+import { getVideoEmbedUrl } from "@/lib/videoEmbed";
 
 const InterventionistProfile = () => {
   const { slug } = useParams();
@@ -88,6 +89,12 @@ const InterventionistProfile = () => {
                 <span className="flex items-center gap-1"><MapPin className="w-4 h-4" />{person.region}</span>
                 <span className="flex items-center gap-1"><Clock className="w-4 h-4" />{person.years_experience}+ years</span>
                 <span className="flex items-center gap-1"><Award className="w-4 h-4" />Vetted Member</span>
+                {person.accepting_cases === true && (
+                  <span className="flex items-center gap-1.5 font-semibold text-emerald-400"><span className="w-2 h-2 rounded-full bg-emerald-400" />Accepting new cases</span>
+                )}
+                {person.accepting_cases === false && (
+                  <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-primary-foreground/30" />Currently waitlist only</span>
+                )}
               </div>
             </div>
           </div>
@@ -98,6 +105,25 @@ const InterventionistProfile = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 space-y-8">
+              {(() => {
+                const embedUrl = getVideoEmbedUrl(person.video_url);
+                if (!embedUrl) return null;
+                return (
+                  <div>
+                    <h2 className="text-xl font-bold mb-3">Meet {person.name.split(" ")[0]}</h2>
+                    <div className="relative w-full overflow-hidden rounded-lg border border-border" style={{ paddingBottom: "56.25%" }}>
+                      <iframe
+                        src={embedUrl}
+                        title={`Video introduction from ${person.name}`}
+                        className="absolute inset-0 h-full w-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                );
+              })()}
               <div>
                 <h2 className="text-xl font-bold mb-3">About</h2>
                 {person.full_bio.split("\n\n").map((p, i) => (
@@ -108,6 +134,21 @@ const InterventionistProfile = () => {
                 <h2 className="text-xl font-bold mb-3">Approach & Philosophy</h2>
                 <p className="text-muted-foreground leading-relaxed">{person.approach}</p>
               </div>
+              {person.endorsements && person.endorsements.length > 0 && (
+                <div>
+                  <h2 className="text-xl font-bold mb-3">Professional Endorsements</h2>
+                  <div className="space-y-4">
+                    {person.endorsements.map((endorsement, i) => (
+                      <blockquote key={i} className="rounded-lg border border-border bg-warm-gray p-5 text-sm text-muted-foreground leading-relaxed italic border-l-4 border-l-gold">
+                        {endorsement}
+                      </blockquote>
+                    ))}
+                  </div>
+                  <p className="mt-3 text-xs text-muted-foreground">
+                    Endorsements come from referring professionals — clinicians, attorneys, and colleagues — not from client families.
+                  </p>
+                </div>
+              )}
               <div>
                 <h2 className="text-xl font-bold mb-3">Certifications & Training</h2>
                 <ul className="space-y-2">

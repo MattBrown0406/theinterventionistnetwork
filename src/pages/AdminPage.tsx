@@ -38,6 +38,9 @@ const emptyForm = {
   offers_case_management: false,
   languages: [] as string[],
   willing_to_travel_internationally: false,
+  accepting_cases: true,
+  video_url: "",
+  endorsements: "",
 };
 
 type FormData = typeof emptyForm;
@@ -124,6 +127,9 @@ const AdminPage = () => {
       offers_case_management: person.offers_case_management ?? false,
       languages: person.languages || [],
       willing_to_travel_internationally: person.willing_to_travel_internationally ?? false,
+      accepting_cases: person.accepting_cases ?? true,
+      video_url: person.video_url || "",
+      endorsements: (person.endorsements || []).join("\n"),
     });
     setPhotoFile(null);
   };
@@ -183,6 +189,9 @@ const AdminPage = () => {
       offers_case_management: form.offers_case_management,
       languages: form.languages,
       willing_to_travel_internationally: form.willing_to_travel_internationally,
+      accepting_cases: form.accepting_cases,
+      video_url: form.video_url.trim() || null,
+      endorsements: form.endorsements.split("\n").map((line) => line.trim()).filter(Boolean),
     };
 
     let error;
@@ -300,6 +309,18 @@ const AdminPage = () => {
                       <Label>Photo</Label>
                       <Input type="file" accept="image/*" onChange={(e) => setPhotoFile(e.target.files?.[0] || null)} />
                       {form.photo_url && <img src={form.photo_url} alt="Current" className="w-16 h-16 rounded-full mt-2 object-cover" />}
+                    </div>
+                    <div>
+                      <Label>Video intro URL (YouTube or Vimeo)</Label>
+                      <Input value={form.video_url} onChange={(e) => setForm({ ...form, video_url: e.target.value })} placeholder="https://youtu.be/..." />
+                    </div>
+                    <div>
+                      <Label>Professional endorsements (one per line)</Label>
+                      <Textarea rows={4} value={form.endorsements} onChange={(e) => setForm({ ...form, endorsements: e.target.value })} placeholder={'"Quote from a referring professional." — Jane Smith, LMFT, Portland OR'} />
+                    </div>
+                    <div className="flex items-center gap-2 pt-6">
+                      <Switch checked={form.accepting_cases} onCheckedChange={(v) => setForm({ ...form, accepting_cases: v })} />
+                      <Label>Accepting new cases</Label>
                     </div>
                     <div className="flex items-center gap-2 pt-6">
                       <Switch checked={form.featured} onCheckedChange={(v) => setForm({ ...form, featured: v })} />

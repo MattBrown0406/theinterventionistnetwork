@@ -9,7 +9,7 @@ const distDir = path.join(rootDir, "dist");
 const indexPath = path.join(distDir, "index.html");
 const blogDataPath = path.join(rootDir, "scripts", "generated", "blog-route-data.json");
 
-const baseRoutes = ["/", "/about", "/find", "/help", "/contact", "/join", "/apply", "/blog", "/faq", "/badge", "/verify", "/training", "/intensive"];
+const baseRoutes = ["/", "/about", "/find", "/help", "/contact", "/join", "/apply", "/blog", "/faq", "/badge", "/verify", "/training", "/intensive", "/pledge", "/cities/phoenix", "/cities/dallas", "/cities/atlanta", "/cities/chicago", "/cities/los-angeles", "/cities/seattle"];
 
 const escapeHtml = (value = "") =>
   value
@@ -27,6 +27,11 @@ const formatTitle = (route) => {
   if (route === "/") return "The Interventionist Network";
   if (route === "/intensive") return "The Interventionist Intensive — Professional Training | The Interventionist Network";
   if (route === "/training") return "Professional Training Library | The Interventionist Network";
+  if (route === "/pledge") return "The Network Pledge — Our Ethical Standard | The Interventionist Network";
+  if (route.startsWith("/cities/")) {
+    const city = route.replace("/cities/", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
+    return `${city} Addiction Interventionists | The Interventionist Network`;
+  }
   if (route === "/blog") return "Blog | The Interventionist Network";
   if (route.startsWith("/blog/")) return `${slugToPost[route.replace("/blog/", "")]?.title || "Blog"} | The Interventionist Network`;
   return "The Interventionist Network";
@@ -36,6 +41,11 @@ const formatDescription = (route) => {
   if (route === "/") return "Professional addiction intervention resources, vetted interventionists, and guidance for families in crisis.";
   if (route === "/intensive") return "Cohort-based professional training for new addiction interventionists: a 3-day live intensive, 90-day mentorship, and a directory listing to launch your practice ethically.";
   if (route === "/training") return "On-demand training modules for addiction interventionists, built from 20+ years of intervention experience.";
+  if (route === "/pledge") return "Every interventionist in the network signs this pledge: no referral fees, no kickbacks, recommendations based on clinical fit alone. Read the full standard and how we're funded.";
+  if (route.startsWith("/cities/")) {
+    const city = route.replace("/cities/", "").split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ");
+    return `Find a vetted addiction interventionist serving ${city} and surrounding communities. No referral fees — families connect directly with trusted professionals.`;
+  }
   if (route === "/blog") return "Expert insights on addiction intervention, family recovery, and navigating the treatment system from The Interventionist Network.";
   if (route.startsWith("/blog/")) return slugToPost[route.replace("/blog/", "")]?.excerpt || "Addiction intervention insights from The Interventionist Network.";
   return "The Interventionist Network.";
