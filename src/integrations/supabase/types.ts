@@ -344,9 +344,6 @@ export type Database = {
       }
       interventionists: {
         Row: {
-          accepting_cases: boolean
-          video_url: string | null
-          endorsements: string[]
           approach: string
           bio: string
           certifications: string[]
@@ -372,9 +369,6 @@ export type Database = {
           years_experience: number
         }
         Insert: {
-          accepting_cases?: boolean
-          video_url?: string | null
-          endorsements?: string[]
           approach?: string
           bio?: string
           certifications?: string[]
@@ -400,9 +394,6 @@ export type Database = {
           years_experience?: number
         }
         Update: {
-          accepting_cases?: boolean
-          video_url?: string | null
-          endorsements?: string[]
           approach?: string
           bio?: string
           certifications?: string[]
