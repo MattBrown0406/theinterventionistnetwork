@@ -345,14 +345,13 @@ export type Database = {
       interventionists: {
         Row: {
           accepting_cases: boolean
-          video_url: string | null
-          endorsements: string[]
           approach: string
           bio: string
           certifications: string[]
           created_at: string
           credentials: string
           email: string | null
+          endorsements: string[]
           featured: boolean
           full_bio: string
           id: string
@@ -367,20 +366,20 @@ export type Database = {
           slug: string
           specialties: string[]
           states_served: string[]
+          video_url: string | null
           website: string | null
           willing_to_travel_internationally: boolean
           years_experience: number
         }
         Insert: {
           accepting_cases?: boolean
-          video_url?: string | null
-          endorsements?: string[]
           approach?: string
           bio?: string
           certifications?: string[]
           created_at?: string
           credentials?: string
           email?: string | null
+          endorsements?: string[]
           featured?: boolean
           full_bio?: string
           id?: string
@@ -395,20 +394,20 @@ export type Database = {
           slug: string
           specialties?: string[]
           states_served?: string[]
+          video_url?: string | null
           website?: string | null
           willing_to_travel_internationally?: boolean
           years_experience?: number
         }
         Update: {
           accepting_cases?: boolean
-          video_url?: string | null
-          endorsements?: string[]
           approach?: string
           bio?: string
           certifications?: string[]
           created_at?: string
           credentials?: string
           email?: string | null
+          endorsements?: string[]
           featured?: boolean
           full_bio?: string
           id?: string
@@ -423,6 +422,7 @@ export type Database = {
           slug?: string
           specialties?: string[]
           states_served?: string[]
+          video_url?: string | null
           website?: string | null
           willing_to_travel_internationally?: boolean
           years_experience?: number
