@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "loved-one-wants-to-leave-rehab-early-family-guide",
+    title: "When Your Loved One Wants to Leave Rehab Early: A Family's Guide",
+    author: "Matt Brown",
+    date: "2026-07-20",
+    excerpt: "The intervention worked. Your loved one said yes, made it to treatment, and for a few days you finally slept. Then the phone rings, and the voice on the other end says the words nearly every family hears at some point: \"I don't need to be here. I'm coming home.\" If your loved one wants to leave rehab early, you are facing one of the most common — and most predictable — moments in the entire recovery process.",
+    readTime: "7 min read",
+  },
+  {
     slug: "how-to-become-an-addiction-interventionist",
     title: "How to Become an Addiction Interventionist: A Realistic Guide to Entering the Field",
     author: "Matt Brown",
