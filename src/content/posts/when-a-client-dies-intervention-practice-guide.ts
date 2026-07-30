@@ -1,0 +1,46 @@
+import type { BlogPostEntry } from "../blogMeta";
+import blogClientDeath from "@/assets/blog-client-death-practice-guide.jpg";
+
+const post: BlogPostEntry = {
+  title: "When a Client Dies: Navigating Client Death in Intervention Work",
+  author: "Matt Brown",
+  date: "2026-07-30",
+  image: blogClientDeath,
+  imageAlt: "An empty wooden chair beside a window in a quiet, softly lit office",
+  content: [
+    "Client death in intervention work is the outcome no practitioner plans for and nearly every experienced interventionist eventually faces. You worked the case. The family showed up. The person went to treatment, or refused, or left early. Then you get the call. We were trained to run a family meeting and coordinate an admission, not for the seventy-two hours after a former client dies.",
+    "This is written practitioner-to-practitioner: what to do immediately, how to support a grieving family without overstepping, how to carry your own grief, and what protocols to build now so your response is grounded rather than improvised.",
+    "## Why does client death require its own professional framework?",
+    "Because intervention work sits in a structural blind spot. We hold enormous relational intensity with families over a short window, then hand off. When a death occurs, we usually learn about it secondhand, weeks later, with no clinical container and no colleague who was in the room.",
+    "Three features of our work make loss land differently than it does for therapists or treatment staff:",
+    "• The relationship is short, intense, and unfinished. Forty hours across ten days, then no contact for eight months. Grief attaches to the version of the person you knew at their most raw.\n• You occupied the role of the one who was supposed to fix it. Families hire us at the moment of maximum hope, and a death can feel like a referendum on it.\n• Most of us practice alone. No team debrief, no shift change, no supervisor down the hall unless you built one.",
+    "These features explain why one death can produce a disproportionate professional response: sudden case-selection timidity, over-functioning with the next family, or quiet withdrawal from the work.",
+    "## What should an interventionist do in the first 72 hours?",
+    "Slow down, confirm the facts, and do nothing publicly. The first three days are about accuracy and restraint. Most professional damage in these situations comes from well-intentioned speed.",
+    "**Confirm before you respond.** Verify the death through a direct family contact, not a group text, social media post, or treatment center rumor. Misinformation moves fast in families under this kind of stress, and reaching out on an unconfirmed report causes real harm.",
+    "**Secure and preserve your file.** Do not edit, clean up, or annotate existing case notes after learning of a death. Write a separate, dated entry recording when and how you learned of it and what you did next. If a claim or licensing complaint surfaces, the integrity of your original record protects you. Retroactive edits, even innocent ones, destroy credibility.",
+    "**Say something short and human.** If contact is appropriate, keep it brief and free of clinical framing. \"I heard about Daniel. I am so sorry. I am thinking about your family.\" No explanation of what happened, no reference to the treatment plan, no offer of services. Families in acute grief do not need your analysis, and any attempt to make sense of it this early reads as self-protection, because usually it is.",
+    "If the death occurred during an active engagement, notify your liability carrier per policy terms and consult your attorney before putting any account in writing.",
+    "## How do you support a family after a client death?",
+    "Stay available, stay out of the meaning-making business, and be clear about the role you can hold. Your value here is continuity, not intervention.",
+    "Families reach for the interventionist after a death for one of three reasons: they want facts about what happened in treatment, they want absolution, or they want someone who knew the person as a person rather than an obituary. Only the third is genuinely yours to give.",
+    "• Answer factual questions you have direct knowledge of. Decline to speculate about decisions made by others, and say plainly that you were not there.\n• Do not absorb or assign blame. When a mother says \"I should have made him stay,\" the answer is neither reassurance nor agreement. It is presence: \"You did what you knew to do with what you had.\"\n• Refer clearly and specifically. Grief after an addiction-related death is complicated by shame, relief, exhaustion, and years of anticipatory loss. Have bereavement clinicians you can name.\n• Watch the surviving system. Siblings and adolescent children carry elevated risk. Name it to the responsible adult once, plainly, then step back.",
+    "Resist the pull to re-enter as the family's ongoing helper unless you are contracted, competent, and clear about scope. Grief counseling is a distinct competency. Taking that chair because it feels good to be useful is a boundary failure.",
+    "## How do interventionists process their own grief?",
+    "Deliberately, with other professionals, and on a longer timeline than you expect. Grief in this work rarely arrives as sadness. It arrives as a change in your practice behavior, and that is the signal to watch. Post-loss distortions to monitor in yourself:",
+    "• Case-selection contraction. You screen out anyone resembling the client who died and call it clinical prudence.\n• Escalating urgency. You push families harder and faster, trying to prevent a death that already happened.\n• Over-promising. Your language creeps toward guarantees because uncertainty has become intolerable to you.\n• Numbness that reads as professionalism. You stop feeling much in family sessions and call it clinical detachment.",
+    "The corrective is structural, not emotional. Bring the loss to formal consultation, not just a peer over coffee. If you carry personal recovery, be honest about whether this is touching your own history. It usually is, and that is data, not disqualification. If you are in therapy, put it on the table there rather than inside your practice.",
+    "Give it a real timeline. Practitioners expect to be settled in two weeks and are surprised when something surfaces at month four. Schedule a consultation check-in ninety days out.",
+    "## What protocols should you build before you need them?",
+    "Build them now, in writing, while you are calm. A death response protocol is ordinary risk management, like a safety plan or a scope-of-practice statement. At minimum, your practice should have:",
+    "• A notification procedure — who you contact, in what order, and what you say.\n• A records policy stating files are never altered after an adverse event, with a defined retention period.\n• A named consultant or supervisor, with an agreement that adverse outcomes trigger a session.\n• A vetted bereavement referral list, refreshed annually.\n• Liability coverage you have actually read, plus an attorney you can call.\n• A personal continuation plan — what you will and will not commit to in the ninety days after a client death.",
+    "None of this prevents loss. Addiction is a fatal illness and we work at its sharpest edge. What protocols do is ensure that when the worst outcome arrives, your response comes from preparation rather than panic, and that the families still in your care are not absorbing the cost of your unprocessed grief. The standard for this field is not that we never lose people. It is that we are honest about the risk, rigorous in documentation, accountable in supervision, and steady enough to keep doing the work.",
+    "## Frequently Asked Questions",
+    "**Should an interventionist attend a former client's funeral?** Only if the family explicitly invites you, and only in a private capacity. Attend as someone who cared about the person, not the professional who worked the case. Do not network, discuss case details, or post about it.",
+    "**Am I liable if a client dies after an intervention?** Liability depends on your jurisdiction, scope of practice, documentation, and the circumstances. Practicing within your stated scope and keeping contemporaneous, unaltered records are your strongest protections. This is not legal advice — consult an attorney licensed in your state and review your coverage before you need it.",
+    "**How do I talk about client deaths with prospective families?** Honestly and without detail. If asked whether you have lost clients, say yes. Addiction is a fatal illness and any experienced practitioner has. Never share identifying details, and never use a death to manufacture urgency in a new family.",
+    "**How long should I wait before taking new cases after a client dies?** There is no fixed interval, but do not make that call alone. Bring it to a consultant or supervisor. The question is not how you feel but how you are functioning — whether your assessment, pacing, and boundaries are intact.",
+  ],
+};
+
+export default post;
