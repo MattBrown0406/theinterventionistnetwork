@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "intervention-transport-protocol-practitioner-guide",
+    title: "The Ride to Treatment: Building a Transport Protocol That Holds Under Pressure",
+    author: "Matt Brown",
+    date: "2026-08-02",
+    excerpt: "Most of us have spent years refining what happens in the room. We rehearse the family, sequence the letters, anticipate the objections, and hold the line when the temperature rises. Then the client says yes — and a surprising number of otherwise excellent interventions come apart in the next ninety minutes. A solid intervention transport protocol is what separates a yes that becomes an admission from a yes that evaporates in an airport parking lot.",
+    readTime: "9 min read",
+  },
+  {
     slug: "when-a-client-dies-intervention-practice-guide",
     title: "When a Client Dies: Navigating Client Death in Intervention Work",
     author: "Matt Brown",
