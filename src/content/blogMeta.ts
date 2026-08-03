@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "free-intervention-services-vs-independent-interventionist",
+    title: "Free Intervention Services vs. Hiring an Independent Interventionist: What Families Need to Know",
+    author: "Matt Brown",
+    date: "2026-08-03",
+    excerpt: "If you have called a treatment center recently, someone has probably offered you free intervention services. It sounds like relief. You are exhausted, the money question is already keeping you up at night, and here is a person on the phone saying they will send someone out at no cost. Before you say yes, understand what you are actually being offered.",
+    readTime: "8 min read",
+  },
+  {
     slug: "intervention-transport-protocol-practitioner-guide",
     title: "The Ride to Treatment: Building a Transport Protocol That Holds Under Pressure",
     author: "Matt Brown",
