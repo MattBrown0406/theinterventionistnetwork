@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "veterans-first-responders-intervention-practitioner-guide",
+    title: "Intervention for Veterans and First Responders: A Practitioner's Guide",
+    author: "Matt Brown",
+    date: "2026-08-04",
+    excerpt: "An intervention for veterans and first responders requires meaningful adaptation of standard practice. The fundamentals still apply, but the culture surrounding the identified patient — military service, law enforcement, fire, EMS, dispatch — changes how resistance shows up, what leverage means, and what placement should look like.",
+    readTime: "8 min read",
+  },
+  {
     slug: "free-intervention-services-vs-independent-interventionist",
     title: "Free Intervention Services vs. Hiring an Independent Interventionist: What Families Need to Know",
     author: "Matt Brown",
