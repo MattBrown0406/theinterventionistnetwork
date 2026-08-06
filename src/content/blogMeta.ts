@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "co-facilitating-interventions-practitioner-guide",
+    title: "Co-Facilitating an Intervention: When Two Practitioners Are Better Than One",
+    author: "Matt Brown",
+    date: "2026-08-06",
+    excerpt: "Most of us learned this work solo. One interventionist, one family, one room. And for many cases, that model holds. But there is a category of case — high-complexity, high-acuity, high-conflict — where co-facilitating an intervention is not a luxury. It is the clinically responsible choice.",
+    readTime: "5 min read",
+  },
+  {
     slug: "what-to-expect-during-detox-family-guide",
     title: "What to Expect During Detox: A Family's Guide to the First Days of Treatment",
     author: "Matt Brown",
