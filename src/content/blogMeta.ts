@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "eating-disorder-mental-health-interventions-practitioner-guide",
+    title: "Eating Disorder and Mental Health Interventions: What Every Substance Use Interventionist Needs to Know",
+    author: "Matt Brown",
+    date: "2026-08-09",
+    excerpt: "Eating disorder and mental health interventions demand a different playbook. A practitioner's guide to assessment, teaming, and adapting your model.",
+    readTime: "6 min read",
+  },
+  {
     slug: "co-facilitating-interventions-practitioner-guide",
     title: "Co-Facilitating an Intervention: When Two Practitioners Are Better Than One",
     author: "Matt Brown",
