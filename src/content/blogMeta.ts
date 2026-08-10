@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "when-a-family-member-wont-participate-in-an-intervention",
+    title: "When a Family Member Won't Participate in an Intervention: What Families Need to Know",
+    author: "Matt Brown",
+    date: "2026-08-10",
+    excerpt: "What to do when a family member won't participate in an intervention — why refusals happen, how to respond, and when to move forward without them.",
+    readTime: "6 min read",
+  },
+  {
     slug: "eating-disorder-mental-health-interventions-practitioner-guide",
     title: "Eating Disorder and Mental Health Interventions: What Every Substance Use Interventionist Needs to Know",
     author: "Matt Brown",
