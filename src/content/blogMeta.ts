@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "who-is-the-client-role-clarity-contracting-intervention-work",
+    title: "Who Is the Client? Role Clarity and Contracting in Professional Intervention Work",
+    author: "Matt Brown",
+    date: "2026-08-11",
+    excerpt: "Who is the client in intervention work? A practitioner's guide to contracting, role clarity, and managing competing family agendas in professional intervention practice.",
+    readTime: "6 min read",
+  },
+  {
     slug: "when-a-family-member-wont-participate-in-an-intervention",
     title: "When a Family Member Won't Participate in an Intervention: What Families Need to Know",
     author: "Matt Brown",
