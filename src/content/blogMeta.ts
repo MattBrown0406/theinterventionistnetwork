@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "just-found-out-loved-one-addiction-first-steps",
+    title: "What to Do When You Find Out a Loved One Is Addicted: First Steps for Families",
+    author: "Matt Brown",
+    date: "2026-08-12",
+    excerpt: "Just discovered a loved one's addiction? Learn what to do first, what to avoid, and when to call a professional interventionist. A calm, practical guide.",
+    readTime: "7 min read",
+  },
+  {
     slug: "who-is-the-client-role-clarity-contracting-intervention-work",
     title: "Who Is the Client? Role Clarity and Contracting in Professional Intervention Work",
     author: "Matt Brown",
