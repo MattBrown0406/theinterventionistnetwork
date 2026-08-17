@@ -1,0 +1,45 @@
+import type { BlogPostEntry } from "../blogMeta";
+import blogComingHome from "@/assets/blog-loved-one-coming-home-from-rehab.jpg";
+
+const post: BlogPostEntry = {
+  title: "Your Loved One Is Coming Home From Rehab: How Families Prepare for the First 30 Days",
+  author: "Matt Brown",
+  date: "2026-08-17",
+  image: blogComingHome,
+  imageAlt: "A quiet home entryway in morning light with a packed duffel bag by the door and a calendar on the wall",
+  content: [
+    "When a loved one is coming home from rehab, most families focus on the wrong day. They circle the discharge date, plan the welcome dinner, and assume the hard part is behind them. The hard part is often just changing shape.",
+    "Treatment is a controlled environment. Home is not. The first 30 days after discharge are one of the highest-risk windows in recovery, and the difference between a rocky reentry and a stable one usually comes down to what the family did in the two weeks before discharge. Here is what to prepare, what to agree on, and what to stop doing.",
+    "## Why Is the First Month After Rehab So Risky?",
+    "The first month home is risky because every cue that supported using is still in place, and every structure that supported recovery just disappeared. In treatment, your loved one had a schedule, a peer group, and daily accountability. At home, they have unstructured hours, old relationships, and a family that may still be running on crisis reflexes.",
+    "• Structure collapse. Scheduled mornings, groups, and meals give way to open time. Unstructured time is where cravings do their best work.\n• Emotional whiplash. Your loved one feels hopeful and fragile at once. Family members feel relieved and terrified at once. Nobody says either out loud.\n• Unresolved family business. Everything tabled during the crisis — money, broken agreements, a spouse's anger, a sibling's resentment — is waiting in the living room.",
+    "## What Should Families Do Before Discharge Day?",
+    "Before discharge, get aligned on expectations, remove obvious risks from the home, and talk directly with the treatment team about aftercare. One week of preparation beforehand is worth more than a month of good intentions after.",
+    "Ask the treatment center to include you in discharge planning. Most programs welcome family involvement in the parts your loved one consents to share. Come with specific questions: What is the aftercare recommendation — sober living, intensive outpatient, therapy, or a combination? What is the first appointment, and is it already scheduled? Are there prescribed medications, and who manages refills? What triggers and early warning signs did the clinical team observe? What does the team recommend the family do differently?",
+    "If the answer to the scheduling question is \"we'll figure that out later,\" that is a gap. The first outpatient appointment belongs on the calendar before discharge — ideally within 72 hours of coming home.",
+    "Preparing the physical environment is concrete and often skipped out of a wish not to seem distrustful. Do it anyway, and do it openly rather than secretly.",
+    "• Remove alcohol from the house. All of it. This is a courtesy, not a punishment.\n• Secure or dispose of unused prescriptions — opioids, benzodiazepines, stimulants. Pharmacies and police departments accept take-backs.\n• Decide who holds and dispenses prescribed medications for the first weeks, with your loved one's agreement in advance.\n• Reset their living space before they arrive.",
+    "Then hold a family meeting without your loved one present. The goal is not to build a case against them — it is to prevent the split that addiction thrives on. Agree in advance on check-ins, whether they will drive, whether money will be given or withheld, and what happens after a positive test or a missed appointment. Write it down, so that six weeks from now nobody argues about what was decided while everyone was exhausted.",
+    "## What Does a Healthy First Week at Home Look Like?",
+    "A healthy first week is quiet, structured, and slightly boring. Families often plan a celebration. What most people in early recovery need is low stimulation and clear anchors in the day.",
+    "Skip the party. A big gathering asks your loved one to perform gratitude and stability on day one, and it usually includes someone who drinks or someone who cannot resist a comment about the past. One or two people, a normal meal, an early night.",
+    "Recovery in the first month is largely a scheduling problem. On day one, put the anchors on a shared calendar:",
+    "• Support meetings or recovery groups — specific days, specific times\n• Outpatient sessions, therapy, and medical appointments\n• Sleep and wake times, meals, and exercise\n• One useful responsibility at home that reestablishes them as a contributing member of the household",
+    "Anchors matter more than rules. A person with somewhere to be at 9 a.m. is in a different position than a person with nowhere to be at all.",
+    "Two questions are worth retiring: \"Are you okay?\" asked twelve times a day, and \"Are you using?\" asked in a tone that already assumes the answer. Both make honesty more expensive. Replace surveillance with directness: \"Can we agree you'll tell me when you're struggling, so I can stop guessing?\"",
+    "## What Should Families Stop Doing?",
+    "The most common homecoming mistake is resuming the accommodations that protected the addiction, now with more hope attached. Families rarely slip back into enabling on purpose — the old behaviors are automatic and the new ones require thought.",
+    "• Taking over responsibilities they can now handle: calls, appointments, paperwork, consequences that are properly theirs.\n• Managing their recovery for them. Attendance and honesty are their job. Keeping your own commitments is yours.\n• Handing over cash while telling yourself it is for gas.\n• Cleaning up the fallout of every mistake. Some consequences are the most persuasive teachers available.\n• Abandoning your own support. If you went to Al-Anon, a family program, or therapy during the crisis, keep going.",
+    "## When Should You Ask for Professional Help Again?",
+    "Reach out when the plan stops holding — missed appointments, returning secrecy, isolation, or family conflict escalating faster than you can manage. Reengaging early is far easier than staging a second crisis response. Specific signals:",
+    "• They stop attending meetings or outpatient sessions and dismiss it as unnecessary\n• Sleep, mood, or hygiene shifts sharply in either direction\n• They resume contact with people connected to their using\n• They leave sober living or treatment against clinical advice",
+    "Many professional interventionists offer aftercare coordination and family coaching well past intervention day. If you worked with one, the follow-up call you are hesitating to make is a call they expect.",
+    "## The Standard Worth Holding",
+    "Families do not need to be perfect during reentry. They need to be consistent, aligned, and willing to hold agreements when it gets uncomfortable — usually somewhere around week three. A qualified interventionist does not disappear at discharge. Professional standards in this field include preparing the family for what comes after treatment and staying reachable when the plan is tested.",
+    "## Frequently Asked Questions",
+    "How long does it take for someone to stabilize after rehab? Most clinicians treat the first 90 days as the critical stabilization window, with the first 30 carrying the highest risk. Sleep, mood, and cognition often keep improving for six months to a year. Judge stability by consistent behavior over weeks rather than one good week.",
+    "Is it okay to drug test a family member after treatment? Yes, when it is agreed to in advance and framed as support rather than surveillance. Random testing is standard in sober living and outpatient programs, and many families use it to make trust verifiable. Decide together who administers it, how often, and what a positive result triggers — before the first test.",
+  ],
+};
+
+export default post;
