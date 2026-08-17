@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "loved-one-coming-home-from-rehab-family-guide",
+    title: "Your Loved One Is Coming Home From Rehab: How Families Prepare for the First 30 Days",
+    author: "Matt Brown",
+    date: "2026-08-17",
+    excerpt: "Your loved one is coming home from rehab. Here is how families prepare the house, the schedule, and themselves for the critical first 30 days.",
+    readTime: "7 min read",
+  },
+  {
     slug: "blended-step-family-systems-intervention-practitioner-guide",
     title: "Intervention With Blended Families: Mapping Loyalty, Authority, and Divided Households",
     author: "Matt Brown",
