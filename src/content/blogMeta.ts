@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "blended-step-family-systems-intervention-practitioner-guide",
+    title: "Intervention With Blended Families: Mapping Loyalty, Authority, and Divided Households",
+    author: "Matt Brown",
+    date: "2026-08-16",
+    excerpt: "How to run an intervention with blended families: mapping loyalty lines, step-parent authority, and split households without fracturing the team.",
+    readTime: "8 min read",
+  },
+  {
     slug: "just-found-out-loved-one-addiction-first-steps",
     title: "What to Do When You Find Out a Loved One Is Addicted: First Steps for Families",
     author: "Matt Brown",
