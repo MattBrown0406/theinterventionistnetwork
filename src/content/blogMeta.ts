@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "intervention-for-a-teenager-parents-guide",
+    title: "Intervention for a Teenager: A Parent's Guide to Acting Early and Acting Well",
+    author: "Matt Brown",
+    date: "2026-08-24",
+    excerpt: "Wondering if an intervention for a teenager is the right move? Learn how teen interventions differ, when to act, and how to choose the right professional.",
+    readTime: "7 min read",
+  },
+  {
     slug: "loved-one-coming-home-from-rehab-family-guide",
     title: "Your Loved One Is Coming Home From Rehab: How Families Prepare for the First 30 Days",
     author: "Matt Brown",
