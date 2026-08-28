@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "ethical-case-termination-intervention-work",
+    title: "Ending the Engagement: Ethical Case Termination in Intervention Work",
+    author: "Matt Brown",
+    date: "2026-08-27",
+    excerpt: "How and when to ethically end an intervention engagement: termination triggers, handoff language, documentation standards, and avoiding client abandonment.",
+    readTime: "8 min read",
+  },
+  {
     slug: "intervention-for-a-teenager-parents-guide",
     title: "Intervention for a Teenager: A Parent's Guide to Acting Early and Acting Well",
     author: "Matt Brown",
