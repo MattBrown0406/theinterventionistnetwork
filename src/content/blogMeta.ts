@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "what-to-do-when-loved-one-goes-to-rehab-logistics",
+    title: "What to Do When Your Loved One Goes to Rehab: The Logistics Nobody Prepares You For",
+    author: "Matt Brown",
+    date: "2026-08-28",
+    excerpt: "What to do when your loved one goes to rehab: how to handle their job, bills, kids, pets, and phone so the bed stays open and recovery has a real chance.",
+    readTime: "8 min read",
+  },
+  {
     slug: "ethical-case-termination-intervention-work",
     title: "Ending the Engagement: Ethical Case Termination in Intervention Work",
     author: "Matt Brown",
