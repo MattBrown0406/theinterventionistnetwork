@@ -1,0 +1,48 @@
+import type { BlogPostEntry } from "../blogMeta";
+import blogFentanyl from "@/assets/blog-fentanyl-opioid-intervention.jpg";
+
+const post: BlogPostEntry = {
+  title: "Fentanyl Intervention: A Family Guide to Staging an Opioid Intervention Safely",
+  author: "Matt Brown",
+  date: "2026-09-09",
+  image: blogFentanyl,
+  imageAlt: "A naloxone nasal spray box and a set of car keys on a kitchen counter in morning light",
+  content: [
+    "If you are reading this, you may already know that a fentanyl intervention is not the same as the interventions you have seen on television. The margin for error is smaller. The timeline is shorter. And the fear you are carrying is not an overreaction. It is an accurate read of the situation.",
+    "This guide is for families actively looking for a professional interventionist to help a loved one using fentanyl or other opioids. It covers what makes an opioid intervention different, how it is planned, what to look for in a professional, and how to protect your loved one while you organize.",
+    "## Why Is a Fentanyl Intervention Different From Other Interventions?",
+    "A fentanyl intervention is different because the risk of a fatal overdose is present every single day the person keeps using, and it spikes sharply during any period of reduced tolerance. That changes how a professional plans the timeline, the safety measures, and the handoff to treatment. Everything moves faster and with more precision.",
+    "Illicit fentanyl is far more potent than heroin and is commonly pressed into counterfeit pills or mixed into other drugs without the user knowing. Many people who die from fentanyl did not think they were taking it. Often neither the family nor the person using has a clear picture of what is actually being consumed.",
+    "The second difference is withdrawal. Opioid withdrawal is rarely life-threatening on its own, but it is intensely uncomfortable, and fear of it drives much of the resistance you will encounter. A skilled interventionist plans for this with a placement that includes medically managed detox and medication support.",
+    "## What Should Families Do Before the Intervention to Reduce Overdose Risk?",
+    "Before anything else, get naloxone into your home and learn how to use it. Naloxone (often known by the brand name Narcan) reverses an opioid overdose and is available without a prescription at most pharmacies and through many community programs. This is not a sign you are giving up on treatment. It is what responsible families do while they organize the next step.",
+    "A professional interventionist will typically walk the family through a short safety plan in the first or second call. That plan usually covers:",
+    "• Naloxone in the home, in the car, and with the family members who see the person most often\n• Who checks in and how often, without turning the family into surveillance\n• What to do if the person is found unresponsive, including calling 911 first\n• Whether the person is using alone, which dramatically raises the risk of a fatal overdose",
+    "Families sometimes worry the safety plan will tip off their loved one. In practice, keeping naloxone available rarely derails an intervention. A fatal overdose does.",
+    "## How Does a Professional Plan an Opioid Intervention?",
+    "A professional opioid intervention is planned around a confirmed treatment placement, a tight timeline, and a same-day handoff. The interventionist does the clinical assessment, coordinates with the treatment center, prepares the family, and leads the meeting. The family's job is to show up prepared and united.",
+    "**The assessment comes first.** Expect detailed questions about the pattern of use, previous treatment, overdoses, mental health history, legal issues, and who in the family has influence. The answers shape which treatment centers are appropriate and how firm the family's position needs to be.",
+    "**Treatment is secured before the meeting.** A qualified interventionist will not hold a fentanyl intervention without a bed confirmed and transport arranged. The window between a person saying yes and that person changing their mind can be measured in hours. If a professional tells you they will find a placement after the meeting, that is a warning sign.",
+    "**The family is prepared, not just informed.** Most interventionists hold one or more preparation sessions. You will practice what you plan to say, agree on what changes if your loved one declines help, and decide who leads if the conversation gets hard. Improvisation is where interventions fall apart.",
+    "## What Credentials and Experience Should You Look For?",
+    "Look for a professional interventionist with a recognized intervention credential, direct experience with opioid cases, and established relationships with treatment programs that offer medically managed detox and medication for opioid use disorder. Ask about all three. Vague answers are an answer.",
+    "Useful questions to ask on the first call:",
+    "• How many opioid or fentanyl interventions have you led in the last two years?\n• Which treatment programs do you work with, and do they offer buprenorphine or methadone when appropriate?\n• How do you handle the safety plan while the intervention is being organized?\n• What happens on intervention day if my loved one is high, in withdrawal, or does not show up?\n• What is included in your fee, and what is not?",
+    "Be cautious of anyone who dismisses medication for opioid use disorder outright. Buprenorphine, methadone, and naltrexone are supported by strong evidence for reducing overdose deaths. A professional should be able to discuss them honestly and connect you with programs that offer them.",
+    "## What Happens After a Fentanyl Intervention?",
+    "After a fentanyl intervention, the person typically goes directly to a medically managed detox and then into a structured treatment program. The interventionist's role does not end at the door. Good practice includes follow-up with the family and the treatment team, especially through the first weeks when the risk of leaving early is highest.",
+    "Families need to understand one hard fact about the period after detox. Tolerance drops quickly. A person who leaves treatment early and returns to the same dose they were using before can overdose and die. This is why professionals push for continuity of care, why medication support matters, and why the family's agreements about what changes if the person leaves treatment need to be real, not threats.",
+    "Recovery from opioid use disorder is often a long road with setbacks. That is a reason to pick a professional who has walked families through the whole road, not just the meeting.",
+    "## Why Professional Standards Matter More With Opioids",
+    "The intervention field is unregulated in most places. With alcohol, a poorly run intervention costs a family time and money. With fentanyl, it can cost a life. Standards around assessment, safety planning, secured placement, and ethical referral relationships exist because families cannot afford to learn these lessons the hard way.",
+    "Choose a professional who explains their process clearly, has real opioid experience, and treats your family as capable partners.",
+    "## Frequently Asked Questions",
+    "**Can you do an intervention on someone using fentanyl?** Yes. A fentanyl intervention follows the same core structure as other professional interventions, but with added emphasis on overdose safety, a confirmed detox placement, and a fast handoff to treatment. Working with an interventionist who has direct opioid experience is strongly recommended.",
+    "**Should I wait until my loved one hits rock bottom?** No. With fentanyl, rock bottom is frequently death. Professional interventionists no longer view waiting as a strategy. The goal is to raise the bottom by changing what the family will and will not support, so the person can choose treatment sooner.",
+    "**What if my loved one is high during the intervention?** An experienced interventionist plans for this. Timing is usually chosen for early in the day, when the person is most likely to be clear enough to participate. If the person is severely impaired or in acute withdrawal, the professional may pause, redirect to a medical evaluation, or reschedule rather than push through.",
+    "**Does insurance cover opioid detox and treatment?** Most health plans cover some level of detox and addiction treatment, but coverage varies by plan and by facility. A professional interventionist can help you verify benefits before the intervention so there are no surprises on admission day.",
+    "**Is medication like Suboxone just replacing one drug with another?** No. Buprenorphine (Suboxone) and methadone are prescribed, monitored medications that stabilize brain chemistry and reduce overdose deaths. They allow people to work, parent, and engage in treatment. Whether medication is right for your loved one is a clinical decision made with the treatment team.",
+  ],
+};
+
+export default post;
