@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "fentanyl-opioid-intervention-family-guide",
+    title: "Fentanyl Intervention: A Family Guide to Staging an Opioid Intervention Safely",
+    author: "Matt Brown",
+    date: "2026-09-09",
+    excerpt: "Planning a fentanyl intervention? Learn how opioid interventions differ, why timing matters, what to look for in an interventionist, and how to plan for safety.",
+    readTime: "8 min read",
+  },
+  {
     slug: "what-to-do-when-loved-one-goes-to-rehab-logistics",
     title: "What to Do When Your Loved One Goes to Rehab: The Logistics Nobody Prepares You For",
     author: "Matt Brown",
