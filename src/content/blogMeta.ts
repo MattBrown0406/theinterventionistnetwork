@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "cannabis-intervention-high-potency-thc-practitioner-guide",
+    title: "Cannabis Intervention in the High-Potency Era: A Practitioner's Guide for Interventionists",
+    author: "Matt Brown",
+    date: "2026-09-10",
+    excerpt: "A practitioner's guide to cannabis intervention: high-potency THC, family ambivalence, psychosis risk, and building a plan that holds when the drug is legal.",
+    readTime: "8 min read",
+  },
+  {
     slug: "fentanyl-opioid-intervention-family-guide",
     title: "Fentanyl Intervention: A Family Guide to Staging an Opioid Intervention Safely",
     author: "Matt Brown",
