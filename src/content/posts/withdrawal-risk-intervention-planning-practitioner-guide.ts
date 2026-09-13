@@ -1,0 +1,46 @@
+import type { BlogPostEntry } from "../blogMeta";
+import blogWithdrawalRisk from "@/assets/blog-withdrawal-risk-intervention-planning.jpg";
+
+const post: BlogPostEntry = {
+  title: "Withdrawal Risk in Intervention Planning: What Every Interventionist Must Know Before the Room",
+  author: "Matt Brown",
+  date: "2026-09-13",
+  image: blogWithdrawalRisk,
+  imageAlt: "An empty hospital intake desk at dawn with a blank assessment form on a clipboard and a blood pressure cuff beside it",
+  content: [
+    "Most of us learned the emotional and family-systems side of this work first. Fewer of us were taught that withdrawal risk in intervention planning is a life-safety issue, not a treatment-center detail. A well-run intervention can end with a yes, a packed bag, and a loved one in a car for six hours with a blood alcohol level that is about to drop for the first time in years. If nobody planned for that, the best outcome in the room can become the worst outcome on the road.",
+    "This article is for practitioners. I am not a physician, and neither are most of us. The job is not to manage withdrawal. The job is to make sure someone qualified does.",
+    "## Why Is Withdrawal Risk in Intervention Planning a Practitioner Responsibility?",
+    "Because the interventionist is often the only professional who sees the whole picture before day one. The family knows the drinking. The treatment center knows the intake form. You are the person standing between those two facts, and you are the one who decides what happens in the hours after the yes.",
+    "Treatment centers screen for medical risk at admission. That screening does not protect the client during the twelve hours between your living room and their front desk. Planning for that window is part of the intervention, not an afterthought.",
+    "## Which Substances Carry the Highest Medical Withdrawal Risk?",
+    "Alcohol and benzodiazepines are the two categories where unmanaged withdrawal can be fatal. Opioid withdrawal is rarely lethal on its own, but it is severe enough to derail an admission and carries overdose risk if the client uses again after a short break. Stimulant withdrawal is primarily psychiatric, and the risk is usually suicidality rather than seizures.",
+    "• Alcohol: Daily heavy use, especially with prior withdrawal seizures, delirium tremens, or morning drinking, means the client should not stop abruptly without medical supervision. Symptoms can escalate 6 to 72 hours after the last drink.\n• Benzodiazepines (Xanax, Klonopin, Ativan, Valium): Long-term daily use can produce seizures on abrupt discontinuation. This is true even at prescribed doses.\n• Opioids (fentanyl, oxycodone, heroin): Withdrawal is miserable but usually not life-threatening. The danger is the client leaving treatment early, losing tolerance, and overdosing on a dose that used to be normal.\n• Stimulants (methamphetamine, cocaine): The crash brings profound depression, exhaustion, and sometimes acute suicidal thinking. Medical detox is often not required, but psychiatric monitoring is.\n• Polysubstance use: The highest-risk substance sets the plan.",
+    "None of this makes you a clinician. It makes you a referral source who knows when to say, \"This one needs a medical detox bed, and we are not driving anywhere until that is confirmed.\"",
+    "## What Should You Ask Families About Withdrawal Risk Before Setting a Date?",
+    "Ask specific questions about quantity, frequency, timing of first use each day, and any history of seizures or hospitalizations. Families will minimize, not because they are lying, but because they have been rounding down for years. Ask concretely enough that the messy version comes out.",
+    "• What does a typical day of use look like, start to finish? Push past \"a lot.\" Ask for the number of drinks, pills, or bags.\n• What time does the first drink or dose happen? Morning use is a significant flag for physical dependence.\n• Has there ever been a seizure, a hospitalization, or a \"bad few days\" when they tried to stop? Families often describe delirium tremens without knowing the name for it.\n• What prescriptions are they currently on, and who is prescribing? Benzodiazepines and opioids frequently hide in the medicine cabinet as legitimate scripts.",
+    "Write the answers down. Share them with the receiving facility before the intervention, not after.",
+    "## How Do You Coordinate Medical Safety With the Treatment Center?",
+    "Confirm the level of care in writing before the intervention date. Ask the admissions team directly whether the client will be medically assessed on arrival, whether a nurse or physician is on site, and whether the program has a detox protocol or transfers to a hospital. \"We handle detox\" is not an answer. \"We have 24-hour nursing and a medical director who sees every admission\" is an answer.",
+    "**Questions to ask admissions.** Do you provide medically supervised detox on site, or do you refer out? If you refer out, to where, and how quickly? Given what I have described, is this client appropriate for your level of care on day one?",
+    "**Transport and timing.** The gap between yes and admission is the most dangerous stretch in the process for a physically dependent client. For heavy alcohol use, a physician may advise that the client continue drinking at a reduced, controlled level until they reach medical care. That feels backwards to families, and it is sometimes the medically correct call. You do not make that decision. You get it from a physician and relay it clearly.",
+    "Keep transport short when risk is high. A local medical detox followed by a transfer to the residential program the family prefers is often safer than a long flight to the \"perfect\" program. Hold the line on sequence: stabilize first, then transfer.",
+    "## What Does a Medical Safety Plan Look Like on Intervention Day?",
+    "A written plan that everyone in the room has read. It names the receiving facility, the level of care confirmed, the transport route and duration, the medical contact for questions, and what to do if the client shows withdrawal symptoms before departure.",
+    "• Ask the family to keep the client's current medications and prescription bottles together, and bring them. Do not have the family withhold prescribed benzodiazepines or opioids \"to keep them honest.\" That decision belongs to a physician.\n• Have naloxone available if opioids are in the picture.\n• If the client appears intoxicated, tremulous, sweating heavily, confused, or reports hallucinations, the plan changes from transport to medical evaluation. Say this to the family in advance.\n• Document the medical screen, who you consulted, and what the facility confirmed.",
+    "## The Standard This Sets for the Field",
+    "Families cannot evaluate this part of our work. They will never know whether we asked about morning drinking or checked for nursing coverage. That is precisely why it matters. Professional standards exist for the parts of the job the client cannot see.",
+    "An interventionist who treats withdrawal risk in intervention planning as a core competency, not a treatment-center problem, is practicing at the level this field needs. The emotional work in the room gets people to yes. The medical planning keeps them alive long enough for the yes to matter.",
+    "## Frequently Asked Questions",
+    "**Can someone die from stopping alcohol suddenly?** Yes. Abrupt cessation after heavy, prolonged daily drinking can cause seizures and delirium tremens, both of which can be fatal without medical care. Screen for alcohol dependence and confirm medical detox before transport.",
+    "**Do interventionists need medical training?** No, but they need medical literacy. A professional interventionist should know which substances carry life-threatening withdrawal risk, how to screen families for it, and how to confirm a facility can manage it. The role is to identify risk and route it to medical professionals, not to manage it.",
+    "**Is opioid withdrawal dangerous?** Opioid withdrawal is rarely fatal by itself, but it is severe and frequently causes people to leave treatment early. The greater danger is overdose after a period of reduced tolerance. Confirm the facility has an opioid-specific protocol.",
+    "**Should the family take away prescription medications before an intervention?** No. Abruptly withholding prescribed benzodiazepines or opioids can trigger dangerous withdrawal. Gather the bottles and bring them to the facility, where medical staff decide how to taper or continue them.",
+    "**What if the treatment center says they do not do detox?** Then the client may need a medical detox first, followed by a transfer. Many excellent residential programs are not equipped for acute withdrawal. Confirm the level of care before intervention day and arrange a stabilize-then-transfer sequence when needed.",
+    "## Deepen Your Practice",
+    "If you are building or refining your practice, The Interventionist Network offers practitioner resources, standards of practice, and a community of professionals who take this work seriously.",
+  ],
+};
+
+export default post;

@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "withdrawal-risk-intervention-planning-practitioner-guide",
+    title: "Withdrawal Risk in Intervention Planning: What Every Interventionist Must Know Before the Room",
+    author: "Matt Brown",
+    date: "2026-09-13",
+    excerpt: "A practitioner's guide to withdrawal risk in intervention planning: which substances can kill on day one, what to ask families, and how to plan medically.",
+    readTime: "8 min read",
+  },
+  {
     slug: "cannabis-intervention-high-potency-thc-practitioner-guide",
     title: "Cannabis Intervention in the High-Potency Era: A Practitioner's Guide for Interventionists",
     author: "Matt Brown",
