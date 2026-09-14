@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "meth-intervention-stimulant-addiction-family-guide",
+    title: "How to Plan a Meth Intervention: A Family Guide to Stimulant Addiction",
+    author: "Matt Brown",
+    date: "2026-09-14",
+    excerpt: "Planning a meth intervention? Learn how stimulant addiction changes timing, safety, treatment, and recovery, and how to choose an interventionist who has done this before.",
+    readTime: "8 min read",
+  },
+  {
     slug: "withdrawal-risk-intervention-planning-practitioner-guide",
     title: "Withdrawal Risk in Intervention Planning: What Every Interventionist Must Know Before the Room",
     author: "Matt Brown",
