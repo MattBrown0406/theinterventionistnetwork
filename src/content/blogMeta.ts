@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "how-interventionists-vet-treatment-centers-practitioner-guide",
+    title: "How Interventionists Vet Treatment Centers: A Due-Diligence Framework for Placement",
+    author: "Matt Brown",
+    date: "2026-09-17",
+    excerpt: "A practitioner's due-diligence framework for how interventionists vet treatment centers before placement: licensing, clinical fit, site visits, and the questions that reveal quality.",
+    readTime: "8 min read",
+  },
+  {
     slug: "meth-intervention-stimulant-addiction-family-guide",
     title: "How to Plan a Meth Intervention: A Family Guide to Stimulant Addiction",
     author: "Matt Brown",

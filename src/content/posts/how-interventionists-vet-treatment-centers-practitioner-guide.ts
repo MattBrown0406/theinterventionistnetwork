@@ -1,0 +1,48 @@
+import type { BlogPostEntry } from "../blogMeta";
+import blogVetting from "@/assets/blog-vetting-treatment-centers.jpg";
+
+const post: BlogPostEntry = {
+  title: "How Interventionists Vet Treatment Centers: A Due-Diligence Framework for Placement",
+  author: "Matt Brown",
+  date: "2026-09-17",
+  image: blogVetting,
+  imageAlt: "An empty treatment center hallway in morning light with a clipboard hanging by a doorway",
+  content: [
+    "Every interventionist eventually learns this the hard way: the intervention can go perfectly and the case can still fail because the placement was wrong. Understanding how interventionists vet treatment centers is not a back-office detail. It is clinical work, and it carries as much weight as anything that happens in the room on intervention day.",
+    "The family trusts you to know where their loved one is going. The client, once they say yes, is handing you a moment of willingness that may not come again. If the program you chose is a poor fit, under-resourced, or quietly running a business model that prioritizes census over care, you will have spent that willingness on the wrong bet.",
+    "## Why does vetting treatment centers matter so much in intervention work?",
+    "It matters because the interventionist is the last professional filter between a family in crisis and an industry with wide variance in quality. Families cannot tell the difference between a strong clinical program and a strong marketing department. You can, if you do the work.",
+    "A referral is also an extension of your credibility. When a placement goes badly, the family does not blame a program they never heard of before you named it. They remember that you sent them there.",
+    "A well-vetted program also protects you. If a client leaves against medical advice or a family questions the choice later, being able to explain exactly what you verified and why is both an ethical and a professional safeguard.",
+    "## What should interventionists verify before adding a program to their referral list?",
+    "Start with the non-negotiables: state licensure, accreditation, and the actual credentials of the clinical staff. These are verifiable facts, not impressions, and they should be confirmed before any conversation about fit begins.",
+    "A baseline verification checklist looks like this:",
+    "• State license: current, in the program's actual name, at the address where clients are treated. Look it up on the state's own site rather than trusting a logo on a brochure.\n• Accreditation: Joint Commission or CARF is the standard for residential and higher levels of care. Confirm the accreditation is active and covers the specific location.\n• Clinical leadership: who is the clinical director, what are their credentials, and how long have they been there? Frequent turnover in that seat is a meaningful signal.\n• Medical coverage: for detox and residential, what does physician and nursing coverage actually look like at 2 a.m. on a Saturday, not just on the org chart?\n• Ownership: who owns the program, and do they own others? The answer tells you what pressures the staff are working under.",
+    "## How do interventionists assess clinical fit rather than just reputation?",
+    "Clinical fit means the program can competently treat the specific person you are placing, with their specific substance history, co-occurring conditions, medical needs, and life circumstances. A program can be excellent in general and wrong for this client.",
+    "The questions that reveal fit are concrete. How does the program handle a client on buprenorphine or methadone, and will they continue it? What is their actual capacity for co-occurring psychiatric conditions, and is a psychiatrist on staff or on call? How do they work with trauma, and is that a modality with trained clinicians or a word on the website?",
+    "Ask about the population. A 24-year-old with a stimulant history and a 61-year-old with three decades of alcohol use should not be in the same milieu with the same programming. Ask who is in the building right now. Ask about family programming too: is there a structured component, and does it include the people you have spent weeks preparing?",
+    "Finally, ask what happens when a client wants to leave in the first 72 hours, and how they involve you and the family in that moment. Programs with a thoughtful answer have lived through it. Programs that say it rarely happens are not being straight with you.",
+    "## What does a meaningful site visit look like?",
+    "A site visit is the single most valuable vetting tool available, and it is the one most often skipped. A phone call with an admissions director tells you about the admissions director. Walking the halls tells you about the program.",
+    "What to observe on site:",
+    "• The clients. Do they look engaged or warehoused? Are groups actually running at the times on the schedule?\n• The staff. Talk to a line counselor or a tech, not just leadership. Ask how long they have worked there and what they would change.\n• The physical environment. Cleanliness and maintenance are proxies for whether the operation is funded and managed.\n• The tone. Programs with a healthy culture feel calm and ordered. Programs under strain feel it too, and you will notice within ten minutes.",
+    "If a program will not accommodate a visit from a referring professional, that is your answer.",
+    "Site visits cost time and travel, which is why strong interventionists keep a short, deeply known referral list. Ten programs you have walked through will serve your clients better than fifty you know from conferences.",
+    "## How do you keep a referral list honest over time?",
+    "Programs change. Clinical directors leave, owners sell, census pressure shifts what admissions is willing to accept. A program that was excellent two years ago may not be today, and the only way to know is to keep looking.",
+    "Practical maintenance habits include:",
+    "• Follow every placement. Call the program at 72 hours, at two weeks, and at discharge. You learn more about a program from how they handle your client than from anything they tell you in advance.\n• Debrief with families after treatment. Patterns across three or four families are data.\n• Re-verify licensure and accreditation annually. It takes fifteen minutes and occasionally saves a career.\n• Watch for pressure. If a program starts asking why you have not sent anyone lately, or offers anything that resembles a referral incentive, remove them. Patient brokering laws exist for a reason and the reputational cost of being adjacent to it is permanent.",
+    "## Placement is clinical work",
+    "How interventionists vet treatment centers is, in the end, a reflection of how seriously they take the whole of the case. The family did not hire you to get a yes. They hired you to help their loved one get better, and the placement is where that begins or quietly ends.",
+    "Professional standards in this field are built by practitioners who do the unglamorous work: verifying licenses, walking buildings, following up at week two, and pruning the list when a program no longer earns its place. That discipline is what separates a referral from a recommendation.",
+    "## Frequently Asked Questions",
+    "How do interventionists choose a treatment center for a client? They match the client's clinical needs, including substance history, medical risk, co-occurring conditions, and life circumstances, against programs they have personally verified. Licensure, accreditation, staff credentials, and clinical fit are confirmed before a program is ever named to a family.",
+    "Should an interventionist visit a treatment center before referring to it? Yes, whenever possible. A site visit reveals staff culture, client engagement, and operational quality in ways a phone call cannot. Most experienced interventionists maintain a shorter list of programs they have visited rather than a long list they know only by reputation.",
+    "What are red flags when vetting a treatment center? Vague answers about staff credentials, reluctance to allow a site visit, high clinical leadership turnover, unclear ownership, and any offer of referral incentives. Programs that cannot describe their protocol for a client wanting to leave early are also a concern.",
+    "Is it legal for treatment centers to pay interventionists for referrals? No. Federal law and most state laws prohibit paying for patient referrals, and several states have specific patient brokering statutes with criminal penalties. Ethical interventionists are paid by the family, not the program, and disclose any relationship they have with a facility.",
+    "What if the family wants a program the interventionist has not vetted? Say so plainly, explain what you would need to verify, and offer to do that work before admission if timing allows. Families deserve to know the difference between a program you have vetted and one you are simply willing to call.",
+  ],
+};
+
+export default post;
