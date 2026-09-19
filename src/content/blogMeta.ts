@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "recovery-monitoring-agreements-after-admission-practitioner-guide",
+    title: "Recovery Monitoring Agreements: How Interventionists Structure Accountability After Admission",
+    author: "Matt Brown",
+    date: "2026-09-19",
+    excerpt: "How professional interventionists use a recovery monitoring agreement, drug testing, and sober companions to keep accountability alive after admission.",
+    readTime: "8 min read",
+  },
+  {
     slug: "how-interventionists-vet-treatment-centers-practitioner-guide",
     title: "How Interventionists Vet Treatment Centers: A Due-Diligence Framework for Placement",
     author: "Matt Brown",
