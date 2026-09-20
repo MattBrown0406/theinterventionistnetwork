@@ -1,0 +1,46 @@
+import type { BlogPostEntry } from "../blogMeta";
+import blogHandlingCounteroffers from "@/assets/blog-handling-counteroffers-intervention.jpg";
+
+const post: BlogPostEntry = {
+  title: "Handling Counteroffers in an Intervention: When the Yes Comes With Conditions",
+  author: "Matt Brown",
+  date: "2026-09-20",
+  image: blogHandlingCounteroffers,
+  imageAlt: "Two empty armchairs facing each other in a quiet living room in morning light",
+  content: [
+    "Most interventions do not end in a flat no. They end in a negotiation. The person in the chair says yes, and then the conditions start: not today, not that program, not residential, not without my phone. Handling counteroffers in an intervention is one of the least discussed and most consequential skills in this work, because families rehearse for refusal and almost never for a conditional yes. This piece offers a framework for what the bargaining means, how to prepare families for it, and when a modified plan is a clinical decision rather than a concession.",
+    "## Why Does the Identified Patient Bargain Instead of Refusing?",
+    "Bargaining is what ambivalence looks like when it is cornered. A flat refusal costs the person the relationships in the room; a full yes costs them the substance. A counteroffer lets them keep both a little longer. That is the first principle of handling counteroffers in an intervention: the person is not fighting you. They are fighting the loss.",
+    "It also tells you something useful. Nobody negotiates with a message they did not receive. When the counteroffers begin, the letters have landed. That is progress, even when it feels like a stall.",
+    "## What Are the Four Common Types of Counteroffer?",
+    "Nearly every counteroffer falls into one of four categories: the delay, the downgrade, the substitution, and the private deal. Naming the category in the moment keeps you from improvising.",
+    "The delay: \"I'll go after the quarter ends.\" \"Let me get through my daughter's wedding.\" The delay is the most common counteroffer and the most dangerous, because it sounds reasonable and it moves the decision out of the room where the family has power and into the week where the substance does.",
+    "The downgrade: \"I'll do outpatient.\" \"I'll go to meetings.\" The downgrade accepts that something needs to change while shrinking the level of care to something that does not interrupt the using. Sometimes a lower level of care is appropriate. Often it is chosen because it is not.",
+    "The substitution: \"Not that place. My friend went there and hated it.\" The substitution keeps the appearance of agreement while reopening the entire vetting process. Sometimes it is a real objection. Sometimes it is a way to make the plan die of logistics.",
+    "The private deal: the person turns to the softest family member and says, \"Can we talk about this alone?\" The private deal moves the decision out of the group, where the bottom lines hold, into a one-on-one, where they historically have not.",
+    "## How Do You Prepare the Family for Counteroffers Before Intervention Day?",
+    "You prepare the family by rehearsing the counteroffers explicitly, in the loved one's own words, with each member knowing exactly what they will say. Generic preparation does not survive contact. \"Stay firm\" is not a plan. \"When he says he needs to finish the project first, Dad, you say this sentence\" is a plan.",
+    "In the pre-intervention meeting, ask the family directly: what will she say when she does not say no? Families usually know; they can often quote the lines. Write them down, sort them into the four categories, and assign a response to each.",
+    "• One spokesperson for logistics. Questions about the program, the bed, or the cost get one designated answerer. Counteroffers feed on cross-talk.\n• A pre-decided answer to the delay. The family agrees before the room that the bed is today and the bottom lines begin today. If that gets decided in the moment, it will be decided by whoever is most tired.\n• A sentence for the private deal. Every family member, especially the softest one, needs a ready answer to \"can we talk alone.\" Something like: \"Anything you want to say to me, you can say here.\"\n• Clarity about what is negotiable. Departure time, who drives, what happens to the dog: these can flex. The level of care and the date generally cannot.",
+    "## How Do You Respond to a Counteroffer in the Room Without Escalating?",
+    "The most effective response is to acknowledge the fear underneath the counteroffer, restate the plan without apology, and return the decision to the person. The moment you debate whether outpatient could work, you have accepted the premise that the plan is up for debate.",
+    "A working sequence: reflect the fear (\"You are worried about the business if you are gone thirty days. That makes sense.\"), hold the plan (\"The bed is today, and the family's decisions start today too.\"), and hand it back (\"So the question in front of you is whether you go today.\"). Then stop talking. Silence is not a gap you need to fill. It is where the decision gets made.",
+    "Keep the room in the present tense; questions about six months from now belong in treatment. When a private deal is attempted, name it gently and out loud: \"I notice you are asking Mom to step out. I would like her to stay.\" Most people will not push a private deal once it is visible.",
+    "## When Should an Interventionist Accept a Modified Plan?",
+    "You accept a modified plan when it addresses a legitimate clinical or practical issue, the level of care still matches the assessment, and the family's bottom lines remain intact. You do not accept it because everyone is exhausted and it feels like a win. Only one of those is a professional judgment.",
+    "The test is simple: does the modification change what happens, or only when and where? A different facility at the same level of care, leaving tomorrow morning with a sibling in the house tonight, is a logistics change. Outpatient instead of residential for someone who cannot stop on their own is a treatment change, and treatment changes belong to the clinical assessment, not the negotiation. A vetted backup program with an open bed is what lets you say yes to a reasonable substitution without losing the day.",
+    "If you accept a modification, put it in the room, out loud, with a time attached. \"So we are agreed: you fly out tomorrow at ten, your brother stays here tonight, and the bottom lines are in effect starting now.\" Ambiguity is where modified plans go to die.",
+    "## Why This Is a Matter of Professional Standards",
+    "Families hire an interventionist because they cannot hold this line themselves. They have been negotiating for years and losing. The value you bring is not that you are tougher than they are. It is that you have a framework, you rehearsed it with them, and you stay calm when the counteroffers start because you knew they were coming. That is a teachable skill, and it separates this profession from well-meaning improvisation.",
+    "## Frequently Asked Questions",
+    "What should an interventionist do when the person agrees to treatment but not today? Treat the delay as a counteroffer, not an agreement. Acknowledge the concern, restate that the bed and the bottom lines begin today, and hand the decision back. Delays that leave the room almost always erode.",
+    "Is it ever appropriate to accept outpatient instead of residential during an intervention? Only when the pre-intervention clinical assessment supports outpatient as an appropriate level of care. If residential was recommended because of withdrawal risk or an inability to stop unaided, a downgrade in the room is a treatment change, not a negotiation point.",
+    "How do you stop a family member from making a private deal during an intervention? Prepare that person ahead of time with a specific sentence for \"can we talk alone,\" and if the attempt happens anyway, name it calmly in front of the group. Decisions witnessed by the whole family carry weight that private promises do not.",
+    "What if the person objects to the specific treatment center? Take the objection seriously without reopening the vetting process in the room. A second, pre-vetted program with an available bed lets you offer a real alternative without giving up the admission.",
+    "Does bargaining mean the intervention is failing? No. Bargaining usually means the person has heard the family and is looking for the least costly way to comply. With a prepared family, it most often resolves into a yes.",
+    "## Ready to Strengthen Your Practice?",
+    "How you handle the conditional yes shapes your outcomes more than almost anything else in the room. Explore The Interventionist Network for practitioner resources, colleagues, and a higher standard of care.",
+  ],
+};
+
+export default post;
