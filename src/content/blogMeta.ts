@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "handling-counteroffers-in-an-intervention-practitioner-guide",
+    title: "Handling Counteroffers in an Intervention: When the Yes Comes With Conditions",
+    author: "Matt Brown",
+    date: "2026-09-20",
+    excerpt: "A practitioner's guide to handling counteroffers in an intervention: the delay, the downgrade, the substitution, and the private deal, and how to hold the plan.",
+    readTime: "8 min read",
+  },
+  {
     slug: "recovery-monitoring-agreements-after-admission-practitioner-guide",
     title: "Recovery Monitoring Agreements: How Interventionists Structure Accountability After Admission",
     author: "Matt Brown",
