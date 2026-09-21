@@ -1,0 +1,48 @@
+import type { BlogPostEntry } from "../blogMeta";
+import blogHospitalIntervention from "@/assets/blog-hospital-intervention-medical-crisis.jpg";
+
+const post: BlogPostEntry = {
+  title: "Hospital Intervention for Addiction: How to Use a Medical Crisis as the Turning Point",
+  author: "Matt Brown",
+  date: "2026-09-21",
+  image: blogHospitalIntervention,
+  imageAlt: "Empty hospital room in early morning light with an IV stand beside the bed",
+  content: [
+    "Your loved one is in a hospital bed right now. Maybe it was an overdose, a fall, pancreatitis, a car accident, or a withdrawal seizure. You have been afraid of this call for a long time, and now that it has come, you are wondering whether this is the moment to finally do something.",
+    "It usually is. A hospital intervention for addiction is one of the most effective settings a family will ever get, because the illness has just made its own argument. The question is not whether to act. It is how to act well, and quickly, before discharge closes the window.",
+    "## Why Is a Hospital Stay One of the Best Windows for an Intervention?",
+    "A hospital stay strips away the three things that normally protect an addiction: access to the substance, the ability to walk out of the conversation, and the story that everything is fine. For a few days, your loved one is sober, contained, and face to face with a consequence they cannot explain away.",
+    "Doctors and nurses are also telling the truth about the liver, the heart, or the overdose in plain clinical language. That truth lands differently coming from a physician than from a spouse. A hospital intervention for addiction borrows that authority and attaches a next step to it.",
+    "The window is short. Most substance-related stays run two to five days. Once your loved one is home, the substance is available again, the fear fades, and the old system reassembles within a week.",
+    "## How Does a Hospital Intervention for Addiction Actually Work?",
+    "A hospital intervention follows the same core structure as any professional intervention, compressed into a much shorter timeline. The interventionist assesses the situation, prepares the family, coordinates with the medical team, and facilitates a direct conversation that ends with a treatment plan and a same-day or discharge-day transition.",
+    "The first call. The first questions will be about medical status, expected discharge date, and who is already involved. A good interventionist will ask whether your loved one is stable enough to hold a conversation and whether a social worker or case manager has been assigned. Some hospital cases call for direct-to-treatment coordination rather than a formal family intervention, and an honest professional will tell you which one you need.",
+    "Working with the hospital team. Hospitals have their own discharge process, and it does not wait for you. The interventionist contacts the case manager, learns the discharge timeline, and makes sure the receiving program gets the medical records it needs to accept the admission. Staff will need your loved one's permission to share information; if you do not have it, the interventionist can still work the family side and coordinate the program.",
+    "The conversation itself. A hospital intervention is quieter than the ones on television. It usually happens in the room or a family conference space, with two to five family members, the interventionist, and sometimes a social worker. Family members speak briefly about what they have seen, what they fear, and what they are asking for. The interventionist keeps the conversation on the decision, not the past.",
+    "The goal is a yes to a specific program with a specific admission time, ideally transported directly from the hospital. Going home first \"to get things in order\" is where most hospital interventions are lost.",
+    "## What Should You Have Ready Before Discharge?",
+    "The single biggest predictor of a successful hospital intervention is whether the treatment plan is fully arranged before the conversation happens. You are asking your loved one to make one decision, not to solve logistics. Everything else should already be done.",
+    "• A treatment program that has reviewed the medical situation and confirmed a bed, an admission time, and any detox or medical requirements.\n• Insurance verification or a clear understanding of cost, completed before the conversation, so money does not become the exit.\n• Transportation from the hospital directly to the program, arranged and staffed, with a backup plan if discharge is moved up.\n• A short, written statement from each family member about what changes if the answer is no.",
+    "If discharge comes before the program can accept, the interventionist can often arrange a short bridge placement. Do not let your loved one go home to wait for a bed.",
+    "## What Mistakes Do Families Make During a Hospital Intervention?",
+    "The most common mistake is confusing relief with readiness. A frightened person in a hospital bed will agree to almost anything to make the moment pass. Agreement is not commitment. Commitment is the car arriving at the program.",
+    "Other patterns that undo a hospital intervention for addiction:",
+    "• Talking too early, before the medical team has cleared the patient and before the family is on the same page.\n• Accepting a promise to \"do outpatient\" or \"see a therapist\" when the medical event clearly calls for a higher level of care.\n• Treating the hospital as the treatment. A medically stabilized patient who has not entered addiction treatment has not been treated.\n• Waiting for the crisis to pass so everyone can calm down first. Calm is exactly what you do not want yet.",
+    "## How Do You Find an Interventionist Who Can Move This Fast?",
+    "You need a professional who can respond within hours, has active relationships with treatment programs that accept medical admissions, and has done hospital interventions before. Ask directly: How many interventions have you run from a hospital setting? What is your realistic timeline from this call to admission? Which programs can accept a patient with this medical history?",
+    "Look for a written agreement, plain fees, and a willingness to say what they cannot do. Credentials matter here as much as anywhere: a Certified Intervention Professional or licensed clinician with intervention training brings ethical standards and accountability to a situation that is already fragile. Speed without standards is how families get hurt twice.",
+    "## The Crisis Is the Opening. Standards Are What Carry You Through It.",
+    "A hospital stay hands your family something it has not had in a long time: a sober, contained, frightened person and a medical team telling the truth out loud. That is not a tragedy to survive. It is a door.",
+    "Walking through it well takes a professional who coordinates with the medical team, arranges treatment before the conversation, and holds the room steady while your loved one makes the hardest decision of their life. That is the difference between a scare and a turning point.",
+    "## Frequently Asked Questions About Hospital Interventions",
+    "Can you do an intervention while someone is in the hospital? Yes. A hospital intervention for addiction is common and often more effective than one at home, because the person is sober, cannot leave, and has just experienced a medical consequence. The interventionist coordinates with hospital staff and arranges treatment so admission can happen directly from discharge.",
+    "How quickly can an interventionist respond to a hospital admission? Experienced interventionists can usually take a first call the same day and begin family preparation within 24 hours. Placement typically takes one to three days depending on insurance and medical needs. Call as soon as your loved one is admitted, not the day before discharge.",
+    "Will the hospital help with an intervention? Social workers and case managers often help with discharge planning and referrals, but they do not run family interventions and they work on the hospital's timeline. A private interventionist works on your timeline and coordinates with hospital staff rather than replacing them.",
+    "What if my loved one is discharged before treatment is arranged? This is the most common way a hospital intervention fails. Ask the case manager about the discharge timeline immediately, tell the interventionist, and have a bridge plan, such as a short detox stay or a family member staying with the patient, so the window does not close.",
+    "Does an overdose count as a reason for a hospital intervention? An overdose is one of the strongest reasons to act. Risk of a repeat overdose is highest in the days and weeks after the first one, especially with opioids, because tolerance drops. Treatment directly from the hospital removes the most dangerous gap.",
+    "## Find a Qualified Interventionist Now",
+    "If your loved one is in the hospital right now, you do not have weeks to research. Use The Interventionist Network to find credentialed interventionists who work with medical crises, compare experience and credentials, and make one call today that changes what happens after discharge.",
+  ],
+};
+
+export default post;

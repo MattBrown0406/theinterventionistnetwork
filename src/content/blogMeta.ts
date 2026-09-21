@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "hospital-intervention-for-addiction-medical-crisis-family-guide",
+    title: "Hospital Intervention for Addiction: How to Use a Medical Crisis as the Turning Point",
+    author: "Matt Brown",
+    date: "2026-09-21",
+    excerpt: "A hospital stay may be the best window your family gets. How a hospital intervention for addiction works, what to arrange before discharge, and how to act fast.",
+    readTime: "8 min read",
+  },
+  {
     slug: "handling-counteroffers-in-an-intervention-practitioner-guide",
     title: "Handling Counteroffers in an Intervention: When the Yes Comes With Conditions",
     author: "Matt Brown",
