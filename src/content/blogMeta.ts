@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "after-a-failed-intervention-practitioner-protocol",
+    title: "After a Failed Intervention: The Practitioner's Protocol for the Weeks That Follow",
+    author: "Matt Brown",
+    date: "2026-09-22",
+    excerpt: "What professional interventionists actually do after a failed intervention: the 48-hour protocol, keeping bottom lines intact, and handling the delayed yes.",
+    readTime: "8 min read",
+  },
+  {
     slug: "hospital-intervention-for-addiction-medical-crisis-family-guide",
     title: "Hospital Intervention for Addiction: How to Use a Medical Crisis as the Turning Point",
     author: "Matt Brown",
