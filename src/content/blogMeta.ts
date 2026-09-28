@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "outcome-tracking-for-intervention-practices",
+    title: "Why Outcome Tracking Should Be a Core Part of Every Intervention Practice",
+    author: "Matt Brown",
+    date: "2026-09-27",
+    excerpt: "A practitioner's guide to outcome tracking in intervention work — what to measure, how to build a sustainable follow-up system, and how to use the data responsibly.",
+    readTime: "8 min read",
+  },
+  {
     slug: "after-a-failed-intervention-practitioner-protocol",
     title: "After a Failed Intervention: The Practitioner's Protocol for the Weeks That Follow",
     author: "Matt Brown",
