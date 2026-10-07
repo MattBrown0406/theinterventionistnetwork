@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "holiday-intervention-family-guide",
+    title: "Planning a Holiday Intervention: When the Season Helps, When It Hurts, and How to Get the Timing Right",
+    author: "Matt Brown",
+    date: "2026-10-07",
+    excerpt: "Considering a holiday intervention? Learn when the holidays help or hurt, how to time it, and how a professional interventionist keeps your family safe.",
+    readTime: "7 min read",
+  },
+  {
     slug: "outcome-tracking-for-intervention-practices",
     title: "Why Outcome Tracking Should Be a Core Part of Every Intervention Practice",
     author: "Matt Brown",
