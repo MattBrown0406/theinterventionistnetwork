@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "family-member-substance-use-in-intervention-planning-practitioner-guide",
+    title: "Family Member Substance Use in Intervention Planning: A Practitioner's Guide to the Second Problem in the Room",
+    author: "Matt Brown",
+    date: "2026-10-08",
+    excerpt: "When someone on the intervention team has their own drinking or drug problem, the whole plan is at risk. How interventionists screen, decide, and respond.",
+    readTime: "8 min read",
+  },
+  {
     slug: "holiday-intervention-family-guide",
     title: "Planning a Holiday Intervention: When the Season Helps, When It Hurts, and How to Get the Timing Right",
     author: "Matt Brown",
