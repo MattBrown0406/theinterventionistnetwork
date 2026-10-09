@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "intervention-for-high-functioning-professional-family-guide",
+    title: "Intervention for a High-Functioning Professional: A Family Guide to Protecting Their Career and Their Life",
+    author: "Matt Brown",
+    date: "2026-10-09",
+    excerpt: "Planning an intervention for a high-functioning professional? Learn how families protect a loved one's career, license, and privacy while getting them help.",
+    readTime: "8 min read",
+  },
+  {
     slug: "family-member-substance-use-in-intervention-planning-practitioner-guide",
     title: "Family Member Substance Use in Intervention Planning: A Practitioner's Guide to the Second Problem in the Room",
     author: "Matt Brown",
