@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "personality-disorders-in-addiction-intervention-practitioner-guide",
+    title: "Personality Disorders in Addiction Intervention: A Practitioner's Guide to Borderline, Narcissistic, and Antisocial Traits",
+    author: "Matt Brown",
+    date: "2026-10-11",
+    excerpt: "How interventionists can adapt planning, family prep, and placement when a loved one shows borderline, narcissistic, or antisocial personality traits.",
+    readTime: "8 min read",
+  },
+  {
     slug: "intervention-for-high-functioning-professional-family-guide",
     title: "Intervention for a High-Functioning Professional: A Family Guide to Protecting Their Career and Their Life",
     author: "Matt Brown",
