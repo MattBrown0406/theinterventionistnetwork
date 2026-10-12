@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "best-time-and-place-for-an-intervention-family-guide",
+    title: "Choosing the Best Time and Place for an Intervention: A Guide for Families",
+    author: "Matt Brown",
+    date: "2026-10-12",
+    excerpt: "Choosing the best time and place for an intervention can shape the outcome. Learn when and where to hold one, what to avoid, and what to prepare in advance.",
+    readTime: "7 min read",
+  },
+  {
     slug: "personality-disorders-in-addiction-intervention-practitioner-guide",
     title: "Personality Disorders in Addiction Intervention: A Practitioner's Guide to Borderline, Narcissistic, and Antisocial Traits",
     author: "Matt Brown",
