@@ -21,6 +21,14 @@ export type BlogPostMeta = {
 
 export const blogPostList: BlogPostMeta[] = [
   {
+    slug: "invitational-vs-surprise-intervention-family-guide",
+    title: "Invitational vs. Surprise Intervention: Which Approach Is Right for Your Family?",
+    author: "Matt Brown",
+    date: "2026-10-14",
+    excerpt: "Invitational or surprise intervention? Learn how each approach works, the pros and cons of both, and how to choose the right fit for your family's situation.",
+    readTime: "8 min read",
+  },
+  {
     slug: "best-time-and-place-for-an-intervention-family-guide",
     title: "Choosing the Best Time and Place for an Intervention: A Guide for Families",
     author: "Matt Brown",
